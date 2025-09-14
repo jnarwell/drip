@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+archive/
+*.log
+*.tmp
+.cache/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Reports (can be regenerated)
+reports/*.xlsx
+reports/*.txt
+reports/*.html
+reports/*.csv
+
+# Keep the reports directory
+!reports/.gitkeep
+
+# External repositories
+SysML-v2-Release/
+
+# JDK
+jdk-21.0.2.jdk/
