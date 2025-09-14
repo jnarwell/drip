@@ -1,0 +1,193 @@
+site_name: Acoustic Manufacturing System
+site_description: Complete documentation for acoustic levitation-based manufacturing system
+site_author: Acoustic Manufacturing Team
+site_url: https://jnarwell.github.io/drip/
+repo_url: https://github.com/jnarwell/drip
+repo_name: jnarwell/drip
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2025 - Acoustic Manufacturing System
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  favicon: assets/favicon.png
+  logo: assets/logo.png
+  
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - mermaid2:
+      arguments:
+        theme: 'base'
+  - awesome-pages
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_datetime
+  - macros:
+      include_dir: docs/includes
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: jnarwell
+      repo: drip
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - tables
+
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Add your Google Analytics ID
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jnarwell
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/jnarwell
+  generator: false
+  version:
+    provider: mike
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/tablesort.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: 
+    - Overview: index.md
+    - Quick Start: quick-start.md
+    - System Dashboard: dashboard.md
+  
+  - System Design:
+    - Architecture: system/architecture.md
+    - Requirements: system/requirements.md
+    - Level Configurations: system/levels.md
+    - Risk Analysis: system/risks.md
+  
+  - Components:
+    - Registry Overview: components/index.md
+    - Bill of Materials: components/bom.md
+    - Technical Specs: components/specs.md
+    - Suppliers: components/suppliers.md
+    - Cost Analysis: components/cost.md
+  
+  - Interfaces (ICDs):
+    - ICD Overview: icds/index.md
+    - ICD-001 Acoustic-Thermal: icds/ICD-001.md
+    - ICD-002 Control-Power: icds/ICD-002.md
+    - ICD-003 Sensor-Control: icds/ICD-003.md
+    - ICD-004 Induction-Crucible: icds/ICD-004.md
+    - ICD-005 Amplifier-Transducer: icds/ICD-005.md
+    - Validation Report: icds/validation.md
+  
+  - Analysis:
+    - Thermal Analysis: analysis/thermal.md
+    - Acoustic Modeling: analysis/acoustic.md
+    - Power Budget: analysis/power.md
+    - FMEA: analysis/fmea.md
+  
+  - Verification:
+    - Test Matrix: verification/matrix.md
+    - Test Procedures: verification/procedures.md
+    - Acceptance Criteria: verification/acceptance.md
+    - Test Reports: verification/reports.md
+  
+  - Resources:
+    - API Reference: api/index.md
+    - Glossary: resources/glossary.md
+    - References: resources/references.md
+    - Contributing: resources/contributing.md
