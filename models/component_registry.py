@@ -1050,7 +1050,7 @@ class ComponentRegistry:
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=10000,  # W output
+                    power_consumption=900,  # W input power consumption (10kW * (1-0.91 efficiency))
                     voltage_nominal=48,
                     voltage_range=(43.2, 52.8),  # ±10% adjustment
                     current_draw=48,  # A input at full load
@@ -1058,9 +1058,9 @@ class ComponentRegistry:
                     dimensions={'L': 280, 'W': 140, 'H': 90},  # mm
                     operating_temp=(0, 50),
                     max_temp=70,
-                    thermal_dissipation=1000,  # W at full load
+                    thermal_dissipation=900,  # W heat generated = power consumed
                     cooling_required="forced air",
-                    efficiency=91,  # %
+                    efficiency=91,  # % (10kW output / 10.9kW input)
                     connections=["AC input terminal", "DC output terminal"],
                     control_signal="Remote on/off, voltage adjust"
                 )

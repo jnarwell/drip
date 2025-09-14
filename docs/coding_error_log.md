@@ -140,3 +140,49 @@ jupyter nbconvert --to python notebook.ipynb --stdout | python -m py_compile -
 5. **Error Logs**: Document these patterns to prevent recurrence
 
 **Next time these errors occur, reference this log for immediate resolution.**
+
+---
+
+## **CRITICAL POWER ACCOUNTING ERROR**
+
+### Date: 2025-01-14
+### Component: component_registry.py - Power Supply Unit
+
+**Error**: PSU listed as consuming 10kW instead of supplying 10kW
+**Impact**: Power budget showed 23.7kW consumption (impossible - exceeds supply)
+**Root Cause**: Conceptual error in power flow direction
+
+### Incorrect Pattern:
+```python
+# PSU specs - WRONG
+tech_specs=TechnicalSpecs(
+    power_consumption=10000,  # W output - WRONG FIELD!
+```
+**Result**: System shows 23.7kW total power consumption
+
+### Correct Pattern:
+```python  
+# PSU specs - CORRECT
+tech_specs=TechnicalSpecs(
+    power_consumption=900,  # W input consumption (efficiency loss)
+    # 10kW output capacity is implicit - PSU supplies power, doesn't consume it
+```
+**Result**: System shows 14.6kW total power consumption (realistic)
+
+### **KEY INSIGHT**: 
+- **Power supplies PROVIDE power, they don't CONSUME their rated capacity**
+- PSU consumption = Input power - Output power = Efficiency losses
+- For 91% efficient 10kW PSU: Consumes ~900W, Supplies 10,000W
+
+### **VALIDATION CHECK**:
+```bash
+# Quick power budget validation
+python3 -c "from models.component_registry import ComponentRegistry; 
+registry = ComponentRegistry(); 
+power_budget = registry.calculate_power_budget(); 
+total = power_budget['TOTAL']['active_power'];
+print(f'Total Power: {total}W'); 
+print('✅ Realistic' if total < 15000 else '❌ Check PSU accounting')"
+```
+
+This error caused **completely incorrect power analysis** - always verify supply vs consumption!
