@@ -24,7 +24,8 @@ class ComponentType(Enum):
 class TechnicalSpecs:
     """Detailed technical specifications for components"""
     # Electrical
-    power_consumption: Optional[float] = None  # Watts
+    power_consumption: Optional[float] = None  # Watts (power consumed by component)
+    power_supply: Optional[float] = None  # Watts (power supplied by component, e.g., PSU)
     voltage_nominal: Optional[float] = None  # V
     voltage_range: Optional[Tuple[float, float]] = None  # (min, max) V
     current_draw: Optional[float] = None  # A
@@ -1051,6 +1052,7 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=900,  # W input power consumption (10kW * (1-0.91 efficiency))
+                    power_supply=10000,  # W output power supplied to system
                     voltage_nominal=48,
                     voltage_range=(43.2, 52.8),  # ±10% adjustment
                     current_draw=48,  # A input at full load
@@ -1387,41 +1389,59 @@ class ComponentRegistry:
                 print(f"  - {comp.name}: {comp.expansion_notes}")
     
     def calculate_power_budget(self) -> Dict[str, Dict[str, float]]:
-        """Calculate total power consumption by subsystem"""
+        """Calculate total power consumption and supply by subsystem"""
         power_budget = {}
         
         for category in ComponentCategory:
             category_power = {
-                'active_power': 0,  # W - actual power consumption
+                'active_power': 0,  # W - actual power consumption (positive)
+                'power_supply': 0,  # W - power supplied (positive)
+                'net_power': 0,     # W - net consumption (consumption - supply)
                 'thermal_load': 0,  # W - heat generated
                 'component_count': 0
             }
             
             for component in self.components:
-                if component.category == category and component.tech_specs.power_consumption:
-                    # Calculate based on quantity
-                    total_power = component.tech_specs.power_consumption * component.quantity
-                    category_power['active_power'] += total_power
+                if component.category == category:
+                    # Power consumption (what component uses)
+                    if component.tech_specs.power_consumption:
+                        total_power = component.tech_specs.power_consumption * component.quantity
+                        category_power['active_power'] += total_power
+                    
+                    # Power supply (what component provides)
+                    if component.tech_specs.power_supply:
+                        supplied_power = component.tech_specs.power_supply * component.quantity
+                        category_power['power_supply'] += supplied_power
                     
                     # Calculate thermal load (inefficiency)
-                    if component.tech_specs.efficiency:
-                        thermal_load = total_power * (1 - component.tech_specs.efficiency / 100)
-                    elif component.tech_specs.thermal_dissipation:
-                        thermal_load = component.tech_specs.thermal_dissipation * component.quantity
-                    else:
-                        # Assume 20% loss for components without efficiency data
-                        thermal_load = total_power * 0.2
+                    if component.tech_specs.power_consumption:
+                        total_power = component.tech_specs.power_consumption * component.quantity
+                        if component.tech_specs.efficiency:
+                            thermal_load = total_power * (1 - component.tech_specs.efficiency / 100)
+                        elif component.tech_specs.thermal_dissipation:
+                            thermal_load = component.tech_specs.thermal_dissipation * component.quantity
+                        else:
+                            # Assume 20% loss for components without efficiency data
+                            thermal_load = total_power * 0.2
+                        
+                        category_power['thermal_load'] += thermal_load
                     
-                    category_power['thermal_load'] += thermal_load
-                    category_power['component_count'] += component.quantity
+                    if component.tech_specs.power_consumption or component.tech_specs.power_supply:
+                        category_power['component_count'] += component.quantity
+            
+            # Calculate net power (consumption - supply)
+            category_power['net_power'] = category_power['active_power'] - category_power['power_supply']
             
             power_budget[category.value] = category_power
         
-        # Calculate totals
+        # Calculate totals (only sum category values, not including TOTAL)
+        category_values = list(power_budget.values())
         power_budget['TOTAL'] = {
-            'active_power': sum(pb['active_power'] for pb in power_budget.values()),
-            'thermal_load': sum(pb['thermal_load'] for pb in power_budget.values()),
-            'component_count': sum(pb['component_count'] for pb in power_budget.values())
+            'active_power': sum(pb['active_power'] for pb in category_values),
+            'power_supply': sum(pb['power_supply'] for pb in category_values),
+            'net_power': sum(pb['net_power'] for pb in category_values),
+            'thermal_load': sum(pb['thermal_load'] for pb in category_values),
+            'component_count': sum(pb['component_count'] for pb in category_values)
         }
         
         return power_budget
