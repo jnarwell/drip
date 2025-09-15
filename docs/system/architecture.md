@@ -16,14 +16,14 @@
     <a href="../../assets/diagrams/system_architecture.html" target="_blank" class="md-button md-button--primary">
         :material-open-in-new: Open Full Screen
     </a>
-    <a href="../../assets/images/system_architecture.png" download class="md-button">
+    <a href="../assets/images/system_architecture.png" download class="md-button">
         :material-download: Download PNG
     </a>
 </div>
 
 ## System Overview Diagram
 
-![System Architecture](../../assets/images/system_architecture.png){ loading=lazy }
+![System Architecture](../assets/images/system_architecture.png){ loading=lazy }
 
 ## Component Color Coding
 
@@ -160,6 +160,3 @@ For detailed interface specifications, see:
 | FPGA → Amplifiers | Digital I/O | 1 MHz | Phase control |
 | STM32 → Heaters | PWM + I2C | 100 kHz | Temperature control |
 
----
-
-*For the latest system architecture updates, see the [change log](../changelog.md)*

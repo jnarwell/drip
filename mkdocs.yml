@@ -152,7 +152,6 @@ extra_javascript:
   - javascripts/extra.js
   - javascripts/tablesort.js
   - javascripts/editor.js
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
   - https://viewer.diagrams.net/js/viewer-static.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
