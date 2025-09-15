@@ -190,6 +190,11 @@ nav:
     - ICD-003 Sensor-Control: icds/ICD-003.md
     - ICD-004 Induction-Crucible: icds/ICD-004.md
     - ICD-005 Amplifier-Transducer: icds/ICD-005.md
+    - ICD-006 Crucible Material Feed: icds/ICD-006.md
+    - ICD-007 Thermal Camera Data: icds/ICD-007.md
+    - ICD-008 Acoustic Array Phasing: icds/ICD-008.md
+    - ICD-009 Multi-Outlet Distribution: icds/ICD-009.md
+    - ICD-010 Emergency Shutdown: icds/ICD-010.md
     - Validation Report: icds/validation.md
   
   - Analysis:
@@ -204,6 +209,7 @@ nav:
     - Test Procedures: verification/procedures.md
     - Acceptance Criteria: verification/acceptance.md
     - Test Reports: verification/reports.md
+    - Verification Status (Reconciled): verification/verification-status.md
   
   - Resources:
     - API Reference: api/index.md

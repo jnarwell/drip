@@ -39,7 +39,11 @@ Not specified
 
 ### Side A Components
 **Optris PI 1M Thermal Camera**
-- ⚠️ Component not found in registry
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 
 ### Side B Components
@@ -135,4 +139,4 @@ Not specified
 | 2025-09-14 | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-14 14:18:04*
+*This ICD was auto-generated from component specifications on 2025-09-14 20:28:20*

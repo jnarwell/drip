@@ -190,7 +190,11 @@ class ICDGenerator:
                     break
             else:
                 specs.append(f"**{name}**")
-                specs.append("- ⚠️ Component not found in registry")
+                specs.append("- ⚠️ Component not in registry - needs definition")
+                specs.append("- Specification: [TO BE DEFINED]")
+                specs.append("- Cost: [TBD]")
+                specs.append("- Supplier: [TBD]")
+                specs.append("- **ACTION REQUIRED**: Add to component_registry.py")
                 specs.append("")
         
         return "\n".join(specs)

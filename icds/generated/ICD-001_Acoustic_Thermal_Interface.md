@@ -68,7 +68,11 @@ Not specified
 
 ### Side B Components
 **Chamber Assembly**
-- ⚠️ Component not found in registry
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 **Thermal Isolation Tube**
 - Operating Temp: -50-1000°C
@@ -166,4 +170,4 @@ Not specified
 | 2025-09-14 | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-14 14:18:04*
+*This ICD was auto-generated from component specifications on 2025-09-14 20:28:20*

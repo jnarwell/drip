@@ -1,38 +1,31 @@
-# ICD-004: Induction-Crucible Interface
+# ICD-007: Thermal Camera Data Interface
 
 ## Document Control
-- **ICD Number**: ICD-004
+- **ICD Number**: ICD-007
 - **Revision**: 1.0
 - **Date**: 2025-09-14
 - **Status**: Draft
 - **Criticality**: HIGH
 
 ## 1. Interface Overview
-- **Purpose**: Define interface between Crucible Subsystem and Crucible Subsystem
-- **Interface Types**: thermal, electrical, mechanical
-- **Side A Components**: Induction Heater, Induction Coil Assembly
-- **Side B Components**: Crucible Assembly, Material Feed System
+- **Purpose**: Define interface between Power/Control Subsystem and Power/Control Subsystem
+- **Interface Types**: data
+- **Side A Components**: Optris PI 1M
+- **Side B Components**: Industrial PC, FPGA Board
 
 ## 2. Interface Requirements
 
 | Parameter | Nominal | Min | Max | Units | Verification |
 |-----------|---------|-----|-----|-------|--------------|
-| Heating Power | 3000 | 1000 | 3500 | W | Power meter measurement |
-| Temperature Uniformity | 5 | 0 | 10 | °C | Thermal mapping |
-| Coil Current | 15 | 5 | 20 | A | Current probe |
+
 
 ## 3. Physical Interface
 
 ### 3.1 Mechanical Details
-- **Coil Clearance**: 25mm minimum
-- **Mounting**: Fixed ceramic supports
-- **Access Ports**: 4x 50mm diameter
+Not specified
 
 ### 3.2 Thermal Details
-- **Operating Temp**: 1200-1500°C
-- **Ramp Rate**: 50°C/min max
-- **Insulation**: Ceramic fiber composite
-- **Cooling**: Water jacket required
+Not specified
 
 ### 3.3 Electrical Details
 Not specified
@@ -40,50 +33,35 @@ Not specified
 ## 4. Component Specifications
 
 ### Side A Components
-**Induction Heater**
-- Power Consumption: 3000W
-- Operating Temp: 0-45°C
-- Max Temp: 50°C
-- Weight: 12.0kg
-- Frequency: 50000Hz
-- Efficiency: 85%
-- Dimensions: 400×300×200mm
-- Cost: $700
-- Supplier: DaWei
-
-**Induction Coil Assembly**
-- Operating Temp: 20-80°C
-- Max Temp: 100°C
-- Weight: 1.5kg
-- Frequency: 50000Hz
-- Dimensions: Ø100×80mm
-- Cost: $250
-- Supplier: None
+**Optris PI 1M**
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 
 ### Side B Components
-**Crucible Assembly**
-- Operating Temp: 20-1800°C
-- Max Temp: 2000°C
-- Weight: 2.5kg
-- Cost: $400
+**Industrial PC**
+- Power Consumption: 65W
+- Operating Temp: 0-50°C
+- Weight: 2.0kg
+- Cost: $0
 - Supplier: None
 
-**Material Feed System**
-- Operating Temp: 20-150°C
-- Weight: 3.0kg
-- Dimensions: 200×150×100mm
-- Cost: $350
+**FPGA Board**
+- Power Consumption: 2W
+- Operating Temp: 0-85°C
+- Weight: 0.05kg
+- Dimensions: 70×50×15mm
+- Cost: $75
 - Supplier: None
 
 
 ## 5. Verification & Validation
 
 ### 5.1 Test Equipment
-- Power meter
-- Thermal camera
-- Current probe
-- Thermocouples
+- None specified
 
 ### 5.2 Test Procedure
 1. **Pre-Test Setup**
@@ -93,12 +71,6 @@ Not specified
    - Document baseline conditions
 
 2. **Baseline Measurements**
-   - Measure Heating Power using Power meter measurement
-     * Expected: 3000 W (±1250.0)
-   - Measure Temperature Uniformity using Thermal mapping
-     * Expected: 5 °C (±5.0)
-   - Measure Coil Current using Current probe
-     * Expected: 15 A (±7.5)
 
 3. **Functional Verification**
    - Power on system incrementally
@@ -125,23 +97,16 @@ Not specified
 - Interface meets all functional requirements
 
 ## 6. Interface Compatibility Analysis
-### Compatibility Status: ❌ INCOMPATIBLE
+### Compatibility Status: ✅ COMPATIBLE
 
-**Critical Issues:**
-- ❌ Extreme thermal mismatch: 1900°C difference between sides
-- ❌ Insufficient power supply: 3000W demand vs 0W supply
-
-**Warnings:**
-- ⚠️ Induction Heater has max temp of 50°C - ensure adequate thermal isolation
-
+No compatibility issues identified.
 
 
 ## 7. Risk Assessment
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
 | Critical interface failure causing system shutdown | Low | High | Redundant monitoring, fail-safe design, regular testing |
-| Thermal damage to components | Medium | High | Active cooling, thermal monitoring, temperature limits |
-| Electrical fault causing component damage | Low | High | Circuit protection, isolation, ground fault detection |
+| Data corruption or communication loss | Medium | Medium | Error checking, redundant paths, watchdog timers |
 
 
 ## 8. Design Considerations

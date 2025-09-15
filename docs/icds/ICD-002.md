@@ -39,7 +39,11 @@ Not specified
 
 ### Side A Components
 **Cyclone IV FPGA Board**
-- ⚠️ Component not found in registry
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 **STM32 Dev Board**
 - Power Consumption: 0.5W
@@ -64,10 +68,18 @@ Not specified
 - Supplier: Mean Well
 
 **48V DC Power Supply**
-- ⚠️ Component not found in registry
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 **12V DC Power Supply**
-- ⚠️ Component not found in registry
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 
 ## 5. Verification & Validation
@@ -153,4 +165,4 @@ No compatibility issues identified.
 | 2025-09-14 | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-14 14:18:04*
+*This ICD was auto-generated from component specifications on 2025-09-14 20:28:20*
