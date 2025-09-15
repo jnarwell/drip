@@ -13,9 +13,51 @@ from pathlib import Path
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from models.component_registry import ComponentRegistry, ComponentCategory
-from models.interfaces.interface_registry import SYSTEM_INTERFACES
-from models.interfaces.icd_generator import ICDGenerator
+try:
+    from models.component_registry import ComponentRegistry, ComponentCategory
+    from models.interfaces.interface_registry import SYSTEM_INTERFACES
+    from models.interfaces.icd_generator import ICDGenerator
+    REGISTRY_AVAILABLE = True
+except ImportError:
+    print("Warning: Component registry not available. Using mock data.")
+    REGISTRY_AVAILABLE = False
+    
+    # Mock classes for when registry is not available
+    class ComponentCategory:
+        FRAME = "Frame Subsystem"
+        HEATED_BED = "Heated Bed Subsystem"
+        ACOUSTIC_CYLINDER = "Acoustic Cylinder Subsystem"
+        CRUCIBLE = "Crucible Subsystem"
+        POWER_CONTROL = "Power/Control Subsystem"
+        SOFTWARE = "Software"
+        INTEGRATION = "Integration & Testing"
+    
+    class ComponentRegistry:
+        def __init__(self):
+            self.components = []
+            
+        def get_summary(self):
+            return {
+                'categories': [],
+                'total_components': 0,
+                'total_cost': 0,
+                'cots_percentage': 0
+            }
+            
+        def get_category_summary(self):
+            return pd.DataFrame()
+            
+        def get_by_category(self, category):
+            return []
+    
+    SYSTEM_INTERFACES = []
+    
+    class ICDGenerator:
+        def __init__(self):
+            pass
+            
+        def generate_all_icds(self):
+            return []
 
 class DocsGenerator:
     def __init__(self):
