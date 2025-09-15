@@ -165,6 +165,7 @@ nav:
   - System Design:
     - Architecture: system/architecture.md
     - Requirements: system/requirements.md
+    - Requirements Traceability: requirements/traceability.md
     - Level Configurations: system/levels.md
     - Risk Analysis: system/risks.md
   
@@ -174,6 +175,13 @@ nav:
     - Technical Specs: components/specs.md
     - Suppliers: components/suppliers.md
     - Cost Analysis: components/cost.md
+  
+  - Behavioral Models:
+    - Overview: behavioral/index.md
+    - Control Behavior: behavioral/control-behavior.md
+    - System States: behavioral/system-states.md
+    - Control Sequences: behavioral/control-sequences.md
+    - Thermal Dynamics: behavioral/thermal-dynamics.md
   
   - Interfaces (ICDs):
     - ICD Overview: icds/index.md
