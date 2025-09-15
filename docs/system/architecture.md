@@ -4,7 +4,7 @@
 
 <div class="diagram-wrapper">
     <iframe 
-        src="../../assets/diagrams/system_architecture.html" 
+        src="../assets/diagrams/system_architecture.html" 
         width="100%" 
         height="800px" 
         frameborder="0"
@@ -13,7 +13,7 @@
 </div>
 
 <div class="diagram-controls">
-    <a href="../../assets/diagrams/system_architecture.html" target="_blank" class="md-button md-button--primary">
+    <a href="../assets/diagrams/system_architecture.html" target="_blank" class="md-button md-button--primary">
         :material-open-in-new: Open Full Screen
     </a>
     <a href="../assets/images/system_architecture.png" download class="md-button">
