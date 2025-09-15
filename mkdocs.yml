@@ -200,6 +200,7 @@ nav:
   
   - Verification:
     - Test Matrix: verification/matrix.md
+    - Complete Test Registry: verification/test-registry.md
     - Test Procedures: verification/procedures.md
     - Acceptance Criteria: verification/acceptance.md
     - Test Reports: verification/reports.md

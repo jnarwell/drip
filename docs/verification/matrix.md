@@ -3,28 +3,50 @@
 ## Test Coverage Overview
 
 ```mermaid
-pie title Test Coverage by Subsystem
-    "Acoustic" : 8
-    "Thermal" : 6
-    "Control" : 5
-    "Material" : 4
-    "Integration" : 3
+pie title Test Coverage by Subsystem (100 Total Tests)
+    "Acoustic (15)" : 15
+    "Thermal (15)" : 15
+    "Crucible (10)" : 10
+    "Power (10)" : 10
+    "Sensors (10)" : 10
+    "Control (10)" : 10
+    "Chamber (5)" : 5
+    "Integration (5)" : 5
+    "Performance (5)" : 5
+    "Endurance (10)" : 10
+    "Validation (5)" : 5
 ```
 
-## Verification Test Matrix
+## Complete Test Registry
 
-| Test ID | Requirement | Test Method | Equipment | Pass Criteria | Priority |
-|---------|-------------|-------------|-----------|---------------|----------|
-| VT-001 | 40kHz frequency | Spectrum analysis | Oscilloscope, FFT | 40±0.1 kHz | HIGH |
-| VT-002 | Field uniformity | Hydrophone scan | Hydrophone array | ±5% variation | HIGH |
-| VT-003 | Temperature range | Thermal test | Thermocouples | 700-1580°C | HIGH |
-| VT-004 | Position accuracy | Optical tracking | High-speed camera | ±0.3mm | HIGH |
-| VT-005 | Power consumption | Power analysis | Power meter | <5kW net | MEDIUM |
-| VT-006 | Cooling capacity | Thermal load test | Flow meter, sensors | ΔT<10°C | MEDIUM |
-| VT-007 | Control latency | Response time | Logic analyzer | <100μs | MEDIUM |
-| VT-008 | Material density | Archimedes test | Precision scale | >95% theoretical | HIGH |
-| VT-009 | Surface finish | Profilometry | Surface profiler | <50μm Ra | LOW |
-| VT-010 | EMC compliance | EMI/EMC test | Spectrum analyzer | IEC 61000 | LOW |
+The DRIP system verification comprises **100 comprehensive tests** organized into 11 categories. 
+
+### 📋 Full Test List
+**[View Complete Test Registry →](test-registry.md)**
+
+The test registry includes all 100 tests (TE-001 through TE-100) with:
+- Test purpose and acceptance criteria
+- Target components
+- Prerequisites and dependencies
+- Required equipment
+- Estimated duration
+
+### Summary by Category
+
+| Category | Test Range | Count | Total Hours | Focus Area |
+|----------|------------|-------|-------------|------------|
+| Acoustic | TE-001 to TE-015 | 15 | 67h | Transducers, amplifiers, acoustic field |
+| Thermal | TE-016 to TE-030 | 15 | 83h | Cameras, sensors, cooling, insulation |
+| Crucible | TE-031 to TE-040 | 10 | 54h | Heating, droplet generation, materials |
+| Power | TE-041 to TE-050 | 10 | 35h | Power supplies, distribution, safety |
+| Sensors | TE-051 to TE-060 | 10 | 41h | Calibration, integration, accuracy |
+| Control | TE-061 to TE-070 | 10 | 44h | Controllers, algorithms, interfaces |
+| Chamber | TE-071 to TE-075 | 5 | 20h | Sealing, filtration, environment |
+| Integration | TE-076 to TE-080 | 5 | 40h | Subsystem interaction, safety |
+| Performance | TE-081 to TE-085 | 5 | 82h | System accuracy, speed, quality |
+| Endurance | TE-086 to TE-095 | 10 | 4,581h | Long-term reliability testing |
+| Validation | TE-096 to TE-100 | 5 | 100h | Final acceptance testing |
+| **TOTAL** | **TE-001 to TE-100** | **100** | **5,147h** | **Complete system verification** |
 
 ## Test Dependencies
 
