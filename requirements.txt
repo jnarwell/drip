@@ -8,3 +8,4 @@ mkdocs-awesome-pages-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-minify-plugin
 mkdocs-macros-plugin
+mkdocs-glightbox==0.3.5

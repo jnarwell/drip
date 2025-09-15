@@ -286,3 +286,74 @@
 #component-list > div.hidden {
   display: none;
 }
+
+/* Diagram display styles */
+.diagram-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.diagram-wrapper iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+}
+
+.diagram-controls {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+/* Responsive diagram sizing */
+@media (max-width: 768px) {
+    .diagram-wrapper iframe {
+        min-height: 400px;
+    }
+}
+
+/* Figure styling for static diagrams */
+figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--md-default-fg-color--light);
+}
+
+/* Zoom on hover for diagrams */
+figure img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+/* Color coding legend */
+.color-legend {
+    margin: 2rem 0;
+}
+
+.color-legend table {
+    width: 100%;
+}
+
+.color-legend td:first-child {
+    text-align: center;
+    font-size: 1.5rem;
+}
