@@ -264,13 +264,12 @@ class DashboardGenerator:
                     
                     # Create report link
                     if execution.status == TestStatus.NOT_STARTED:
-                        template_path = f"../../test_reports/templates/{test_id}_{test_def.test_name.replace(' ', '_').replace('/', '-')}.md"
-                        report_link = f"[Create Report]({template_path})"
+                        report_link = "[Not Started]"
                     elif execution.status == TestStatus.COMPLETE:
                         if execution.report_path:
-                            report_link = f"[View Report]({execution.report_path})"
+                            report_link = "[Complete]"
                         else:
-                            report_link = "[Report Missing]"
+                            report_link = "[Complete - No Report]"
                     else:
                         report_link = "[In Progress]"
                     
