@@ -57,6 +57,26 @@
          <lastmod>2025-09-15</lastmod>
     </url>
     <url>
+         <loc>https://jnarwell.github.io/drip/behavioral/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/behavioral/control-behavior/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/behavioral/control-sequences/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/behavioral/system-states/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/behavioral/thermal-dynamics/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
          <loc>https://jnarwell.github.io/drip/components/</loc>
          <lastmod>2025-09-15</lastmod>
     </url>
@@ -106,6 +126,10 @@
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/includes/abbreviations/</loc>
+         <lastmod>2025-09-15</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/requirements/traceability/</loc>
          <lastmod>2025-09-15</lastmod>
     </url>
     <url>
