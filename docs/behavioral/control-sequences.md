@@ -27,15 +27,7 @@ sequenceDiagram
 
 ### Timing Analysis
 
-| Step | Component | Action | Duration | Protocol |
-|------|-----------|--------|----------|----------|
-| 1 | Camera | Capture thermal image | 31.25 ms | 32 Hz rate |
-| 2 | STM32 | Process image | 0.5 ms | Internal |
-| 3 | STM32 | Compute trajectory | 0.4 ms | Internal |
-| 4 | STM32→FPGA | Transfer phases | 0.02 ms | SPI @ 50MHz |
-| 5 | FPGA→Amps | Distribute control | 0.01 ms | Parallel |
-| 6 | Amps→Trans | Generate signals | 0.001 ms | Analog |
-| 7 | Trans→Drop | Apply force | 0.2 ms | Acoustic |
+See [Control Loop Timing Details](../behavioral/control-behavior.md#control-loop-implementation) for detailed timing breakdown.
 
 **Total Loop Time: <2 ms** ✓ (Meets SR014 requirement)
 

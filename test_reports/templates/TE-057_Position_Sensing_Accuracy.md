@@ -26,6 +26,11 @@ result: null
 
 # Test Report: TE-057 - Position Sensing Accuracy
 
+!!! info "Test Status"
+    **Current Phase**: Planning Only
+    **Hardware**: Not Available
+    **Expected Execution**: After prototype assembly (Q2 2025)
+
 ## 1.0 Test Information
 
 ### 1.1 Test Overview

@@ -39,9 +39,7 @@ This guide covers the component selection, procurement, and integration process 
   - Lead time: 2-3 weeks
 
 ### Thermal Sensing
-- **IR Camera**: Optris PI 1M
-  - 450-1800°C range
-  - 764x480 resolution
+- **IR Camera**: See [Thermal Camera Specifications](components/specs.md#thermal-sensing-specifications)
   - Lead time: 6 weeks (critical path)
 
 ### Thermal System (Level 2+)

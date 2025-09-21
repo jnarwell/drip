@@ -46,7 +46,7 @@ The Acoustic Manufacturing System uses **40 kHz ultrasonic transducers** to crea
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
-| **Power** | 4.6kW | 15kW | 20kW | 35kW |
+| **Power** | 4.6kW | 8.2kW | 12.5kW | 18.7kW |
 
 ## 🚀 Quick Navigation
 
@@ -68,20 +68,27 @@ Real-time project metrics
 </div>
 </div>
 
+!!! warning "Documentation Status: PLANNING PHASE"
+    This documentation represents the **PLANNED DESIGN** for the DRIP system.
+    - **Hardware Status**: Not built
+    - **Testing Status**: Not performed  
+    - **Verification**: Simulation only
+    - **Specifications**: Subject to change based on prototype results
+
 ## 📈 Project Status
 
-!!! success "Current Phase: Level 1 Development"
-    - [x] Requirements definition complete
-    - [x] Component selection finalized  
-    - [x] ICDs drafted
-    - [x] Power budget validated
+!!! info "Current Phase: Level 1 Development - PLANNING"
+    - [ ] Requirements definition (90% draft)
+    - [ ] Component selection (under review)  
+    - [ ] ICDs (preliminary draft)
+    - [ ] Power budget (estimated)
     - [ ] Mechanical design in progress
     - [ ] Prototype assembly pending
 
 ## 🔗 Recent Updates
 
 - **2025-09-14**: MkDocs documentation system implemented
-- **2025-01-14**: ICD system and interface validation complete
+- **2025-01-14**: ICD system drafted and interface validation simulated
 - **2025-01-14**: Power accounting fixed (4.6kW net consumption)
 - **2025-01-13**: Component registry with technical specs
 

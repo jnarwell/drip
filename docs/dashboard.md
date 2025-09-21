@@ -86,11 +86,11 @@ gantt
 
 | Subsystem | Tests Planned | Tests Complete | Status |
 |-----------|--------------|----------------|--------|
-| Acoustic Array | 8 | 6 | 🟡 75% |
-| Thermal System | 6 | 4 | 🟡 67% |
-| Control System | 5 | 5 | 🟢 100% |
-| Material Feed | 4 | 2 | 🟠 50% |
-| Integration | 3 | 0 | 🔴 0% |
+| Acoustic Array | 8 | 0 | 📋 Planned |
+| Thermal System | 6 | 0 | 📋 Planned |
+| Control System | 5 | 0 | 📋 Planned |
+| Material Feed | 4 | 0 | 📋 Planned |
+| Integration | 3 | 0 | 📋 Planned |
 
 ---
 *Dashboard updated: 2025-09-14 20:34:13*

@@ -56,38 +56,46 @@ This matrix traces system requirements to their implementation in behavioral mod
 
 | Model Element | Test Procedure | Expected Result | Status |
 |---------------|----------------|-----------------|--------|
-| `ThermalPredictiveControl` | TP-002 | ±0.3mm accuracy | 🔄 Testing |
-| `DropletCoolingModel` | TP-010 | >1000°C/s rate | ✅ Verified |
-| `ControlLoop` timing | TP-014 | <3ms total | ✅ Verified |
-| `ChamberThermalField` | TP-009 | <300°C walls | ✅ Verified |
+| `ThermalPredictiveControl` | TP-002 | ±0.3mm accuracy | 📋 Planned |
+| `DropletCoolingModel` | TP-010 | >1000°C/s rate | 📊 Simulated |
+| `ControlLoop` timing | TP-014 | <3ms total | 📊 Simulated |
+| `ChamberThermalField` | TP-009 | <300°C walls | 📊 Simulated |
 
 ## Gap Analysis
 
 ### Fully Traced Requirements
-- ✅ SR001: Acoustic frequency
-- ✅ SR002: Steering accuracy
-- ✅ SR009: Chamber temperature
-- ✅ SR010: Cooling rate
-- ✅ SR014: Control loop timing
+- 📋 SR001: Acoustic frequency
+- 📋 SR002: Steering accuracy
+- 📋 SR009: Chamber temperature
+- 📋 SR010: Cooling rate
+- 📋 SR014: Control loop timing
 
 ### Partially Traced Requirements
 - ⚠️ SR004: Power scaling (behavioral model planned)
 - ⚠️ SR005: Build volume scaling (state space definition needed)
 - ⚠️ SR012: 25 parallel outlets (sequence definition in progress)
 
-### Verification Priorities
-1. **High**: SR002 steering accuracy - in active testing
-2. **Medium**: SR011 scalable array - simulation planned
-3. **Low**: SR008 operating cost - economic model deferred
+## Verification Approach (Planning Phase)
+
+### Simulation-Based Verification (Current)
+- ✅ Acoustic field modeling (COMSOL)
+- ✅ Thermal dynamics (ANSYS)
+- ✅ Control loop timing (MATLAB)
+
+### Hardware Verification (Future - Q2 2025)
+- ⏳ Acoustic frequency measurement
+- ⏳ Steering accuracy testing
+- ⏳ Cooling rate validation
+- ⏳ System integration testing
 
 ## Model Validation Status
 
 | Model | Simulation | Hardware Test | Production Ready |
 |-------|------------|---------------|------------------|
-| Control Behavior | ✅ Complete | 🔄 In Progress | ❌ Not Ready |
-| System States | ✅ Complete | ✅ Complete | ✅ Ready |
-| Control Sequences | ✅ Complete | 🔄 In Progress | ❌ Not Ready |
-| Thermal Dynamics | ✅ Complete | ✅ Complete | ⚠️ Tuning Needed |
+| Control Behavior | 📊 Simulated | 📋 Planned | ❌ Not Ready |
+| System States | 📋 Defined | 📋 Planned | ❌ Not Ready |
+| Control Sequences | 📊 Simulated | 📋 Planned | ❌ Not Ready |
+| Thermal Dynamics | 📊 Simulated | 📋 Planned | ❌ Not Ready |
 
 ## Continuous Verification
 

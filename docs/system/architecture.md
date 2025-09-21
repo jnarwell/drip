@@ -1,8 +1,25 @@
+!!! warning "Documentation Status: PLANNING PHASE"
+    This documentation represents the **PLANNED DESIGN** for the DRIP system.
+    - **Hardware Status**: Not built
+    - **Testing Status**: Not performed  
+    - **Verification**: Simulation only
+    - **Specifications**: Subject to change based on prototype results
+
 # System Architecture
 
 ## Overview
 
-The Acoustic Manufacturing System uses ultrasonic levitation to manipulate molten metal droplets in a contactless manner.
+The Acoustic Manufacturing System uses ultrasonic levitation to manipulate molten metal droplets in a contactless manner. The system consists of six main subsystems that work together to achieve controlled levitation and processing of materials in an acoustic field.
+
+## Interactive System Diagram
+
+<iframe src="../assets/diagrams/system_architecture.html" width="100%" height="800px" frameborder="0"></iframe>
+
+!!! tip "Interactive Features"
+    - **Zoom**: Use mouse wheel or zoom controls
+    - **Pan**: Click and drag to navigate
+    - **Layers**: Toggle component layers
+    - **Export**: Use the export button to save as image
 
 ## System Block Diagram
 

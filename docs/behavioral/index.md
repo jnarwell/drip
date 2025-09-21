@@ -1,3 +1,10 @@
+!!! warning "Documentation Status: PLANNING PHASE"
+    This documentation represents the **PLANNED DESIGN** for the DRIP system.
+    - **Hardware Status**: Not built
+    - **Testing Status**: Not performed  
+    - **Verification**: Simulation only
+    - **Specifications**: Subject to change based on prototype results
+
 # Behavioral Models
 
 ## Overview
@@ -38,10 +45,10 @@ Each behavioral model includes verification constraints that map directly to our
 
 | Model | Status | Validation | Last Updated |
 |-------|--------|------------|--------------|
-| Droplet Control Behavior | ✅ Complete | Simulated | 2025-09-15 |
-| System States | ✅ Complete | Defined | 2025-09-15 |
-| Control Sequences | ✅ Complete | Timing Verified | 2025-09-15 |
-| Thermal Dynamics | ✅ Complete | Analytical | 2025-09-15 |
+| Droplet Control Behavior | 📊 Simulated | MATLAB/Python | 2025-09-15 |
+| System States | 📋 Defined | Paper Design | 2025-09-15 |
+| Control Sequences | 📋 Planned | Timing Analysis | 2025-09-15 |
+| Thermal Dynamics | 📊 Simulated | FEA Analysis | 2025-09-15 |
 
 ## Quick Links
 
