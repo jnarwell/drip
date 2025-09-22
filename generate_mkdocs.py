@@ -342,12 +342,54 @@ gantt
 ## 📈 Test Progress
 
 | Subsystem | Tests Planned | Tests Complete | Status |
-|-----------|--------------|----------------|--------|
-| Acoustic Array | 8 | 6 | 🟡 75% |
-| Thermal System | 6 | 4 | 🟡 67% |
-| Control System | 5 | 5 | 🟢 100% |
-| Material Feed | 4 | 2 | 🟠 50% |
-| Integration | 3 | 0 | 🔴 0% |
+|-----------|--------------|----------------|--------|"""
+        
+        # Get real test data from test management system
+        try:
+            from test_management.verification_logic import VerificationEngine
+            from test_management.component_test_mapping import ComponentTestMapper
+            
+            engine = VerificationEngine()
+            mapper = ComponentTestMapper()
+            subsystem_status = engine.get_subsystem_status()
+            
+            # Map our subsystem names to display names
+            subsystem_display_names = {
+                "Acoustic": "Acoustic Array",
+                "Thermal": "Thermal System", 
+                "Control": "Control System",
+                "Crucible": "Material Feed",
+                "Power": "Power System"
+            }
+            
+            for subsystem, status in subsystem_status.items():
+                display_name = subsystem_display_names.get(subsystem, subsystem)
+                total_tests = status['total_tests']
+                completed_tests = status['completed_tests']
+                percentage = status['completion_percentage']
+                
+                # Status emoji based on percentage
+                if percentage == 0:
+                    status_emoji = "🔴"
+                elif percentage < 50:
+                    status_emoji = "🟠"
+                elif percentage < 100:
+                    status_emoji = "🟡"
+                else:
+                    status_emoji = "🟢"
+                
+                content += f"\n| {display_name} | {total_tests} | {completed_tests} | {status_emoji} {percentage:.0f}% |"
+                
+        except ImportError:
+            # Fallback if test management system not available
+            content += """
+| Acoustic Array | 0 | 0 | 🔴 0% |
+| Thermal System | 0 | 0 | 🔴 0% |
+| Control System | 0 | 0 | 🔴 0% |
+| Material Feed | 0 | 0 | 🔴 0% |
+| Power System | 0 | 0 | 🔴 0% |"""
+        
+        content += """
 
 ---
 *Dashboard updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}*
@@ -2394,16 +2436,37 @@ The Acoustic Manufacturing System Level 1 shall meet all acceptance criteria bef
     
     def generate_test_reports(self):
         """Generate test reports template"""
-        content = """# Test Reports
+        # Get real test statistics
+        total_tests_planned = 0
+        tests_completed = 0
+        tests_passed = 0
+        tests_failed = 0
+        tests_blocked = 0
+        
+        try:
+            from test_management.verification_logic import VerificationEngine
+            engine = VerificationEngine()
+            summary = engine.get_verification_summary()
+            
+            total_tests_planned = summary['tests']['total']
+            tests_completed = summary['tests']['complete']
+            tests_passed = summary['tests']['passed']
+            tests_failed = summary['tests']['failed']
+            tests_blocked = summary['tests']['blocked']
+        except ImportError:
+            # Use default values if test management not available
+            total_tests_planned = 100  # Based on TE-001 to TE-100
+            
+        content = f"""# Test Reports
 
 ## Test Report Summary
 
 ### Overall Status
-- **Total Tests Planned**: 26
-- **Tests Completed**: 0
-- **Tests Passed**: 0
-- **Tests Failed**: 0
-- **Tests Blocked**: 0
+- **Total Tests Planned**: {total_tests_planned}
+- **Tests Completed**: {tests_completed}
+- **Tests Passed**: {tests_passed}
+- **Tests Failed**: {tests_failed}
+- **Tests Blocked**: {tests_blocked}
 
 ### Test Progress
 ```mermaid

@@ -89,11 +89,15 @@ gantt
 
 | Subsystem | Tests Planned | Tests Complete | Status |
 |-----------|--------------|----------------|--------|
-| Acoustic Array | 8 | 6 | 🟡 75% |
-| Thermal System | 6 | 4 | 🟡 67% |
-| Control System | 5 | 5 | 🟢 100% |
-| Material Feed | 4 | 2 | 🟠 50% |
-| Integration | 3 | 0 | 🔴 0% |
+| Acoustic Array | 9 | 0 | 🔴 0% |
+| Thermal System | 8 | 0 | 🔴 0% |
+| Cooling | 2 | 0 | 🔴 0% |
+| Insulation | 4 | 0 | 🔴 0% |
+| Material Feed | 7 | 0 | 🔴 0% |
+| Power System | 8 | 0 | 🔴 0% |
+| Sensors | 4 | 0 | 🔴 0% |
+| Control System | 7 | 0 | 🔴 0% |
+| Chamber | 3 | 0 | 🔴 0% |
 
 ---
-*Dashboard updated: 2025-09-22 11:24:31*
+*Dashboard updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}*
