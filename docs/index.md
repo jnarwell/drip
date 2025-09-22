@@ -56,16 +56,16 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 <div class="tx-hero__content">
 <div class="feature-cards">
 
-[**Component Registry** :material-database:](components/index.md){: .md-button .md-button--primary }
+[**Component Registry** :material-database:](components/index.md){ .md-button .md-button--primary }
 Preliminary BOM with 51 planned components
 
-[**Interface Control** :material-connection:](icds/index.md){: .md-button .md-button--primary }
+[**Interface Control** :material-connection:](icds/index.md){ .md-button .md-button--primary }
 5 planned critical system interfaces
 
-[**Verification Matrix** :material-check-all:](verification/matrix.md){: .md-button .md-button--primary }
+[**Verification Matrix** :material-check-all:](verification/matrix.md){ .md-button .md-button--primary }
 Planned comprehensive test procedures
 
-[**System Dashboard** :material-view-dashboard:](dashboard.md){: .md-button .md-button--primary }
+[**System Dashboard** :material-view-dashboard:](dashboard.md){ .md-button .md-button--primary }
 Project planning metrics
 
 </div>
@@ -94,4 +94,4 @@ Project planning metrics
 
 ---
 
-*Last updated: 2025-09-22 08:54:33 | Build: v1758556473*
+*Last updated: 2025-09-22 09:41:04 | Build: v1758559264*
