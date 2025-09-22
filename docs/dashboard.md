@@ -37,7 +37,7 @@
 <div class="metric-content">
 <h3>Interfaces</h3>
 <p class="metric-value">5</p>
-<p class="metric-label">ICDs Drafted</p>
+<p class="metric-label">ICDs Defined</p>
 </div>
 </div>
 
@@ -85,15 +85,15 @@ gantt
     Production      :2025-05-10, 60d
 ```
 
-## 📈 Test Planning Status
+## 📈 Test Progress
 
-| Subsystem | Tests Planned | Test Procedures Drafted | Status |
-|-----------|--------------|-------------------------|--------|
-| Acoustic Array | 8 | 6 | 🟡 75% Planned |
-| Thermal System | 6 | 4 | 🟡 67% Planned |
-| Control System | 5 | 5 | 🟢 100% Planned |
-| Material Feed | 4 | 2 | 🟠 50% Planned |
-| Integration | 3 | 0 | 🔴 0% Planned |
+| Subsystem | Tests Planned | Tests Complete | Status |
+|-----------|--------------|----------------|--------|
+| Acoustic Array | 8 | 6 | 🟡 75% |
+| Thermal System | 6 | 4 | 🟡 67% |
+| Control System | 5 | 5 | 🟢 100% |
+| Material Feed | 4 | 2 | 🟠 50% |
+| Integration | 3 | 0 | 🔴 0% |
 
 ---
-*Dashboard updated: 2025-09-21 19:34:01*
+*Dashboard updated: 2025-09-21 20:51:12*

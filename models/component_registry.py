@@ -83,7 +83,24 @@ class Component:
 class ComponentRegistry:
     """Central registry for all system components"""
     
-    def __init__(self):
+    # Level scaling factors derived from current projections
+    LEVEL_MULTIPLIERS = {
+        1: {'cost': 1.0, 'power': 1.0, 'transducers': 18, 'build_volume': 125},
+        2: {'cost': 1.55, 'power': 1.78, 'transducers': 36, 'build_volume': 1000},
+        3: {'cost': 2.73, 'power': 2.72, 'transducers': 36, 'build_volume': 1000},
+        4: {'cost': 5.70, 'power': 4.07, 'transducers': 72, 'build_volume': 8000}
+    }
+    
+    # Level-specific capabilities
+    LEVEL_CAPABILITIES = {
+        1: {'materials': ['Al'], 'build_rate': 1},  # cm³/hr
+        2: {'materials': ['Al', 'Steel'], 'build_rate': 5},
+        3: {'materials': ['Al', 'Steel'], 'build_rate': 10, 'feature': 'Dual simultaneous'},
+        4: {'materials': ['Al', 'Steel', 'Ti', 'Cu', 'Ni'], 'build_rate': 25}
+    }
+    
+    def __init__(self, level=1):
+        self.level = level
         self.components: List[Component] = []
         self._initialize_components()
     
@@ -1314,6 +1331,42 @@ class ComponentRegistry:
     def get_components_requiring_expansion(self) -> List[Component]:
         """Get all components marked as requiring expansion"""
         return [c for c in self.components if c.requires_expansion]
+    
+    def get_level_scaled_cost(self) -> float:
+        """Get total cost with level multiplier applied"""
+        base_cost = sum(c.total_cost for c in self.components)
+        return base_cost * self.LEVEL_MULTIPLIERS[self.level]['cost']
+    
+    def get_level_scaled_power(self) -> float:
+        """Get power requirement with level multiplier applied"""
+        power_budget = self.calculate_power_budget()
+        base_power = power_budget['TOTAL']['net_power']
+        return base_power * self.LEVEL_MULTIPLIERS[self.level]['power']
+    
+    def get_level_transducer_count(self) -> int:
+        """Get transducer count for current level"""
+        return self.LEVEL_MULTIPLIERS[self.level]['transducers']
+    
+    def get_level_build_volume(self) -> int:
+        """Get build volume for current level"""
+        return self.LEVEL_MULTIPLIERS[self.level]['build_volume']
+    
+    def get_level_materials(self) -> List[str]:
+        """Get supported materials for current level"""
+        return self.LEVEL_CAPABILITIES[self.level]['materials']
+    
+    def get_level_build_rate(self) -> float:
+        """Get build rate for current level"""
+        return self.LEVEL_CAPABILITIES[self.level]['build_rate']
+    
+    def get_level_power_supply_required(self) -> float:
+        """Calculate required power supply capacity for level"""
+        # Base it on total consumption, not net
+        power_budget = self.calculate_power_budget()
+        base_consumption = power_budget['TOTAL']['active_power']
+        scaled_consumption = base_consumption * self.LEVEL_MULTIPLIERS[self.level]['power']
+        # Add 20% safety margin
+        return scaled_consumption * 1.2
     
     def get_total_cost_by_category(self) -> Dict[ComponentCategory, Dict[str, float]]:
         """Calculate total costs broken down by category and type"""

@@ -47,9 +47,9 @@ graph TB
 
 ### Acoustic Subsystem
 - **Function**: Generate 40kHz standing waves for droplet manipulation
-- **Components**: 18-72 ultrasonic transducers in phased array
+- **Components**: {ComponentRegistry(1).get_level_transducer_count()}-{ComponentRegistry(4).get_level_transducer_count()} ultrasonic transducers in phased array
 - **Control**: FPGA-based phase control with <100μs update rate
-- **Power**: 180W (Level 1) to 720W (Level 4)
+- **Power**: {ComponentRegistry(1).get_level_transducer_count() * 10}W (Level 1) to {ComponentRegistry(4).get_level_transducer_count() * 10}W (Level 4)
 
 ### Thermal Subsystem
 - **Function**: Melt material and control solidification

@@ -44,12 +44,12 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost (Target)** | ~$13,988 | ~$26k | ~$49k | ~$117k |
+| **Cost (Target)** | ~$13,988 | ~$21,681 | ~$38,187 | ~$79,732 |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **Build Rate (Target)** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
-| **Power (Est.)** | ~4.6kW | ~15kW | ~20kW | ~35kW |
+| **Power (Est.)** | ~4.6kW | ~8kW | ~12kW | ~19kW |
 
 ## 🚀 Quick Navigation
 
@@ -94,4 +94,4 @@ Project planning metrics
 
 ---
 
-*Last updated: 2025-09-21 19:34:01*
+*Last updated: 2025-09-21 20:51:12*

@@ -106,6 +106,11 @@ class DocsGenerator:
         power_budget = self.registry.calculate_power_budget()
         net_power = power_budget['TOTAL']['net_power']
         
+        # Create registries for other levels
+        reg_l2 = ComponentRegistry(level=2)
+        reg_l3 = ComponentRegistry(level=3)
+        reg_l4 = ComponentRegistry(level=4)
+        
         content = f"""# Acoustic Manufacturing System
 
 !!! warning "CONCEPTUAL PLANNING PHASE ONLY"
@@ -152,12 +157,12 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost (Target)** | ~${total_cost:,.0f} | ~$26k | ~$49k | ~$117k |
-| **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
+| **Cost (Target)** | ~${total_cost:,.0f} | ~${reg_l2.get_level_scaled_cost():,.0f} | ~${reg_l3.get_level_scaled_cost():,.0f} | ~${reg_l4.get_level_scaled_cost():,.0f} |
+| **Build Volume** | {self.registry.get_level_build_volume()} cm³ | {reg_l2.get_level_build_volume()} cm³ | {reg_l3.get_level_build_volume()} cm³ | {reg_l4.get_level_build_volume()} cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
-| **Transducers** | 18 | 36 | 36 | 72 |
-| **Build Rate (Target)** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
-| **Power (Est.)** | ~{net_power/1000:.1f}kW | ~15kW | ~20kW | ~35kW |
+| **Transducers** | {self.registry.get_level_transducer_count()} | {reg_l2.get_level_transducer_count()} | {reg_l3.get_level_transducer_count()} | {reg_l4.get_level_transducer_count()} |
+| **Build Rate (Target)** | {self.registry.get_level_build_rate()} cm³/hr | {reg_l2.get_level_build_rate()} cm³/hr | {reg_l3.get_level_build_rate()} cm³/hr | {reg_l4.get_level_build_rate()} cm³/hr |
+| **Power (Est.)** | ~{net_power/1000:.1f}kW | ~{reg_l2.get_level_scaled_power()/1000:.0f}kW | ~{reg_l3.get_level_scaled_power()/1000:.0f}kW | ~{reg_l4.get_level_scaled_power()/1000:.0f}kW |
 
 ## 🚀 Quick Navigation
 
@@ -791,9 +796,9 @@ graph TB
 
 ### Acoustic Subsystem
 - **Function**: Generate 40kHz standing waves for droplet manipulation
-- **Components**: 18-72 ultrasonic transducers in phased array
+- **Components**: {ComponentRegistry(1).get_level_transducer_count()}-{ComponentRegistry(4).get_level_transducer_count()} ultrasonic transducers in phased array
 - **Control**: FPGA-based phase control with <100μs update rate
-- **Power**: 180W (Level 1) to 720W (Level 4)
+- **Power**: {ComponentRegistry(1).get_level_transducer_count() * 10}W (Level 1) to {ComponentRegistry(4).get_level_transducer_count() * 10}W (Level 4)
 
 ### Thermal Subsystem
 - **Function**: Melt material and control solidification
@@ -961,7 +966,38 @@ graph TD
     
     def generate_levels(self):
         """Generate level configurations page"""
-        content = """# Level Configurations
+        
+        # Create registries for each level to get automated calculations
+        registries = {
+            1: ComponentRegistry(level=1),
+            2: ComponentRegistry(level=2),
+            3: ComponentRegistry(level=3),
+            4: ComponentRegistry(level=4)
+        }
+        
+        # Build the comparison table with calculated values
+        table_rows = []
+        purposes = {
+            1: "Proof of Concept",
+            2: "Steel Capability", 
+            3: "Multi-Material",
+            4: "Production"
+        }
+        
+        chamber_sizes = {
+            1: "Ø120×150mm",
+            2: "Ø180×200mm",
+            3: "Ø180×200mm",
+            4: "Ø400×300mm"
+        }
+        
+        # Generate table rows with automated calculations
+        for level in [1, 2, 3, 4]:
+            reg = registries[level]
+            materials = reg.get_level_materials()
+            material_str = materials[0] if level == 1 else " + ".join(materials[:2]) if level == 2 else "Dual simultaneous" if level == 3 else "5+ materials"
+            
+        content = f"""# Level Configurations
 
 ## Development Progression
 
@@ -971,15 +1007,15 @@ The system follows a phased development approach with four distinct levels:
 
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
-| **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Cost** | $28,766 | $44,470 | $78,620 | $163,970 |
-| **Transducers** | 18 | 36 | 36 | 72 |
-| **Power Supply** | 10kW | 10kW | 15kW | 20kW |
-| **Net Power** | 4.6kW | 8.2kW | 12.5kW | 18.7kW |
-| **Chamber Size** | Ø120×150mm | Ø180×200mm | Ø180×200mm | Ø400×300mm |
-| **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
-| **Materials** | Aluminum | Al + Steel | Dual simultaneous | 5+ materials |
-| **Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
+| **Purpose** | {purposes[1]} | {purposes[2]} | {purposes[3]} | {purposes[4]} |
+| **Cost** | ${registries[1].get_level_scaled_cost():,.0f} | ${registries[2].get_level_scaled_cost():,.0f} | ${registries[3].get_level_scaled_cost():,.0f} | ${registries[4].get_level_scaled_cost():,.0f} |
+| **Transducers** | {registries[1].get_level_transducer_count()} | {registries[2].get_level_transducer_count()} | {registries[3].get_level_transducer_count()} | {registries[4].get_level_transducer_count()} |
+| **Power Supply** | {registries[1].get_level_power_supply_required()/1000:.0f}kW | {registries[2].get_level_power_supply_required()/1000:.0f}kW | {registries[3].get_level_power_supply_required()/1000:.0f}kW | {registries[4].get_level_power_supply_required()/1000:.0f}kW |
+| **Net Power** | {registries[1].get_level_scaled_power()/1000:.1f}kW | {registries[2].get_level_scaled_power()/1000:.1f}kW | {registries[3].get_level_scaled_power()/1000:.1f}kW | {registries[4].get_level_scaled_power()/1000:.1f}kW |
+| **Chamber Size** | {chamber_sizes[1]} | {chamber_sizes[2]} | {chamber_sizes[3]} | {chamber_sizes[4]} |
+| **Build Volume** | {registries[1].get_level_build_volume()} cm³ | {registries[2].get_level_build_volume()} cm³ | {registries[3].get_level_build_volume()} cm³ | {registries[4].get_level_build_volume()} cm³ |
+| **Materials** | {registries[1].get_level_materials()[0]} | {" + ".join(registries[2].get_level_materials()[:2])} | Dual simultaneous | 5+ materials |
+| **Build Rate** | {registries[1].get_level_build_rate()} cm³/hr | {registries[2].get_level_build_rate()} cm³/hr | {registries[3].get_level_build_rate()} cm³/hr | {registries[4].get_level_build_rate()} cm³/hr |
 | **Outlets** | 25 | 100 | 100 | 400 |
 
 ## Level Details
@@ -1089,9 +1125,9 @@ The system follows a phased development approach with four distinct levels:
 ```mermaid
 graph LR
     subgraph "Cost Progression"
-        L1[Level 1<br/>$29k] --> L2[Level 2<br/>+$15k]
-        L2 --> L3[Level 3<br/>+$34k]
-        L3 --> L4[Level 4<br/>+$85k]
+        L1[Level 1<br/>${registries[1].get_level_scaled_cost()/1000:.0f}k] --> L2[Level 2<br/>+${(registries[2].get_level_scaled_cost() - registries[1].get_level_scaled_cost())/1000:.0f}k]
+        L2 --> L3[Level 3<br/>+${(registries[3].get_level_scaled_cost() - registries[2].get_level_scaled_cost())/1000:.0f}k]
+        L3 --> L4[Level 4<br/>+${(registries[4].get_level_scaled_cost() - registries[3].get_level_scaled_cost())/1000:.0f}k]
     end
 ```
 
@@ -1697,9 +1733,9 @@ graph TD
 - **Available margin: {10000 - power_budget['TOTAL']['net_power']:.0f}W ({(10000 - power_budget['TOTAL']['net_power'])/100:.0f}%)**
 
 ### Expansion Capability
-- Level 2 upgrade: +3,600W required
-- Level 3 upgrade: +7,900W required
-- Level 4 upgrade: +14,100W required
+- Level 2 upgrade: +{(ComponentRegistry(2).get_level_scaled_power() - power_budget['TOTAL']['net_power']):.0f}W required
+- Level 3 upgrade: +{(ComponentRegistry(3).get_level_scaled_power() - ComponentRegistry(2).get_level_scaled_power()):.0f}W required
+- Level 4 upgrade: +{(ComponentRegistry(4).get_level_scaled_power() - ComponentRegistry(3).get_level_scaled_power()):.0f}W required
 
 ## Circuit Protection
 
