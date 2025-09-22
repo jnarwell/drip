@@ -11,13 +11,13 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Target Cost** | ~$28,766 | ~$44,470 | ~$78,620 | ~$163,970 |
+| **Target Cost** | ~$13,988 | ~$21,681 | ~$38,187 | ~$79,732 |
 | **Transducers** | 18 | 36 | 36 | 72 |
-| **Power Supply** | ~10kW | ~10kW | ~15kW | ~20kW |
+| **Power Supply** | ~18kW | ~31kW | ~48kW | ~71kW |
 | **Est. Net Power** | ~4.6kW | ~8.2kW | ~12.5kW | ~18.7kW |
 | **Chamber Size** | Ø120×150mm | Ø180×200mm | Ø180×200mm | Ø400×300mm |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
-| **Materials** | Aluminum | Al + Steel | Dual simultaneous | 5+ materials |
+| **Materials** | Al | Al + Steel | Dual simultaneous | 5+ materials |
 | **Target Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
 | **Outlets** | 25 | 100 | 100 | 400 |
 
@@ -128,9 +128,9 @@ The system follows a phased development approach with four distinct levels:
 ```mermaid
 graph LR
     subgraph "Cost Progression"
-        L1[Level 1<br/>$29k] --> L2[Level 2<br/>+$15k]
-        L2 --> L3[Level 3<br/>+$34k]
-        L3 --> L4[Level 4<br/>+$85k]
+        L1[Level 1<br/>$14k] --> L2[Level 2<br/>+$8k]
+        L2 --> L3[Level 3<br/>+$17k]
+        L3 --> L4[Level 4<br/>+$42k]
     end
 ```
 

@@ -76,7 +76,7 @@ class DocsGenerator:
         # System documentation
         self.generate_architecture()
         # SKIP: self.generate_requirements() - manually maintained with planning disclaimers
-        # SKIP: self.generate_levels() - manually maintained with planning disclaimers
+        self.generate_levels()  # Now automated with calculated values
         self.generate_risks()
         
         # Component documentation
@@ -157,7 +157,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost (Target)** | ~${total_cost:,.0f} | ~${reg_l2.get_level_scaled_cost():,.0f} | ~${reg_l3.get_level_scaled_cost():,.0f} | ~${reg_l4.get_level_scaled_cost():,.0f} |
+| **Cost (Target)** | ~${self.registry.get_level_scaled_cost():,.0f} | ~${reg_l2.get_level_scaled_cost():,.0f} | ~${reg_l3.get_level_scaled_cost():,.0f} | ~${reg_l4.get_level_scaled_cost():,.0f} |
 | **Build Volume** | {self.registry.get_level_build_volume()} cm³ | {reg_l2.get_level_build_volume()} cm³ | {reg_l3.get_level_build_volume()} cm³ | {reg_l4.get_level_build_volume()} cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | {self.registry.get_level_transducer_count()} | {reg_l2.get_level_transducer_count()} | {reg_l3.get_level_transducer_count()} | {reg_l4.get_level_transducer_count()} |
@@ -968,12 +968,10 @@ graph TD
         """Generate level configurations page"""
         
         # Create registries for each level to get automated calculations
-        registries = {
-            1: ComponentRegistry(level=1),
-            2: ComponentRegistry(level=2),
-            3: ComponentRegistry(level=3),
-            4: ComponentRegistry(level=4)
-        }
+        registries = {}
+        for level in [1, 2, 3, 4]:
+            reg = ComponentRegistry(level=level)
+            registries[level] = reg
         
         # Build the comparison table with calculated values
         table_rows = []
@@ -998,6 +996,8 @@ graph TD
             material_str = materials[0] if level == 1 else " + ".join(materials[:2]) if level == 2 else "Dual simultaneous" if level == 3 else "5+ materials"
             
         content = f"""# Level Configurations
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Development Progression
 
@@ -1008,14 +1008,14 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | {purposes[1]} | {purposes[2]} | {purposes[3]} | {purposes[4]} |
-| **Cost** | ${registries[1].get_level_scaled_cost():,.0f} | ${registries[2].get_level_scaled_cost():,.0f} | ${registries[3].get_level_scaled_cost():,.0f} | ${registries[4].get_level_scaled_cost():,.0f} |
+| **Target Cost** | ~${registries[1].get_level_scaled_cost():,.0f} | ~${registries[2].get_level_scaled_cost():,.0f} | ~${registries[3].get_level_scaled_cost():,.0f} | ~${registries[4].get_level_scaled_cost():,.0f} |
 | **Transducers** | {registries[1].get_level_transducer_count()} | {registries[2].get_level_transducer_count()} | {registries[3].get_level_transducer_count()} | {registries[4].get_level_transducer_count()} |
-| **Power Supply** | {registries[1].get_level_power_supply_required()/1000:.0f}kW | {registries[2].get_level_power_supply_required()/1000:.0f}kW | {registries[3].get_level_power_supply_required()/1000:.0f}kW | {registries[4].get_level_power_supply_required()/1000:.0f}kW |
-| **Net Power** | {registries[1].get_level_scaled_power()/1000:.1f}kW | {registries[2].get_level_scaled_power()/1000:.1f}kW | {registries[3].get_level_scaled_power()/1000:.1f}kW | {registries[4].get_level_scaled_power()/1000:.1f}kW |
+| **Power Supply** | ~{registries[1].get_level_power_supply_required()/1000:.0f}kW | ~{registries[2].get_level_power_supply_required()/1000:.0f}kW | ~{registries[3].get_level_power_supply_required()/1000:.0f}kW | ~{registries[4].get_level_power_supply_required()/1000:.0f}kW |
+| **Est. Net Power** | ~{registries[1].get_level_scaled_power()/1000:.1f}kW | ~{registries[2].get_level_scaled_power()/1000:.1f}kW | ~{registries[3].get_level_scaled_power()/1000:.1f}kW | ~{registries[4].get_level_scaled_power()/1000:.1f}kW |
 | **Chamber Size** | {chamber_sizes[1]} | {chamber_sizes[2]} | {chamber_sizes[3]} | {chamber_sizes[4]} |
 | **Build Volume** | {registries[1].get_level_build_volume()} cm³ | {registries[2].get_level_build_volume()} cm³ | {registries[3].get_level_build_volume()} cm³ | {registries[4].get_level_build_volume()} cm³ |
 | **Materials** | {registries[1].get_level_materials()[0]} | {" + ".join(registries[2].get_level_materials()[:2])} | Dual simultaneous | 5+ materials |
-| **Build Rate** | {registries[1].get_level_build_rate()} cm³/hr | {registries[2].get_level_build_rate()} cm³/hr | {registries[3].get_level_build_rate()} cm³/hr | {registries[4].get_level_build_rate()} cm³/hr |
+| **Target Build Rate** | {registries[1].get_level_build_rate()} cm³/hr | {registries[2].get_level_build_rate()} cm³/hr | {registries[3].get_level_build_rate()} cm³/hr | {registries[4].get_level_build_rate()} cm³/hr |
 | **Outlets** | 25 | 100 | 100 | 400 |
 
 ## Level Details
@@ -1039,11 +1039,11 @@ The system follows a phased development approach with four distinct levels:
     - **Control System**: STM32 + basic FPGA
     - **Thermal Monitoring**: Thermocouples only
     
-    ### Success Criteria
-    - [ ] Stable droplet levitation for 30 minutes
-    - [ ] Controlled deposition ±0.5mm
-    - [ ] >95% density achieved
-    - [ ] 10 parts successfully built
+    ### Target Success Criteria (Future Testing)
+    - 📋 Stable droplet levitation for 30 minutes
+    - 📋 Controlled deposition ±0.5mm
+    - 📋 >95% density achievement
+    - 📋 10 parts to be built for validation
 
 === "Level 2: Steel Capable"
 
@@ -1064,11 +1064,11 @@ The system follows a phased development approach with four distinct levels:
     - **Thermal Imaging**: 32Hz, 1mK resolution
     - **Cooling**: 5 L/min water flow
     
-    ### Success Criteria
-    - [ ] Steel melting demonstrated
-    - [ ] Thermal control ±10°C
-    - [ ] 5 cm³/hr build rate
-    - [ ] 50 steel parts built
+    ### Target Success Criteria (Future Testing)
+    - 📋 Steel melting capability demonstration
+    - 📋 Thermal control ±10°C target
+    - 📋 5 cm³/hr build rate goal
+    - 📋 50 steel parts planned for validation
 
 === "Level 3: Multi-Material"
 
@@ -1089,11 +1089,11 @@ The system follows a phased development approach with four distinct levels:
     - **Gradient Control**: 10 steps/mm
     - **Bond Strength**: >70% base material
     
-    ### Success Criteria
-    - [ ] Al-Steel bonding verified
-    - [ ] Controlled mixing zones
-    - [ ] Functionally graded parts
-    - [ ] 100 multi-material parts
+    ### Target Success Criteria (Future Testing)
+    - 📋 Al-Steel bonding to be tested
+    - 📋 Controlled mixing zones planned
+    - 📋 Functionally graded parts goal
+    - 📋 100 multi-material parts for validation
 
 === "Level 4: Production"
 
@@ -1114,11 +1114,11 @@ The system follows a phased development approach with four distinct levels:
     - **Build Rate**: 25 cm³/hr
     - **Uptime**: >99% over 8 hours
     
-    ### Success Criteria
-    - [ ] 25 cm³/hr sustained
-    - [ ] <$95/kg operating cost
-    - [ ] ISO 9001 certification
-    - [ ] 1000+ production parts
+    ### Target Success Criteria (Future Testing)
+    - 📋 25 cm³/hr sustained rate goal
+    - 📋 <$95/kg operating cost target
+    - 📋 ISO 9001 certification planned
+    - 📋 1000+ production parts for full validation
 
 ## Cost Breakdown by Level
 
