@@ -351,7 +351,7 @@ gantt
             
             engine = VerificationEngine()
             mapper = ComponentTestMapper()
-            subsystem_status = engine.get_subsystem_status()
+            subsystem_status = engine.get_accurate_subsystem_status()
             
             # Map our subsystem names to display names
             subsystem_display_names = {
@@ -384,31 +384,40 @@ gantt
                 
                 content += f"\n| {display_name} | {total_tests} | {completed_tests} | {status_emoji} {percentage:.0f}% |"
             
-            # Add system-level test categories
-            content += "\n| **Integration** | 5 | 0 | 🔴 0% |"
-            content += "\n| **Performance** | 5 | 0 | 🔴 0% |"
-            content += "\n| **Endurance** | 10 | 0 | 🔴 0% |"
-            content += "\n| **Validation** | 5 | 0 | 🔴 0% |"
-            
             # Add totals row
-            total_subsystem_tests = sum(status['total_tests'] for status in subsystem_status.values())
-            total_system_tests = 25  # Integration (5) + Performance (5) + Endurance (10) + Validation (5)
-            grand_total = total_subsystem_tests + total_system_tests
-            content += f"\n| **TOTAL** | **{grand_total}** | **0** | **🔴 0%** |"
+            total_tests = sum(status['total_tests'] for status in subsystem_status.values())
+            total_completed = sum(status['completed_tests'] for status in subsystem_status.values())
+            total_percentage = (total_completed / total_tests * 100) if total_tests > 0 else 0
+            
+            # Status emoji for total
+            if total_percentage == 0:
+                total_emoji = "🔴"
+            elif total_percentage < 50:
+                total_emoji = "🟠"
+            elif total_percentage < 100:
+                total_emoji = "🟡"
+            else:
+                total_emoji = "🟢"
+                
+            content += f"\n| **TOTAL** | **{total_tests}** | **{total_completed}** | **{total_emoji} {total_percentage:.0f}%** |"
                 
         except ImportError:
             # Fallback if test management system not available
             content += """
-| Acoustic Array | 0 | 0 | 🔴 0% |
-| Thermal System | 0 | 0 | 🔴 0% |
-| Control System | 0 | 0 | 🔴 0% |
-| Material Feed | 0 | 0 | 🔴 0% |
-| Power System | 0 | 0 | 🔴 0% |
-| Integration | 0 | 0 | 🔴 0% |
-| Performance | 0 | 0 | 🔴 0% |
-| Endurance | 0 | 0 | 🔴 0% |
-| Validation | 0 | 0 | 🔴 0% |
-| **TOTAL** | **0** | **0** | **🔴 0%** |"""
+| Acoustic Array | 15 | 0 | 🔴 0% |
+| Thermal System | 15 | 0 | 🔴 0% |
+| Control System | 10 | 0 | 🔴 0% |
+| Material Feed | 10 | 0 | 🔴 0% |
+| Power System | 10 | 0 | 🔴 0% |
+| Sensors | 10 | 0 | 🔴 0% |
+| Chamber | 5 | 0 | 🔴 0% |
+| Cooling | 3 | 0 | 🔴 0% |
+| Insulation | 2 | 0 | 🔴 0% |
+| Integration | 5 | 0 | 🔴 0% |
+| Performance | 5 | 0 | 🔴 0% |
+| Endurance | 10 | 0 | 🔴 0% |
+| Validation | 5 | 0 | 🔴 0% |
+| **TOTAL** | **100** | **0** | **🔴 0%** |"""
         
         content += f"""
 

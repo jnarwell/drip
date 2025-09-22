@@ -89,20 +89,18 @@ gantt
 
 | Subsystem | Tests Planned | Tests Complete | Status |
 |-----------|--------------|----------------|--------|
-| Acoustic Array | 9 | 0 | 🔴 0% |
-| Thermal System | 8 | 0 | 🔴 0% |
-| Cooling | 2 | 0 | 🔴 0% |
-| Insulation | 4 | 0 | 🔴 0% |
-| Material Feed | 7 | 0 | 🔴 0% |
-| Power System | 8 | 0 | 🔴 0% |
-| Sensors | 4 | 0 | 🔴 0% |
-| Control System | 7 | 0 | 🔴 0% |
-| Chamber | 3 | 0 | 🔴 0% |
-| **Integration** | 5 | 0 | 🔴 0% |
-| **Performance** | 5 | 0 | 🔴 0% |
-| **Endurance** | 10 | 0 | 🔴 0% |
-| **Validation** | 5 | 0 | 🔴 0% |
-| **TOTAL** | **77** | **0** | **🔴 0%** |
+| Acoustic Array | 15 | 0 | 🔴 0% |
+| Thermal System | 15 | 0 | 🔴 0% |
+| Material Feed | 10 | 0 | 🔴 0% |
+| Power System | 10 | 0 | 🔴 0% |
+| Sensors | 10 | 0 | 🔴 0% |
+| Control System | 10 | 0 | 🔴 0% |
+| Chamber | 5 | 0 | 🔴 0% |
+| Integration | 5 | 0 | 🔴 0% |
+| Performance | 5 | 0 | 🔴 0% |
+| Endurance | 10 | 0 | 🔴 0% |
+| Validation | 5 | 0 | 🔴 0% |
+| **TOTAL** | **100** | **0** | **🔴 0%** |
 
 ---
-*Dashboard updated: 2025-09-22 14:50:24*
+*Dashboard updated: 2025-09-22 15:00:14*

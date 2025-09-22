@@ -13,6 +13,8 @@ from .data_models import (
 )
 from .test_registry import TestRegistry
 from .component_test_mapping import ComponentTestMapper
+from .system_test_mapping import SystemTestMapper
+from .test_count_calculator import TestCountCalculator
 
 class VerificationEngine:
     def __init__(self, data_dir: str = "verification_status"):
@@ -21,6 +23,8 @@ class VerificationEngine:
         
         self.test_registry = TestRegistry()
         self.component_mapper = ComponentTestMapper()
+        self.system_mapper = SystemTestMapper()
+        self.test_calculator = TestCountCalculator()
         
         # Load or initialize state
         self.component_verifications = self._load_component_verifications()
@@ -351,6 +355,82 @@ class VerificationEngine:
                     "completed_tests": 0,
                     "passed_tests": 0
                 }
+        
+        return subsystem_status
+    
+    def get_accurate_subsystem_status(self) -> Dict[str, Dict[str, float]]:
+        """Get accurate test counts and status per subsystem using test calculator"""
+        test_counts = self.test_calculator.get_subsystem_test_counts()
+        display_names = self.test_calculator.get_display_names()
+        
+        subsystem_status = {}
+        
+        for internal_name, test_count in test_counts.items():
+            display_name = display_names.get(internal_name, internal_name)
+            
+            # For now, all tests are at 0% completion
+            subsystem_status[display_name] = {
+                "completion_percentage": 0.0,
+                "pass_percentage": 0.0,
+                "total_tests": test_count,
+                "completed_tests": 0,
+                "passed_tests": 0
+            }
+        
+        return subsystem_status
+    
+    def get_combined_subsystem_status(self) -> Dict[str, Dict[str, float]]:
+        """Get verification status by subsystem including both component and system tests"""
+        # Start with component-based subsystem status
+        subsystem_status = self.get_subsystem_status()
+        
+        # Add unmapped subsystem tests
+        unmapped_tests = self.system_mapper.get_unmapped_subsystem_tests()
+        
+        for subsystem_name, unmapped_count in unmapped_tests.items():
+            # Map display names to match
+            display_name_map = {
+                "Acoustic Array": "Acoustic",
+                "Thermal System": "Thermal",
+                "Material Feed": "Crucible",
+                "Power System": "Power",
+                "Control System": "Control"
+            }
+            
+            mapped_name = display_name_map.get(subsystem_name, subsystem_name)
+            
+            if mapped_name in subsystem_status:
+                # Add unmapped tests to existing subsystem
+                existing = subsystem_status[mapped_name]
+                total_tests = existing['total_tests'] + unmapped_count
+                
+                subsystem_status[mapped_name] = {
+                    "completion_percentage": (existing['completed_tests'] / total_tests * 100) if total_tests > 0 else 0,
+                    "pass_percentage": existing['pass_percentage'],
+                    "total_tests": total_tests,
+                    "completed_tests": existing['completed_tests'],
+                    "passed_tests": existing['passed_tests']
+                }
+            else:
+                # Add new subsystem entry
+                subsystem_status[subsystem_name] = {
+                    "completion_percentage": 0.0,
+                    "pass_percentage": 0.0,
+                    "total_tests": unmapped_count,
+                    "completed_tests": 0,
+                    "passed_tests": 0
+                }
+        
+        # Add system-level test categories
+        system_stats = self.system_mapper.get_system_test_stats()
+        for category_name, stats in system_stats.items():
+            subsystem_status[category_name] = {
+                "completion_percentage": 0.0,
+                "pass_percentage": 0.0,
+                "total_tests": stats['total_tests'],
+                "completed_tests": 0,
+                "passed_tests": 0
+            }
         
         return subsystem_status
     
