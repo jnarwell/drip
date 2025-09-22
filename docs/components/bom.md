@@ -4,11 +4,11 @@
 
 <div class="button-group" markdown>
 
-[:material-download: Download Excel](../downloads/bom.xlsx){{ .md-button }}
+[:material-download: Download Excel](../downloads/bom.xlsx){ .md-button }
 
-[:material-file-pdf: Download PDF](../downloads/bom.pdf){{ .md-button }}
+[:material-file-pdf: Download PDF](../downloads/bom.pdf){ .md-button }
 
-[:material-code-json: Download JSON](../downloads/bom.json){{ .md-button }}
+[:material-code-json: Download JSON](../downloads/bom.json){ .md-button }
 
 </div>
 

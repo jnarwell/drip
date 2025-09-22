@@ -114,6 +114,37 @@ class DocsGenerator:
         reg_l3 = ComponentRegistry(level=3)
         reg_l4 = ComponentRegistry(level=4)
         
+        # Build the content without f-strings for the button section
+        button_section = """## 🚀 Quick Navigation
+
+<div class="grid cards" markdown>
+
+- :material-database:{ .lg .middle } **[Component Registry](components/index.md)**
+
+    ---
+    
+    """ + str(len(self.registry.components)) + """ planned components ready for Level 1
+
+- :material-connection:{ .lg .middle } **[Interface Control](icds/index.md)**
+
+    ---
+    
+    """ + str(len(SYSTEM_INTERFACES)) + """ critical system interfaces defined
+
+- :material-check-all:{ .lg .middle } **[Verification Matrix](verification/matrix.md)**
+
+    ---
+    
+    Comprehensive test procedures planned
+
+- :material-view-dashboard:{ .lg .middle } **[System Dashboard](dashboard.md)**
+
+    ---
+    
+    Real-time project planning metrics
+
+</div>"""
+        
         content = f"""# Acoustic Manufacturing System
 
 !!! warning "CONCEPTUAL PLANNING PHASE ONLY"
@@ -167,27 +198,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 | **Build Rate (Target)** | {self.registry.get_level_build_rate()} cm³/hr | {reg_l2.get_level_build_rate()} cm³/hr | {reg_l3.get_level_build_rate()} cm³/hr | {reg_l4.get_level_build_rate()} cm³/hr |
 | **Power (Est.)** | ~{self.registry.get_level_total_power()/1000:.1f}kW | ~{reg_l2.get_level_total_power()/1000:.0f}kW | ~{reg_l3.get_level_total_power()/1000:.0f}kW | ~{reg_l4.get_level_total_power()/1000:.0f}kW |
 
-## 🚀 Quick Navigation
-
-- [Component Registry :material-database:](components/index.md){{ .md-button .md-button--primary }}
-
-    ---
-    {len(self.registry.components)} planned components
-
-- [Interface Control :material-connection:](icds/index.md){{ .md-button .md-button--primary }}
-
-    ---
-    {len(SYSTEM_INTERFACES)} critical system interfaces
-
-- [Verification Matrix :material-check-all:](verification/matrix.md){{ .md-button .md-button--primary }}
-
-    ---
-    Comprehensive test procedures
-
-- [System Dashboard :material-view-dashboard:](dashboard.md){{ .md-button .md-button--primary }}
-
-    ---
-    Project planning metrics
+{button_section}
 
 ## 📈 Project Status
 
@@ -543,11 +554,11 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 
 <div class="button-group" markdown>
 
-[:material-download: Download Excel](../downloads/bom.xlsx){{ .md-button }}
+[:material-download: Download Excel](../downloads/bom.xlsx){ .md-button }
 
-[:material-file-pdf: Download PDF](../downloads/bom.pdf){{ .md-button }}
+[:material-file-pdf: Download PDF](../downloads/bom.pdf){ .md-button }
 
-[:material-code-json: Download JSON](../downloads/bom.json){{ .md-button }}
+[:material-code-json: Download JSON](../downloads/bom.json){ .md-button }
 
 </div>
 
