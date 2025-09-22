@@ -1,4 +1,6 @@
 # System Integration Guide
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Prerequisites
 

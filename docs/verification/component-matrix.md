@@ -1,4 +1,6 @@
 # Component Verification Matrix
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 [← Back to Dashboard](index.md)
 

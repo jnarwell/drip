@@ -1,4 +1,6 @@
 # Thermal Dynamics
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Droplet Cooling Model
 
@@ -114,7 +116,7 @@ plt.tight_layout()
 | 0.5 mm | Steel | 1600°C | 150 ms | 1200°C | 2667 K/s |
 | 1.0 mm | Steel | 1600°C | 200 ms | 1150°C | 2250 K/s |
 
-**All configurations exceed SR010 requirement of >1000 K/s** ✓
+**All configurations exceed SR010 requirement of >1000 K/s** (target)
 
 ## Chamber Thermal Field
 
@@ -244,10 +246,10 @@ sequenceDiagram
 
 | Parameter | Requirement | Method | Status |
 |-----------|-------------|--------|--------|
-| Cooling Rate | >1000 K/s | Pyrometer | ✅ Verified |
-| Chamber Temp | <300°C | Thermocouples | ✅ Verified |
-| Gradient | <50°C/cm | Thermal Imaging | ✅ Achieved |
-| Response Time | <100 ms | Step Response | ✅ Measured |
+| Cooling Rate | >1000 K/s | Pyrometer | (target) |
+| Chamber Temp | <300°C | Thermocouples | (target) |
+| Gradient | <50°C/cm | Thermal Imaging | (target) |
+| Response Time | <100 ms | Step Response | (target) |
 
 ## SysML Model Reference
 

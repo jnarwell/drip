@@ -1,10 +1,12 @@
 # Component Summary
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 **Generated**: 2025-09-14 14:18:04
 **Total Components**: 51
-**Total Power Consumption**: 14,596W
-**Total Power Supply**: 10,000W
-**Net Power Requirement**: 4,596W
+**Est. Total Power Consumption**: ~14,596W
+**Est. Total Power Supply**: ~10,000W
+**Est. Net Power Requirement**: ~4,596W
 
 ## Components by Subsystem
 
@@ -13,7 +15,7 @@
 **Count**: 10 components
 
 
-| Component | Qty | Power (W) | Cost ($) | Supplier |
+| Component | Qty | Est. Power (W) | Est. Cost ($) | Supplier |
 |-----------|-----|-----------|----------|----------|
 | Kapton Tubes | 2 | 0 | 180 | None |
 | Assembly Rails | 4 | 0 | 10 | None |
@@ -30,9 +32,9 @@
 
 **Count**: 6 components
 
-**Power Consumption**: 8000W
+**Est. Power Consumption**: 8000W
 
-| Component | Qty | Power (W) | Cost ($) | Supplier |
+| Component | Qty | Est. Power (W) | Est. Cost ($) | Supplier |
 |-----------|-----|-----------|----------|----------|
 | Heating Rods | 4 | 1000 | 100 | None |
 | Thermocouples | 2 | 0 | 24 | None |
@@ -45,9 +47,9 @@
 
 **Count**: 9 components
 
-**Power Consumption**: 185W
+**Est. Power Consumption**: 185W
 
-| Component | Qty | Power (W) | Cost ($) | Supplier |
+| Component | Qty | Est. Power (W) | Est. Cost ($) | Supplier |
 |-----------|-----|-----------|----------|----------|
 | 40kHz Transducers | 18 | 10 | 36 | None |
 | Cable Ties | 18 | 0 | 4 | Harbor Freight |
@@ -63,9 +65,9 @@
 
 **Count**: 15 components
 
-**Power Consumption**: 5068W
+**Est. Power Consumption**: 5068W
 
-| Component | Qty | Power (W) | Cost ($) | Supplier |
+| Component | Qty | Est. Power (W) | Est. Cost ($) | Supplier |
 |-----------|-----|-----------|----------|----------|
 | Induction Heater | 1 | 3000 | 700 | DaWei |
 | Pellet Hopper | 1 | 5 | 20 | None |
@@ -87,10 +89,10 @@
 
 **Count**: 11 components
 
-**Power Consumption**: 1342W
-**Power Supply**: 10000W
+**Est. Power Consumption**: 1342W
+**Est. Power Supply**: 10000W
 
-| Component | Qty | Power (W) | Cost ($) | Supplier |
+| Component | Qty | Est. Power (W) | Est. Cost ($) | Supplier |
 |-----------|-----|-----------|----------|----------|
 | 10kW PSU | 1 | 900 | 1850 | Mean Well |
 | FPGA Board | 1 | 2 | 75 | None |
@@ -106,7 +108,7 @@
 
 ## Cost Summary
 
-**Total System Cost**: $13,988.00
+**Target System Cost**: $13,988.00
 
 **Total System Weight**: 132.7kg
 

@@ -1,4 +1,6 @@
 # Safety Requirements and Procedures
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Electrical Safety
 

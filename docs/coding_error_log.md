@@ -1,4 +1,6 @@
 # Coding Error Log - Jupyter Notebook Issues
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Date: 2025-01-14
 ## Component: system_analysis_with_tech_specs.ipynb

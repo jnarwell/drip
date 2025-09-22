@@ -1,124 +1,101 @@
-# Requirements to Behavioral Models Traceability
+# Requirements Traceability (Planning Phase)
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
-## Overview
+## Document Purpose
+This document will track requirements through implementation. Currently, all items are conceptual targets.
 
-This matrix traces system requirements to their implementation in behavioral models and verification methods.
+## Requirements Status
 
-## Traceability Matrix
+### Defined Requirements (Targets Only)
+All requirements represent design targets and have not been validated:
 
-| Requirement | Description | Behavioral Model | Verification Method |
-|-------------|-------------|------------------|---------------------|
-| SR001 | 40kHz ±100Hz frequency | `DropletControlBehavior.AcousticForce` | Spectrum analyzer |
-| SR002 | ±0.3mm steering accuracy | `DropletControlBehavior.SteerDroplet` | High-speed camera |
-| SR003 | 700-1580°C temperature | `SystemStates.BuildingStates` | Thermocouple array |
-| SR009 | Chamber <300°C | `ThermalDynamics.ChamberThermalField` | Thermal mapping |
-| SR010 | >1000°C/s cooling | `ThermalDynamics.CoolingModel` | Pyrometer |
-| SR011 | Scalable array | `ControlSequences.MultiDropletCoordination` | Field mapping |
-| SR013 | Thermal camera | `ControlSequences.ThermalPredictiveControl` | Latency test |
-| SR014 | <3ms control loop | `ControlSequences.ControlLoop` | Oscilloscope |
-| SR015 | MERV 13 filtration | `SystemStates.ErrorStates.Ventilation` | Flow measurement |
+| ID | Requirement | Target Value | Validation Plan | Status |
+|----|-------------|--------------|-----------------|--------|
+| SR001 | Frequency | 40kHz ±100Hz | Spectrum analyzer | 📋 Plan Only |
+| SR002 | Accuracy | ±0.3mm | High-speed camera | 📋 Plan Only |
+| SR003 | Temperature | 700-1580°C | Thermocouple array | 📋 Plan Only |
+| SR009 | Chamber temp | <300°C | Thermal mapping | 📋 Plan Only |
+| SR010 | Cooling rate | >1000°C/s | Pyrometer | 📋 Plan Only |
+| SR011 | Scalable array | Modular | Field mapping | 📋 Plan Only |
+| SR013 | Thermal camera | 32Hz | Latency test | 📋 Plan Only |
+| SR014 | Control loop | <3ms | Oscilloscope | 📋 Plan Only |
+| SR015 | Filtration | MERV 13 | Flow measurement | 📋 Plan Only |
 
-## Behavioral Model Coverage
+### Behavioral Model Mapping (Conceptual)
 
-### Control Behaviors
-- **Model**: `droplet_control_behavior.sysml`
-- **Requirements Covered**: SR001, SR002, SR014
-- **Key Constraints**:
-  - Control cycle time < 3ms
-  - Acoustic frequency = 40kHz ±100Hz
-  - Steering accuracy ±0.3mm
+| Requirement | Planned Implementation | Model Type | Status |
+|-------------|----------------------|------------|---------|
+| SR001 | `DropletControlBehavior.AcousticForce` | Control | 📝 Concept |
+| SR002 | `DropletControlBehavior.SteerDroplet` | Control | 📝 Concept |
+| SR003 | `SystemStates.BuildingStates` | State Machine | 📝 Concept |
+| SR009 | `ThermalDynamics.ChamberThermalField` | Physics | 📝 Concept |
+| SR010 | `ThermalDynamics.CoolingModel` | Physics | 📝 Concept |
+| SR011 | `ControlSequences.MultiDropletCoordination` | Sequence | 📝 Concept |
+| SR013 | `ControlSequences.ThermalPredictiveControl` | Sequence | 📝 Concept |
+| SR014 | `ControlSequences.ControlLoop` | Timing | 📝 Concept |
+| SR015 | `SystemStates.ErrorStates.Ventilation` | Safety | 📝 Concept |
 
-### System States
-- **Model**: `system_states.sysml`
-- **Requirements Covered**: SR003, SR015
-- **Key States**:
-  - Material-specific temperature ranges
-  - Error handling with safety interlocks
-  - Transition guards for temperature limits
+### Future Verification Approach
 
-### Control Sequences
-- **Model**: `control_sequences.sysml`
-- **Requirements Covered**: SR011, SR013, SR014
-- **Key Sequences**:
-  - Thermal predictive control loop
-  - Multi-droplet coordination
-  - Emergency shutdown (<10ms response)
+#### Phase 1: Simulation (Not Started)
+- [ ] COMSOL acoustic modeling
+- [ ] ANSYS thermal analysis  
+- [ ] MATLAB control loops
 
-### Thermal Dynamics
-- **Model**: `thermal_dynamics.sysml`
-- **Requirements Covered**: SR009, SR010
-- **Key Models**:
-  - Droplet cooling rate calculation
-  - Chamber temperature field evolution
-  - Solidification dynamics
+#### Phase 2: Prototype Testing (Future)
+- [ ] Component characterization
+- [ ] Subsystem validation
+- [ ] System integration
 
-## Verification Cross-Reference
-
-| Model Element | Test Procedure | Expected Result | Status |
-|---------------|----------------|-----------------|--------|
-| `ThermalPredictiveControl` | TP-002 | ±0.3mm accuracy | 📋 Planned |
-| `DropletCoolingModel` | TP-010 | >1000°C/s rate | 📊 Simulated |
-| `ControlLoop` timing | TP-014 | <3ms total | 📊 Simulated |
-| `ChamberThermalField` | TP-009 | <300°C walls | 📊 Simulated |
+**Current Status:** No verification work has begun.
 
 ## Gap Analysis
 
-### Fully Traced Requirements
-- 📋 SR001: Acoustic frequency
-- 📋 SR002: Steering accuracy
-- 📋 SR009: Chamber temperature
-- 📋 SR010: Cooling rate
-- 📋 SR014: Control loop timing
+### Requirements Definition Status
+- ⏳ SR001-SR003: Core functionality requirements drafted
+- ⏳ SR004-SR008: Performance requirements need refinement
+- ⏳ SR009-SR011: Safety requirements preliminary
+- ⏳ SR012-SR015: Operational requirements in progress
 
-### Partially Traced Requirements
-- ⚠️ SR004: Power scaling (behavioral model planned)
-- ⚠️ SR005: Build volume scaling (state space definition needed)
-- ⚠️ SR012: 25 parallel outlets (sequence definition in progress)
+### Model Development Needed
+1. **Control Behavior**: Algorithm development required
+2. **System States**: State machine design needed
+3. **Control Sequences**: Timing analysis required
+4. **Thermal Dynamics**: Physics modeling needed
 
-## Verification Approach (Planning Phase)
+## Continuous Verification (Future Implementation)
 
-### Simulation-Based Verification (Current)
-- ✅ Acoustic field modeling (COMSOL)
-- ✅ Thermal dynamics (ANSYS)
-- ✅ Control loop timing (MATLAB)
-
-### Hardware Verification (Future - Q2 2025)
-- ⏳ Acoustic frequency measurement
-- ⏳ Steering accuracy testing
-- ⏳ Cooling rate validation
-- ⏳ System integration testing
-
-## Model Validation Status
-
-| Model | Simulation | Hardware Test | Production Ready |
-|-------|------------|---------------|------------------|
-| Control Behavior | 📊 Simulated | 📋 Planned | ❌ Not Ready |
-| System States | 📋 Defined | 📋 Planned | ❌ Not Ready |
-| Control Sequences | 📊 Simulated | 📋 Planned | ❌ Not Ready |
-| Thermal Dynamics | 📊 Simulated | 📋 Planned | ❌ Not Ready |
-
-## Continuous Verification
-
-The behavioral models include built-in constraints that are continuously verified during operation:
+When implemented, behavioral models will include built-in constraints:
 
 ```sysml
+// Example future constraints
 constraint controlLoopTiming {
-    assert { totalLoopTime < 3[ms] }  // SR014
+    doc /* Target: totalLoopTime < 3[ms] per SR014 */
 }
 
 constraint coolingRateRequirement {
-    assert { coolingRate > 1000[°C/s] }  // SR010
+    doc /* Target: coolingRate > 1000[°C/s] per SR010 */
 }
 
 constraint chamberTemperatureLimit {
-    assert { all positions { temperature < 300[°C] } }  // SR009
+    doc /* Target: all positions { temperature < 300[°C] } per SR009 */
 }
 ```
 
-These constraints generate runtime alerts if requirements are violated.
+These constraints will generate runtime alerts if requirements are violated during future testing.
+
+## Traceability Matrix Summary
+
+| Category | Total | Defined | Modeled | Verified |
+|----------|-------|---------|---------|----------|
+| Functional | 5 | 5 | 0 | 0 |
+| Performance | 6 | 6 | 0 | 0 |
+| Safety | 4 | 4 | 0 | 0 |
+| **Total** | **15** | **15** | **0** | **0** |
 
 ---
 
-*Last Updated: 2025-09-15*
+*Last Updated: 2025-09-22*
 
 *Related: [Behavioral Models](../behavioral/index.md) | [Requirements](../system/requirements.md) | [Test Matrix](../verification/matrix.md)*

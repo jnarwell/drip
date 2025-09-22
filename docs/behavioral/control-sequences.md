@@ -1,4 +1,6 @@
 # Control Sequences
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Thermal Predictive Control Loop
 
@@ -29,7 +31,7 @@ sequenceDiagram
 
 See [Control Loop Timing Details](../behavioral/control-behavior.md#control-loop-implementation) for detailed timing breakdown.
 
-**Total Loop Time: <2 ms** ✓ (Meets SR014 requirement)
+**Total Loop Time: <2 ms** (target) (Meets SR014 requirement)
 
 ## Material Transition Sequence
 

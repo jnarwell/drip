@@ -1,8 +1,10 @@
 # Droplet Control Behavior
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Thermal Predictive Control
 
-The DRIP system uses thermal imaging for predictive droplet control, providing a 200ms lead time advantage over reactive optical systems.
+The DRIP system will use thermal imaging for predictive droplet control, targeting a 200ms lead time advantage over reactive optical systems.
 
 ### Control Algorithm
 
@@ -22,13 +24,13 @@ graph TD
 
 #### Aluminum (700-750°C)
 - Viscosity: 0.85×10⁻³ Pa·s at 747°C
-- Cooling rate: 15°C/s typical
-- Required force: 6.2×10⁻⁶ N
+- Cooling rate: 15°C/s (calculated)
+- Required force: 6.2×10⁻⁶ N (theoretical)
 
 #### Steel (1580-1650°C)
 - Viscosity: 1.9×10⁻³ Pa·s at 1648°C
-- Cooling rate: 8°C/s typical
-- Required force: 9.1×10⁻⁶ N
+- Cooling rate: 8°C/s (calculated)
+- Required force: 9.1×10⁻⁶ N (theoretical)
 
 ## Control Loop Implementation
 
@@ -42,11 +44,11 @@ graph TD
 | SPI Transfer | Phase data | 0.02 ms | 1.92 ms |
 | FPGA | Phase distribution | 0.01 ms | 1.93 ms |
 | Amplifiers | Signal generation | 0.001 ms | 1.931 ms |
-| **Total** | **Control cycle** | **<2 ms** | **✓ SR014** |
+| **Total** | **Control cycle** | **Target: <2 ms** | **Per SR014** |
 
 ### Acoustic Force Calculation
 
-The system uses the Gorkov potential for force calculation:
+The system will use the Gorkov potential for force calculation:
 
 ```
 F = -4/3 × π × r³ × k × P² × ρ_contrast
@@ -97,26 +99,26 @@ graph LR
 
 ## Integration with Thermal Sensing
 
-The Optris PI 1M thermal camera provides:
+The Optris PI 1M thermal camera will provide:
 - 32 Hz frame rate (31.25 ms between frames)
 - 764×480 pixel resolution
 - 0.1 K temperature resolution
 - 575-1900°C measurement range
 
 ### Interpolation Strategy
-Since thermal updates occur every 31.25 ms but control runs at 1 kHz:
+Since thermal updates will occur every 31.25 ms but control should run at 1 kHz:
 1. Linear interpolation between thermal frames
 2. Kalman filtering for state estimation
 3. Predictive modeling fills temporal gaps
 
-## Performance Metrics
+## Target Performance Metrics (Unvalidated)
 
-| Metric | Requirement | Achieved | Status |
-|--------|-------------|----------|--------|
-| Control frequency | 1 kHz | 1 kHz | ✅ |
-| Loop latency | <3 ms | <2 ms | ✅ |
-| Steering accuracy | ±0.3 mm | ±0.25 mm | ✅ |
-| Phase update rate | >10 kHz | 100 kHz | ✅ |
+| Metric | Requirement | Target | Validation Method |
+|--------|-------------|--------|-------------------|
+| Control frequency | 1 kHz | 1 kHz | Will require oscilloscope |
+| Loop latency | <3 ms | <2 ms | Will require timing analysis |
+| Steering accuracy | ±0.3 mm | ±0.25 mm | Will require camera tracking |
+| Phase update rate | >10 kHz | 100 kHz | Will require logic analyzer |
 
 ## SysML Model Reference
 
@@ -128,12 +130,12 @@ Since thermal updates occur every 31.25 ms but control runs at 1 kHz:
 - `ControlLoop` real-time specification
 - Material-specific property definitions
 
-## Verification Methods
+## Planned Verification Methods
 
-1. **Timing Verification**: Oscilloscope measurement of control signals
-2. **Accuracy Verification**: High-speed camera tracking vs predictions
-3. **Force Verification**: Laser vibrometer acoustic field mapping
-4. **Thermal Verification**: Independent pyrometer validation
+1. **Timing Verification**: Will use oscilloscope measurement of control signals
+2. **Accuracy Verification**: Will use high-speed camera tracking vs predictions
+3. **Force Verification**: Will use laser vibrometer acoustic field mapping
+4. **Thermal Verification**: Will use independent pyrometer validation
 
 ---
 

@@ -1,4 +1,6 @@
 # N2 Interface Chart
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 This diagram shows the interface relationships between major subsystems.
 

@@ -1,4 +1,6 @@
 # Acoustic Manufacturing System - Project Timeline
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Phase 1: Level 1 Prototype (Weeks 1-12)
 - [ ] Week 1-3: Component procurement

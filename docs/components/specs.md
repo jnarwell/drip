@@ -8,16 +8,6 @@ Search components using the box below or browse by category.
 
 <div id="component-list">
 
-### Thermal Sensing Specifications
-
-**Optris PI 1M Thermal Camera** (Single source of truth)
-- Resolution: 764×480 pixels
-- Frame Rate: 32 Hz  
-- Temperature Range: 575-1900°C
-- Accuracy: ±2°C or ±2%
-- Interface: Gigabit Ethernet
-- Cost: $7,995
-
 ### Kapton Tubes
 
 <div class="spec-card">

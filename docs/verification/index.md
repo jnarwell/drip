@@ -1,27 +1,33 @@
 # DRIP System Verification Dashboard
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 *Last Updated: 2025-09-14 20:22:11*
 
-## Overall System Status
+## Test Planning Status
 
-### Component Verification Progress
-**Components Verified**: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0% (0/53)
+All tests are in planning phase only:
+- **Hardware Required**: Not available
+- **Expected Timeline**: After prototype construction (TBD)
+- **Current Status**: Test procedures being drafted
 
-- ✅ **Verified**: 0/53
-- 🔄 **In Testing**: 0
-- ❌ **Failed**: 0
-- ⬜ **Not Started**: 53
+### Component Testing Plans
+**Components Planned for Testing**: 53 total
 
-### Test Execution Progress
-**Tests Complete**: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0% (0/100)
+- 📋 **Procedures Drafted**: 100/100
+- ⏳ **Awaiting Hardware**: 53/53
+- 🔬 **Equipment Identified**: Yes
+- 📅 **Schedule**: TBD - Depends on funding
 
-- ✅ **Complete**: 0/100
-- 🔄 **In Progress**: 0
-- ❌ **Failed**: 0
-- 🚫 **Blocked**: 62
-- ⬜ **Not Started**: 38
+### Test Planning Progress
+**Test Procedures Documented**: 100/100
 
-## Subsystem Status
+- 📋 **Procedures Written**: 100
+- ⏳ **Awaiting Equipment**: 100
+- 📊 **Prerequisites Defined**: Yes
+- 📁 **Templates Created**: Yes
+
+## Subsystem Test Planning
 
 | Subsystem | Progress | Tests Complete | Status |
 |-----------|----------|----------------|--------|
@@ -37,8 +43,8 @@
 
 ## Critical Path Status
 
-### Critical Components
-These components must be verified before system-level testing:
+### Critical Components (Future Testing Priority)
+These components will require verification before system-level testing:
 
 | Component | Status | Progress | Next Test |
 |-----------|--------|----------|------------|
@@ -57,9 +63,9 @@ These components must be verified before system-level testing:
 - [Test Planning](test-planning.md)
 - [Subsystem Details](subsystem-status.md)
 
-## Actions Required
+## Planning Actions Required
 
-### Next Tests to Execute
+### Test Procedures Ready for Future Execution
 1. **TE-001**: Individual Transducer Frequency Characterization
    - Duration: 3.0h
    - Components: 40kHz Transducers

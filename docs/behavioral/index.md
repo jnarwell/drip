@@ -1,14 +1,10 @@
-!!! warning "Documentation Status: PLANNING PHASE"
-    This documentation represents the **PLANNED DESIGN** for the DRIP system.
-    - **Hardware Status**: Not built
-    - **Testing Status**: Not performed  
-    - **Verification**: Simulation only
-    - **Specifications**: Subject to change based on prototype results
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 # Behavioral Models
 
 ## Overview
-Behavioral models capture the dynamic operation of the DRIP acoustic manufacturing system, defining how components interact over time to achieve precise droplet control and material deposition.
+Behavioral models will capture the planned dynamic operation of the DRIP acoustic manufacturing system, defining how components should interact over time to achieve precise droplet control and material deposition.
 
 ## Model Categories
 
@@ -30,25 +26,27 @@ Heat transfer models and cooling rate predictions for material control.
 
 ## Integration with System Architecture
 
-These behavioral models directly implement the requirements defined in our [System Requirements](../system/requirements.md) and interface through the connections specified in our [ICDs](../icds/index.md).
+These behavioral models are intended to implement the requirements defined in our [System Requirements](../system/requirements.md) and will interface through the connections specified in our [ICDs](../icds/index.md).
 
-### Key Performance Metrics
-- **Control Loop Frequency**: 1 kHz (1ms cycle time)
-- **Steering Accuracy**: ±0.3mm per SR002
-- **Cooling Rate**: >1000°C/s per SR010
-- **Response Time**: <200ms predictive lead
+### Target Performance Metrics (Unvalidated)
+- **Control Loop Frequency**: Target 1 kHz (1ms cycle time)
+- **Steering Accuracy**: Target ±0.3mm per SR002
+- **Cooling Rate**: Target >1000°C/s per SR010
+- **Response Time**: Target <200ms predictive lead
 
 ## Verification Approach
-Each behavioral model includes verification constraints that map directly to our [Design Verification Matrix](../verification/matrix.md).
+Each behavioral model will include verification constraints that must map to our [Design Verification Matrix](../verification/matrix.md).
 
 ## Model Implementation Status
 
-| Model | Status | Validation | Last Updated |
-|-------|--------|------------|--------------|
-| Droplet Control Behavior | 📊 Simulated | MATLAB/Python | 2025-09-15 |
-| System States | 📋 Defined | Paper Design | 2025-09-15 |
-| Control Sequences | 📋 Planned | Timing Analysis | 2025-09-15 |
-| Thermal Dynamics | 📊 Simulated | FEA Analysis | 2025-09-15 |
+| Model | Status | Work Completed | Next Steps |
+|-------|--------|----------------|------------|
+| Droplet Control Behavior | 📋 Conceptual | Requirements defined | MATLAB simulation planned |
+| System States | 📋 Planned | State diagram drafted | Formal modeling needed |
+| Control Sequences | 📋 Planned | Timing targets set | Simulation required |
+| Thermal Dynamics | 📋 Conceptual | Physics equations identified | FEA analysis planned |
+
+**Note:** All models are conceptual only. No simulations have been run.
 
 ## Quick Links
 

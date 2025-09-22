@@ -1,4 +1,6 @@
 # Documentation Editing Guide
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 This documentation includes an interactive editing feature that allows authorized users to make changes directly in the browser.
 
@@ -81,10 +83,10 @@ python apply_edits.py docs-edits-[timestamp].json --dry-run
 
 The editor currently supports:
 
-- ✅ Plain text editing
-- ✅ Basic formatting preservation
-- ✅ Local storage of edits
-- ✅ Export/import functionality
+- • Plain text editing
+- • Basic formatting preservation
+- • Local storage of edits
+- • Export/import functionality
 
 Not yet supported:
 

@@ -1,4 +1,6 @@
 # Component Integration Guide
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Overview
 This guide covers the component selection, procurement, and integration process for the Acoustic Manufacturing System.
