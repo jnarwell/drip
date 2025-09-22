@@ -115,7 +115,7 @@ This page contains the complete registry of all 100 tests in the DRIP system.
 | TE-096 | Reference Part Production | Build qualification parts | Complete System | 24.0h |
 | TE-097 | Multi-Material Validation | Verify material switching capability | Complete System | 12.0h |
 | TE-098 | Operator Training Validation | Verify system usability | Complete System, HMI Touch Screen 15 inch | 16.0h |
-| TE-099 | Documentation Verification | Ensure all documentation complete | Complete System | 8.0h |
+| TE-099 | Documentation Verification | Will ensure all documentation is complete | Complete System | 8.0h |
 | TE-100 | Final System Acceptance | Customer acceptance test | Complete System | 40.0h |
 
 ## Test Statistics

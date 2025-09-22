@@ -1,4 +1,6 @@
 # Level Configurations
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Development Progression
 
@@ -9,14 +11,14 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Cost** | $28,766 | $44,470 | $78,620 | $163,970 |
+| **Target Cost** | ~$28,766 | ~$44,470 | ~$78,620 | ~$163,970 |
 | **Transducers** | 18 | 36 | 36 | 72 |
-| **Power Supply** | 10kW | 10kW | 15kW | 20kW |
-| **Net Power** | 4.6kW | 8.2kW | 12.5kW | 18.7kW |
+| **Power Supply** | ~10kW | ~10kW | ~15kW | ~20kW |
+| **Est. Net Power** | ~4.6kW | ~8.2kW | ~12.5kW | ~18.7kW |
 | **Chamber Size** | Ø120×150mm | Ø180×200mm | Ø180×200mm | Ø400×300mm |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Aluminum | Al + Steel | Dual simultaneous | 5+ materials |
-| **Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
+| **Target Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
 | **Outlets** | 25 | 100 | 100 | 400 |
 
 ## Level Details
@@ -40,11 +42,11 @@ The system follows a phased development approach with four distinct levels:
     - **Control System**: STM32 + basic FPGA
     - **Thermal Monitoring**: Thermocouples only
     
-    ### Success Criteria
-    - [ ] Stable droplet levitation for 30 minutes
-    - [ ] Controlled deposition ±0.5mm
-    - [ ] >95% density achieved
-    - [ ] 10 parts successfully built
+    ### Target Success Criteria (Future Testing)
+    - 📋 Stable droplet levitation for 30 minutes
+    - 📋 Controlled deposition ±0.5mm
+    - 📋 >95% density achievement
+    - 📋 10 parts to be built for validation
 
 === "Level 2: Steel Capable"
 
@@ -65,11 +67,11 @@ The system follows a phased development approach with four distinct levels:
     - **Thermal Imaging**: 32Hz, 1mK resolution
     - **Cooling**: 5 L/min water flow
     
-    ### Success Criteria
-    - [ ] Steel melting demonstrated
-    - [ ] Thermal control ±10°C
-    - [ ] 5 cm³/hr build rate
-    - [ ] 50 steel parts built
+    ### Target Success Criteria (Future Testing)
+    - 📋 Steel melting capability demonstration
+    - 📋 Thermal control ±10°C target
+    - 📋 5 cm³/hr build rate goal
+    - 📋 50 steel parts planned for validation
 
 === "Level 3: Multi-Material"
 
@@ -90,11 +92,11 @@ The system follows a phased development approach with four distinct levels:
     - **Gradient Control**: 10 steps/mm
     - **Bond Strength**: >70% base material
     
-    ### Success Criteria
-    - [ ] Al-Steel bonding verified
-    - [ ] Controlled mixing zones
-    - [ ] Functionally graded parts
-    - [ ] 100 multi-material parts
+    ### Target Success Criteria (Future Testing)
+    - 📋 Al-Steel bonding to be tested
+    - 📋 Controlled mixing zones planned
+    - 📋 Functionally graded parts goal
+    - 📋 100 multi-material parts for validation
 
 === "Level 4: Production"
 
@@ -115,11 +117,11 @@ The system follows a phased development approach with four distinct levels:
     - **Build Rate**: 25 cm³/hr
     - **Uptime**: >99% over 8 hours
     
-    ### Success Criteria
-    - [ ] 25 cm³/hr sustained
-    - [ ] <$95/kg operating cost
-    - [ ] ISO 9001 certification
-    - [ ] 1000+ production parts
+    ### Target Success Criteria (Future Testing)
+    - 📋 25 cm³/hr sustained rate goal
+    - 📋 <$95/kg operating cost target
+    - 📋 ISO 9001 certification planned
+    - 📋 1000+ production parts for full validation
 
 ## Cost Breakdown by Level
 

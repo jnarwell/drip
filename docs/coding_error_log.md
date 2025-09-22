@@ -107,12 +107,12 @@ print("Text with proper closing quote")
 
 Before committing notebook changes:
 
-1. ✅ **Import Order**: Auto-install BEFORE imports
-2. ✅ **F-String Validation**: Test complex f-strings separately
-3. ✅ **Quote Consistency**: Use """ for docstrings, " for strings  
-4. ✅ **Variable Scope**: Check cross-cell dependencies
-5. ✅ **Syntax Validation**: Run each cell before committing
-6. ✅ **Error Handling**: Include try/except for brittle operations
+1. 📋 **Import Order**: Auto-install BEFORE imports
+2. 📋 **F-String Validation**: Test complex f-strings separately
+3. 📋 **Quote Consistency**: Use """ for docstrings, " for strings  
+4. 📋 **Variable Scope**: Check cross-cell dependencies
+5. 📋 **Syntax Validation**: Run each cell before committing
+6. 📋 **Error Handling**: Include try/except for brittle operations
 
 ## **QUICK FIX COMMANDS**
 

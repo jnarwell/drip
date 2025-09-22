@@ -1,6 +1,9 @@
 # Verification Matrix
 
-## Test Coverage Overview
+!!! warning "CONCEPTUAL PLANNING PHASE ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
+
+## Planned Test Coverage Overview
 
 ```mermaid
 pie title Test Coverage by Subsystem
@@ -11,7 +14,7 @@ pie title Test Coverage by Subsystem
     "Integration" : 3
 ```
 
-## Verification Test Matrix
+## Planned Verification Test Matrix
 
 | Test ID | Requirement | Test Method | Equipment | Pass Criteria | Priority |
 |---------|-------------|-------------|-----------|---------------|----------|
@@ -38,7 +41,7 @@ graph TD
     VT007[VT-007: Control] --> VT004
 ```
 
-## Test Schedule
+## Tentative Test Schedule (Pending Hardware)
 
 | Week | Tests | Duration | Resources |
 |------|-------|----------|-----------|

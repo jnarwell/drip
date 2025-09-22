@@ -126,15 +126,15 @@
 ## Legend
 
 ### Status Icons
-- ⬜ Not Tested
-- 🔄 In Testing  
-- ✅ Verified
-- ❌ Failed
+- 📋 Test Planned
+- ⬜ Not Started
+- 🔄 Test Procedure Drafted  
+- 📝 Awaiting Hardware
 
 ### Actions
-- **Execute [Test ID]**: Click to view test procedure
-- **Review Failed**: Investigation required for failed tests
-- **Complete Integration**: All required tests passed, integration testing needed
+- **Execute [Test ID]**: Future test procedure (after hardware available)
+- **Review**: Planning documentation for future tests
+- **Complete Integration**: Future integration testing planned
 
 ## Export Options
 

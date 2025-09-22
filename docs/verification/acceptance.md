@@ -1,28 +1,30 @@
 # Acceptance Criteria
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
-## System Level Acceptance
+## System Level Acceptance Planning
 
-The Acoustic Manufacturing System Level 1 shall meet all acceptance criteria before proceeding to Level 2 development.
+The Acoustic Manufacturing System Level 1 will need to meet all acceptance criteria before proceeding to Level 2 development.
 
 ## Functional Requirements
 
 ### Acoustic Performance
-- [ ] **Frequency Accuracy**: 40kHz ±100Hz verified
+- 📋 **Frequency Accuracy**: 40kHz ±100Hz to be verified
 - [ ] **Field Uniformity**: ±5% in 80% of build volume
-- [ ] **Power Delivery**: 10W per transducer achieved
+- 📋 **Power Delivery**: 10W per transducer target
 - [ ] **Phase Control**: <1° phase error between channels
 - [ ] **Stability**: <1% drift over 8 hours
 
 ### Thermal Performance
-- [ ] **Temperature Range**: 700-1580°C demonstrated
+- 📋 **Temperature Range**: 700-1580°C to be demonstrated
 - [ ] **Temperature Stability**: ±10°C at setpoint
-- [ ] **Heating Rate**: >50°C/min achieved
-- [ ] **Cooling Rate**: >1000°C/s verified
+- 📋 **Heating Rate**: >50°C/min target
+- 📋 **Cooling Rate**: >1000°C/s to be verified
 - [ ] **Thermal Uniformity**: <50°C gradient in melt zone
 
 ### Material Processing
 - [ ] **Droplet Size**: 1-3mm diameter controlled
-- [ ] **Position Accuracy**: ±0.3mm demonstrated
+- 📋 **Position Accuracy**: ±0.3mm to be demonstrated
 - [ ] **Deposition Rate**: 1 cm³/hr minimum
 - [ ] **Material Density**: >95% theoretical
 - [ ] **Surface Finish**: <50μm Ra

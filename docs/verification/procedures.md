@@ -1,13 +1,21 @@
 # Test Procedures
+!!! danger "PLANNING DOCUMENTATION ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
+
+!!! warning "Test Status: Planning Only"
+    - Hardware: Not available
+    - Simulations: Not yet performed  
+    - Expected Execution: After prototype assembly (Q2 2025 or later)
+    - Current Status: Defining test procedures and acceptance criteria
 
 ## General Test Requirements
 
 ### Pre-Test Preparation
-1. Verify all safety systems operational
-2. Check calibration certificates current
-3. Review test procedure with team
-4. Prepare data collection sheets
-5. Verify environmental conditions
+1. Will verify all safety systems operational
+2. Will check calibration certificates current
+3. Will review test procedure with team
+4. Will prepare data collection sheets
+5. Will verify environmental conditions
 
 ### Test Environment
 - Temperature: 20±5°C
@@ -20,7 +28,7 @@
 
 ### TP-001: Acoustic Frequency Verification
 
-**Purpose**: Verify transducer array operates at 40kHz ±100Hz
+**Purpose**: Will verify transducer array operates at 40kHz ±100Hz
 
 **Equipment**:
 - Oscilloscope with FFT capability
@@ -45,7 +53,7 @@
 
 ### TP-002: Acoustic Field Uniformity
 
-**Purpose**: Verify acoustic field uniformity within specifications
+**Purpose**: Will verify acoustic field uniformity within specifications
 
 **Equipment**:
 - Hydrophone array (3×3 minimum)

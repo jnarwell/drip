@@ -1,13 +1,16 @@
 # Acoustic Manufacturing System
 
+!!! warning "CONCEPTUAL PLANNING PHASE ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
+
 <div class="hero-section">
 <h2>Advanced Acoustic Levitation Manufacturing</h2>
-<p>Contactless material processing using ultrasonic transducer arrays</p>
+<p>Planned contactless material processing using ultrasonic transducer arrays</p>
 </div>
 
 ## 🎯 System Overview
 
-The Acoustic Manufacturing System uses **40 kHz ultrasonic transducers** to create standing waves for contactless manipulation of molten metal droplets. This revolutionary approach enables:
+The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transducers** to create standing waves for contactless manipulation of molten metal droplets. This planned approach would enable:
 
 <div class="grid cards" markdown>
 
@@ -15,25 +18,25 @@ The Acoustic Manufacturing System uses **40 kHz ultrasonic transducers** to crea
 
     ---
 
-    ±0.3mm droplet steering accuracy with real-time thermal feedback
+    Targeted ±0.3mm droplet steering accuracy with planned real-time thermal feedback
 
 -   :material-thermometer:{ .lg .middle } **Temperature Range**
 
     ---
 
-    700°C (Aluminum) to 1580°C (Steel) processing capability
+    Planned 700°C (Aluminum) to 1580°C (Steel) processing capability
 
 -   :material-cube-outline:{ .lg .middle } **Material Quality**
 
     ---
 
-    >95% theoretical density with controlled cooling rates
+    Target >95% theoretical density with planned controlled cooling rates
 
 -   :fontawesome-solid-rocket:{ .lg .middle } **Scalable Design**
 
     ---
 
-    Modular progression from $14k prototype to $117k production system
+    Planned modular progression from $14k prototype to $117k production system
 
 </div>
 
@@ -41,12 +44,12 @@ The Acoustic Manufacturing System uses **40 kHz ultrasonic transducers** to crea
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost** | $13,988 | $26k | $49k | $117k |
+| **Cost (Target)** | ~$13,988 | ~$26k | ~$49k | ~$117k |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
-| **Build Rate** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
-| **Power** | 4.6kW | 15kW | 20kW | 35kW |
+| **Build Rate (Target)** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
+| **Power (Est.)** | ~4.6kW | ~15kW | ~20kW | ~35kW |
 
 ## 🚀 Quick Navigation
 
@@ -54,36 +57,40 @@ The Acoustic Manufacturing System uses **40 kHz ultrasonic transducers** to crea
 <div class="feature-cards">
 
 [**Component Registry** :material-database:](components/index.md){ .md-button .md-button--primary }
-Complete BOM with 51 components
+Preliminary BOM with 51 planned components
 
 [**Interface Control** :material-connection:](icds/index.md){ .md-button .md-button--primary }
-5 critical system interfaces
+5 planned critical system interfaces
 
 [**Verification Matrix** :material-check-all:](verification/matrix.md){ .md-button .md-button--primary }
-Comprehensive test procedures
+Planned comprehensive test procedures
 
 [**System Dashboard** :material-view-dashboard:](dashboard.md){ .md-button .md-button--primary }
-Real-time project metrics
+Project planning metrics
 
 </div>
 </div>
 
 ## 📈 Project Status
 
-!!! success "Current Phase: Level 1 Development"
-    - [x] Requirements definition complete
-    - [x] Component selection finalized  
-    - [x] ICDs drafted
-    - [x] Power budget validated
-    - [ ] Mechanical design in progress
-    - [ ] Prototype assembly pending
+!!! warning "⚠️ PLANNING PHASE ONLY - No Hardware Built"
 
-## 🔗 Recent Updates
+**Current Phase: Conceptual Planning for Level 1**
+- 📋 Requirements definition: In planning
+- 📝 Component selection: Under evaluation  
+- 📋 Interface concepts: Being developed
+- 🎯 Power budget: Target ~4.6kW (estimated)
+- 📝 Mechanical concepts: Initial sketches
+- ⏳ Prototype assembly: Future work (pending funding)
 
-- **2025-09-21**: MkDocs documentation system implemented
-- **2025-01-14**: ICD system and interface validation complete
-- **2025-01-14**: Power accounting fixed (4.6kW net consumption)
-- **2025-01-13**: Component registry with technical specs
+**Note:** All specifications are targets/estimates only. No simulation, validation, or physical testing has been performed.
+
+## 🔗 Planning Milestones
+
+- **2025-09-21**: Documentation framework established for planning phase
+- **2025-01-14**: Target interface concepts outlined  
+- **2025-01-14**: Power consumption estimated at ~4.6kW (preliminary)
+- **2025-01-13**: Initial component research documented
 
 ---
 

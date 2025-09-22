@@ -1,5 +1,8 @@
 # Thermal Analysis
 
+!!! warning "CONCEPTUAL PLANNING PHASE ONLY"
+    **No hardware exists. No simulations completed. These are conceptual targets only.**
+
 ## Heat Budget
 
 ### Heat Generation Sources
@@ -76,19 +79,19 @@ graph TB
    - Thermal conductivity: 0.1 W/m·K
    - Surface temperature: <50°C
 
-## Thermal Simulation Results
+## Target Thermal Performance (Unvalidated)
 
-### Steady-State Analysis
-- Chamber wall: 250°C ± 20°C
-- Transducer mounting: 45°C ± 5°C
-- Electronics enclosure: 38°C ± 3°C
-- Frame maximum: 42°C
+### Steady-State Targets
+- Chamber wall: Target 250°C ± 20°C
+- Transducer mounting: Target 45°C ± 5°C
+- Electronics enclosure: Target 38°C ± 3°C
+- Frame maximum: Target 42°C
 
-### Transient Response
-- Heatup time: 20 minutes to 1500°C
-- Cooldown time: 45 minutes to 100°C
-- Thermal cycling: 100 cycles tested
-- No thermal stress failures
+### Transient Response Targets
+- Heatup time: Target 20 minutes to 1500°C
+- Cooldown time: Target 45 minutes to 100°C
+- Thermal cycling: Target 100 cycles minimum
+- Goal: No thermal stress failures
 
 ## Recommendations
 
