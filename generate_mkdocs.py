@@ -8,6 +8,7 @@ import json
 import pandas as pd
 from datetime import datetime
 from pathlib import Path
+import time
 
 # Add project root to path
 import sys
@@ -63,6 +64,8 @@ class DocsGenerator:
     def __init__(self):
         self.registry = ComponentRegistry()
         self.docs_dir = Path("docs")
+        # Generate build version for cache busting
+        self.build_version = int(time.time())
         
     def generate_all(self):
         """Generate all documentation"""
@@ -207,7 +210,7 @@ Project planning metrics
 
 ---
 
-*Last updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}*
+*Last updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} | Build: v{self.build_version}*
 """
         
         with open(self.docs_dir / "index.md", "w") as f:

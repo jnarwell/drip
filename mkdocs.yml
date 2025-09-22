@@ -12,6 +12,7 @@ theme:
   language: en
   favicon: assets/favicon.png
   logo: assets/logo.png
+  custom_dir: docs/overrides
   
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -143,6 +144,8 @@ extra:
   generator: false
   version:
     provider: mike
+  # Build version will be injected by generate_mkdocs.py
+  build_version: "dev"
 
 extra_css:
   - stylesheets/extra.css

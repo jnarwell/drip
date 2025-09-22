@@ -1,0 +1,31 @@
+name: Purge GitHub Pages Cache
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    
+    steps:
+      - name: Wait for deployment
+        run: sleep 30
+        
+      - name: Purge cache via API calls
+        run: |
+          # Make multiple requests to force cache refresh
+          for i in {1..5}; do
+            curl -s -H "Cache-Control: no-cache" https://jnarwell.github.io/drip/ > /dev/null
+            curl -s -H "Cache-Control: no-cache" https://jnarwell.github.io/drip/index.html > /dev/null
+            sleep 2
+          done
+          
+      - name: Verify deployment
+        run: |
+          echo "Checking deployment..."
+          curl -s https://jnarwell.github.io/drip/ | grep -q "Last updated" && echo "Site accessible" || echo "Site check failed"
