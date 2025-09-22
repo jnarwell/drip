@@ -541,9 +541,9 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 
 <div class="button-group">
 
-[:material-download: Download Excel](../downloads/bom.xlsx){{: .md-button }}
-[:material-file-pdf: Download PDF](../downloads/bom.pdf){{: .md-button }}
-[:material-code-json: Download JSON](../downloads/bom.json){{: .md-button }}
+[:material-download: Download Excel](../downloads/bom.xlsx){: .md-button }
+[:material-file-pdf: Download PDF](../downloads/bom.pdf){: .md-button }
+[:material-code-json: Download JSON](../downloads/bom.json){: .md-button }
 
 </div>
 
