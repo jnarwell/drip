@@ -169,23 +169,25 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 ## 🚀 Quick Navigation
 
-<div class="tx-hero__content">
-<div class="feature-cards">
+- [Component Registry :material-database:](components/index.md){{ .md-button .md-button--primary }}
 
-""" + f"""[**Component Registry** :material-database:](components/index.md)""" + """{ .md-button .md-button--primary }
-""" + f"""Preliminary BOM with {len(self.registry.components)} planned components
+    ---
+    {len(self.registry.components)} planned components
 
-[**Interface Control** :material-connection:](icds/index.md)""" + """{ .md-button .md-button--primary }
-""" + f"""{len(SYSTEM_INTERFACES)} planned critical system interfaces
+- [Interface Control :material-connection:](icds/index.md){{ .md-button .md-button--primary }}
 
-[**Verification Matrix** :material-check-all:](verification/matrix.md)""" + """{ .md-button .md-button--primary }
-""" + f"""Planned comprehensive test procedures
+    ---
+    {len(SYSTEM_INTERFACES)} critical system interfaces
 
-[**System Dashboard** :material-view-dashboard:](dashboard.md)""" + """{ .md-button .md-button--primary }
-""" + f"""Project planning metrics
+- [Verification Matrix :material-check-all:](verification/matrix.md){{ .md-button .md-button--primary }}
 
-</div>
-</div>
+    ---
+    Comprehensive test procedures
+
+- [System Dashboard :material-view-dashboard:](dashboard.md){{ .md-button .md-button--primary }}
+
+    ---
+    Project planning metrics
 
 ## 📈 Project Status
 
@@ -539,11 +541,13 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 
 ## Export Options
 
-<div class="button-group">
+<div class="button-group" markdown>
 
-""" + """[:material-download: Download Excel](../downloads/bom.xlsx){ .md-button }
-[:material-file-pdf: Download PDF](../downloads/bom.pdf){ .md-button }
-[:material-code-json: Download JSON](../downloads/bom.json){ .md-button }""" + f"""
+[:material-download: Download Excel](../downloads/bom.xlsx){{ .md-button }}
+
+[:material-file-pdf: Download PDF](../downloads/bom.pdf){{ .md-button }}
+
+[:material-code-json: Download JSON](../downloads/bom.json){{ .md-button }}
 
 </div>
 
