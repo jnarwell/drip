@@ -62,7 +62,6 @@ pie title Cost Distribution by Subsystem
 | Acoustic Cylinder Subsystem | 185W | 0W | 185W |
 | Crucible Subsystem | 5068W | 0W | 5068W |
 | Power/Control Subsystem | 1342W | 10000W | -8658W |
-
 | **TOTAL** | **14596W** | **10000W** | **4596W** |
 
 ## 🔄 Development Timeline
@@ -103,4 +102,4 @@ gantt
 | **TOTAL** | **100** | **0** | **🔴 0%** |
 
 ---
-*Dashboard updated: 2025-09-22 15:00:14*
+*Dashboard updated: 2025-09-22 15:05:03*

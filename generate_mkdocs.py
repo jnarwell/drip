@@ -316,9 +316,9 @@ pie title Cost Distribution by Subsystem
                 content += f"{cat_data.get('power_supply', 0):.0f}W | "
                 content += f"{cat_data.get('net_power', 0):.0f}W |\n"
         
-        content += f"""
-| **TOTAL** | **{power_budget['TOTAL']['active_power']:.0f}W** | **{power_budget['TOTAL']['power_supply']:.0f}W** | **{power_budget['TOTAL']['net_power']:.0f}W** |
-
+        content += f"| **TOTAL** | **{power_budget['TOTAL']['active_power']:.0f}W** | **{power_budget['TOTAL']['power_supply']:.0f}W** | **{power_budget['TOTAL']['net_power']:.0f}W** |\n"
+        
+        content += """
 ## 🔄 Development Timeline
 
 ```mermaid
