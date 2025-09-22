@@ -172,16 +172,16 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 <div class="tx-hero__content">
 <div class="feature-cards">
 
-[**Component Registry** :material-database:](components/index.md){{ .md-button .md-button--primary }}
+[**Component Registry** :material-database:](components/index.md){{: .md-button .md-button--primary }}
 Preliminary BOM with {len(self.registry.components)} planned components
 
-[**Interface Control** :material-connection:](icds/index.md){{ .md-button .md-button--primary }}
+[**Interface Control** :material-connection:](icds/index.md){{: .md-button .md-button--primary }}
 {len(SYSTEM_INTERFACES)} planned critical system interfaces
 
-[**Verification Matrix** :material-check-all:](verification/matrix.md){{ .md-button .md-button--primary }}
+[**Verification Matrix** :material-check-all:](verification/matrix.md){{: .md-button .md-button--primary }}
 Planned comprehensive test procedures
 
-[**System Dashboard** :material-view-dashboard:](dashboard.md){{ .md-button .md-button--primary }}
+[**System Dashboard** :material-view-dashboard:](dashboard.md){{: .md-button .md-button--primary }}
 Project planning metrics
 
 </div>
@@ -541,9 +541,9 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 
 <div class="button-group">
 
-[:material-download: Download Excel](../downloads/bom.xlsx){ .md-button }
-[:material-file-pdf: Download PDF](../downloads/bom.pdf){ .md-button }
-[:material-code-json: Download JSON](../downloads/bom.json){ .md-button }
+[:material-download: Download Excel](../downloads/bom.xlsx){{: .md-button }}
+[:material-file-pdf: Download PDF](../downloads/bom.pdf){{: .md-button }}
+[:material-code-json: Download JSON](../downloads/bom.json){{: .md-button }}
 
 </div>
 
@@ -750,7 +750,7 @@ pie title Cost Distribution by Category
     
     def generate_architecture(self):
         """Generate system architecture page"""
-        content = """# System Architecture
+        content = f"""# System Architecture
 
 ## Overview
 

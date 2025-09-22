@@ -56,16 +56,16 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 <div class="tx-hero__content">
 <div class="feature-cards">
 
-[**Component Registry** :material-database:](components/index.md){ .md-button .md-button--primary }
+[**Component Registry** :material-database:](components/index.md){: .md-button .md-button--primary }
 Preliminary BOM with 51 planned components
 
-[**Interface Control** :material-connection:](icds/index.md){ .md-button .md-button--primary }
+[**Interface Control** :material-connection:](icds/index.md){: .md-button .md-button--primary }
 5 planned critical system interfaces
 
-[**Verification Matrix** :material-check-all:](verification/matrix.md){ .md-button .md-button--primary }
+[**Verification Matrix** :material-check-all:](verification/matrix.md){: .md-button .md-button--primary }
 Planned comprehensive test procedures
 
-[**System Dashboard** :material-view-dashboard:](dashboard.md){ .md-button .md-button--primary }
+[**System Dashboard** :material-view-dashboard:](dashboard.md){: .md-button .md-button--primary }
 Project planning metrics
 
 </div>
@@ -87,11 +87,11 @@ Project planning metrics
 
 ## 🔗 Planning Milestones
 
-- **2025-09-21**: Documentation framework established for planning phase
+- **2025-09-22**: Documentation framework established for planning phase
 - **2025-01-14**: Target interface concepts outlined  
 - **2025-01-14**: Power consumption estimated at ~4.6kW (preliminary)
 - **2025-01-13**: Initial component research documented
 
 ---
 
-*Last updated: 2025-09-21 22:52:39 | Build: v1758520359*
+*Last updated: 2025-09-22 08:54:33 | Build: v1758556473*
