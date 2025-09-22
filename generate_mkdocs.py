@@ -359,7 +359,11 @@ gantt
                 "Thermal": "Thermal System", 
                 "Control": "Control System",
                 "Crucible": "Material Feed",
-                "Power": "Power System"
+                "Power": "Power System",
+                "Sensors": "Sensors",
+                "Chamber": "Chamber",
+                "Cooling": "Cooling",
+                "Insulation": "Insulation"
             }
             
             for subsystem, status in subsystem_status.items():
@@ -379,6 +383,18 @@ gantt
                     status_emoji = "🟢"
                 
                 content += f"\n| {display_name} | {total_tests} | {completed_tests} | {status_emoji} {percentage:.0f}% |"
+            
+            # Add system-level test categories
+            content += "\n| **Integration** | 5 | 0 | 🔴 0% |"
+            content += "\n| **Performance** | 5 | 0 | 🔴 0% |"
+            content += "\n| **Endurance** | 10 | 0 | 🔴 0% |"
+            content += "\n| **Validation** | 5 | 0 | 🔴 0% |"
+            
+            # Add totals row
+            total_subsystem_tests = sum(status['total_tests'] for status in subsystem_status.values())
+            total_system_tests = 25  # Integration (5) + Performance (5) + Endurance (10) + Validation (5)
+            grand_total = total_subsystem_tests + total_system_tests
+            content += f"\n| **TOTAL** | **{grand_total}** | **0** | **🔴 0%** |"
                 
         except ImportError:
             # Fallback if test management system not available
@@ -387,9 +403,14 @@ gantt
 | Thermal System | 0 | 0 | 🔴 0% |
 | Control System | 0 | 0 | 🔴 0% |
 | Material Feed | 0 | 0 | 🔴 0% |
-| Power System | 0 | 0 | 🔴 0% |"""
+| Power System | 0 | 0 | 🔴 0% |
+| Integration | 0 | 0 | 🔴 0% |
+| Performance | 0 | 0 | 🔴 0% |
+| Endurance | 0 | 0 | 🔴 0% |
+| Validation | 0 | 0 | 🔴 0% |
+| **TOTAL** | **0** | **0** | **🔴 0%** |"""
         
-        content += """
+        content += f"""
 
 ---
 *Dashboard updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}*
