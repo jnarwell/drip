@@ -14,7 +14,7 @@ The system follows a phased development approach with four distinct levels:
 | **Target Cost** | ~$13,988 | ~$21,681 | ~$38,187 | ~$79,732 |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **Power Supply** | ~18kW | ~31kW | ~48kW | ~71kW |
-| **Est. Net Power** | ~4.6kW | ~8.2kW | ~12.5kW | ~18.7kW |
+| **Est. Total Power** | ~14.6kW | ~26.0kW | ~39.7kW | ~59.4kW |
 | **Chamber Size** | Ø120×150mm | Ø180×200mm | Ø180×200mm | Ø400×300mm |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual simultaneous | 5+ materials |

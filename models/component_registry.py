@@ -1343,6 +1343,12 @@ class ComponentRegistry:
         base_power = power_budget['TOTAL']['net_power']
         return base_power * self.LEVEL_MULTIPLIERS[self.level]['power']
     
+    def get_level_total_power(self) -> float:
+        """Get total power consumption with level multiplier applied"""
+        power_budget = self.calculate_power_budget()
+        base_power = power_budget['TOTAL']['active_power']
+        return base_power * self.LEVEL_MULTIPLIERS[self.level]['power']
+    
     def get_level_transducer_count(self) -> int:
         """Get transducer count for current level"""
         return self.LEVEL_MULTIPLIERS[self.level]['transducers']

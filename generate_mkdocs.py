@@ -152,7 +152,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
     ---
 
-    Planned modular progression from $14k prototype to $117k production system
+    Planned modular progression from ${int(self.registry.get_level_scaled_cost()/1000)}k prototype to ${int(reg_l4.get_level_scaled_cost()/1000)}k production system
 
 </div>
 
@@ -165,7 +165,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | {self.registry.get_level_transducer_count()} | {reg_l2.get_level_transducer_count()} | {reg_l3.get_level_transducer_count()} | {reg_l4.get_level_transducer_count()} |
 | **Build Rate (Target)** | {self.registry.get_level_build_rate()} cm³/hr | {reg_l2.get_level_build_rate()} cm³/hr | {reg_l3.get_level_build_rate()} cm³/hr | {reg_l4.get_level_build_rate()} cm³/hr |
-| **Power (Est.)** | ~{net_power/1000:.1f}kW | ~{reg_l2.get_level_scaled_power()/1000:.0f}kW | ~{reg_l3.get_level_scaled_power()/1000:.0f}kW | ~{reg_l4.get_level_scaled_power()/1000:.0f}kW |
+| **Power (Est.)** | ~{self.registry.get_level_total_power()/1000:.1f}kW | ~{reg_l2.get_level_total_power()/1000:.0f}kW | ~{reg_l3.get_level_total_power()/1000:.0f}kW | ~{reg_l4.get_level_total_power()/1000:.0f}kW |
 
 ## 🚀 Quick Navigation
 
@@ -1014,7 +1014,7 @@ The system follows a phased development approach with four distinct levels:
 | **Target Cost** | ~${registries[1].get_level_scaled_cost():,.0f} | ~${registries[2].get_level_scaled_cost():,.0f} | ~${registries[3].get_level_scaled_cost():,.0f} | ~${registries[4].get_level_scaled_cost():,.0f} |
 | **Transducers** | {registries[1].get_level_transducer_count()} | {registries[2].get_level_transducer_count()} | {registries[3].get_level_transducer_count()} | {registries[4].get_level_transducer_count()} |
 | **Power Supply** | ~{registries[1].get_level_power_supply_required()/1000:.0f}kW | ~{registries[2].get_level_power_supply_required()/1000:.0f}kW | ~{registries[3].get_level_power_supply_required()/1000:.0f}kW | ~{registries[4].get_level_power_supply_required()/1000:.0f}kW |
-| **Est. Net Power** | ~{registries[1].get_level_scaled_power()/1000:.1f}kW | ~{registries[2].get_level_scaled_power()/1000:.1f}kW | ~{registries[3].get_level_scaled_power()/1000:.1f}kW | ~{registries[4].get_level_scaled_power()/1000:.1f}kW |
+| **Est. Total Power** | ~{registries[1].get_level_total_power()/1000:.1f}kW | ~{registries[2].get_level_total_power()/1000:.1f}kW | ~{registries[3].get_level_total_power()/1000:.1f}kW | ~{registries[4].get_level_total_power()/1000:.1f}kW |
 | **Chamber Size** | {chamber_sizes[1]} | {chamber_sizes[2]} | {chamber_sizes[3]} | {chamber_sizes[4]} |
 | **Build Volume** | {registries[1].get_level_build_volume()} cm³ | {registries[2].get_level_build_volume()} cm³ | {registries[3].get_level_build_volume()} cm³ | {registries[4].get_level_build_volume()} cm³ |
 | **Materials** | {registries[1].get_level_materials()[0]} | {" + ".join(registries[2].get_level_materials()[:2])} | Dual simultaneous | 5+ materials |
