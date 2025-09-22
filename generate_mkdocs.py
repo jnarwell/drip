@@ -504,8 +504,6 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 
 ## Quick Stats
 
-<div class="info-grid">
-
 | Metric | Value |
 |--------|-------|
 | **Total Components** | {len(self.registry.components)} |
@@ -513,8 +511,6 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
 | **Custom Components** | {custom_count} ({custom_count/len(self.registry.components)*100:.0f}%) |
 | **Total Cost** | ${total_cost:,.2f} |
 | **Lead Time** | 6-8 weeks |
-
-</div>
 
 ## Subsystem Components
 
@@ -534,8 +530,10 @@ The Acoustic Manufacturing System consists of **{len(self.registry.components)} 
             
             for comp in self.registry.components:
                 if comp.category == category:
-                    power = comp.tech_specs.power_consumption if comp.tech_specs and comp.tech_specs.power_consumption else 0
-                    content += f"    | {comp.name} | {comp.type.value} | {comp.quantity} | ${comp.total_cost:.2f} | {power}W |\n"
+                    power = "-"
+                    if comp.tech_specs and comp.tech_specs.power_consumption and comp.tech_specs.power_consumption > 0:
+                        power = f"{comp.tech_specs.power_consumption}W"
+                    content += f"    | {comp.name} | {comp.type.value} | {comp.quantity} | ${comp.total_cost:.2f} | {power} |\n"
         
         with open(self.docs_dir / "components" / "index.md", "w") as f:
             f.write(content)
