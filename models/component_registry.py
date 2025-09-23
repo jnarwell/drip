@@ -1098,30 +1098,32 @@ class ComponentRegistry:
         # POWER/CONTROL SUBSYSTEM - COTS
         self.components.extend([
             Component(
-                name="15kW PSU",
+                name="Mean Well RSP-1500-48",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="Mean Well RST-15K-115",
+                specification="48V 32A switching power supply with PFC",
                 quantity=1,
-                unit_cost=3800,
-                total_cost=3800,
-                notes="Main power supply - 15kW rack mount",
-                supplier="Mean Well",
+                unit_cost=400,
+                total_cost=400,
+                notes="Right-sized for 1.3kW DC load, 83% utilization",
+                supplier="https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=1650,  # W input power consumption (15kW / 0.91 efficiency)
-                    power_supply=15000,  # W output power supplied to system
-                    voltage_nominal=115,  # V output
-                    voltage_range=(103.5, 126.5),  # ±10% adjustment typical
-                    current_draw=143,  # A input at full load (16.5kW / 115V)
-                    weight=12.0,  # kg (estimated for 15kW unit)
-                    dimensions={'L': 350, 'W': 200, 'H': 100},  # mm (estimated rack mount)
-                    operating_temp=(0, 50),
+                    power_consumption=110,  # Input losses at 91% efficiency
+                    power_supply=1536,      # Output capacity
+                    power_type='DC',
+                    power_voltage=48,
+                    voltage_nominal=48,
+                    voltage_range=(43.2, 52.8),  # ±10% adjustment
+                    current_draw=14.4,  # A input at full load (1650W / 115V)
+                    weight=1.8,  # kg
+                    dimensions={'L': 295, 'W': 127, 'H': 41},  # mm
+                    operating_temp=(-20, 70),  # °C with derating above 50°C
                     max_temp=70,
-                    thermal_dissipation=1650,  # W heat generated = power consumed - output
+                    thermal_dissipation=110,  # W heat generated
                     cooling_required="forced air",
-                    efficiency=91,  # % typical for Mean Well high power units
+                    efficiency=91,  # %
                     connections=["AC input terminal", "DC output terminal"],
                     control_signal="Remote on/off, voltage adjust"
                 )
@@ -1405,6 +1407,93 @@ class ComponentRegistry:
                     operating_temp=(0, 70),
                     connections=["5V power", "2× control inputs", "2× NO/NC contacts"],
                     control_signal="5V logic level"
+                )
+            ),
+            Component(
+                name="48V to 12V DC Converter",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="48V to 12V 35A step-down converter",
+                quantity=1,
+                unit_cost=40,
+                total_cost=40,
+                notes="Powers PC, fans, PID controllers",
+                supplier="Generic/Amazon",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=460,  # Input from 48V bus (accounting for efficiency)
+                    power_supply=420,       # 12V @ 35A output
+                    power_type='DC',
+                    power_voltage=48,       # Input voltage
+                    efficiency=91,
+                    voltage_range=(36, 72),  # Input voltage range
+                    voltage_nominal=12,      # Output voltage
+                    current_draw=9.6,        # 460W/48V input current
+                    weight=0.3,
+                    dimensions={'L': 120, 'W': 60, 'H': 30},  # mm
+                    operating_temp=(0, 60),
+                    mounting_type="Chassis mount with heatsink",
+                    connections=["48V input terminals", "12V output terminals"],
+                    control_signal="None - always on"
+                )
+            ),
+            Component(
+                name="48V to 5V DC Converter",  
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="48V to 5V 15A step-down converter",
+                quantity=1,
+                unit_cost=30,
+                total_cost=30,
+                notes="Powers FPGA, STM32, logic circuits",
+                supplier="Generic/Amazon",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=82,   # Input from 48V bus
+                    power_supply=75,        # 5V @ 15A output
+                    power_type='DC',
+                    power_voltage=48,       # Input voltage
+                    efficiency=91,
+                    voltage_range=(36, 72),  # Input voltage range
+                    voltage_nominal=5,       # Output voltage
+                    current_draw=1.7,        # 82W/48V input current
+                    weight=0.2,
+                    dimensions={'L': 100, 'W': 50, 'H': 25},  # mm
+                    operating_temp=(0, 60),
+                    mounting_type="PCB mount",
+                    connections=["48V input terminals", "5V output terminals"],
+                    control_signal="None - always on"
+                )
+            ),
+            Component(
+                name="48V to 24V DC Converter",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="48V to 24V 2A step-down converter",
+                quantity=1,
+                unit_cost=20,
+                total_cost=20,
+                notes="Powers stepper motors for material feed",
+                supplier="Generic/Amazon",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=53,   # Input from 48V bus
+                    power_supply=48,        # 24V @ 2A output
+                    power_type='DC',
+                    power_voltage=48,       # Input voltage
+                    efficiency=90,
+                    voltage_range=(36, 72),  # Input voltage range
+                    voltage_nominal=24,      # Output voltage
+                    current_draw=1.1,        # 53W/48V input current
+                    weight=0.1,
+                    dimensions={'L': 80, 'W': 40, 'H': 20},  # mm
+                    operating_temp=(0, 60),
+                    mounting_type="DIN rail",
+                    connections=["48V input terminals", "24V output terminals"],
+                    control_signal="None - always on"
                 )
             ),
         ])
@@ -1861,6 +1950,30 @@ class ComponentRegistry:
         power_domains['PSU']['utilization'] = (power_domains['PSU']['dc_load'] / power_domains['PSU']['capacity']) * 100
         
         return power_domains
+
+    def get_power_architecture_note(self):
+        """Return explanation of AC/DC separation"""
+        return """
+    POWER ARCHITECTURE - DUAL DOMAIN
+    ================================
+    
+    DC DOMAIN (Through PSU):
+    - Acoustic system: 585W
+    - Control electronics: 250W
+    - Cooling/sensors: 415W
+    - Material feed: 30W
+    - TOTAL DC: 1,280W
+    - PSU: RSP-1500-48 (1,536W capacity)
+    - Utilization: 83%
+    
+    AC DOMAIN (Direct from mains):
+    - Bed heaters: 2,000W (SSR switched)
+    - Induction heater: 3,000W (contactor)
+    - Micro heaters: 1,000W (SSR bank)
+    - TOTAL AC: 6,000W
+    
+    TOTAL WALL POWER: ~7.4kW (DC + AC)
+    """
 
 
 """

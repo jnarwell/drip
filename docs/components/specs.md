@@ -1104,7 +1104,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### 15kW PSU
+### Mean Well RSP-1500-48
 
 <div class="spec-card">
 
@@ -1115,19 +1115,19 @@ Search components using the box below or browse by category.
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 1 |
-    | **Unit Cost** | $3800.00 |
-    | **Power Consumption** | 1650W |
-    | **Power Supply** | 15000W |
-    | **Voltage** | 115V |
-    | **Operating Temp** | 0-50°C |
+    | **Unit Cost** | $400.00 |
+    | **Power Consumption** | 110W |
+    | **Power Supply** | 1536W |
+    | **Voltage** | 48V |
+    | **Operating Temp** | -20-70°C |
     | **Max Temperature** | 70°C |
-    | **Weight** | 12.0kg |
+    | **Weight** | 1.8kg |
     | **Efficiency** | 91% |
-    | **Dimensions** | 350×200×100mm |
+    | **Dimensions** | 295×127×41mm |
 
 === "Notes"
 
-    Main power supply - 15kW rack mount
+    Right-sized for 1.3kW DC load, 83% utilization
 
 === "Expansion"
 
@@ -1439,6 +1439,96 @@ Search components using the box below or browse by category.
 === "Notes"
 
     Switches heater pairs for 2-zone operation
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### 48V to 12V DC Converter
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $40.00 |
+    | **Power Consumption** | 460W |
+    | **Power Supply** | 420W |
+    | **Voltage** | 12V |
+    | **Operating Temp** | 0-60°C |
+    | **Weight** | 0.3kg |
+    | **Efficiency** | 91% |
+    | **Dimensions** | 120×60×30mm |
+
+=== "Notes"
+
+    Powers PC, fans, PID controllers
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### 48V to 5V DC Converter
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $30.00 |
+    | **Power Consumption** | 82W |
+    | **Power Supply** | 75W |
+    | **Voltage** | 5V |
+    | **Operating Temp** | 0-60°C |
+    | **Weight** | 0.2kg |
+    | **Efficiency** | 91% |
+    | **Dimensions** | 100×50×25mm |
+
+=== "Notes"
+
+    Powers FPGA, STM32, logic circuits
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### 48V to 24V DC Converter
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $20.00 |
+    | **Power Consumption** | 53W |
+    | **Power Supply** | 48W |
+    | **Voltage** | 24V |
+    | **Operating Temp** | 0-60°C |
+    | **Weight** | 0.1kg |
+    | **Efficiency** | 90% |
+    | **Dimensions** | 80×40×20mm |
+
+=== "Notes"
+
+    Powers stepper motors for material feed
 
 === "Expansion"
 

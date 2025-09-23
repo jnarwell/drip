@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **58 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **61 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 58 |
-| **COTS Components** | 24 (41%) |
-| **Custom Components** | 34 (59%) |
-| **Total Cost** | $25,485.00 |
+| **Total Components** | 61 |
+| **COTS Components** | 27 (44%) |
+| **Custom Components** | 34 (56%) |
+| **Total Cost** | $22,175.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -81,7 +81,7 @@ The Acoustic Manufacturing System consists of **58 components** organized into 5
 
     | Component | Type | Qty | Cost | Power |
     |-----------|------|-----|------|-------|
-    | 15kW PSU | Commercial Off-The-Shelf | 1 | $3800.00 | 1650W |
+    | Mean Well RSP-1500-48 | Commercial Off-The-Shelf | 1 | $400.00 | 110W |
     | FPGA Board | Commercial Off-The-Shelf | 1 | $75.00 | 2W |
     | 6-Channel Amp Modules | Commercial Off-The-Shelf | 4 | $60.00 | 100W |
     | 8-Channel Relays | Commercial Off-The-Shelf | 5 | $40.00 | 2W |
@@ -93,6 +93,9 @@ The Acoustic Manufacturing System consists of **58 components** organized into 5
     | SSR-25DA Solid State Relay | Commercial Off-The-Shelf | 1 | $8.00 | 0.012W |
     | Type K Thermocouple (spare) | Commercial Off-The-Shelf | 1 | $10.00 | - |
     | 2-Channel Relay Module | Commercial Off-The-Shelf | 1 | $12.00 | 0.16W |
+    | 48V to 12V DC Converter | Commercial Off-The-Shelf | 1 | $40.00 | 460W |
+    | 48V to 5V DC Converter | Commercial Off-The-Shelf | 1 | $30.00 | 82W |
+    | 48V to 24V DC Converter | Commercial Off-The-Shelf | 1 | $20.00 | 53W |
     | Control Bus PCB | Custom Fabricated | 1 | $350.00 | 10W |
     | Acoustic Bus PCB | Custom Fabricated | 1 | $200.00 | 5W |
     | Thermal Bus PCB | Custom Fabricated | 1 | $250.00 | 15W |

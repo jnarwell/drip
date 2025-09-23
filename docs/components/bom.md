@@ -59,7 +59,7 @@
 | 39 | Feed Lines | Crucible Subsystem | Custom Fabricated | PTFE/SS tubing | 25 | $10.00 | $250.00 | High-temp rated |
 | 40 | Thermal Pulse Formation | Crucible Subsystem | Custom Fabricated | Control valves | 1 | $350.00 | $350.00 | Droplet timing |
 | 41 | Ceramic Isolation | Crucible Subsystem | Custom Fabricated | Moldable ceramic | 1 | $150.00 | $150.00 | Thermal protection |
-| 42 | 15kW PSU | Power/Control Subsystem | Commercial Off-The-Shelf | Mean Well RST-15K-115 | 1 | $3800.00 | $3800.00 | Main power supply - 15kW rack mount |
+| 42 | Mean Well RSP-1500-48 | Power/Control Subsystem | Commercial Off-The-Shelf | 48V 32A switching power supply with PFC | 1 | $400.00 | $400.00 | Right-sized for 1.3kW DC load, 83% utilization |
 | 43 | FPGA Board | Power/Control Subsystem | Commercial Off-The-Shelf | Cyclone IV EP4CE6 | 1 | $75.00 | $75.00 | Per VDATP reference |
 | 44 | 6-Channel Amp Modules | Power/Control Subsystem | Commercial Off-The-Shelf | TDA2030 DIY boards | 4 | $15.00 | $60.00 | Build from kits |
 | 45 | 8-Channel Relays | Power/Control Subsystem | Commercial Off-The-Shelf | Generic relay modules, 10A | 5 | $8.00 | $40.00 | eBay/AliExpress |
@@ -71,11 +71,14 @@
 | 51 | SSR-25DA Solid State Relay | Power/Control Subsystem | Commercial Off-The-Shelf | 25A DC-AC solid state relay | 1 | $8.00 | $8.00 | For second heater zone |
 | 52 | Type K Thermocouple (spare) | Power/Control Subsystem | Commercial Off-The-Shelf | Type K, 6mm probe, 2m cable | 1 | $10.00 | $10.00 | Second zone temperature sensing |
 | 53 | 2-Channel Relay Module | Power/Control Subsystem | Commercial Off-The-Shelf | 5V 10A dual relay for zone selection | 1 | $12.00 | $12.00 | Switches heater pairs for 2-zone operation |
-| 54 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
-| 55 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
-| 56 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
-| 57 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
-| 58 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
+| 54 | 48V to 12V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 12V 35A step-down converter | 1 | $40.00 | $40.00 | Powers PC, fans, PID controllers |
+| 55 | 48V to 5V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 5V 15A step-down converter | 1 | $30.00 | $30.00 | Powers FPGA, STM32, logic circuits |
+| 56 | 48V to 24V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 24V 2A step-down converter | 1 | $20.00 | $20.00 | Powers stepper motors for material feed |
+| 57 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
+| 58 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
+| 59 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
+| 60 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
+| 61 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
 
 </div>
 
@@ -87,5 +90,5 @@
 | Heated Bed Subsystem | 6 | $56.00 | $1300.00 | $1356.00 |
 | Acoustic Cylinder Subsystem | 9 | $40.00 | $2500.00 | $2540.00 |
 | Crucible Subsystem | 15 | $984.00 | $2650.00 | $3634.00 |
-| Power/Control Subsystem | 17 | $12415.00 | $1300.00 | $13715.00 |
-| **TOTAL** | **58** | **$13685.00** | **$11800.00** | **$25485.00** |
+| Power/Control Subsystem | 20 | $9105.00 | $1300.00 | $10405.00 |
+| **TOTAL** | **61** | **$10375.00** | **$11800.00** | **$22175.00** |

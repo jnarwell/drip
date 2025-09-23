@@ -1756,7 +1756,7 @@ graph LR
 
 ## PSU Utilization Analysis
 
-- **PSU Model**: Mean Well RST-15K-115
+- **PSU Model**: Mean Well RSP-1500-48
 - **PSU Capacity**: {dual_domain['PSU']['capacity']:.0f}W
 - **DC Load**: {dual_domain['PSU']['dc_load']:.0f}W  
 - **Utilization**: {dual_domain['PSU']['utilization']:.1f}%
@@ -1774,21 +1774,24 @@ pie title PSU Capacity Utilization
 graph TD
     MAINS[240V AC Mains<br/>60A Service] --> SSR1[SSR Bank 1<br/>Heating]
     MAINS --> SSR2[SSR Bank 2<br/>Induction]
-    MAINS --> PSU[15kW PSU<br/>115V DC Out]
+    MAINS --> PSU[1.5kW PSU<br/>48V DC Out]
     
     SSR1 --> HEAT[Heating Rods<br/>8kW @ 240V]
     SSR2 --> IND[Induction Heater<br/>3kW @ 240V]
     
-    PSU --> BUS115[115V DC Bus<br/>130A Capacity]
-    BUS115 --> CONV48[48V Converter<br/>30A]
-    BUS115 --> CONV12[12V Converter<br/>20A]
-    BUS115 --> CONV5[5V Converter<br/>10A]
+    PSU --> BUS48[48V DC Bus<br/>32A Capacity]
+    BUS48 --> AMP[Amplifiers<br/>400W]
+    BUS48 --> TRANS[Transducers<br/>180W]
+    BUS48 --> CONV12[12V Converter<br/>35A]
+    BUS48 --> CONV5[5V Converter<br/>15A]
+    BUS48 --> CONV24[24V Converter<br/>2A]
     
-    CONV48 --> AMP[Amplifiers<br/>400W]
-    CONV48 --> TRANS[Transducers<br/>180W]
     CONV12 --> MHEAT[Micro Heaters<br/>1000W]
     CONV12 --> PC[Industrial PC<br/>65W]
+    CONV12 --> PID[PID Controllers<br/>5W]
     CONV5 --> FPGA[FPGA Board<br/>2W]
+    CONV5 --> STM32[STM32 Board<br/>2W]
+    CONV24 --> STEPPER[Stepper Motors<br/>30W]
     
     style HEAT fill:#ff6b6b
     style IND fill:#ff6b6b
@@ -1856,11 +1859,16 @@ graph TD
 3. DC converters only for actual DC loads
 
 ### Estimated Component Costs
-- 15kW PSU: $3,800
+- 1.5kW PSU (RSP-1500-48): $400
+- DC-DC converters: $90 (48V→12V: $40, 48V→5V: $30, 48V→24V: $20)
 - SSR modules (8ch): ~$200
-- DC-DC converters: ~$300
 - Protection devices: ~$150
-- **Total Power Control**: ~$4,450
+- **Total Power Control**: ~$840
+
+### Cost Savings
+- Old spec: 15kW PSU @ $3,800
+- New spec: 1.5kW PSU @ $400 + DC converters @ $90
+- **Savings: $3,310**
 
 ## Heated Bed Configuration
 

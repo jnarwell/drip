@@ -34,7 +34,7 @@ acoustic-sysml-v2/
 2. **Heated Bed Subsystem**: Temperature-controlled build platform
 3. **Acoustic Cylinder Subsystem**: 40kHz ultrasonic transducer arrays
 4. **Crucible Subsystem**: Material melting and delivery (25 outlets)
-5. **Power/Control Subsystem**: FPGA-based control with 10kW PSU
+5. **Power/Control Subsystem**: FPGA-based control with 1.5kW PSU (RSP-1500-48)
 
 ## Quick Start
 
