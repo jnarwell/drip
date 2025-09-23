@@ -6,39 +6,49 @@
 ## Dual Domain Power Distribution
 
 ### AC Domain (Mains Direct)
-**Total AC Load: 9000W**
+**Total AC Load: 9005W**
 
 | Component | Voltage | Power | Control Method |
 |-----------|---------|-------|----------------|
 | Cartridge Heaters 120V (4-pack) | 120V | 4000W | SSR |
 | Copper Heated Bed | 120V | 2000W | SSR |
-| Induction Heater | 240V | 3000W | SSR |
+| Induction Heater Module (OEM) | 220V | 3000W | SSR |
+| Induction Main Contactor | 48V | 5W | SSR |
 
 
 ### DC Domain (PSU Powered)
-**Total DC Load: 4372W**
+**Total DC Load: 3439W**
 
 | Component | Voltage | Power | Source |
 |-----------|---------|-------|--------|
 | 40kHz Transducers | 48V | 180W | PSU |
 | Transducer Array Layer | 48V | 5W | PSU |
+| Induction EMI Filter | 48V | 2W | PSU |
+| Induction Cooling Pump | 12V | 10W | PSU |
+| Induction Radiator | 12V | 3W | PSU |
+| Induction Flow Sensor | 5V | 0W | PSU |
+| Induction Power Meter | 48V | 0W | PSU |
+| Induction Interface PCB | 48V | 1W | PSU |
 | Pellet Hopper | 48V | 5W | PSU |
 | Feedrate Controller | 48V | 10W | PSU |
 | Temperature Controller | 48V | 3W | PSU |
 | Micro Heaters | 12V | 1000W | PSU |
 | Material Delivery System | 48V | 1000W | PSU |
 | Thermal Pulse Formation | 48V | 50W | PSU |
-| 15kW PSU | 48V | 1650W | PSU |
-| FPGA Board | 5V | 2W | PSU |
+| Mean Well RSP-1500-48 | 48V | 110W | PSU |
+| FPGA Board | 5.0V | 2W | PSU |
 | 6-Channel Amp Modules | 48V | 400W | PSU |
 | 8-Channel Relays | 48V | 10W | PSU |
 | STM32 Dev Board | 48V | 0W | PSU |
 | Industrial PC | 12V | 0W | PSU |
-| Thermal Camera - Optris Xi 400 | 48V | 16W | PSU |
+| Thermal Camera - FLIR A35 | 48V | 12W | PSU |
 | Emergency Stop System | 48V | 5W | PSU |
 | Inkbird ITC-100VH PID Kit | 12V | 5W | PSU |
 | SSR-25DA Solid State Relay | 5V | 0W | PSU |
 | 2-Channel Relay Module | 5V | 0W | PSU |
+| 48V to 12V DC Converter | 48V | 460W | PSU |
+| 48V to 5V DC Converter | 48V | 82W | PSU |
+| 48V to 24V DC Converter | 48V | 53W | PSU |
 | Control Bus PCB | 48V | 10W | PSU |
 | Acoustic Bus PCB | 48V | 5W | PSU |
 | Thermal Bus PCB | 48V | 15W | PSU |
@@ -46,16 +56,16 @@
 
 ## PSU Utilization Analysis
 
-- **PSU Model**: Mean Well RST-15K-115
-- **PSU Capacity**: 15000W
-- **DC Load**: 4372W  
-- **Utilization**: 29.1%
-- **Available Headroom**: 10628W
+- **PSU Model**: Mean Well RSP-1500-48
+- **PSU Capacity**: 1500W
+- **DC Load**: 3439W  
+- **Utilization**: 229.3%
+- **Available Headroom**: -1939W
 
 ```mermaid
 pie title PSU Capacity Utilization
-    "Used (4372W)" : 4371.672
-    "Available (10628W)" : 10628.328000000001
+    "Used (3439W)" : 3439.222
+    "Available (-1939W)" : -1939.2220000000002
 ```
 
 ## Power Distribution Architecture
@@ -64,21 +74,24 @@ pie title PSU Capacity Utilization
 graph TD
     MAINS[240V AC Mains<br/>60A Service] --> SSR1[SSR Bank 1<br/>Heating]
     MAINS --> SSR2[SSR Bank 2<br/>Induction]
-    MAINS --> PSU[15kW PSU<br/>115V DC Out]
+    MAINS --> PSU[1.5kW PSU<br/>48V DC Out]
     
     SSR1 --> HEAT[Heating Rods<br/>8kW @ 240V]
     SSR2 --> IND[Induction Heater<br/>3kW @ 240V]
     
-    PSU --> BUS115[115V DC Bus<br/>130A Capacity]
-    BUS115 --> CONV48[48V Converter<br/>30A]
-    BUS115 --> CONV12[12V Converter<br/>20A]
-    BUS115 --> CONV5[5V Converter<br/>10A]
+    PSU --> BUS48[48V DC Bus<br/>32A Capacity]
+    BUS48 --> AMP[Amplifiers<br/>400W]
+    BUS48 --> TRANS[Transducers<br/>180W]
+    BUS48 --> CONV12[12V Converter<br/>35A]
+    BUS48 --> CONV5[5V Converter<br/>15A]
+    BUS48 --> CONV24[24V Converter<br/>2A]
     
-    CONV48 --> AMP[Amplifiers<br/>400W]
-    CONV48 --> TRANS[Transducers<br/>180W]
     CONV12 --> MHEAT[Micro Heaters<br/>1000W]
     CONV12 --> PC[Industrial PC<br/>65W]
+    CONV12 --> PID[PID Controllers<br/>5W]
     CONV5 --> FPGA[FPGA Board<br/>2W]
+    CONV5 --> STM32[STM32 Board<br/>2W]
+    CONV24 --> STEPPER[Stepper Motors<br/>30W]
     
     style HEAT fill:#ff6b6b
     style IND fill:#ff6b6b
@@ -89,16 +102,16 @@ graph TD
 
 ## Total System Power
 
-- **AC Components**: 9000W
-- **DC Components**: 4372W
-- **PSU Input Power**: 4804W
-- **Total Wall Power**: 13804W
+- **AC Components**: 9005W
+- **DC Components**: 3439W
+- **PSU Input Power**: 3779W
+- **Total Wall Power**: 12784W
 
 ## Electrical Service Requirements
 
 ### For AC Loads:
 - 120V Circuits: 6000W (50.0A)
-- 240V Circuits: 3000W (12.5A)
+- 240V Circuits: 0W (0.0A)
 
 ### Recommended Configuration:
 - One 240V 60A circuit for all loads
@@ -146,11 +159,16 @@ graph TD
 3. DC converters only for actual DC loads
 
 ### Estimated Component Costs
-- 15kW PSU: $3,800
+- 1.5kW PSU (RSP-1500-48): $400
+- DC-DC converters: $90 (48V→12V: $40, 48V→5V: $30, 48V→24V: $20)
 - SSR modules (8ch): ~$200
-- DC-DC converters: ~$300
 - Protection devices: ~$150
-- **Total Power Control**: ~$4,450
+- **Total Power Control**: ~$840
+
+### Cost Savings
+- Old spec: 15kW PSU @ $3,800
+- New spec: 1.5kW PSU @ $400 + DC converters @ $90
+- **Savings: $3,310**
 
 ## Heated Bed Configuration
 

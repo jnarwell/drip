@@ -2148,7 +2148,7 @@ class ComponentRegistry:
                 'voltage_groups': {48: 0, 24: 0, 12: 0, 5: 0}
             },
             'PSU': {
-                'capacity': 15000,  # 15kW PSU
+                'capacity': 1500,  # 1.5kW PSU (RSP-1500-48)
                 'dc_load': 0,
                 'efficiency': 0.91,
                 'margin': 0,
