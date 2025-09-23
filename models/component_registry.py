@@ -1022,8 +1022,8 @@ class ComponentRegistry:
                     dimensions={'L': 48, 'W': 48, 'H': 100},  # mm
                     operating_temp=(0, 50),
                     accuracy=0.5,  # % FS
-                    connections=["Thermocouple input", "SSR output"],
-                    control_signal="12V DC SSR drive"
+                    connections=["Type K/J/PT100 input", "SSR/Relay output"],
+                    control_signal="12V DC SSR drive, 30mA max"
                 )
             ),
             Component(
