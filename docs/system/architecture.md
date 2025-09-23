@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Acoustic Manufacturing System uses ultrasonic levitation to manipulate molten metal droplets in a contactless manner.
+The Acoustic Manufacturing System uses ultrasonic steering to guide falling molten metal droplets for precise deposition control.
 
 ## System Block Diagram
 
@@ -46,7 +46,7 @@ graph TB
 ## Subsystem Descriptions
 
 ### Acoustic Subsystem
-- **Function**: Generate 40kHz standing waves for droplet manipulation
+- **Function**: Generate 40kHz acoustic fields for lateral droplet steering
 - **Components**: 18-72 ultrasonic transducers in phased array
 - **Control**: FPGA-based phase control with <100μs update rate
 - **Power**: 180W (Level 1) to 720W (Level 4)

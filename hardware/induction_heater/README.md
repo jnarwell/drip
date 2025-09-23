@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the complete implementation for the 3kW induction heating system used in the DRIP acoustic levitation manufacturing system. The design uses a hybrid approach: commercial OEM power module + custom safety integration.
+This directory contains the complete implementation for the 3kW induction heating system used in the DRIP acoustic steering manufacturing system. The design uses a hybrid approach: commercial OEM power module + custom safety integration.
 
 **⚠️ SAFETY CRITICAL SYSTEM - 3kW @ 240V AC**
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the complete Bill of Materials (BOM) and component registry for an acoustic levitation-based manufacturing system. The system uses ultrasonic transducers to create standing waves for contactless material processing.
+This repository contains the complete Bill of Materials (BOM) and component registry for an acoustic steering-based manufacturing system. The system uses ultrasonic transducers to create acoustic fields that steer falling molten metal droplets for precise deposition control.
 
 ## Project Structure
 

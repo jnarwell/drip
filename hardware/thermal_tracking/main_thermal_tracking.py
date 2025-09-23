@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Main thermal tracking program for DRIP acoustic levitation system
+Main thermal tracking program for DRIP acoustic steering system
 Provides real-time droplet position and temperature tracking at 60Hz
 """
 

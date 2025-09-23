@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the **PRIMARY SENSOR** for the DRIP acoustic levitation system. The FLIR A35 thermal camera provides real-time position (X,Y) and temperature data for molten metal droplets at 60Hz, enabling closed-loop acoustic field steering. Without this sensor, controlled levitation is not possible.
+This is the **PRIMARY SENSOR** for the DRIP acoustic steering system. The FLIR A35 thermal camera provides real-time position (X,Y) and temperature data for falling molten metal droplets at 60Hz, enabling closed-loop acoustic field steering. Without this sensor, controlled droplet steering is not possible.
 
 **Key Features:**
 - 60Hz real-time droplet tracking
@@ -221,8 +221,8 @@ Options:
 
 ## Critical Notes
 
-1. **This enables acoustic levitation** - Without position feedback, no control
-2. **60Hz is mandatory** - Lower rates cause unstable levitation
+1. **This enables acoustic steering** - Without position feedback, no trajectory control
+2. **60Hz is mandatory** - Lower rates cause poor steering accuracy
 3. **Calibration is critical** - Wrong scaling breaks position control
 4. **Network must be dedicated** - Shared networks cause frame drops
 5. **This is a real-time system** - Delays cascade to control instability

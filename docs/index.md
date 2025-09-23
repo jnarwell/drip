@@ -4,13 +4,13 @@
     **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 <div class="hero-section">
-<h2>Advanced Acoustic Levitation Manufacturing</h2>
-<p>Planned contactless material processing using ultrasonic transducer arrays</p>
+<h2>Advanced Acoustic Steering Manufacturing</h2>
+<p>Planned precision droplet deposition using ultrasonic acoustic fields</p>
 </div>
 
 ## 🎯 System Overview
 
-The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transducers** to create standing waves for contactless manipulation of molten metal droplets. This planned approach would enable:
+The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transducers** to create acoustic fields that steer falling molten metal droplets during their descent from the crucible to the build plate. This innovative approach enables precise deposition control without fighting gravity:
 
 <div class="grid cards" markdown>
 

@@ -26,7 +26,7 @@ The system follows a phased development approach with four distinct levels:
 === "Level 1: Prototype"
 
     ### Objectives
-    - Validate acoustic levitation concept
+    - Validate acoustic steering concept
     - Demonstrate aluminum processing
     - Achieve ±0.3mm positioning accuracy
     
@@ -43,7 +43,7 @@ The system follows a phased development approach with four distinct levels:
     - **Thermal Monitoring**: Thermocouples only
     
     ### Target Success Criteria (Future Testing)
-    - 📋 Stable droplet levitation for 30 minutes
+    - 📋 Consistent droplet steering for 30 minutes
     - 📋 Controlled deposition ±0.5mm
     - 📋 >95% density achievement
     - 📋 10 parts to be built for validation
@@ -138,7 +138,7 @@ graph LR
 
 | Technology | L1 | L2 | L3 | L4 |
 |------------|----|----|----|----|
-| Acoustic Levitation | TRL 6 | TRL 7 | TRL 8 | TRL 9 |
+| Acoustic Steering | TRL 6 | TRL 7 | TRL 8 | TRL 9 |
 | Al Processing | TRL 5 | TRL 7 | TRL 8 | TRL 9 |
 | Steel Processing | - | TRL 4 | TRL 6 | TRL 8 |
 | Multi-Material | - | - | TRL 3 | TRL 6 |

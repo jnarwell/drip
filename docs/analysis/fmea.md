@@ -28,7 +28,7 @@ This FMEA identifies potential failure modes, their effects, and mitigation stra
 
 | Failure Mode | Cause | Local Effect | System Effect | Detection | Prevention |
 |--------------|-------|--------------|---------------|-----------|------------|
-| Frequency drift | Component aging | Reduced efficiency | Poor levitation | Spectrum analyzer | Regular calibration |
+| Frequency drift | Component aging | Reduced efficiency | Poor steering control | Spectrum analyzer | Regular calibration |
 | Phase mismatch | Cable length variance | Field asymmetry | Position error | Phase monitor | Matched cables |
 | Transducer failure | Overvoltage | Dead zone | Partial field loss | Impedance check | Current limiting |
 | Coupling loss | Contamination | Power reduction | Weak field | Power monitor | Sealed housing |

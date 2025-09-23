@@ -1,7 +1,7 @@
 ---
 test_id: TE-056
-test_name: Acoustic Levitation Force Measurement
-test_purpose: Calibrate force vs position relationship
+test_name: Acoustic Lateral Steering Force Measurement
+test_purpose: Calibrate lateral steering force for trajectory control
 verification_type: FUNCTIONAL
 components_verified:
 - name: Load Cells 50kg
@@ -27,7 +27,7 @@ test_engineer: null
 result: null
 ---
 
-# Test Report: TE-056 - Acoustic Levitation Force Measurement
+# Test Report: TE-056 - Acoustic Lateral Steering Force Measurement
 
 !!! info "Test Status"
     **Current Phase**: Planning Only
@@ -38,8 +38,8 @@ result: null
 
 ### 1.1 Test Overview
 - **Test ID**: TE-056
-- **Test Name**: Acoustic Levitation Force Measurement
-- **Purpose**: Calibrate force vs position relationship
+- **Test Name**: Acoustic Lateral Steering Force Measurement
+- **Purpose**: Calibrate lateral steering force for trajectory control
 - **Type**: FUNCTIONAL
 - **Duration**: 6.0 hours
 - **Date Executed**: _[To be filled]_

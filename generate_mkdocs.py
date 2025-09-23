@@ -839,7 +839,7 @@ pie title Cost Distribution by Category
 
 ## Overview
 
-The Acoustic Manufacturing System uses ultrasonic levitation to manipulate molten metal droplets in a contactless manner.
+The Acoustic Manufacturing System uses ultrasonic steering to guide falling molten metal droplets for precise deposition control.
 
 ## System Block Diagram
 
@@ -1111,7 +1111,7 @@ The system follows a phased development approach with four distinct levels:
 === "Level 1: Prototype"
 
     ### Objectives
-    - Validate acoustic levitation concept
+    - Validate acoustic steering concept
     - Demonstrate aluminum processing
     - Achieve ±0.3mm positioning accuracy
     
@@ -1128,7 +1128,7 @@ The system follows a phased development approach with four distinct levels:
     - **Thermal Monitoring**: Thermocouples only
     
     ### Target Success Criteria (Future Testing)
-    - 📋 Stable droplet levitation for 30 minutes
+    - 📋 Consistent droplet steering for 30 minutes
     - 📋 Controlled deposition ±0.5mm
     - 📋 >95% density achievement
     - 📋 10 parts to be built for validation
@@ -1950,7 +1950,7 @@ This FMEA identifies potential failure modes, their effects, and mitigation stra
 
 | Failure Mode | Cause | Local Effect | System Effect | Detection | Prevention |
 |--------------|-------|--------------|---------------|-----------|------------|
-| Frequency drift | Component aging | Reduced efficiency | Poor levitation | Spectrum analyzer | Regular calibration |
+| Frequency drift | Component aging | Reduced efficiency | Poor steering control | Spectrum analyzer | Regular calibration |
 | Phase mismatch | Cable length variance | Field asymmetry | Position error | Phase monitor | Matched cables |
 | Transducer failure | Overvoltage | Dead zone | Partial field loss | Impedance check | Current limiting |
 | Coupling loss | Contamination | Power reduction | Weak field | Power monitor | Sealed housing |
@@ -3192,7 +3192,7 @@ def pressure_to_db(pressure: float, reference: float = 20e-6) -> float:
 ### Acoustic Levitation
 1. Andrade, M. A., Pérez, N., & Adamowski, J. C. (2018). "Review of Progress in Acoustic Levitation." *Brazilian Journal of Physics*, 48(2), 190-213.
 
-2. Marzo, A., et al. (2015). "Holographic acoustic elements for manipulation of levitated objects." *Nature Communications*, 6, 8661.
+2. Marzo, A., et al. (2015). "Holographic acoustic elements for manipulation of acoustically steered objects." *Nature Communications*, 6, 8661.
 
 3. Foresti, D., et al. (2013). "Acoustophoretic contactless transport and handling of matter in air." *PNAS*, 110(31), 12549-12554.
 

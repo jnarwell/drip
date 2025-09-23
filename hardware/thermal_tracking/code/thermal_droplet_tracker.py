@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Real-time thermal tracking for acoustic levitation control
+Real-time thermal tracking for acoustic steering control
 Tracks multiple droplets with position and temperature using FLIR A35
 Primary sensor for the DRIP acoustic manufacturing system
 """
@@ -17,7 +17,7 @@ from scipy.optimize import linear_sum_assignment
 
 class ThermalDropletTracker:
     """
-    Real-time thermal tracking for acoustic levitation control
+    Real-time thermal tracking for acoustic steering control
     Tracks multiple droplets with position and temperature
     """
     

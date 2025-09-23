@@ -20,9 +20,9 @@
 
 #### Mount Camera
 ```
-1. Position camera above levitation chamber
+1. Position camera above acoustic steering chamber
    - Clear view of entire work area
-   - Perpendicular to levitation plane
+   - Perpendicular to droplet fall path
    - Distance: 300-500mm typical
    
 2. Secure mounting

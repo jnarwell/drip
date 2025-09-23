@@ -28,7 +28,7 @@
 ### Acoustic Levitation
 1. Andrade, M. A., Pérez, N., & Adamowski, J. C. (2018). "Review of Progress in Acoustic Levitation." *Brazilian Journal of Physics*, 48(2), 190-213.
 
-2. Marzo, A., et al. (2015). "Holographic acoustic elements for manipulation of levitated objects." *Nature Communications*, 6, 8661.
+2. Marzo, A., et al. (2015). "Holographic acoustic elements for manipulation of acoustically steered objects." *Nature Communications*, 6, 8661.
 
 3. Foresti, D., et al. (2013). "Acoustophoretic contactless transport and handling of matter in air." *PNAS*, 110(31), 12549-12554.
 

@@ -1447,7 +1447,7 @@ class ComponentRegistry:
                 quantity=1,
                 unit_cost=3995,
                 total_cost=3995,
-                notes="Primary sensor for acoustic levitation - enables real-time droplet position tracking at 60Hz",
+                notes="Primary sensor for acoustic steering - enables real-time droplet position tracking at 60Hz",
                 supplier="FLIR Systems",
                 requires_expansion=False,
                 expansion_notes="",
