@@ -55,7 +55,7 @@
 - [Cyclone IV Device Handbook](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-iv/cyclone4-handbook.pdf)
 
 ### Sensors
-- [Optris PI 1M Technical Data](https://www.optris.com/thermal-imager-optris-pi-1m)
+- [FLIR A35 Technical Data](https://www.flir.com/products/a35/)
 - [Type K Thermocouple Reference](https://www.omega.com/en-us/resources/thermocouple-types)
 
 ### Transducers

@@ -55,7 +55,7 @@ graph TB
 - **Function**: Melt material and control solidification
 - **Range**: 700-1580°C operating temperature
 - **Heating**: 8kW resistive (Al) + 3kW induction (Steel)
-- **Monitoring**: Optris PI 1M thermal camera at 32Hz
+- **Monitoring**: FLIR A35 thermal camera at 60Hz
 
 ### Control Subsystem
 - **Architecture**: Hierarchical (PC → STM32 → FPGA)

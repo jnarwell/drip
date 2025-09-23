@@ -9,7 +9,7 @@
 <span class="metric-icon">💰</span>
 <div class="metric-content">
 <h3>Total Cost</h3>
-<p class="metric-value">$18,258</p>
+<p class="metric-value">$18,489</p>
 <p class="metric-label">Level 1 System</p>
 </div>
 </div>
@@ -18,7 +18,7 @@
 <span class="metric-icon">🔧</span>
 <div class="metric-content">
 <h3>Components</h3>
-<p class="metric-value">70</p>
+<p class="metric-value">71</p>
 <p class="metric-label">Total Parts</p>
 </div>
 </div>
@@ -50,8 +50,8 @@ pie title Cost Distribution by Subsystem
     "Frame Subsystem" : 4240
     "Heated Bed Subsystem" : 1356
     "Acoustic Cylinder Subsystem" : 2540
-    "Crucible Subsystem" : 3735
-    "Power/Control Subsystem" : 6387
+    "Crucible Subsystem" : 3956
+    "Power/Control Subsystem" : 6397
 ```
 
 ## 🔋 Power Distribution
@@ -102,4 +102,4 @@ gantt
 | **TOTAL** | **100** | **0** | **🔴 0%** |
 
 ---
-*Dashboard updated: 2025-09-23 09:44:22*
+*Dashboard updated: 2025-09-23 10:28:13*

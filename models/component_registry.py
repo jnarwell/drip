@@ -398,22 +398,26 @@ class ComponentRegistry:
                 name="Thermocouples",
                 category=ComponentCategory.HEATED_BED,
                 type=ComponentType.COTS,
-                specification="Type K, M6 thread, 800°C",
+                specification="Type K, M6 thread, 3mm probe, 800°C rated",
                 quantity=2,
-                unit_cost=12,
-                total_cost=24,
-                notes="Bed temperature sensing",
+                unit_cost=12.00,
+                total_cost=24.00,
+                notes="Bed temperature sensing - 2-zone control",
+                part_number="Generic-K-M6-800C",
+                supplier="Amazon (Meter Star or equivalent)",
+                lead_time_weeks=1,
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=0,
-                    weight=0.02,  # kg
-                    dimensions={'D': 6, 'L': 100, 'thread': 'M6x1'},  # mm
-                    material_spec="Type K, Inconel sheath",
-                    operating_temp=(-200, 1250),
-                    accuracy=2.2,  # ±°C
-                    connections=["2-wire", "miniature connector"],
-                    control_signal="1-100mV analog"
+                    weight=0.02,  # kg each
+                    dimensions={'D': 3, 'L': 100},  # mm
+                    material_spec="Type K (Chromel/Alumel), SS316 sheath",
+                    operating_temp=(-50, 800),
+                    max_temp=850,
+                    accuracy=1.5,  # ±°C Class 1
+                    connections=["M6x1.0 thread", "2m fiberglass cable", "Mini K-plug"],
+                    control_signal="Type K millivolt output (0-33mV @ 800°C)"
                 )
             ),
         ])
@@ -1026,23 +1030,51 @@ class ComponentRegistry:
                 name="Thermocouples",
                 category=ComponentCategory.CRUCIBLE,
                 type=ComponentType.COTS,
-                specification="Type K, ceramic sheath",
+                specification="Type K MI cable, Inconel 600 sheath, 1/4\" x 12\"",
                 quantity=2,
-                unit_cost=12,
-                total_cost=24,
-                notes="Crucible monitoring",
+                unit_cost=75.00,
+                total_cost=150.00,
+                notes="Induction crucible monitoring - Primary + backup",
+                part_number="KMQSS-062U-12",
+                supplier="Omega Engineering",
+                lead_time_weeks=2,
+                requires_expansion=False,
+                expansion_notes="Limited to 1350°C - consider Type R/S for 1580°C requirement",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0,
+                    weight=0.05,  # kg each
+                    dimensions={'D': 6.35, 'L': 300},  # mm (1/4" x 12")
+                    material_spec="Type K, Mineral Insulated, Inconel 600 sheath",
+                    operating_temp=(-200, 1350),
+                    max_temp=1400,  # Short-term
+                    accuracy=2.2,  # ±°C or 0.75% above 375°C
+                    connections=["Standard K-type plug", "Ungrounded junction"],
+                    control_signal="Type K millivolt output (0-54.9mV @ 1350°C)",
+                    mounting_type="1/4\" compression fitting"
+                )
+            ),
+            Component(
+                name="TC Mounting Kit",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="Industrial TC mounting: fittings, thermowells, ceramic paste",
+                quantity=1,
+                unit_cost=95.00,
+                total_cost=95.00,
+                notes="Professional mounting hardware for high-temp thermocouples",
+                part_number="KIT-TC-MOUNT",
+                supplier="Swagelok/McMaster-Carr",
+                lead_time_weeks=1,
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=0,
-                    weight=0.03,  # kg
-                    dimensions={'D': 8, 'L': 150},  # mm
-                    material_spec="Type K, alumina sheath",
-                    operating_temp=(-50, 1350),
-                    max_temp=1400,
-                    accuracy=2.2,  # ±°C
-                    connections=["2-wire", "standard connector"],
-                    control_signal="1-50mV analog"
+                    weight=0.3,  # kg total
+                    material_spec="316SS fittings, alumina thermowells, ceramic paste",
+                    operating_temp=(0, 1600),
+                    max_temp=1700,
+                    connections=["1/4\" NPT process connection", "1/4\" tube compression"],
+                    mounting_type="Weld-in or threaded"
                 )
             ),
             Component(
@@ -1569,23 +1601,26 @@ class ComponentRegistry:
                 name="Type K Thermocouple (spare)",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="Type K, 6mm probe, 2m cable",
-                quantity=1,
-                unit_cost=10,
-                total_cost=10,
-                notes="Second zone temperature sensing",
-                supplier="Generic/Amazon",
+                specification="Type K, 6mm probe, 2m cable, general purpose",
+                quantity=2,  # Increase to 2 spares
+                unit_cost=10.00,
+                total_cost=20.00,  # Updated for 2 units
+                notes="Spare thermocouples for general temperature monitoring",
+                part_number="Generic-K-6mm",
+                supplier="Amazon",
+                lead_time_weeks=1,
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=0,  # Passive sensor
-                    operating_temp=(-50, 1200),
-                    accuracy=2.2,  # °C
-                    weight=0.05,  # kg
-                    dimensions={'D': 6, 'L': 100},  # mm probe
-                    material_spec="SS316 sheath, mineral insulated",
-                    connections=["K-type connector"],
-                    control_signal="Thermocouple voltage"
+                    power_consumption=0,
+                    weight=0.02,  # kg each
+                    dimensions={'D': 6, 'L': 100},  # mm
+                    material_spec="Type K, SS304 sheath",
+                    operating_temp=(-50, 500),
+                    max_temp=600,
+                    accuracy=2.5,  # ±°C Class 2
+                    connections=["Mini K-type plug", "2m PVC cable"],
+                    control_signal="Type K millivolt output"
                 )
             ),
             Component(

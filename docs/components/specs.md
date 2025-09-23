@@ -338,12 +338,13 @@ Search components using the box below or browse by category.
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 2 |
     | **Unit Cost** | $12.00 |
-    | **Operating Temp** | -200-1250°C |
+    | **Operating Temp** | -50-800°C |
+    | **Max Temperature** | 850°C |
     | **Weight** | 0.02kg |
 
 === "Notes"
 
-    Bed temperature sensing
+    Bed temperature sensing - 2-zone control
 
 === "Expansion"
 
@@ -1049,14 +1050,40 @@ Search components using the box below or browse by category.
     | **Category** | Crucible Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 2 |
-    | **Unit Cost** | $12.00 |
-    | **Operating Temp** | -50-1350°C |
+    | **Unit Cost** | $75.00 |
+    | **Operating Temp** | -200-1350°C |
     | **Max Temperature** | 1400°C |
-    | **Weight** | 0.03kg |
+    | **Weight** | 0.05kg |
 
 === "Notes"
 
-    Crucible monitoring
+    Induction crucible monitoring - Primary + backup
+
+=== "Expansion"
+
+    Limited to 1350°C - consider Type R/S for 1580°C requirement
+
+</div>
+
+### TC Mounting Kit
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $95.00 |
+    | **Operating Temp** | 0-1600°C |
+    | **Max Temperature** | 1700°C |
+    | **Weight** | 0.3kg |
+
+=== "Notes"
+
+    Professional mounting hardware for high-temp thermocouples
 
 === "Expansion"
 
@@ -1637,14 +1664,15 @@ Search components using the box below or browse by category.
     |-----------|-------|
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
-    | **Quantity** | 1 |
+    | **Quantity** | 2 |
     | **Unit Cost** | $10.00 |
-    | **Operating Temp** | -50-1200°C |
-    | **Weight** | 0.05kg |
+    | **Operating Temp** | -50-500°C |
+    | **Max Temperature** | 600°C |
+    | **Weight** | 0.02kg |
 
 === "Notes"
 
-    Second zone temperature sensing
+    Spare thermocouples for general temperature monitoring
 
 === "Expansion"
 

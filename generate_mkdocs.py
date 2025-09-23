@@ -892,7 +892,7 @@ graph TB
 - **Function**: Melt material and control solidification
 - **Range**: 700-1580°C operating temperature
 - **Heating**: 8kW resistive (Al) + 3kW induction (Steel)
-- **Monitoring**: Optris PI 1M thermal camera at 32Hz
+- **Monitoring**: FLIR A35 thermal camera at 60Hz
 
 ### Control Subsystem
 - **Architecture**: Hierarchical (PC → STM32 → FPGA)
@@ -1143,13 +1143,13 @@ The system follows a phased development approach with four distinct levels:
     ### Key Components
     - 36× transducers (redundancy)
     - 3kW induction heater
-    - Optris PI 1M camera
+    - FLIR A35 thermal camera
     - Water cooling system
     
     ### Technical Specifications
     - **Acoustic Power**: 360W (36 × 10W)
     - **Heating Power**: 8kW + 3kW induction
-    - **Thermal Imaging**: 32Hz, 1mK resolution
+    - **Thermal Imaging**: 60Hz, 320×256 pixels
     - **Cooling**: 5 L/min water flow
     
     ### Target Success Criteria (Future Testing)
@@ -3219,7 +3219,7 @@ def pressure_to_db(pressure: float, reference: float = 20e-6) -> float:
 - [Cyclone IV Device Handbook](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-iv/cyclone4-handbook.pdf)
 
 ### Sensors
-- [Optris PI 1M Technical Data](https://www.optris.com/thermal-imager-optris-pi-1m)
+- [FLIR A35 Technical Data](https://www.flir.com/products/a35/)
 - [Type K Thermocouple Reference](https://www.omega.com/en-us/resources/thermocouple-types)
 
 ### Transducers

@@ -8,8 +8,10 @@
 | HCGF/DUANXU via Alibaba | 1 | $420.00 | Various |
 | https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48 | 1 | $400.00 | Various |
 | Pilz/Banner/Similar | 1 | $350.00 | Various |
-| Generic/Amazon | 4 | $100.00 | Various |
+| Omega Engineering | 1 | $150.00 | Various |
 | DigiKey #377-1894-ND | 1 | $95.00 | Various |
+| Swagelok/McMaster-Carr | 1 | $95.00 | Various |
+| Generic/Amazon | 3 | $90.00 | Various |
 | Grainger #3210847 | 1 | $85.00 | Various |
 | ElectroPeak | 1 | $62.00 | Various |
 | Mouser #448-FN2090-16-06 | 1 | $45.00 | Various |
@@ -18,6 +20,8 @@
 | https://inkbird.com/products/itc-100vh-k-sensor-ssr | 1 | $35.00 | Various |
 | https://oemheaters.com/product/5429/ | 1 | $32.00 | Various |
 | Amazon #B07L54XBDL | 1 | $25.00 | Various |
+| Amazon (Meter Star or equivalent) | 1 | $24.00 | Various |
+| Amazon | 1 | $20.00 | Various |
 | Amazon #B07J2Q4YWW | 1 | $18.00 | Various |
 | https://robu.in/product/2-channel-isolated-5v-10a-relay-module/ | 1 | $12.00 | Various |
 | Amazon #B00VKAT7EE | 1 | $8.00 | Various |
@@ -25,6 +29,14 @@
 | Harbor Freight | 1 | $4.00 | Various |
 
 ## Supplier Details
+
+### Amazon
+
+**Total Components**: 1  
+**Total Value**: $20.00
+
+**Components Supplied**:
+- Type K Thermocouple (spare)
 
 ### Amazon #B00VKAT7EE
 
@@ -57,6 +69,14 @@
 
 **Components Supplied**:
 - Induction Cooling Pump
+
+### Amazon (Meter Star or equivalent)
+
+**Total Components**: 1  
+**Total Value**: $24.00
+
+**Components Supplied**:
+- Thermocouples
 
 ### Amazon/eBay generic
 
@@ -92,11 +112,10 @@
 
 ### Generic/Amazon
 
-**Total Components**: 4  
-**Total Value**: $100.00
+**Total Components**: 3  
+**Total Value**: $90.00
 
 **Components Supplied**:
-- Type K Thermocouple (spare)
 - 48V to 12V DC Converter
 - 48V to 5V DC Converter
 - 48V to 24V DC Converter
@@ -133,6 +152,14 @@
 **Components Supplied**:
 - Induction EMI Filter
 
+### Omega Engineering
+
+**Total Components**: 1  
+**Total Value**: $150.00
+
+**Components Supplied**:
+- Thermocouples
+
 ### Pilz/Banner/Similar
 
 **Total Components**: 1  
@@ -140,6 +167,14 @@
 
 **Components Supplied**:
 - Emergency Stop System
+
+### Swagelok/McMaster-Carr
+
+**Total Components**: 1  
+**Total Value**: $95.00
+
+**Components Supplied**:
+- TC Mounting Kit
 
 ### eBay/AliExpress
 

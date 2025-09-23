@@ -11,7 +11,7 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Target Cost** | ~$18,258 | ~$28,300 | ~$49,844 | ~$104,071 |
+| **Target Cost** | ~$18,489 | ~$28,658 | ~$50,475 | ~$105,387 |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **PSU Rating** | 1.5kW (DC only) | 3kW | 5kW | 8kW |
 | **Total Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
@@ -58,13 +58,13 @@ The system follows a phased development approach with four distinct levels:
     ### Key Components
     - 36× transducers (redundancy)
     - 3kW induction heater
-    - Optris PI 1M camera
+    - FLIR A35 thermal camera
     - Water cooling system
     
     ### Technical Specifications
     - **Acoustic Power**: 360W (36 × 10W)
     - **Heating Power**: 8kW + 3kW induction
-    - **Thermal Imaging**: 32Hz, 1mK resolution
+    - **Thermal Imaging**: 60Hz, 320×256 pixels
     - **Cooling**: 5 L/min water flow
     
     ### Target Success Criteria (Future Testing)
@@ -130,7 +130,7 @@ graph LR
     subgraph "Cost Progression"
         L1[Level 1<br/>$18k] --> L2[Level 2<br/>+$10k]
         L2 --> L3[Level 3<br/>+$22k]
-        L3 --> L4[Level 4<br/>+$54k]
+        L3 --> L4[Level 4<br/>+$55k]
     end
 ```
 

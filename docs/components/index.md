@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **70 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **71 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 70 |
-| **COTS Components** | 34 (49%) |
+| **Total Components** | 71 |
+| **COTS Components** | 35 (49%) |
 | **Custom Components** | 36 (51%) |
-| **Total Cost** | $18,258.00 |
+| **Total Cost** | $18,489.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -74,7 +74,8 @@ The Acoustic Manufacturing System consists of **70 components** organized into 5
     | Pellet Hopper | Commercial Off-The-Shelf | 1 | $20.00 | 5W |
     | Feedrate Controller | Commercial Off-The-Shelf | 1 | $25.00 | 10W |
     | Temperature Controller | Commercial Off-The-Shelf | 1 | $15.00 | 3W |
-    | Thermocouples | Commercial Off-The-Shelf | 2 | $24.00 | - |
+    | Thermocouples | Commercial Off-The-Shelf | 2 | $150.00 | - |
+    | TC Mounting Kit | Commercial Off-The-Shelf | 1 | $95.00 | - |
     | Micro Heaters | Commercial Off-The-Shelf | 25 | $200.00 | 40W |
     | Crucible Assembly | Custom Fabricated | 1 | $400.00 | - |
     | Material Feed System | Custom Fabricated | 1 | $350.00 | - |
@@ -100,7 +101,7 @@ The Acoustic Manufacturing System consists of **70 components** organized into 5
     | Emergency Stop System | Commercial Off-The-Shelf | 1 | $350.00 | 5W |
     | Inkbird ITC-100VH PID Kit | Commercial Off-The-Shelf | 1 | $35.00 | 5W |
     | SSR-25DA Solid State Relay | Commercial Off-The-Shelf | 1 | $8.00 | 0.012W |
-    | Type K Thermocouple (spare) | Commercial Off-The-Shelf | 1 | $10.00 | - |
+    | Type K Thermocouple (spare) | Commercial Off-The-Shelf | 2 | $20.00 | - |
     | 2-Channel Relay Module | Commercial Off-The-Shelf | 1 | $12.00 | 0.16W |
     | 48V to 12V DC Converter | Commercial Off-The-Shelf | 1 | $40.00 | 460W |
     | 48V to 5V DC Converter | Commercial Off-The-Shelf | 1 | $30.00 | 82W |
