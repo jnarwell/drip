@@ -1,131 +1,167 @@
-# Power Budget Analysis
+# Power Architecture Analysis
 
-## System Power Overview
+!!! warning "Architecture Update Required"
+    System uses dual power domains - AC loads bypass the PSU entirely.
+    
+## Dual Domain Power Distribution
 
-The Level 1 system uses a 10kW power supply with sophisticated power distribution and management.
+### AC Domain (Mains Direct)
+**Total AC Load: 11000W**
 
-## Power Budget Summary
+| Component | Voltage | Power | Control Method |
+|-----------|---------|-------|----------------|
+| Heating Rods | 240V | 4000W | SSR |
+| Heated Bed Assembly | 240V | 4000W | SSR |
+| Induction Heater | 240V | 3000W | SSR |
 
-| Category | Consumption | Supply | Net Power |
-|----------|-------------|--------|-----------|
-| Heated Bed Subsystem | 8000W | 0W | 8000W |
-| Acoustic Cylinder Subsystem | 185W | 0W | 185W |
-| Crucible Subsystem | 5068W | 0W | 5068W |
-| Power/Control Subsystem | 1342W | 10000W | -8658W |
-| **TOTAL** | **14596W** | **10000W** | **4596W** |
+
+### DC Domain (PSU Powered)
+**Total DC Load: 4366W**
+
+| Component | Voltage | Power | Source |
+|-----------|---------|-------|--------|
+| 40kHz Transducers | 48V | 180W | PSU |
+| Transducer Array Layer | 48V | 5W | PSU |
+| Pellet Hopper | 48V | 5W | PSU |
+| Feedrate Controller | 48V | 10W | PSU |
+| Temperature Controller | 48V | 3W | PSU |
+| Micro Heaters | 12V | 1000W | PSU |
+| Material Delivery System | 48V | 1000W | PSU |
+| Thermal Pulse Formation | 48V | 50W | PSU |
+| 15kW PSU | 48V | 1650W | PSU |
+| FPGA Board | 5V | 2W | PSU |
+| 6-Channel Amp Modules | 48V | 400W | PSU |
+| 8-Channel Relays | 48V | 10W | PSU |
+| STM32 Dev Board | 48V | 0W | PSU |
+| Industrial PC | 12V | 0W | PSU |
+| Thermal Camera - Optris Xi 400 | 48V | 16W | PSU |
+| Emergency Stop System | 48V | 5W | PSU |
+| Control Bus PCB | 48V | 10W | PSU |
+| Acoustic Bus PCB | 48V | 5W | PSU |
+| Thermal Bus PCB | 48V | 15W | PSU |
+
+
+## PSU Utilization Analysis
+
+- **PSU Model**: Mean Well RST-15K-115
+- **PSU Capacity**: 15000W
+- **DC Load**: 4366W  
+- **Utilization**: 29.1%
+- **Available Headroom**: 10634W
+
+```mermaid
+pie title PSU Capacity Utilization
+    "Used (4366W)" : 4366.5
+    "Available (10634W)" : 10633.5
+```
 
 ## Power Distribution Architecture
 
 ```mermaid
 graph TD
-    MAINS[220V AC Mains<br/>63A Service] --> PSU[10kW PSU<br/>91% Efficiency]
-    PSU --> BUS48[48V Bus<br/>208A Capacity]
+    MAINS[240V AC Mains<br/>60A Service] --> SSR1[SSR Bank 1<br/>Heating]
+    MAINS --> SSR2[SSR Bank 2<br/>Induction]
+    MAINS --> PSU[15kW PSU<br/>115V DC Out]
     
-    BUS48 --> CONV24[24V Converter<br/>30A]
-    BUS48 --> CONV12[12V Converter<br/>20A]
-    BUS48 --> CONV5[5V Converter<br/>10A]
+    SSR1 --> HEAT[Heating Rods<br/>8kW @ 240V]
+    SSR2 --> IND[Induction Heater<br/>3kW @ 240V]
     
-    BUS48 --> AMP[Amplifiers<br/>400W total]
-    CONV24 --> CTRL[Control Systems<br/>200W]
-    CONV12 --> FANS[Cooling Fans<br/>150W]
-    CONV5 --> LOGIC[Logic Circuits<br/>50W]
+    PSU --> BUS115[115V DC Bus<br/>130A Capacity]
+    BUS115 --> CONV48[48V Converter<br/>30A]
+    BUS115 --> CONV12[12V Converter<br/>20A]
+    BUS115 --> CONV5[5V Converter<br/>10A]
     
-    MAINS --> HEAT[Heaters<br/>8kW Direct]
-    MAINS --> IND[Induction<br/>3kW Direct]
+    CONV48 --> AMP[Amplifiers<br/>400W]
+    CONV48 --> TRANS[Transducers<br/>180W]
+    CONV12 --> MHEAT[Micro Heaters<br/>1000W]
+    CONV12 --> PC[Industrial PC<br/>65W]
+    CONV5 --> FPGA[FPGA Board<br/>2W]
+    
+    style HEAT fill:#ff6b6b
+    style IND fill:#ff6b6b
+    style MHEAT fill:#4ecdc4
+    style AMP fill:#4ecdc4
+    style TRANS fill:#4ecdc4
 ```
 
-## Detailed Power Consumption
+## Total System Power
 
-### Major Consumers
-1. **Heating Systems**: 11,000W total
-   - Resistive heaters: 8,000W (4×2000W)
-   - Induction heater: 3,000W
+- **AC Components**: 11000W
+- **DC Components**: 4366W
+- **PSU Input Power**: 4798W
+- **Total Wall Power**: 15798W
+
+## Electrical Service Requirements
+
+### For AC Loads:
+- 120V Circuits: 0W (0.0A)
+- 240V Circuits: 11000W (45.8A)
+
+### Recommended Configuration:
+- One 240V 60A circuit for all loads
+- Subpanel with:
+  - 240V 30A breaker for heating (SSR controlled)
+  - 240V 20A breaker for induction (SSR controlled)
+  - 240V 20A breaker for PSU
+  
+## Component Control Architecture
+
+### AC Components (SSR Controlled)
+- Heating Rods: 4 × 1kW @ 240V → 4ch SSR module
+- Heated Bed: Controlled via heating rods
+- Induction Heater: 1 × 3kW @ 240V → High-power SSR
+
+### DC Components (Direct Control)
+- Transducers: PWM from amplifiers
+- Amplifiers: Analog control from FPGA
+- Micro Heaters: PWM from control board
+- Logic: Direct power from converters
+
+## Safety Considerations
+
+### Protection Requirements
+1. **AC Side**
+   - GFCI protection on all heating circuits
+   - Over-temperature cutouts on SSRs
+   - Emergency stop disconnects AC power
    
-2. **Acoustic System**: 580W total
-   - Transducers: 180W (18×10W)
-   - Amplifiers: 400W (4×100W)
+2. **DC Side**
+   - Overcurrent protection on each converter
+   - Voltage monitoring on all rails
+   - Soft-start circuits for capacitive loads
 
-3. **Control & Monitoring**: 470W total
-   - Industrial PC: 200W
-   - FPGA board: 50W
-   - STM32 system: 20W
-   - Cameras & sensors: 200W
+### Grounding Scheme
+- AC ground and DC ground kept separate
+- Single-point ground connection at PSU
+- Shielded cables for high-frequency signals
 
-4. **Cooling & Auxiliary**: 545W total
-   - Water pump: 200W
-   - Cooling fans: 150W
-   - Lighting: 50W
-   - Misc: 145W
+## Cost Optimization
 
-## Power Supply Specifications
+### Current Architecture Benefits
+1. PSU correctly sized (not oversized for heating)
+2. Efficient SSR control for AC loads
+3. DC converters only for actual DC loads
 
-### Main PSU (10kW)
-- Model: Mean Well RSP-10000-48
-- Input: 180-264V AC, 3-phase
-- Output: 48V DC @ 208A
-- Efficiency: 91% @ full load
-- Power consumption: 900W (losses)
-- Net power supplied: 10,000W
-
-### Power Quality
-- Input power factor: >0.95
-- Output ripple: <200mV p-p
-- Voltage regulation: ±1%
-- Overload protection: 110%
-- MTBF: >50,000 hours
-
-## Efficiency Analysis
-
-### System Efficiency
-- Total input power: 15,495W (from mains)
-- Useful output power: 14,595W
-- Overall efficiency: 94.2%
-
-### Loss Breakdown
-- PSU conversion loss: 900W (5.8%)
-- Distribution loss: ~100W (0.6%)
-- Control overhead: 470W (3.0%)
-
-## Power Margin Analysis
-
-### Current Status
-- Available power: 10,000W
-- Net consumption: 4596W
-- **Available margin: 5404W (54%)**
-
-### Expansion Capability
-- Level 2 upgrade: +3,600W required
-- Level 3 upgrade: +7,900W required
-- Level 4 upgrade: +14,100W required
-
-## Circuit Protection
-
-### Primary Protection
-- Main breaker: 63A Type C MCB
-- Ground fault: 30mA RCD
-- Surge protection: Type 2 SPD
-
-### Secondary Protection
-| Circuit | Rating | Type | Purpose |
-|---------|--------|------|---------|
-| 48V Bus | 250A | DC breaker | Overcurrent |
-| Heaters | 20A×4 | MCB Type B | Each heater |
-| Control | 10A | MCB Type B | Electronics |
-| Transducers | 5A | Fuse | Array protection |
+### Estimated Component Costs
+- 15kW PSU: $3,800
+- SSR modules (8ch): ~$200
+- DC-DC converters: ~$300
+- Protection devices: ~$150
+- **Total Power Control**: ~$4,450
 
 ## Recommendations
 
-1. **Immediate Actions**
-   - Verify all connections before power-up
-   - Test protection devices
-   - Monitor temperatures during first run
+1. **Immediate Implementation**
+   - Install appropriate SSRs for AC loads
+   - Verify PSU is connected only to DC loads
+   - Test emergency stop cuts both AC and DC
 
-2. **Future Upgrades**
-   - Add second PSU for Level 2 (redundancy)
-   - Implement smart power monitoring
-   - Add battery backup for controls
+2. **Future Improvements**
+   - Add power monitoring on both domains
+   - Implement soft-start for heating elements
+   - Consider phase angle control for finer heating control
 
-3. **Efficiency Improvements**
-   - Variable speed drives for pumps/fans
-   - Power factor correction
-   - Load scheduling optimization
+3. **Safety Critical**
+   - Never connect AC loads through the PSU
+   - Ensure proper isolation between domains
+   - Regular thermal imaging of power connections

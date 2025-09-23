@@ -191,7 +191,7 @@ class ComponentTestMapper:
             },
             
             # Power System Components
-            "Mean Well RSP-10000-48": {
+            "15kW PSU": {
                 "required_tests": ["TE-041", "TE-042"],
                 "integration_tests": ["TE-048", "TE-049", "TE-079"],
                 "optional_tests": ["TE-086"],
@@ -392,7 +392,7 @@ class ComponentTestMapper:
             "Phase Array Controller", 
             "Thermal Cameras",
             "Control System",
-            "Mean Well RSP-10000-48",
+            "15kW PSU",
             "Graphite Crucibles",
             "Piezo Droplet Dispensers"
         ]
@@ -447,7 +447,7 @@ class ComponentTestMapper:
                 "Linear Actuators", "Magnetic Shielding"
             ],
             "Power": [
-                "Mean Well RSP-10000-48", "DC-DC Converters 48V to 24V", 
+                "15kW PSU", "DC-DC Converters 48V to 24V", 
                 "DC-DC Converters 48V to 12V", "UPS Battery Backup 3kVA",
                 "Circuit Breakers 3-phase 100A", "Fuses 250V 10A", "Emergency Stop System",
                 "Power Cables AWG 2", "Anderson Connectors 175A"

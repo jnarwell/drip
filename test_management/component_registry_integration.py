@@ -217,7 +217,7 @@ class ComponentRegistryIntegration:
             "40kHz Transducers",
             "Phase Array Controller",
             "Thermal Cameras",
-            "Mean Well RSP-10000-48",
+            "15kW PSU",
             "STM32F7 Controllers",
             "Graphite Crucibles",
             "Induction Heater Module"

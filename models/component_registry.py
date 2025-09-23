@@ -51,6 +51,10 @@ class TechnicalSpecs:
     # Interfaces
     connections: Optional[List[str]] = None
     control_signal: Optional[str] = None
+    
+    # Power Domain
+    power_type: Optional[str] = None  # 'AC', 'DC', or 'DUAL'
+    power_voltage: Optional[float] = None  # Operating voltage (120, 240, 48, 24, 12, 5)
 
 
 @dataclass
@@ -331,6 +335,32 @@ class ComponentRegistry:
                     mounting_type="Groove mount per AS568A"
                 )
             ),
+            Component(
+                name="Chamber Assembly",
+                category=ComponentCategory.FRAME,
+                type=ComponentType.CUSTOM,
+                specification="Complete chamber with ports and seals",
+                quantity=1,
+                unit_cost=1200,
+                total_cost=1200,
+                notes="Main process chamber - thermal control",
+                material="316 Stainless Steel",
+                process="Welding and Machining",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0,  # Passive component
+                    weight=15.0,  # kg
+                    dimensions={'L': 400, 'W': 400, 'H': 300},  # mm
+                    material_spec="316L SS chamber with viewing ports",
+                    operating_temp=(20, 300),  # Per SR009 - max chamber temp 300°C
+                    max_temp=400,  # With safety margin
+                    thermal_dissipation=50,  # W to environment
+                    cooling_required="passive",
+                    mounting_type="Frame mounted with vibration isolation",
+                    connections=["Multiple sensor ports", "Gas inlet/outlet", "Access door"]
+                )
+            ),
         ])
         
         # HEATED BED SUBSYSTEM - COTS
@@ -348,6 +378,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=1000,  # W per rod
+                    power_type='AC',  # AC powered
+                    power_voltage=240,  # 240V for 1kW heaters
                     voltage_nominal=220,
                     voltage_range=(200, 240),
                     current_draw=4.5,  # A per rod
@@ -401,6 +433,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=4000,  # 4 heating rods
+                    power_type='AC',  # AC powered via heating rods
+                    power_voltage=240,  # Same as heating rods
                     weight=12.0,  # kg
                     dimensions={'L': 300, 'W': 300, 'H': 50},  # mm
                     material_spec="6061-T6 Aluminum, hard anodized",
@@ -494,6 +528,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=10,  # W per transducer
+                    power_type='DC',  # DC powered
+                    power_voltage=48,  # 48V DC from amplifiers
                     voltage_nominal=12,
                     voltage_range=(10, 15),
                     current_draw=0.8,  # A per transducer
@@ -707,6 +743,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=3000,  # W (derated for L1)
+                    power_type='AC',  # AC powered
+                    power_voltage=240,  # 240V for 3kW load
                     voltage_nominal=220,
                     voltage_range=(200, 240),
                     current_draw=15,  # A at 3kW
@@ -827,6 +865,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=40,  # W per heater
+                    power_type='DC',  # DC powered at 12V
+                    power_voltage=12,  # 12V DC
                     voltage_nominal=12,
                     current_draw=3.3,  # A per heater
                     weight=0.01,  # kg per heater
@@ -1056,30 +1096,30 @@ class ComponentRegistry:
         # POWER/CONTROL SUBSYSTEM - COTS
         self.components.extend([
             Component(
-                name="10kW PSU",
+                name="15kW PSU",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="Mean Well RSP-10000-48",
+                specification="Mean Well RST-15K-115",
                 quantity=1,
-                unit_cost=1850,
-                total_cost=1850,
-                notes="Main power supply",
+                unit_cost=3800,
+                total_cost=3800,
+                notes="Main power supply - 15kW rack mount",
                 supplier="Mean Well",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=900,  # W input power consumption (10kW * (1-0.91 efficiency))
-                    power_supply=10000,  # W output power supplied to system
-                    voltage_nominal=48,
-                    voltage_range=(43.2, 52.8),  # ±10% adjustment
-                    current_draw=48,  # A input at full load
-                    weight=7.5,  # kg
-                    dimensions={'L': 280, 'W': 140, 'H': 90},  # mm
+                    power_consumption=1650,  # W input power consumption (15kW / 0.91 efficiency)
+                    power_supply=15000,  # W output power supplied to system
+                    voltage_nominal=115,  # V output
+                    voltage_range=(103.5, 126.5),  # ±10% adjustment typical
+                    current_draw=143,  # A input at full load (16.5kW / 115V)
+                    weight=12.0,  # kg (estimated for 15kW unit)
+                    dimensions={'L': 350, 'W': 200, 'H': 100},  # mm (estimated rack mount)
                     operating_temp=(0, 50),
                     max_temp=70,
-                    thermal_dissipation=900,  # W heat generated = power consumed
+                    thermal_dissipation=1650,  # W heat generated = power consumed - output
                     cooling_required="forced air",
-                    efficiency=91,  # % (10kW output / 10.9kW input)
+                    efficiency=91,  # % typical for Mean Well high power units
                     connections=["AC input terminal", "DC output terminal"],
                     control_signal="Remote on/off, voltage adjust"
                 )
@@ -1097,6 +1137,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=2,  # W
+                    power_type='DC',  # DC powered
+                    power_voltage=5,  # 5V DC via DC-DC converter
                     voltage_nominal=3.3,
                     voltage_range=(3.0, 3.6),
                     weight=0.05,  # kg
@@ -1119,6 +1161,8 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=100,  # W per module (6ch)
+                    power_type='DC',  # DC powered
+                    power_voltage=48,  # 48V DC from PSU
                     voltage_nominal=24,
                     voltage_range=(12, 36),
                     current_draw=4,  # A per module
@@ -1191,11 +1235,74 @@ class ComponentRegistry:
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
                     power_consumption=65,  # W typical
+                    power_type='DC',  # DC powered
+                    power_voltage=12,  # 12V DC typical for industrial PC
                     voltage_nominal=12,  # V DC typical
                     weight=2.0,  # kg estimated
                     operating_temp=(0, 50),
                     connections=["USB 3.0", "Ethernet", "DisplayPort"],
                     control_signal="USB/Ethernet communication"
+                )
+            ),
+            Component(
+                name="Thermal Camera - Optris Xi 400",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV",
+                quantity=2,
+                unit_cost=4000,
+                total_cost=8000,
+                notes="Droplet temperature monitoring - Replaces optical cameras",
+                supplier="Optris",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=8,  # W via PoE
+                    voltage_nominal=48,  # V (Power over Ethernet)
+                    voltage_range=(44, 57),  # V PoE range
+                    current_draw=0.17,  # A at 48V
+                    weight=0.3,  # kg
+                    dimensions={'L': 107, 'W': 40, 'H': 40},  # mm
+                    operating_temp=(-20, 50),
+                    max_temp=50,
+                    thermal_dissipation=3,  # W
+                    cooling_required="passive",
+                    efficiency=62.5,  # % (5W useful / 8W consumed)
+                    frequency=80,  # Hz frame rate
+                    accuracy=2,  # ±°C or ±2% of reading
+                    connections=["GigE Vision", "PoE", "M12 connector"],
+                    control_signal="GigE Vision protocol",
+                    material_spec="Aluminum housing, IP67 rated"
+                )
+            ),
+            Component(
+                name="Emergency Stop System",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="Safety relay module with mushroom buttons",
+                quantity=1,
+                unit_cost=350,
+                total_cost=350,
+                notes="Fail-safe emergency shutdown per safety requirements",
+                supplier="Pilz/Banner/Similar",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=5,  # W for relay coils
+                    voltage_nominal=24,  # V DC control
+                    voltage_range=(20.4, 26.4),  # ±10%
+                    current_draw=0.2,  # A
+                    weight=2.0,  # kg including buttons and wiring
+                    dimensions={'L': 200, 'W': 150, 'H': 100},  # mm control box
+                    operating_temp=(-25, 55),
+                    max_temp=70,
+                    thermal_dissipation=5,  # W
+                    cooling_required="none",
+                    efficiency=100,  # % (relay efficiency)
+                    accuracy=10,  # ms response time
+                    connections=["4x mushroom buttons", "Safety relay", "Reset key"],
+                    control_signal="Normally closed safety circuit",
+                    material_spec="DIN rail mount safety relay, IP65 buttons"
                 )
             ),
         ])
@@ -1595,6 +1702,63 @@ class ComponentRegistry:
             )
         
         return validation_results
+    
+    def calculate_dual_domain_power(self):
+        """Calculate power split between AC and DC domains"""
+        
+        power_domains = {
+            'AC': {
+                'components': {},
+                'total': 0,
+                'voltage_groups': {120: 0, 240: 0}
+            },
+            'DC': {
+                'components': {},
+                'total': 0,
+                'voltage_groups': {48: 0, 24: 0, 12: 0, 5: 0}
+            },
+            'PSU': {
+                'capacity': 15000,  # 15kW PSU
+                'dc_load': 0,
+                'efficiency': 0.91,
+                'margin': 0,
+                'utilization': 0
+            }
+        }
+        
+        for component in self.components:
+            if not component.tech_specs or not component.tech_specs.power_consumption:
+                continue
+                
+            power = component.tech_specs.power_consumption * component.quantity
+            power_type = component.tech_specs.power_type or 'DC'  # Default to DC if not specified
+            voltage = component.tech_specs.power_voltage or 48
+            
+            if power_type == 'AC':
+                power_domains['AC']['components'][component.name] = {
+                    'power': power,
+                    'voltage': voltage,
+                    'quantity': component.quantity
+                }
+                power_domains['AC']['total'] += power
+                if voltage in power_domains['AC']['voltage_groups']:
+                    power_domains['AC']['voltage_groups'][voltage] += power
+            else:  # DC or unspecified
+                power_domains['DC']['components'][component.name] = {
+                    'power': power,
+                    'voltage': voltage,
+                    'quantity': component.quantity
+                }
+                power_domains['DC']['total'] += power
+                power_domains['PSU']['dc_load'] += power
+                if voltage in power_domains['DC']['voltage_groups']:
+                    power_domains['DC']['voltage_groups'][voltage] += power
+        
+        # Calculate PSU metrics
+        power_domains['PSU']['margin'] = power_domains['PSU']['capacity'] - power_domains['PSU']['dc_load']
+        power_domains['PSU']['utilization'] = (power_domains['PSU']['dc_load'] / power_domains['PSU']['capacity']) * 100
+        
+        return power_domains
 
 
 # Example usage

@@ -30,7 +30,7 @@ def main():
         "40kHz Transducers",
         "Phase Array Controller",
         "Thermal Cameras",
-        "Mean Well RSP-10000-48"
+        "15kW PSU"
     ]
     
     for component in critical_components:

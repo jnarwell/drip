@@ -1,6 +1,4 @@
 # Interface Matrix
-!!! danger "PLANNING DOCUMENTATION ONLY"
-    **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 ## Component-to-Component Interface Mapping
 

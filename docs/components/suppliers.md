@@ -4,8 +4,10 @@
 
 | Supplier | Components | Total Value | Category |
 |----------|------------|-------------|----------|
-| Mean Well | 1 | $1850.00 | Various |
+| Optris | 1 | $8000.00 | Various |
+| Mean Well | 1 | $3800.00 | Various |
 | DaWei | 1 | $700.00 | Various |
+| Pilz/Banner/Similar | 1 | $350.00 | Various |
 | eBay/AliExpress | 1 | $40.00 | Various |
 | Harbor Freight | 1 | $4.00 | Various |
 
@@ -30,10 +32,26 @@
 ### Mean Well
 
 **Total Components**: 1  
-**Total Value**: $1850.00
+**Total Value**: $3800.00
 
 **Components Supplied**:
-- 10kW PSU
+- 15kW PSU
+
+### Optris
+
+**Total Components**: 1  
+**Total Value**: $8000.00
+
+**Components Supplied**:
+- Thermal Camera - Optris Xi 400
+
+### Pilz/Banner/Similar
+
+**Total Components**: 1  
+**Total Value**: $350.00
+
+**Components Supplied**:
+- Emergency Stop System
 
 ### eBay/AliExpress
 

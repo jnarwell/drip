@@ -9,7 +9,7 @@
 <span class="metric-icon">💰</span>
 <div class="metric-content">
 <h3>Total Cost</h3>
-<p class="metric-value">$13,988</p>
+<p class="metric-value">$25,488</p>
 <p class="metric-label">Level 1 System</p>
 </div>
 </div>
@@ -18,7 +18,7 @@
 <span class="metric-icon">🔧</span>
 <div class="metric-content">
 <h3>Components</h3>
-<p class="metric-value">51</p>
+<p class="metric-value">54</p>
 <p class="metric-label">Total Parts</p>
 </div>
 </div>
@@ -27,7 +27,7 @@
 <span class="metric-icon">⚡</span>
 <div class="metric-content">
 <h3>Power Budget</h3>
-<p class="metric-value">4.6kW</p>
+<p class="metric-value">0.4kW</p>
 <p class="metric-label">Net Consumption</p>
 </div>
 </div>
@@ -47,11 +47,11 @@
 
 ```mermaid
 pie title Cost Distribution by Subsystem
-    "Frame Subsystem" : 3040
+    "Frame Subsystem" : 4240
     "Heated Bed Subsystem" : 1424
     "Acoustic Cylinder Subsystem" : 2540
     "Crucible Subsystem" : 3634
-    "Power/Control Subsystem" : 3350
+    "Power/Control Subsystem" : 13650
 ```
 
 ## 🔋 Power Distribution
@@ -61,8 +61,8 @@ pie title Cost Distribution by Subsystem
 | Heated Bed Subsystem | 8000W | 0W | 8000W |
 | Acoustic Cylinder Subsystem | 185W | 0W | 185W |
 | Crucible Subsystem | 5068W | 0W | 5068W |
-| Power/Control Subsystem | 1342W | 10000W | -8658W |
-| **TOTAL** | **14596W** | **10000W** | **4596W** |
+| Power/Control Subsystem | 2114W | 15000W | -12886W |
+| **TOTAL** | **15366W** | **15000W** | **366W** |
 
 ## 🔄 Development Timeline
 
@@ -102,4 +102,4 @@ gantt
 | **TOTAL** | **100** | **0** | **🔴 0%** |
 
 ---
-*Dashboard updated: 2025-09-22 15:05:03*
+*Dashboard updated: 2025-09-22 23:19:56*

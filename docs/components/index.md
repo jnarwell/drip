@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **51 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **54 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 51 |
-| **COTS Components** | 18 (35%) |
-| **Custom Components** | 33 (65%) |
-| **Total Cost** | $13,988.00 |
+| **Total Components** | 54 |
+| **COTS Components** | 20 (37%) |
+| **Custom Components** | 34 (63%) |
+| **Total Cost** | $25,488.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -30,6 +30,7 @@ The Acoustic Manufacturing System consists of **51 components** organized into 5
     | Build Volume | Custom Fabricated | 1 | $600.00 | - |
     | Thermal Isolation Layer | Custom Fabricated | 1 | $200.00 | - |
     | Air/Gas Border | Custom Fabricated | 1 | $100.00 | - |
+    | Chamber Assembly | Custom Fabricated | 1 | $1200.00 | - |
 
 === "Heated Bed Subsystem"
 
@@ -80,12 +81,14 @@ The Acoustic Manufacturing System consists of **51 components** organized into 5
 
     | Component | Type | Qty | Cost | Power |
     |-----------|------|-----|------|-------|
-    | 10kW PSU | Commercial Off-The-Shelf | 1 | $1850.00 | 900W |
+    | 15kW PSU | Commercial Off-The-Shelf | 1 | $3800.00 | 1650W |
     | FPGA Board | Commercial Off-The-Shelf | 1 | $75.00 | 2W |
     | 6-Channel Amp Modules | Commercial Off-The-Shelf | 4 | $60.00 | 100W |
     | 8-Channel Relays | Commercial Off-The-Shelf | 5 | $40.00 | 2W |
     | STM32 Dev Board | Commercial Off-The-Shelf | 1 | $25.00 | 0.5W |
     | Industrial PC | Commercial Off-The-Shelf | 0 | $0.00 | 65W |
+    | Thermal Camera - Optris Xi 400 | Commercial Off-The-Shelf | 2 | $8000.00 | 8W |
+    | Emergency Stop System | Commercial Off-The-Shelf | 1 | $350.00 | 5W |
     | Control Bus PCB | Custom Fabricated | 1 | $350.00 | 10W |
     | Acoustic Bus PCB | Custom Fabricated | 1 | $200.00 | 5W |
     | Thermal Bus PCB | Custom Fabricated | 1 | $250.00 | 15W |

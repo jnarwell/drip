@@ -270,6 +270,33 @@ Search components using the box below or browse by category.
 
 </div>
 
+### Chamber Assembly
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Frame Subsystem |
+    | **Type** | Custom Fabricated |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $1200.00 |
+    | **Operating Temp** | 20-300°C |
+    | **Max Temperature** | 400°C |
+    | **Weight** | 15.0kg |
+    | **Dimensions** | 400×400×300mm |
+
+=== "Notes"
+
+    Main process chamber - thermal control
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
 ### Heating Rods
 
 <div class="spec-card">
@@ -1077,7 +1104,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### 10kW PSU
+### 15kW PSU
 
 <div class="spec-card">
 
@@ -1088,19 +1115,19 @@ Search components using the box below or browse by category.
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 1 |
-    | **Unit Cost** | $1850.00 |
-    | **Power Consumption** | 900W |
-    | **Power Supply** | 10000W |
-    | **Voltage** | 48V |
+    | **Unit Cost** | $3800.00 |
+    | **Power Consumption** | 1650W |
+    | **Power Supply** | 15000W |
+    | **Voltage** | 115V |
     | **Operating Temp** | 0-50°C |
     | **Max Temperature** | 70°C |
-    | **Weight** | 7.5kg |
+    | **Weight** | 12.0kg |
     | **Efficiency** | 91% |
-    | **Dimensions** | 280×140×90mm |
+    | **Dimensions** | 350×200×100mm |
 
 === "Notes"
 
-    Main power supply
+    Main power supply - 15kW rack mount
 
 === "Expansion"
 
@@ -1242,6 +1269,67 @@ Search components using the box below or browse by category.
 === "Notes"
 
     Min specs: i5, 8GB RAM
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Thermal Camera - Optris Xi 400
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 2 |
+    | **Unit Cost** | $4000.00 |
+    | **Power Consumption** | 8W |
+    | **Voltage** | 48V |
+    | **Operating Temp** | -20-50°C |
+    | **Max Temperature** | 50°C |
+    | **Weight** | 0.3kg |
+    | **Efficiency** | 62.5% |
+    | **Frequency** | 80Hz |
+    | **Dimensions** | 107×40×40mm |
+
+=== "Notes"
+
+    Droplet temperature monitoring - Replaces optical cameras
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Emergency Stop System
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $350.00 |
+    | **Power Consumption** | 5W |
+    | **Voltage** | 24V |
+    | **Operating Temp** | -25-55°C |
+    | **Max Temperature** | 70°C |
+    | **Weight** | 2.0kg |
+    | **Efficiency** | 100% |
+    | **Dimensions** | 200×150×100mm |
+
+=== "Notes"
+
+    Fail-safe emergency shutdown per safety requirements
 
 === "Expansion"
 

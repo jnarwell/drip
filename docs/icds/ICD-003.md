@@ -3,14 +3,14 @@
 ## Document Control
 - **ICD Number**: ICD-003
 - **Revision**: 1.0
-- **Date**: 2025-09-14
+- **Date**: 2025-09-22
 - **Status**: Draft
 - **Criticality**: MEDIUM
 
 ## 1. Interface Overview
-- **Purpose**: Define interface between Crucible Subsystem and Power/Control Subsystem
+- **Purpose**: Define interface between Power/Control Subsystem and Power/Control Subsystem
 - **Interface Types**: data, electrical
-- **Side A Components**: Optris PI 1M Thermal Camera
+- **Side A Components**: Thermal Camera - Optris Xi 400
 - **Side B Components**: Industrial PC
 
 ## 2. Interface Requirements
@@ -38,12 +38,16 @@ Not specified
 ## 4. Component Specifications
 
 ### Side A Components
-**Optris PI 1M Thermal Camera**
-- ⚠️ Component not in registry - needs definition
-- Specification: [TO BE DEFINED]
-- Cost: [TBD]
-- Supplier: [TBD]
-- **ACTION REQUIRED**: Add to component_registry.py
+**Thermal Camera - Optris Xi 400**
+- Power Consumption: 8W
+- Operating Temp: -20-50°C
+- Max Temp: 50°C
+- Weight: 0.3kg
+- Frequency: 80Hz
+- Efficiency: 62.5%
+- Dimensions: 107×40×40mm
+- Cost: $8000
+- Supplier: Optris
 
 
 ### Side B Components
@@ -105,7 +109,7 @@ Not specified
 ### Compatibility Status: ❌ INCOMPATIBLE
 
 **Critical Issues:**
-- ❌ Insufficient power supply: 65W demand vs 0W supply
+- ❌ Insufficient power supply: 81W demand vs 0W supply
 
 
 
@@ -136,7 +140,7 @@ Not specified
 ## 9. Change History
 | Date | Revision | Description | Author |
 |------|----------|-------------|--------|
-| 2025-09-14 | 1.0 | Initial release | System Engineer |
+| 2025-09-22 | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-14 20:28:20*
+*This ICD was auto-generated from component specifications on 2025-09-22 22:07:09*

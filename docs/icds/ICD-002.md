@@ -3,15 +3,15 @@
 ## Document Control
 - **ICD Number**: ICD-002
 - **Revision**: 1.0
-- **Date**: 2025-09-14
+- **Date**: 2025-09-22
 - **Status**: Draft
 - **Criticality**: HIGH
 
 ## 1. Interface Overview
 - **Purpose**: Define interface between Power/Control Subsystem and Power/Control Subsystem
 - **Interface Types**: electrical, data
-- **Side A Components**: Cyclone IV FPGA Board, STM32 Dev Board
-- **Side B Components**: 10kW PSU, 48V DC Power Supply, 12V DC Power Supply
+- **Side A Components**: FPGA Board, STM32 Dev Board
+- **Side B Components**: 15kW PSU
 
 ## 2. Interface Requirements
 
@@ -38,12 +38,13 @@ Not specified
 ## 4. Component Specifications
 
 ### Side A Components
-**Cyclone IV FPGA Board**
-- ⚠️ Component not in registry - needs definition
-- Specification: [TO BE DEFINED]
-- Cost: [TBD]
-- Supplier: [TBD]
-- **ACTION REQUIRED**: Add to component_registry.py
+**FPGA Board**
+- Power Consumption: 2W
+- Operating Temp: 0-85°C
+- Weight: 0.05kg
+- Dimensions: 70×50×15mm
+- Cost: $75
+- Supplier: None
 
 **STM32 Dev Board**
 - Power Consumption: 0.5W
@@ -56,30 +57,16 @@ Not specified
 
 
 ### Side B Components
-**10kW PSU**
-- Power Consumption: 900W
-- Power Supply: 10000W
+**15kW PSU**
+- Power Consumption: 1650W
+- Power Supply: 15000W
 - Operating Temp: 0-50°C
 - Max Temp: 70°C
-- Weight: 7.5kg
+- Weight: 12.0kg
 - Efficiency: 91%
-- Dimensions: 280×140×90mm
-- Cost: $1850
+- Dimensions: 350×200×100mm
+- Cost: $380
 - Supplier: Mean Well
-
-**48V DC Power Supply**
-- ⚠️ Component not in registry - needs definition
-- Specification: [TO BE DEFINED]
-- Cost: [TBD]
-- Supplier: [TBD]
-- **ACTION REQUIRED**: Add to component_registry.py
-
-**12V DC Power Supply**
-- ⚠️ Component not in registry - needs definition
-- Specification: [TO BE DEFINED]
-- Cost: [TBD]
-- Supplier: [TBD]
-- **ACTION REQUIRED**: Add to component_registry.py
 
 
 ## 5. Verification & Validation
@@ -129,9 +116,9 @@ Not specified
 - Interface meets all functional requirements
 
 ## 6. Interface Compatibility Analysis
-### Compatibility Status: 📋 PLANNING ONLY
+### Compatibility Status: ✅ COMPATIBLE
 
-Compatibility analysis pending hardware availability.
+No compatibility issues identified.
 
 
 ## 7. Risk Assessment
@@ -162,7 +149,7 @@ Compatibility analysis pending hardware availability.
 ## 9. Change History
 | Date | Revision | Description | Author |
 |------|----------|-------------|--------|
-| 2025-09-14 | 1.0 | Initial release | System Engineer |
+| 2025-09-22 | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-14 20:28:20*
+*This ICD was auto-generated from component specifications on 2025-09-22 22:07:09*
