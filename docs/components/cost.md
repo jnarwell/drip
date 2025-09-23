@@ -5,10 +5,10 @@
 ```mermaid
 pie title Cost Distribution by Category
     "Frame Subsystem" : 4240
-    "Heated Bed Subsystem" : 1424
+    "Heated Bed Subsystem" : 1356
     "Acoustic Cylinder Subsystem" : 2540
     "Crucible Subsystem" : 3634
-    "Power/Control Subsystem" : 13650
+    "Power/Control Subsystem" : 13715
 ```
 
 ## Top 10 Most Expensive Components
@@ -22,13 +22,13 @@ pie title Cost Distribution by Category
 | 5 | Induction Heater | $700.00 | 2.7% |
 | 6 | Build Volume | $600.00 | 2.4% |
 | 7 | Acoustic Cylinder | $600.00 | 2.4% |
-| 8 | Heated Bed Assembly | $450.00 | 1.8% |
+| 8 | Copper Heated Bed | $450.00 | 1.8% |
 | 9 | Transducer Rings | $450.00 | 1.8% |
 | 10 | Baseplate | $400.00 | 1.6% |
 
 ## Cost Metrics
 
-- **Total System Cost**: $25,488.00
-- **Average Component Cost**: $472.00
+- **Total System Cost**: $25,485.00
+- **Average Component Cost**: $439.40
 - **Most Expensive Category**: Power/Control Subsystem
 - **Least Expensive Category**: Heated Bed Subsystem

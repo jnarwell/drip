@@ -29,9 +29,9 @@
 | 9 | Thermal Isolation Layer | Frame Subsystem | Custom Fabricated | Ceramic fiber composite | 1 | $200.00 | $200.00 | High-temp insulation |
 | 10 | Air/Gas Border | Frame Subsystem | Custom Fabricated | Silicone/Viton seals | 1 | $100.00 | $100.00 | Chamber sealing |
 | 11 | Chamber Assembly | Frame Subsystem | Custom Fabricated | Complete chamber with ports and seals | 1 | $1200.00 | $1200.00 | Main process chamber - thermal control |
-| 12 | Heating Rods | Heated Bed Subsystem | Commercial Off-The-Shelf | 1kW cartridge, 12mm×150mm, 220V | 4 | $25.00 | $100.00 | Platform heating |
+| 12 | Cartridge Heaters 120V (4-pack) | Heated Bed Subsystem | Commercial Off-The-Shelf | 1/2 inch × 8 inch, 1000W, 120V | 4 | $8.00 | $32.00 | 2 active + 2 spare/redundancy, 2-zone operation |
 | 13 | Thermocouples | Heated Bed Subsystem | Commercial Off-The-Shelf | Type K, M6 thread, 800°C | 2 | $12.00 | $24.00 | Bed temperature sensing |
-| 14 | Heated Bed Assembly | Heated Bed Subsystem | Custom Fabricated | Aluminum block with channels | 1 | $450.00 | $450.00 | Includes mounting |
+| 14 | Copper Heated Bed | Heated Bed Subsystem | Custom Fabricated | C11000 copper, 150mm × 30mm, 4 heater holes | 1 | $450.00 | $450.00 | 4× heater capability, 2-zone control |
 | 15 | Conductive Block | Heated Bed Subsystem | Custom Fabricated | Copper/aluminum composite | 1 | $300.00 | $300.00 | Heat distribution |
 | 16 | Distribution Channels | Heated Bed Subsystem | Custom Fabricated | CNC machined pathways | 1 | $200.00 | $200.00 | Integrated in bed |
 | 17 | Thermal Isolation Tube | Heated Bed Subsystem | Custom Fabricated | Multi-layer insulation | 1 | $350.00 | $350.00 | Includes air gaps, thermal breaks |
@@ -67,11 +67,15 @@
 | 47 | Industrial PC | Power/Control Subsystem | Commercial Off-The-Shelf | User-provided | 0 | $0.00 | $0.00 | Min specs: i5, 8GB RAM |
 | 48 | Thermal Camera - Optris Xi 400 | Power/Control Subsystem | Commercial Off-The-Shelf | Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV | 2 | $4000.00 | $8000.00 | Droplet temperature monitoring - Replaces optical cameras |
 | 49 | Emergency Stop System | Power/Control Subsystem | Commercial Off-The-Shelf | Safety relay module with mushroom buttons | 1 | $350.00 | $350.00 | Fail-safe emergency shutdown per safety requirements |
-| 50 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
-| 51 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
-| 52 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
-| 53 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
-| 54 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
+| 50 | Inkbird ITC-100VH PID Kit | Power/Control Subsystem | Commercial Off-The-Shelf | PID controller with 25A SSR and K thermocouple | 1 | $35.00 | $35.00 | Complete kit for primary zone control |
+| 51 | SSR-25DA Solid State Relay | Power/Control Subsystem | Commercial Off-The-Shelf | 25A DC-AC solid state relay | 1 | $8.00 | $8.00 | For second heater zone |
+| 52 | Type K Thermocouple (spare) | Power/Control Subsystem | Commercial Off-The-Shelf | Type K, 6mm probe, 2m cable | 1 | $10.00 | $10.00 | Second zone temperature sensing |
+| 53 | 2-Channel Relay Module | Power/Control Subsystem | Commercial Off-The-Shelf | 5V 10A dual relay for zone selection | 1 | $12.00 | $12.00 | Switches heater pairs for 2-zone operation |
+| 54 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
+| 55 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
+| 56 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
+| 57 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
+| 58 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
 
 </div>
 
@@ -80,8 +84,8 @@
 | Category | Components | COTS Cost | Custom Cost | Total Cost |
 |----------|------------|-----------|-------------|------------|
 | Frame Subsystem | 11 | $190.00 | $4050.00 | $4240.00 |
-| Heated Bed Subsystem | 6 | $124.00 | $1300.00 | $1424.00 |
+| Heated Bed Subsystem | 6 | $56.00 | $1300.00 | $1356.00 |
 | Acoustic Cylinder Subsystem | 9 | $40.00 | $2500.00 | $2540.00 |
 | Crucible Subsystem | 15 | $984.00 | $2650.00 | $3634.00 |
-| Power/Control Subsystem | 13 | $12350.00 | $1300.00 | $13650.00 |
-| **TOTAL** | **54** | **$13688.00** | **$11800.00** | **$25488.00** |
+| Power/Control Subsystem | 17 | $12415.00 | $1300.00 | $13715.00 |
+| **TOTAL** | **58** | **$13685.00** | **$11800.00** | **$25485.00** |

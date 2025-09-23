@@ -1862,6 +1862,30 @@ graph TD
 - Protection devices: ~$150
 - **Total Power Control**: ~$4,450
 
+## Heated Bed Configuration
+
+### Hardware
+- **Heaters**: 4× 1000W @ 120V ($32 total)
+  - 2 primary (normal operation)
+  - 2 backup/boost/uniformity
+- **Control**: Inkbird PID kit + spare SSR ($43)
+- **Switching**: 2-channel relay module ($12)
+- **Sensors**: 2× Type K thermocouples ($10 included)
+
+### Operating Modes
+| Mode | Active Heaters | Power | Use Case |
+|------|---------------|-------|----------|
+| Normal | H1+H2 | 2000W | Standard operation |
+| Economy | H1 only | 1000W | Maintain temperature |
+| Boost | All 4 | 4000W | Fast heat-up |
+| Redundant | H3+H4 | 2000W | If primary fails |
+| Alternating | H1+H2 ↔ H3+H4 | 2000W | Even wear |
+
+### Cost Breakdown
+- Heaters: $32
+- Control: $65
+- **Total: $97** (under $100 budget!)
+
 ## Recommendations
 
 1. **Immediate Implementation**

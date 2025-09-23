@@ -366,30 +366,32 @@ class ComponentRegistry:
         # HEATED BED SUBSYSTEM - COTS
         self.components.extend([
             Component(
-                name="Heating Rods",
+                name="Cartridge Heaters 120V (4-pack)",
                 category=ComponentCategory.HEATED_BED,
                 type=ComponentType.COTS,
-                specification="1kW cartridge, 12mm×150mm, 220V",
+                specification="1/2 inch × 8 inch, 1000W, 120V",
                 quantity=4,
-                unit_cost=25,
-                total_cost=100,
-                notes="Platform heating",
+                unit_cost=8,
+                total_cost=32,
+                notes="2 active + 2 spare/redundancy, 2-zone operation",
+                supplier="https://oemheaters.com/product/5429/",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=1000,  # W per rod
-                    power_type='AC',  # AC powered
-                    power_voltage=240,  # 240V for 1kW heaters
-                    voltage_nominal=220,
-                    voltage_range=(200, 240),
-                    current_draw=4.5,  # A per rod
-                    weight=0.12,  # kg per rod
-                    dimensions={'D': 12, 'L': 150},  # mm
-                    operating_temp=(0, 800),
-                    max_temp=800,
+                    power_consumption=1000,  # W per heater
+                    power_type='AC',  # Direct from mains
+                    power_voltage=120,
+                    voltage_nominal=120,
+                    voltage_range=(110, 130),
+                    current_draw=8.3,  # A per heater at 120V
+                    weight=0.15,  # kg per heater
+                    dimensions={'D': 12.7, 'L': 203},  # mm (1/2" × 8")
+                    material_spec="304 SS sheath, MgO insulation",
+                    operating_temp=(20, 600),
+                    max_temp=677,  # 1250°F
                     efficiency=95,
-                    connections=["2-wire with ground", "M4 terminal"],
-                    control_signal="PWM or SSR"
+                    connections=["12 inch fiberglass leads"],
+                    control_signal="SSR controlled"
                 )
             ),
             Component(
@@ -419,28 +421,28 @@ class ComponentRegistry:
         # HEATED BED SUBSYSTEM - Custom
         self.components.extend([
             Component(
-                name="Heated Bed Assembly",
+                name="Copper Heated Bed",
                 category=ComponentCategory.HEATED_BED,
                 type=ComponentType.CUSTOM,
-                specification="Aluminum block with channels",
+                specification="C11000 copper, 150mm × 30mm, 4 heater holes",
                 quantity=1,
                 unit_cost=450,
                 total_cost=450,
-                notes="Includes mounting",
-                material="Aluminum",
+                notes="4× heater capability, 2-zone control",
+                material="Copper C11000",
                 process="CNC Machining",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=4000,  # 4 heating rods
-                    power_type='AC',  # AC powered via heating rods
-                    power_voltage=240,  # Same as heating rods
-                    weight=12.0,  # kg
-                    dimensions={'L': 300, 'W': 300, 'H': 50},  # mm
-                    material_spec="6061-T6 Aluminum, hard anodized",
-                    operating_temp=(20, 800),
-                    max_temp=850,
-                    thermal_dissipation=200,  # W to environment
+                    power_consumption=2000,  # Normal: 2 heaters active
+                    power_type='AC',
+                    power_voltage=120,
+                    weight=4.75,  # kg (copper is denser than aluminum)
+                    dimensions={'D': 150, 'H': 30},  # mm diameter × height
+                    material_spec="C11000 oxygen-free copper",
+                    operating_temp=(20, 600),
+                    max_temp=650,
+                    thermal_dissipation=370,  # W steady-state
                     cooling_required="passive",
                     mounting_type="Standoffs with thermal isolation"
                 )
@@ -1305,6 +1307,106 @@ class ComponentRegistry:
                     material_spec="DIN rail mount safety relay, IP65 buttons"
                 )
             ),
+            Component(
+                name="Inkbird ITC-100VH PID Kit",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="PID controller with 25A SSR and K thermocouple",
+                quantity=1,
+                unit_cost=35,
+                total_cost=35,
+                notes="Complete kit for primary zone control",
+                supplier="https://inkbird.com/products/itc-100vh-k-sensor-ssr",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=5,
+                    power_type='DC',
+                    power_voltage=12,  # Controller power
+                    voltage_nominal=100,  # Can work 100-240VAC
+                    voltage_range=(100, 240),
+                    weight=0.4,  # kg for complete kit
+                    dimensions={'L': 48, 'W': 48, 'H': 100},  # mm controller size
+                    operating_temp=(0, 50),
+                    accuracy=0.1,  # °C
+                    connections=["K-type thermocouple", "SSR output", "Alarm relay"],
+                    control_signal="SSR signal + alarm relay"
+                )
+            ),
+            Component(
+                name="SSR-25DA Solid State Relay",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="25A DC-AC solid state relay",
+                quantity=1,
+                unit_cost=8,
+                total_cost=8,
+                notes="For second heater zone",
+                supplier="Amazon/eBay generic",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0.012,  # 12mA @ 5V control
+                    power_type='DC',
+                    power_voltage=5,  # Control signal
+                    voltage_nominal=5,
+                    voltage_range=(3, 32),  # VDC control range
+                    current_draw=0.012,  # A control current
+                    weight=0.125,  # kg
+                    dimensions={'L': 60, 'W': 45, 'H': 23},  # mm
+                    operating_temp=(-20, 80),
+                    connections=["DC control input", "AC load output"],
+                    control_signal="3-32VDC input"
+                )
+            ),
+            Component(
+                name="Type K Thermocouple (spare)",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="Type K, 6mm probe, 2m cable",
+                quantity=1,
+                unit_cost=10,
+                total_cost=10,
+                notes="Second zone temperature sensing",
+                supplier="Generic/Amazon",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0,  # Passive sensor
+                    operating_temp=(-50, 1200),
+                    accuracy=2.2,  # °C
+                    weight=0.05,  # kg
+                    dimensions={'D': 6, 'L': 100},  # mm probe
+                    material_spec="SS316 sheath, mineral insulated",
+                    connections=["K-type connector"],
+                    control_signal="Thermocouple voltage"
+                )
+            ),
+            Component(
+                name="2-Channel Relay Module",
+                category=ComponentCategory.POWER_CONTROL,
+                type=ComponentType.COTS,
+                specification="5V 10A dual relay for zone selection",
+                quantity=1,
+                unit_cost=12,
+                total_cost=12,
+                notes="Switches heater pairs for 2-zone operation",
+                supplier="https://robu.in/product/2-channel-isolated-5v-10a-relay-module/",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0.16,  # 160mA @ 5V all on
+                    power_type='DC',
+                    power_voltage=5,
+                    voltage_nominal=5,
+                    current_draw=0.16,  # A
+                    weight=0.055,  # kg
+                    dimensions={'L': 50, 'W': 38, 'H': 19},  # mm
+                    operating_temp=(0, 70),
+                    connections=["5V power", "2× control inputs", "2× NO/NC contacts"],
+                    control_signal="5V logic level"
+                )
+            ),
         ])
         
         # POWER/CONTROL SUBSYSTEM - Custom
@@ -1760,6 +1862,50 @@ class ComponentRegistry:
         
         return power_domains
 
+
+"""
+Heater Installation Pattern (150mm diameter copper disc):
+    
+    Top View:
+         37.5mm
+           ↓
+      H1 ─────── H2     
+       │         │      H1,H2 = Zone 1 (Primary)
+       │    ●    │      H3,H4 = Zone 2 (Secondary)
+       │         │      
+      H3 ─────── H4     
+         50mm spacing
+         
+Drilling Specifications:
+- Hole diameter: 12.7mm (0.500")  
+- Hole depth: 25mm (leave 5mm bottom)
+- Position: 37.5mm from center
+- Pattern: Square, 50mm spacing
+- Finish: Ream for tight fit
+"""
+
+"""
+Electrical Architecture:
+
+120V AC Mains
+    │
+    ├─[20A Breaker]─┬─[SSR-1]──[H1: Heater 1 - Zone 1]
+    │               ├─[SSR-1]──[H2: Heater 2 - Zone 1]
+    │               ├─[SSR-2]──[H3: Heater 3 - Zone 2]
+    │               └─[SSR-2]──[H4: Heater 4 - Zone 2]
+    │
+    └─[5V PSU]──[Arduino/Control]
+         │
+         ├──[ITC-100VH PID]──[SSR-1 control]
+         ├──[Relay Module]───[Zone switching]
+         └──[Thermocouples]──[Temperature feedback]
+
+Operating Modes:
+1. Normal: H1+H2 active (2000W)
+2. Boost: H1+H2+H3+H4 (4000W for fast heat-up)
+3. Redundant: H3+H4 if H1 or H2 fails
+4. Uniform: Alternate pairs for better distribution
+"""
 
 # Example usage
 if __name__ == "__main__":

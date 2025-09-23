@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **54 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **58 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 54 |
-| **COTS Components** | 20 (37%) |
-| **Custom Components** | 34 (63%) |
-| **Total Cost** | $25,488.00 |
+| **Total Components** | 58 |
+| **COTS Components** | 24 (41%) |
+| **Custom Components** | 34 (59%) |
+| **Total Cost** | $25,485.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -36,9 +36,9 @@ The Acoustic Manufacturing System consists of **54 components** organized into 5
 
     | Component | Type | Qty | Cost | Power |
     |-----------|------|-----|------|-------|
-    | Heating Rods | Commercial Off-The-Shelf | 4 | $100.00 | 1000W |
+    | Cartridge Heaters 120V (4-pack) | Commercial Off-The-Shelf | 4 | $32.00 | 1000W |
     | Thermocouples | Commercial Off-The-Shelf | 2 | $24.00 | - |
-    | Heated Bed Assembly | Custom Fabricated | 1 | $450.00 | 4000W |
+    | Copper Heated Bed | Custom Fabricated | 1 | $450.00 | 2000W |
     | Conductive Block | Custom Fabricated | 1 | $300.00 | - |
     | Distribution Channels | Custom Fabricated | 1 | $200.00 | - |
     | Thermal Isolation Tube | Custom Fabricated | 1 | $350.00 | - |
@@ -89,6 +89,10 @@ The Acoustic Manufacturing System consists of **54 components** organized into 5
     | Industrial PC | Commercial Off-The-Shelf | 0 | $0.00 | 65W |
     | Thermal Camera - Optris Xi 400 | Commercial Off-The-Shelf | 2 | $8000.00 | 8W |
     | Emergency Stop System | Commercial Off-The-Shelf | 1 | $350.00 | 5W |
+    | Inkbird ITC-100VH PID Kit | Commercial Off-The-Shelf | 1 | $35.00 | 5W |
+    | SSR-25DA Solid State Relay | Commercial Off-The-Shelf | 1 | $8.00 | 0.012W |
+    | Type K Thermocouple (spare) | Commercial Off-The-Shelf | 1 | $10.00 | - |
+    | 2-Channel Relay Module | Commercial Off-The-Shelf | 1 | $12.00 | 0.16W |
     | Control Bus PCB | Custom Fabricated | 1 | $350.00 | 10W |
     | Acoustic Bus PCB | Custom Fabricated | 1 | $200.00 | 5W |
     | Thermal Bus PCB | Custom Fabricated | 1 | $250.00 | 15W |

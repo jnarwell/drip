@@ -6,17 +6,17 @@
 ## Dual Domain Power Distribution
 
 ### AC Domain (Mains Direct)
-**Total AC Load: 11000W**
+**Total AC Load: 9000W**
 
 | Component | Voltage | Power | Control Method |
 |-----------|---------|-------|----------------|
-| Heating Rods | 240V | 4000W | SSR |
-| Heated Bed Assembly | 240V | 4000W | SSR |
+| Cartridge Heaters 120V (4-pack) | 120V | 4000W | SSR |
+| Copper Heated Bed | 120V | 2000W | SSR |
 | Induction Heater | 240V | 3000W | SSR |
 
 
 ### DC Domain (PSU Powered)
-**Total DC Load: 4366W**
+**Total DC Load: 4372W**
 
 | Component | Voltage | Power | Source |
 |-----------|---------|-------|--------|
@@ -36,6 +36,9 @@
 | Industrial PC | 12V | 0W | PSU |
 | Thermal Camera - Optris Xi 400 | 48V | 16W | PSU |
 | Emergency Stop System | 48V | 5W | PSU |
+| Inkbird ITC-100VH PID Kit | 12V | 5W | PSU |
+| SSR-25DA Solid State Relay | 5V | 0W | PSU |
+| 2-Channel Relay Module | 5V | 0W | PSU |
 | Control Bus PCB | 48V | 10W | PSU |
 | Acoustic Bus PCB | 48V | 5W | PSU |
 | Thermal Bus PCB | 48V | 15W | PSU |
@@ -45,14 +48,14 @@
 
 - **PSU Model**: Mean Well RST-15K-115
 - **PSU Capacity**: 15000W
-- **DC Load**: 4366W  
+- **DC Load**: 4372W  
 - **Utilization**: 29.1%
-- **Available Headroom**: 10634W
+- **Available Headroom**: 10628W
 
 ```mermaid
 pie title PSU Capacity Utilization
-    "Used (4366W)" : 4366.5
-    "Available (10634W)" : 10633.5
+    "Used (4372W)" : 4371.672
+    "Available (10628W)" : 10628.328000000001
 ```
 
 ## Power Distribution Architecture
@@ -86,16 +89,16 @@ graph TD
 
 ## Total System Power
 
-- **AC Components**: 11000W
-- **DC Components**: 4366W
-- **PSU Input Power**: 4798W
-- **Total Wall Power**: 15798W
+- **AC Components**: 9000W
+- **DC Components**: 4372W
+- **PSU Input Power**: 4804W
+- **Total Wall Power**: 13804W
 
 ## Electrical Service Requirements
 
 ### For AC Loads:
-- 120V Circuits: 0W (0.0A)
-- 240V Circuits: 11000W (45.8A)
+- 120V Circuits: 6000W (50.0A)
+- 240V Circuits: 3000W (12.5A)
 
 ### Recommended Configuration:
 - One 240V 60A circuit for all loads
@@ -148,6 +151,30 @@ graph TD
 - DC-DC converters: ~$300
 - Protection devices: ~$150
 - **Total Power Control**: ~$4,450
+
+## Heated Bed Configuration
+
+### Hardware
+- **Heaters**: 4× 1000W @ 120V ($32 total)
+  - 2 primary (normal operation)
+  - 2 backup/boost/uniformity
+- **Control**: Inkbird PID kit + spare SSR ($43)
+- **Switching**: 2-channel relay module ($12)
+- **Sensors**: 2× Type K thermocouples ($10 included)
+
+### Operating Modes
+| Mode | Active Heaters | Power | Use Case |
+|------|---------------|-------|----------|
+| Normal | H1+H2 | 2000W | Standard operation |
+| Economy | H1 only | 1000W | Maintain temperature |
+| Boost | All 4 | 4000W | Fast heat-up |
+| Redundant | H3+H4 | 2000W | If primary fails |
+| Alternating | H1+H2 ↔ H3+H4 | 2000W | Even wear |
+
+### Cost Breakdown
+- Heaters: $32
+- Control: $65
+- **Total: $97** (under $100 budget!)
 
 ## Recommendations
 

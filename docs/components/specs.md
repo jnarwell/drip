@@ -297,7 +297,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### Heating Rods
+### Cartridge Heaters 120V (4-pack)
 
 <div class="spec-card">
 
@@ -308,17 +308,17 @@ Search components using the box below or browse by category.
     | **Category** | Heated Bed Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 4 |
-    | **Unit Cost** | $25.00 |
+    | **Unit Cost** | $8.00 |
     | **Power Consumption** | 1000W |
-    | **Voltage** | 220V |
-    | **Operating Temp** | 0-800°C |
-    | **Max Temperature** | 800°C |
-    | **Weight** | 0.12kg |
+    | **Voltage** | 120V |
+    | **Operating Temp** | 20-600°C |
+    | **Max Temperature** | 677°C |
+    | **Weight** | 0.15kg |
     | **Efficiency** | 95% |
 
 === "Notes"
 
-    Platform heating
+    2 active + 2 spare/redundancy, 2-zone operation
 
 === "Expansion"
 
@@ -351,7 +351,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### Heated Bed Assembly
+### Copper Heated Bed
 
 <div class="spec-card">
 
@@ -363,15 +363,15 @@ Search components using the box below or browse by category.
     | **Type** | Custom Fabricated |
     | **Quantity** | 1 |
     | **Unit Cost** | $450.00 |
-    | **Power Consumption** | 4000W |
-    | **Operating Temp** | 20-800°C |
-    | **Max Temperature** | 850°C |
-    | **Weight** | 12.0kg |
-    | **Dimensions** | 300×300×50mm |
+    | **Power Consumption** | 2000W |
+    | **Operating Temp** | 20-600°C |
+    | **Max Temperature** | 650°C |
+    | **Weight** | 4.75kg |
+    | **Dimensions** | Ø150×30mm |
 
 === "Notes"
 
-    Includes mounting
+    4× heater capability, 2-zone control
 
 === "Expansion"
 
@@ -1330,6 +1330,115 @@ Search components using the box below or browse by category.
 === "Notes"
 
     Fail-safe emergency shutdown per safety requirements
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Inkbird ITC-100VH PID Kit
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $35.00 |
+    | **Power Consumption** | 5W |
+    | **Voltage** | 100V |
+    | **Operating Temp** | 0-50°C |
+    | **Weight** | 0.4kg |
+    | **Dimensions** | 48×48×100mm |
+
+=== "Notes"
+
+    Complete kit for primary zone control
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### SSR-25DA Solid State Relay
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $8.00 |
+    | **Power Consumption** | 0.012W |
+    | **Voltage** | 5V |
+    | **Operating Temp** | -20-80°C |
+    | **Weight** | 0.125kg |
+    | **Dimensions** | 60×45×23mm |
+
+=== "Notes"
+
+    For second heater zone
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Type K Thermocouple (spare)
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $10.00 |
+    | **Operating Temp** | -50-1200°C |
+    | **Weight** | 0.05kg |
+
+=== "Notes"
+
+    Second zone temperature sensing
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### 2-Channel Relay Module
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Power/Control Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $12.00 |
+    | **Power Consumption** | 0.16W |
+    | **Voltage** | 5V |
+    | **Operating Temp** | 0-70°C |
+    | **Weight** | 0.055kg |
+    | **Dimensions** | 50×38×19mm |
+
+=== "Notes"
+
+    Switches heater pairs for 2-zone operation
 
 === "Expansion"
 
