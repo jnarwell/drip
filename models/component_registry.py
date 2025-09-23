@@ -1440,34 +1440,34 @@ class ComponentRegistry:
                 )
             ),
             Component(
-                name="Thermal Camera - Optris Xi 400",
+                name="Thermal Camera - FLIR A35",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV",
+                specification="A35, 320×256 pixels, 60Hz real-time tracking, 25°×20° FOV",
                 quantity=2,
-                unit_cost=4000,
-                total_cost=8000,
-                notes="Droplet temperature monitoring - Replaces optical cameras",
-                supplier="Optris",
+                unit_cost=3995,
+                total_cost=7990,
+                notes="Real-time droplet temperature tracking with 60Hz for improved droplet control",
+                supplier="FLIR Systems",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=8,  # W via PoE
-                    voltage_nominal=48,  # V (Power over Ethernet)
-                    voltage_range=(44, 57),  # V PoE range
-                    current_draw=0.17,  # A at 48V
-                    weight=0.3,  # kg
-                    dimensions={'L': 107, 'W': 40, 'H': 40},  # mm
-                    operating_temp=(-20, 50),
+                    power_consumption=12,  # W via PoE+
+                    voltage_nominal=48,  # V (Power over Ethernet Plus)
+                    voltage_range=(44, 57),  # V PoE+ range
+                    current_draw=0.25,  # A at 48V
+                    weight=0.65,  # kg
+                    dimensions={'L': 108, 'W': 108, 'H': 171},  # mm
+                    operating_temp=(-15, 50),
                     max_temp=50,
-                    thermal_dissipation=3,  # W
+                    thermal_dissipation=5,  # W
                     cooling_required="passive",
-                    efficiency=62.5,  # % (5W useful / 8W consumed)
-                    frequency=80,  # Hz frame rate
+                    efficiency=58.3,  # % (7W useful / 12W consumed)
+                    frequency=60,  # Hz frame rate - optimized for real-time droplet tracking
                     accuracy=2,  # ±°C or ±2% of reading
-                    connections=["GigE Vision", "PoE", "M12 connector"],
-                    control_signal="GigE Vision protocol",
-                    material_spec="Aluminum housing, IP67 rated"
+                    connections=["GigE Vision", "PoE+", "M12 connector"],
+                    control_signal="GigE Vision protocol with real-time streaming",
+                    material_spec="Ruggedized aluminum housing, IP67 rated"
                 )
             ),
             Component(
