@@ -13,8 +13,8 @@ The system follows a phased development approach with four distinct levels:
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
 | **Target Cost** | ~$22,276 | ~$34,528 | ~$60,813 | ~$126,973 |
 | **Transducers** | 18 | 36 | 36 | 72 |
-| **Power Supply** | ~15kW | ~27kW | ~41kW | ~61kW |
-| **Est. Total Power** | ~12.4kW | ~22.2kW | ~33.9kW | ~50.7kW |
+| **PSU Rating** | 1.5kW (DC only) | 3kW | 5kW | 8kW |
+| **Total Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
 | **Chamber Size** | Ø120×150mm | Ø180×200mm | Ø180×200mm | Ø400×300mm |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual simultaneous | 5+ materials |

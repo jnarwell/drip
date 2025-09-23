@@ -49,7 +49,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **Build Rate (Target)** | 1 cm³/hr | 5 cm³/hr | 10 cm³/hr | 25 cm³/hr |
-| **Power (Est.)** | ~12.4kW | ~22kW | ~34kW | ~51kW |
+| **Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
 
 ## 🚀 Quick Navigation
 
@@ -89,7 +89,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 - 📋 Requirements definition: In planning
 - 📝 Component selection: Under evaluation  
 - 📋 Interface concepts: Being developed
-- 🎯 Power budget: Target ~10.4kW (estimated)
+- 🎯 Power budget: 11kW AC + 1.3kW DC (separated domains)
 - 📝 Mechanical concepts: Initial sketches
 - ⏳ Prototype assembly: Future work (pending funding)
 
