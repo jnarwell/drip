@@ -2,226 +2,234 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jnarwell.github.io/drip/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/component_summary/</loc>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/dashboard/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://jnarwell.github.io/drip/integration_guide/</loc>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/quick-start/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/analysis/acoustic/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/analysis/fmea/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/analysis/power/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/analysis/thermal/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/api/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/assets/diagrams/EXPORT_INSTRUCTIONS/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/behavioral/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/behavioral/control-behavior/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/behavioral/control-sequences/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/behavioral/system-states/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/behavioral/thermal-dynamics/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/components/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/components/bom/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/components/cost/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/components/specs/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/components/suppliers/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-001/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-002/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-003/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-004/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-005/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-006/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-007/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-008/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-009/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/ICD-010/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/icds/validation/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/includes/abbreviations/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/requirements/traceability/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/resources/contributing/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/resources/editing-guide/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/resources/glossary/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/resources/references/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/safety/safety_requirements/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system/architecture/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system/levels/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system/requirements/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system/risks/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system_architecture/interface_matrix/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system_architecture/block_diagrams/system_block_diagram/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/system_architecture/n2_charts/n2_chart/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/acceptance/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/component-matrix/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/matrix/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/procedures/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/reports/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/subsystem-status/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/test-planning/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/test-registry/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/test-tracker/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://jnarwell.github.io/drip/verification/verification-status/</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
 </urlset>
