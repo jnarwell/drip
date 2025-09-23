@@ -8,7 +8,7 @@ pie title Cost Distribution by Category
     "Heated Bed Subsystem" : 1356
     "Acoustic Cylinder Subsystem" : 2540
     "Crucible Subsystem" : 3735
-    "Power/Control Subsystem" : 6400
+    "Power/Control Subsystem" : 6387
 ```
 
 ## Top 10 Most Expensive Components
@@ -28,7 +28,7 @@ pie title Cost Distribution by Category
 
 ## Cost Metrics
 
-- **Total System Cost**: $18,271.00
-- **Average Component Cost**: $261.01
+- **Total System Cost**: $18,258.00
+- **Average Component Cost**: $260.83
 - **Most Expensive Category**: Power/Control Subsystem
 - **Least Expensive Category**: Heated Bed Subsystem

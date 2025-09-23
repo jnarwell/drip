@@ -11,7 +11,7 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Target Cost** | ~$18,271 | ~$28,320 | ~$49,880 | ~$104,145 |
+| **Target Cost** | ~$18,258 | ~$28,300 | ~$49,844 | ~$104,071 |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **PSU Rating** | 1.5kW (DC only) | 3kW | 5kW | 8kW |
 | **Total Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |

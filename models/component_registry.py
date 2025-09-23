@@ -1323,24 +1323,37 @@ class ComponentRegistry:
                 name="FPGA Board",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="Cyclone IV EP4CE6",
+                specification="ElectroPeak EP4CE6E22C8N Development Board (Cyclone IV)",
                 quantity=1,
-                unit_cost=75,
-                total_cost=75,
-                notes="Per VDATP reference",
+                unit_cost=62.00,
+                total_cost=62.00,
+                notes="Per VDATP reference - proven for acoustic steering control",
+                part_number="EP4CE6E22C8N",
+                supplier="ElectroPeak",
+                lead_time_weeks=2,
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=2,  # W
-                    power_type='DC',  # DC powered
-                    power_voltage=5,  # 5V DC via DC-DC converter
-                    voltage_nominal=3.3,
-                    voltage_range=(3.0, 3.6),
-                    weight=0.05,  # kg
+                    power_consumption=2.0,  # W typical operation
+                    voltage_nominal=5.0,  # V DC input
+                    voltage_range=(4.5, 5.5),  # V DC input range
+                    weight=0.05,  # kg (board only)
                     dimensions={'L': 70, 'W': 50, 'H': 15},  # mm
-                    operating_temp=(0, 85),
-                    connections=["JTAG", "GPIO headers", "USB"],
-                    control_signal="3.3V LVTTL I/O"
+                    operating_temp=(0, 85),  # °C
+                    frequency=50000000,  # Hz (50 MHz crystal)
+                    connections=[
+                        "USB-Blaster JTAG",
+                        "91 user I/O pins",
+                        "USB power/programming",
+                        "DC 5V jack",
+                        "256Mbit SDRAM",
+                        "Camera interface"
+                    ],
+                    control_signal="3.3V LVTTL I/O standard",
+                    power_type='DC',
+                    power_voltage=5.0,
+                    mounting_type="Standoffs/breadboard compatible",
+                    efficiency=85  # % typical for onboard regulators
                 )
             ),
             Component(

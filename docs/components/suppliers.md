@@ -11,6 +11,7 @@
 | Generic/Amazon | 4 | $100.00 | Various |
 | DigiKey #377-1894-ND | 1 | $95.00 | Various |
 | Grainger #3210847 | 1 | $85.00 | Various |
+| ElectroPeak | 1 | $62.00 | Various |
 | Mouser #448-FN2090-16-06 | 1 | $45.00 | Various |
 | eBay/AliExpress | 1 | $40.00 | Various |
 | Amazon #B019OCLHKE | 1 | $35.00 | Various |
@@ -72,6 +73,14 @@
 
 **Components Supplied**:
 - Induction Enclosure
+
+### ElectroPeak
+
+**Total Components**: 1  
+**Total Value**: $62.00
+
+**Components Supplied**:
+- FPGA Board
 
 ### FLIR Systems
 

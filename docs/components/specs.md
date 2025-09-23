@@ -1378,16 +1378,18 @@ Search components using the box below or browse by category.
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 1 |
-    | **Unit Cost** | $75.00 |
-    | **Power Consumption** | 2W |
-    | **Voltage** | 3.3V |
+    | **Unit Cost** | $62.00 |
+    | **Power Consumption** | 2.0W |
+    | **Voltage** | 5.0V |
     | **Operating Temp** | 0-85°C |
     | **Weight** | 0.05kg |
+    | **Efficiency** | 85% |
+    | **Frequency** | 50000000Hz |
     | **Dimensions** | 70×50×15mm |
 
 === "Notes"
 
-    Per VDATP reference
+    Per VDATP reference - proven for acoustic steering control
 
 === "Expansion"
 
