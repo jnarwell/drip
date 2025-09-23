@@ -1104,7 +1104,7 @@ Search components using the box below or browse by category.
     | **Quantity** | 25 |
     | **Unit Cost** | $8.00 |
     | **Power Consumption** | 40W |
-    | **Voltage** | 12V |
+    | **Voltage** | 120V |
     | **Operating Temp** | 0-300°C |
     | **Max Temperature** | 350°C |
     | **Weight** | 0.01kg |
@@ -1112,7 +1112,7 @@ Search components using the box below or browse by category.
 
 === "Notes"
 
-    Feed line heating
+    Feed line heating - AC powered
 
 === "Expansion"
 

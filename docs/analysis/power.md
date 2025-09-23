@@ -6,7 +6,7 @@
 ## Dual Domain Power Distribution
 
 ### AC Domain (Mains Direct)
-**Total AC Load: 9005W**
+**Total AC Load: 10005W**
 
 | Component | Voltage | Power | Control Method |
 |-----------|---------|-------|----------------|
@@ -14,10 +14,11 @@
 | Copper Heated Bed | 120V | 2000W | SSR |
 | Induction Heater Module (OEM) | 220V | 3000W | SSR |
 | Induction Main Contactor | 48V | 5W | SSR |
+| Micro Heaters | 120V | 1000W | SSR |
 
 
 ### DC Domain (PSU Powered)
-**Total DC Load: 3439W**
+**Total DC Load: 2439W**
 
 | Component | Voltage | Power | Source |
 |-----------|---------|-------|--------|
@@ -32,7 +33,6 @@
 | Pellet Hopper | 48V | 5W | PSU |
 | Feedrate Controller | 48V | 10W | PSU |
 | Temperature Controller | 48V | 3W | PSU |
-| Micro Heaters | 12V | 1000W | PSU |
 | Material Delivery System | 48V | 1000W | PSU |
 | Thermal Pulse Formation | 48V | 50W | PSU |
 | Mean Well RSP-1500-48 | 48V | 110W | PSU |
@@ -58,14 +58,14 @@
 
 - **PSU Model**: Mean Well RSP-1500-48
 - **PSU Capacity**: 1500W
-- **DC Load**: 3439W  
-- **Utilization**: 229.3%
-- **Available Headroom**: -1939W
+- **DC Load**: 2439W  
+- **Utilization**: 162.6%
+- **Available Headroom**: -939W
 
 ```mermaid
 pie title PSU Capacity Utilization
-    "Used (3439W)" : 3439.222
-    "Available (-1939W)" : -1939.2220000000002
+    "Used (2439W)" : 2439.2219999999998
+    "Available (-939W)" : -939.2219999999998
 ```
 
 ## Power Distribution Architecture
@@ -102,15 +102,15 @@ graph TD
 
 ## Total System Power
 
-- **AC Components**: 9005W
-- **DC Components**: 3439W
-- **PSU Input Power**: 3779W
-- **Total Wall Power**: 12784W
+- **AC Components**: 10005W
+- **DC Components**: 2439W
+- **PSU Input Power**: 2680W
+- **Total Wall Power**: 12685W
 
 ## Electrical Service Requirements
 
 ### For AC Loads:
-- 120V Circuits: 6000W (50.0A)
+- 120V Circuits: 7000W (58.3A)
 - 240V Circuits: 0W (0.0A)
 
 ### Recommended Configuration:

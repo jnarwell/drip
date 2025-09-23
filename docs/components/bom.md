@@ -59,7 +59,7 @@
 | 39 | Temperature Controller | Crucible Subsystem | Commercial Off-The-Shelf | REX-C100 PID clone | 1 | $15.00 | $15.00 | SSR output for induction |
 | 40 | Thermocouples | Crucible Subsystem | Commercial Off-The-Shelf | Type K MI cable, Inconel 600 sheath, 1/4" x 12" | 2 | $75.00 | $150.00 | Induction crucible monitoring - Primary + backup |
 | 41 | TC Mounting Kit | Crucible Subsystem | Commercial Off-The-Shelf | Industrial TC mounting: fittings, thermowells, ceramic paste | 1 | $95.00 | $95.00 | Professional mounting hardware for high-temp thermocouples |
-| 42 | Micro Heaters | Crucible Subsystem | Commercial Off-The-Shelf | 12V 40W cartridge, 6mm×20mm | 25 | $8.00 | $200.00 | Feed line heating |
+| 42 | Micro Heaters | Crucible Subsystem | Commercial Off-The-Shelf | 120V 40W cartridge, 6mm×20mm | 25 | $8.00 | $200.00 | Feed line heating - AC powered |
 | 43 | Crucible Assembly | Crucible Subsystem | Custom Fabricated | Graphite + insulation | 1 | $400.00 | $400.00 | Complete unit |
 | 44 | Material Feed System | Crucible Subsystem | Custom Fabricated | Machined aluminum | 1 | $350.00 | $350.00 | Includes guides |
 | 45 | Induction Coil Assembly | Crucible Subsystem | Custom Fabricated | Copper tube + mounting | 1 | $250.00 | $250.00 | Custom wound |
