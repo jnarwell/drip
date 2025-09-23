@@ -10,7 +10,7 @@
 ## 1. Interface Overview
 - **Purpose**: Define interface between Power/Control Subsystem and Power/Control Subsystem
 - **Interface Types**: data
-- **Side A Components**: Optris PI 1M
+- **Side A Components**: FLIR A35 Thermal Camera
 - **Side B Components**: Industrial PC, FPGA Board
 
 ## 2. Interface Requirements
@@ -33,12 +33,12 @@ Not specified
 ## 4. Component Specifications
 
 ### Side A Components
-**Optris PI 1M**
-- ⚠️ Component not in registry - needs definition
-- Specification: [TO BE DEFINED]
-- Cost: [TBD]
-- Supplier: [TBD]
-- **ACTION REQUIRED**: Add to component_registry.py
+**FLIR A35 Thermal Camera**
+- Real-time droplet temperature tracking with 60Hz for improved droplet control
+- Specification: A35, 320×256 pixels, 60Hz real-time tracking, 25°×20° FOV
+- Cost: $3,995 each (total $7,990 for 2 units)
+- Supplier: FLIR Systems
+- Power: 12W via PoE+, 48V nominal
 
 
 ### Side B Components

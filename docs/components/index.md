@@ -11,7 +11,7 @@ The Acoustic Manufacturing System consists of **70 components** organized into 5
 | **Total Components** | 70 |
 | **COTS Components** | 34 (49%) |
 | **Custom Components** | 36 (51%) |
-| **Total Cost** | $22,276.00 |
+| **Total Cost** | $18,271.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -96,7 +96,7 @@ The Acoustic Manufacturing System consists of **70 components** organized into 5
     | 8-Channel Relays | Commercial Off-The-Shelf | 5 | $40.00 | 2W |
     | STM32 Dev Board | Commercial Off-The-Shelf | 1 | $25.00 | 0.5W |
     | Industrial PC | Commercial Off-The-Shelf | 0 | $0.00 | 65W |
-    | Thermal Camera - Optris Xi 400 | Commercial Off-The-Shelf | 2 | $8000.00 | 8W |
+    | Thermal Camera - FLIR A35 | Commercial Off-The-Shelf | 1 | $3995.00 | 12W |
     | Emergency Stop System | Commercial Off-The-Shelf | 1 | $350.00 | 5W |
     | Inkbird ITC-100VH PID Kit | Commercial Off-The-Shelf | 1 | $35.00 | 5W |
     | SSR-25DA Solid State Relay | Commercial Off-The-Shelf | 1 | $8.00 | 0.012W |

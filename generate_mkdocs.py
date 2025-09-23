@@ -151,13 +151,13 @@ class DocsGenerator:
     **No hardware exists. No simulations completed. These are conceptual targets only.**
 
 <div class="hero-section">
-<h2>Advanced Acoustic Levitation Manufacturing</h2>
-<p>Planned contactless material processing using ultrasonic transducer arrays</p>
+<h2>Advanced Acoustic Steering Manufacturing</h2>
+<p>Planned precision droplet deposition using ultrasonic acoustic fields</p>
 </div>
 
 ## 🎯 System Overview
 
-The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transducers** to create standing waves for contactless manipulation of molten metal droplets. This planned approach would enable:
+The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transducers** to create acoustic fields that steer falling molten metal droplets during their descent from the crucible to the build plate. This innovative approach enables precise deposition control without fighting gravity:
 
 <div class="grid cards" markdown>
 
@@ -196,7 +196,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | {self.registry.get_level_transducer_count()} | {reg_l2.get_level_transducer_count()} | {reg_l3.get_level_transducer_count()} | {reg_l4.get_level_transducer_count()} |
 | **Build Rate (Target)** | {self.registry.get_level_build_rate()} cm³/hr | {reg_l2.get_level_build_rate()} cm³/hr | {reg_l3.get_level_build_rate()} cm³/hr | {reg_l4.get_level_build_rate()} cm³/hr |
-| **Power (Est.)** | ~{self.registry.get_level_total_power()/1000:.1f}kW | ~{reg_l2.get_level_total_power()/1000:.0f}kW | ~{reg_l3.get_level_total_power()/1000:.0f}kW | ~{reg_l4.get_level_total_power()/1000:.0f}kW |
+| **Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
 
 {button_section}
 
@@ -208,7 +208,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 - 📋 Requirements definition: In planning
 - 📝 Component selection: Under evaluation  
 - 📋 Interface concepts: Being developed
-- 🎯 Power budget: Target ~{net_power/1000:.1f}kW (estimated)
+- 🎯 Power budget: 11kW AC + 1.3kW DC (separated domains)
 - 📝 Mechanical concepts: Initial sketches
 - ⏳ Prototype assembly: Future work (pending funding)
 
@@ -883,7 +883,7 @@ graph TB
 ## Subsystem Descriptions
 
 ### Acoustic Subsystem
-- **Function**: Generate 40kHz standing waves for droplet manipulation
+- **Function**: Generate 40kHz acoustic fields for lateral droplet steering
 - **Components**: {ComponentRegistry(1).get_level_transducer_count()}-{ComponentRegistry(4).get_level_transducer_count()} ultrasonic transducers in phased array
 - **Control**: FPGA-based phase control with <100μs update rate
 - **Power**: {ComponentRegistry(1).get_level_transducer_count() * 10}W (Level 1) to {ComponentRegistry(4).get_level_transducer_count() * 10}W (Level 4)
@@ -1098,8 +1098,8 @@ The system follows a phased development approach with four distinct levels:
 | **Purpose** | {purposes[1]} | {purposes[2]} | {purposes[3]} | {purposes[4]} |
 | **Target Cost** | ~${registries[1].get_level_scaled_cost():,.0f} | ~${registries[2].get_level_scaled_cost():,.0f} | ~${registries[3].get_level_scaled_cost():,.0f} | ~${registries[4].get_level_scaled_cost():,.0f} |
 | **Transducers** | {registries[1].get_level_transducer_count()} | {registries[2].get_level_transducer_count()} | {registries[3].get_level_transducer_count()} | {registries[4].get_level_transducer_count()} |
-| **Power Supply** | ~{registries[1].get_level_power_supply_required()/1000:.0f}kW | ~{registries[2].get_level_power_supply_required()/1000:.0f}kW | ~{registries[3].get_level_power_supply_required()/1000:.0f}kW | ~{registries[4].get_level_power_supply_required()/1000:.0f}kW |
-| **Est. Total Power** | ~{registries[1].get_level_total_power()/1000:.1f}kW | ~{registries[2].get_level_total_power()/1000:.1f}kW | ~{registries[3].get_level_total_power()/1000:.1f}kW | ~{registries[4].get_level_total_power()/1000:.1f}kW |
+| **PSU Rating** | 1.5kW (DC only) | 3kW | 5kW | 8kW |
+| **Total Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
 | **Chamber Size** | {chamber_sizes[1]} | {chamber_sizes[2]} | {chamber_sizes[3]} | {chamber_sizes[4]} |
 | **Build Volume** | {registries[1].get_level_build_volume()} cm³ | {registries[2].get_level_build_volume()} cm³ | {registries[3].get_level_build_volume()} cm³ | {registries[4].get_level_build_volume()} cm³ |
 | **Materials** | {registries[1].get_level_materials()[0]} | {" + ".join(registries[2].get_level_materials()[:2])} | Dual simultaneous | 5+ materials |
@@ -1223,7 +1223,7 @@ graph LR
 
 | Technology | L1 | L2 | L3 | L4 |
 |------------|----|----|----|----|
-| Acoustic Levitation | TRL 6 | TRL 7 | TRL 8 | TRL 9 |
+| Acoustic Steering | TRL 6 | TRL 7 | TRL 8 | TRL 9 |
 | Al Processing | TRL 5 | TRL 7 | TRL 8 | TRL 9 |
 | Steel Processing | - | TRL 4 | TRL 6 | TRL 8 |
 | Multi-Material | - | - | TRL 3 | TRL 6 |

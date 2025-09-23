@@ -74,7 +74,7 @@
 | 54 | 8-Channel Relays | Power/Control Subsystem | Commercial Off-The-Shelf | Generic relay modules, 10A | 5 | $8.00 | $40.00 | eBay/AliExpress |
 | 55 | STM32 Dev Board | Power/Control Subsystem | Commercial Off-The-Shelf | STM32F4 Discovery | 1 | $25.00 | $25.00 | Real STM32 for development |
 | 56 | Industrial PC | Power/Control Subsystem | Commercial Off-The-Shelf | User-provided | 0 | $0.00 | $0.00 | Min specs: i5, 8GB RAM |
-| 57 | Thermal Camera - Optris Xi 400 | Power/Control Subsystem | Commercial Off-The-Shelf | Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV | 2 | $4000.00 | $8000.00 | Droplet temperature monitoring - Replaces optical cameras |
+| 57 | Thermal Camera - FLIR A35 | Power/Control Subsystem | Commercial Off-The-Shelf | A35, 320×256 pixels, 60Hz real-time tracking, 25°×20° FOV | 1 | $3995.00 | $3995.00 | Primary sensor for acoustic steering - enables real-time droplet position tracking at 60Hz |
 | 58 | Emergency Stop System | Power/Control Subsystem | Commercial Off-The-Shelf | Safety relay module with mushroom buttons | 1 | $350.00 | $350.00 | Fail-safe emergency shutdown per safety requirements |
 | 59 | Inkbird ITC-100VH PID Kit | Power/Control Subsystem | Commercial Off-The-Shelf | PID controller with 25A SSR and K thermocouple | 1 | $35.00 | $35.00 | Complete kit for primary zone control |
 | 60 | SSR-25DA Solid State Relay | Power/Control Subsystem | Commercial Off-The-Shelf | 25A DC-AC solid state relay | 1 | $8.00 | $8.00 | For second heater zone |
@@ -99,5 +99,5 @@
 | Heated Bed Subsystem | 6 | $56.00 | $1300.00 | $1356.00 |
 | Acoustic Cylinder Subsystem | 9 | $40.00 | $2500.00 | $2540.00 |
 | Crucible Subsystem | 24 | $1015.00 | $2720.00 | $3735.00 |
-| Power/Control Subsystem | 20 | $9105.00 | $1300.00 | $10405.00 |
-| **TOTAL** | **70** | **$10406.00** | **$11870.00** | **$22276.00** |
+| Power/Control Subsystem | 20 | $5100.00 | $1300.00 | $6400.00 |
+| **TOTAL** | **70** | **$6401.00** | **$11870.00** | **$18271.00** |

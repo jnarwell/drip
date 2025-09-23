@@ -4,7 +4,7 @@
 
 | Supplier | Components | Total Value | Category |
 |----------|------------|-------------|----------|
-| Optris | 1 | $8000.00 | Various |
+| FLIR Systems | 1 | $3995.00 | Various |
 | HCGF/DUANXU via Alibaba | 1 | $420.00 | Various |
 | https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48 | 1 | $400.00 | Various |
 | Pilz/Banner/Similar | 1 | $350.00 | Various |
@@ -73,6 +73,14 @@
 **Components Supplied**:
 - Induction Enclosure
 
+### FLIR Systems
+
+**Total Components**: 1  
+**Total Value**: $3995.00
+
+**Components Supplied**:
+- Thermal Camera - FLIR A35
+
 ### Generic/Amazon
 
 **Total Components**: 4  
@@ -115,14 +123,6 @@
 
 **Components Supplied**:
 - Induction EMI Filter
-
-### Optris
-
-**Total Components**: 1  
-**Total Value**: $8000.00
-
-**Components Supplied**:
-- Thermal Camera - Optris Xi 400
 
 ### Pilz/Banner/Similar
 

@@ -1508,7 +1508,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### Thermal Camera - Optris Xi 400
+### Thermal Camera - FLIR A35
 
 <div class="spec-card">
 
@@ -1518,20 +1518,20 @@ Search components using the box below or browse by category.
     |-----------|-------|
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
-    | **Quantity** | 2 |
-    | **Unit Cost** | $4000.00 |
-    | **Power Consumption** | 8W |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $3995.00 |
+    | **Power Consumption** | 12W |
     | **Voltage** | 48V |
-    | **Operating Temp** | -20-50°C |
+    | **Operating Temp** | -15-50°C |
     | **Max Temperature** | 50°C |
-    | **Weight** | 0.3kg |
-    | **Efficiency** | 62.5% |
-    | **Frequency** | 80Hz |
-    | **Dimensions** | 107×40×40mm |
+    | **Weight** | 0.65kg |
+    | **Efficiency** | 58.3% |
+    | **Frequency** | 60Hz |
+    | **Dimensions** | 108×108×171mm |
 
 === "Notes"
 
-    Droplet temperature monitoring - Replaces optical cameras
+    Primary sensor for acoustic steering - enables real-time droplet position tracking at 60Hz
 
 === "Expansion"
 

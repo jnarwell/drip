@@ -36,7 +36,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
     ---
 
-    Planned modular progression from $22k prototype to $126k production system
+    Planned modular progression from $18k prototype to $104k production system
 
 </div>
 
@@ -44,7 +44,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost (Target)** | ~$22,276 | ~$34,528 | ~$60,813 | ~$126,973 |
+| **Cost (Target)** | ~$18,271 | ~$28,320 | ~$49,880 | ~$104,145 |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
@@ -97,11 +97,11 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 ## 🔗 Planning Milestones
 
-- **2025-09-22**: Documentation framework established for planning phase
+- **2025-09-23**: Documentation framework established for planning phase
 - **2025-01-14**: Target interface concepts outlined  
 - **2025-01-14**: Power consumption estimated at ~4.6kW (preliminary)
 - **2025-01-13**: Initial component research documented
 
 ---
 
-*Last updated: 2025-09-22 23:58:40 | Build: v1758610720*
+*Last updated: 2025-09-23 09:20:36 | Build: v1758644436*

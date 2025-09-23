@@ -8,27 +8,27 @@ pie title Cost Distribution by Category
     "Heated Bed Subsystem" : 1356
     "Acoustic Cylinder Subsystem" : 2540
     "Crucible Subsystem" : 3735
-    "Power/Control Subsystem" : 10405
+    "Power/Control Subsystem" : 6400
 ```
 
 ## Top 10 Most Expensive Components
 
 | Rank | Component | Cost | % of Total |
 |------|-----------|------|------------|
-| 1 | Thermal Camera - Optris Xi 400 | $8000.00 | 35.9% |
-| 2 | Chamber Assembly | $1200.00 | 5.4% |
-| 3 | Frame | $800.00 | 3.6% |
-| 4 | Build Volume | $600.00 | 2.7% |
-| 5 | Acoustic Cylinder | $600.00 | 2.7% |
-| 6 | Copper Heated Bed | $450.00 | 2.0% |
-| 7 | Transducer Rings | $450.00 | 2.0% |
-| 8 | Induction Heater Module (OEM) | $420.00 | 1.9% |
-| 9 | Baseplate | $400.00 | 1.8% |
-| 10 | Transducer Array Layer | $400.00 | 1.8% |
+| 1 | Thermal Camera - FLIR A35 | $3995.00 | 21.9% |
+| 2 | Chamber Assembly | $1200.00 | 6.6% |
+| 3 | Frame | $800.00 | 4.4% |
+| 4 | Build Volume | $600.00 | 3.3% |
+| 5 | Acoustic Cylinder | $600.00 | 3.3% |
+| 6 | Copper Heated Bed | $450.00 | 2.5% |
+| 7 | Transducer Rings | $450.00 | 2.5% |
+| 8 | Induction Heater Module (OEM) | $420.00 | 2.3% |
+| 9 | Baseplate | $400.00 | 2.2% |
+| 10 | Transducer Array Layer | $400.00 | 2.2% |
 
 ## Cost Metrics
 
-- **Total System Cost**: $22,276.00
-- **Average Component Cost**: $318.23
+- **Total System Cost**: $18,271.00
+- **Average Component Cost**: $261.01
 - **Most Expensive Category**: Power/Control Subsystem
 - **Least Expensive Category**: Heated Bed Subsystem
