@@ -1321,34 +1321,34 @@ class ComponentRegistry:
         # POWER/CONTROL SUBSYSTEM - COTS
         self.components.extend([
             Component(
-                name="Mean Well RSP-1500-48",
+                name="Mean Well RSP-1500-48 (Dual PSU)",
                 category=ComponentCategory.POWER_CONTROL,
                 type=ComponentType.COTS,
-                specification="48V 32A switching power supply with PFC",
-                quantity=1,
+                specification="48V 32A switching power supply with PFC (2 units in parallel)",
+                quantity=2,
                 unit_cost=400,
-                total_cost=400,
-                notes="Right-sized for 1.3kW DC load, 83% utilization",
+                total_cost=800,
+                notes="Dual PSU configuration for 3kW total capacity, load sharing",
                 supplier="https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=110,  # Input losses at 91% efficiency
-                    power_supply=1536,      # Output capacity
+                    power_consumption=220,  # Input losses at 91% efficiency (2 units)
+                    power_supply=3072,      # Output capacity (2 × 1536W)
                     power_type='DC',
                     power_voltage=48,
                     voltage_nominal=48,
                     voltage_range=(43.2, 52.8),  # ±10% adjustment
-                    current_draw=14.4,  # A input at full load (1650W / 115V)
-                    weight=1.8,  # kg
-                    dimensions={'L': 295, 'W': 127, 'H': 41},  # mm
+                    current_draw=28.8,  # A input at full load (3300W / 115V)
+                    weight=3.6,  # kg (2 × 1.8kg)
+                    dimensions={'L': 295, 'W': 127, 'H': 41},  # mm (each unit)
                     operating_temp=(-20, 70),  # °C with derating above 50°C
                     max_temp=70,
-                    thermal_dissipation=110,  # W heat generated
+                    thermal_dissipation=220,  # W heat generated (2 units)
                     cooling_required="forced air",
                     efficiency=91,  # %
-                    connections=["AC input terminal", "DC output terminal"],
-                    control_signal="Remote on/off, voltage adjust"
+                    connections=["2× AC input terminals", "Parallel DC output bus"],
+                    control_signal="Remote on/off, voltage adjust, current share"
                 )
             ),
             Component(
@@ -2148,7 +2148,7 @@ class ComponentRegistry:
                 'voltage_groups': {48: 0, 24: 0, 12: 0, 5: 0}
             },
             'PSU': {
-                'capacity': 1500,  # 1.5kW PSU (RSP-1500-48)
+                'capacity': 3000,  # 3kW total (2× RSP-1500-48)
                 'dc_load': 0,
                 'efficiency': 0.91,
                 'margin': 0,
@@ -2201,9 +2201,9 @@ class ComponentRegistry:
     - Control electronics: 250W
     - Cooling/sensors: 415W
     - Material feed: 30W
-    - TOTAL DC: 1,280W
-    - PSU: RSP-1500-48 (1,536W capacity)
-    - Utilization: 83%
+    - TOTAL DC: 2,440W (with micro heaters now AC)
+    - PSU: 2× RSP-1500-48 (3,072W total capacity)
+    - Utilization: 79%
     
     AC DOMAIN (Direct from mains):
     - Bed heaters: 2,000W (SSR switched)

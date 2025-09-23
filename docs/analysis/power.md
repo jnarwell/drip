@@ -18,7 +18,7 @@
 
 
 ### DC Domain (PSU Powered)
-**Total DC Load: 2439W**
+**Total DC Load: 2769W**
 
 | Component | Voltage | Power | Source |
 |-----------|---------|-------|--------|
@@ -35,7 +35,7 @@
 | Temperature Controller | 48V | 3W | PSU |
 | Material Delivery System | 48V | 1000W | PSU |
 | Thermal Pulse Formation | 48V | 50W | PSU |
-| Mean Well RSP-1500-48 | 48V | 110W | PSU |
+| Mean Well RSP-1500-48 (Dual PSU) | 48V | 440W | PSU |
 | FPGA Board | 5.0V | 2W | PSU |
 | 6-Channel Amp Modules | 48V | 400W | PSU |
 | 8-Channel Relays | 48V | 10W | PSU |
@@ -56,16 +56,16 @@
 
 ## PSU Utilization Analysis
 
-- **PSU Model**: Mean Well RSP-1500-48
-- **PSU Capacity**: 1500W
-- **DC Load**: 2439W  
-- **Utilization**: 162.6%
-- **Available Headroom**: -939W
+- **PSU Model**: Dual Mean Well RSP-1500-48 (parallel)
+- **PSU Capacity**: 3000W
+- **DC Load**: 2769W  
+- **Utilization**: 92.3%
+- **Available Headroom**: 231W
 
 ```mermaid
 pie title PSU Capacity Utilization
-    "Used (2439W)" : 2439.2219999999998
-    "Available (-939W)" : -939.2219999999998
+    "Used (2769W)" : 2769.222
+    "Available (231W)" : 230.7779999999998
 ```
 
 ## Power Distribution Architecture
@@ -74,7 +74,7 @@ pie title PSU Capacity Utilization
 graph TD
     MAINS[240V AC Mains<br/>60A Service] --> SSR1[SSR Bank 1<br/>Heating]
     MAINS --> SSR2[SSR Bank 2<br/>Induction]
-    MAINS --> PSU[1.5kW PSU<br/>48V DC Out]
+    MAINS --> PSU[2×1.5kW PSU<br/>48V DC Out]
     
     SSR1 --> HEAT[Heating Rods<br/>8kW @ 240V]
     SSR2 --> IND[Induction Heater<br/>3kW @ 240V]
@@ -103,9 +103,9 @@ graph TD
 ## Total System Power
 
 - **AC Components**: 10005W
-- **DC Components**: 2439W
-- **PSU Input Power**: 2680W
-- **Total Wall Power**: 12685W
+- **DC Components**: 2769W
+- **PSU Input Power**: 3043W
+- **Total Wall Power**: 13048W
 
 ## Electrical Service Requirements
 
@@ -159,16 +159,16 @@ graph TD
 3. DC converters only for actual DC loads
 
 ### Estimated Component Costs
-- 1.5kW PSU (RSP-1500-48): $400
+- 2×1.5kW PSU (RSP-1500-48): $800
 - DC-DC converters: $90 (48V→12V: $40, 48V→5V: $30, 48V→24V: $20)
 - SSR modules (8ch): ~$200
 - Protection devices: ~$150
-- **Total Power Control**: ~$840
+- **Total Power Control**: ~$1240
 
 ### Cost Savings
 - Old spec: 15kW PSU @ $3,800
-- New spec: 1.5kW PSU @ $400 + DC converters @ $90
-- **Savings: $3,310**
+- New spec: 2×1.5kW PSU @ $800 + DC converters @ $90
+- **Savings: $2,910**
 
 ## Heated Bed Configuration
 

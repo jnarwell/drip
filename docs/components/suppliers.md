@@ -5,8 +5,8 @@
 | Supplier | Components | Total Value | Category |
 |----------|------------|-------------|----------|
 | FLIR Systems | 1 | $3995.00 | Various |
+| https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48 | 1 | $800.00 | Various |
 | HCGF/DUANXU via Alibaba | 1 | $420.00 | Various |
-| https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48 | 1 | $400.00 | Various |
 | Pilz/Banner/Similar | 1 | $350.00 | Various |
 | Omega Engineering | 1 | $150.00 | Various |
 | DigiKey #377-1894-ND | 1 | $95.00 | Various |
@@ -211,7 +211,7 @@
 ### https://www.mouser.com/ProductDetail/MEAN-WELL/RSP-1500-48
 
 **Total Components**: 1  
-**Total Value**: $400.00
+**Total Value**: $800.00
 
 **Components Supplied**:
-- Mean Well RSP-1500-48
+- Mean Well RSP-1500-48 (Dual PSU)

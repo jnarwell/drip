@@ -1363,7 +1363,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### Mean Well RSP-1500-48
+### Mean Well RSP-1500-48 (Dual PSU)
 
 <div class="spec-card">
 
@@ -1373,20 +1373,20 @@ Search components using the box below or browse by category.
     |-----------|-------|
     | **Category** | Power/Control Subsystem |
     | **Type** | Commercial Off-The-Shelf |
-    | **Quantity** | 1 |
+    | **Quantity** | 2 |
     | **Unit Cost** | $400.00 |
-    | **Power Consumption** | 110W |
-    | **Power Supply** | 1536W |
+    | **Power Consumption** | 220W |
+    | **Power Supply** | 3072W |
     | **Voltage** | 48V |
     | **Operating Temp** | -20-70°C |
     | **Max Temperature** | 70°C |
-    | **Weight** | 1.8kg |
+    | **Weight** | 3.6kg |
     | **Efficiency** | 91% |
     | **Dimensions** | 295×127×41mm |
 
 === "Notes"
 
-    Right-sized for 1.3kW DC load, 83% utilization
+    Dual PSU configuration for 3kW total capacity, load sharing
 
 === "Expansion"
 

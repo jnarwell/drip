@@ -69,7 +69,7 @@
 | 49 | Feed Lines | Crucible Subsystem | Custom Fabricated | PTFE/SS tubing | 25 | $10.00 | $250.00 | High-temp rated |
 | 50 | Thermal Pulse Formation | Crucible Subsystem | Custom Fabricated | Control valves | 1 | $350.00 | $350.00 | Droplet timing |
 | 51 | Ceramic Isolation | Crucible Subsystem | Custom Fabricated | Moldable ceramic | 1 | $150.00 | $150.00 | Thermal protection |
-| 52 | Mean Well RSP-1500-48 | Power/Control Subsystem | Commercial Off-The-Shelf | 48V 32A switching power supply with PFC | 1 | $400.00 | $400.00 | Right-sized for 1.3kW DC load, 83% utilization |
+| 52 | Mean Well RSP-1500-48 (Dual PSU) | Power/Control Subsystem | Commercial Off-The-Shelf | 48V 32A switching power supply with PFC (2 units in parallel) | 2 | $400.00 | $800.00 | Dual PSU configuration for 3kW total capacity, load sharing |
 | 53 | FPGA Board | Power/Control Subsystem | Commercial Off-The-Shelf | ElectroPeak EP4CE6E22C8N Development Board (Cyclone IV) | 1 | $62.00 | $62.00 | Per VDATP reference - proven for acoustic steering control |
 | 54 | 6-Channel Amp Modules | Power/Control Subsystem | Commercial Off-The-Shelf | TDA2030 DIY boards | 4 | $15.00 | $60.00 | Build from kits |
 | 55 | 8-Channel Relays | Power/Control Subsystem | Commercial Off-The-Shelf | Generic relay modules, 10A | 5 | $8.00 | $40.00 | eBay/AliExpress |
@@ -100,5 +100,5 @@
 | Heated Bed Subsystem | 6 | $56.00 | $1300.00 | $1356.00 |
 | Acoustic Cylinder Subsystem | 9 | $40.00 | $2500.00 | $2540.00 |
 | Crucible Subsystem | 25 | $1236.00 | $2720.00 | $3956.00 |
-| Power/Control Subsystem | 20 | $5097.00 | $1300.00 | $6397.00 |
-| **TOTAL** | **71** | **$6619.00** | **$11870.00** | **$18489.00** |
+| Power/Control Subsystem | 20 | $5497.00 | $1300.00 | $6797.00 |
+| **TOTAL** | **71** | **$7019.00** | **$11870.00** | **$18889.00** |

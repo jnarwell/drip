@@ -11,7 +11,7 @@ The Acoustic Manufacturing System consists of **71 components** organized into 5
 | **Total Components** | 71 |
 | **COTS Components** | 35 (49%) |
 | **Custom Components** | 36 (51%) |
-| **Total Cost** | $18,489.00 |
+| **Total Cost** | $18,889.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -91,7 +91,7 @@ The Acoustic Manufacturing System consists of **71 components** organized into 5
 
     | Component | Type | Qty | Cost | Power |
     |-----------|------|-----|------|-------|
-    | Mean Well RSP-1500-48 | Commercial Off-The-Shelf | 1 | $400.00 | 110W |
+    | Mean Well RSP-1500-48 (Dual PSU) | Commercial Off-The-Shelf | 2 | $800.00 | 220W |
     | FPGA Board | Commercial Off-The-Shelf | 1 | $62.00 | 2.0W |
     | 6-Channel Amp Modules | Commercial Off-The-Shelf | 4 | $60.00 | 100W |
     | 8-Channel Relays | Commercial Off-The-Shelf | 5 | $40.00 | 2W |

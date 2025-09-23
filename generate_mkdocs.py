@@ -1756,7 +1756,7 @@ graph LR
 
 ## PSU Utilization Analysis
 
-- **PSU Model**: Mean Well RSP-1500-48
+- **PSU Model**: Dual Mean Well RSP-1500-48 (parallel)
 - **PSU Capacity**: {dual_domain['PSU']['capacity']:.0f}W
 - **DC Load**: {dual_domain['PSU']['dc_load']:.0f}W  
 - **Utilization**: {dual_domain['PSU']['utilization']:.1f}%
@@ -1774,7 +1774,7 @@ pie title PSU Capacity Utilization
 graph TD
     MAINS[240V AC Mains<br/>60A Service] --> SSR1[SSR Bank 1<br/>Heating]
     MAINS --> SSR2[SSR Bank 2<br/>Induction]
-    MAINS --> PSU[1.5kW PSU<br/>48V DC Out]
+    MAINS --> PSU[2×1.5kW PSU<br/>48V DC Out]
     
     SSR1 --> HEAT[Heating Rods<br/>8kW @ 240V]
     SSR2 --> IND[Induction Heater<br/>3kW @ 240V]
@@ -1859,16 +1859,16 @@ graph TD
 3. DC converters only for actual DC loads
 
 ### Estimated Component Costs
-- 1.5kW PSU (RSP-1500-48): $400
+- 2×1.5kW PSU (RSP-1500-48): $800
 - DC-DC converters: $90 (48V→12V: $40, 48V→5V: $30, 48V→24V: $20)
 - SSR modules (8ch): ~$200
 - Protection devices: ~$150
-- **Total Power Control**: ~$840
+- **Total Power Control**: ~$1240
 
 ### Cost Savings
 - Old spec: 15kW PSU @ $3,800
-- New spec: 1.5kW PSU @ $400 + DC converters @ $90
-- **Savings: $3,310**
+- New spec: 2×1.5kW PSU @ $800 + DC converters @ $90
+- **Savings: $2,910**
 
 ## Heated Bed Configuration
 

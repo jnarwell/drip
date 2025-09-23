@@ -11,7 +11,7 @@ The system follows a phased development approach with four distinct levels:
 | Parameter | Level 1 | Level 2 | Level 3 | Level 4 |
 |-----------|---------|---------|---------|---------|
 | **Purpose** | Proof of Concept | Steel Capability | Multi-Material | Production |
-| **Target Cost** | ~$18,489 | ~$28,658 | ~$50,475 | ~$105,387 |
+| **Target Cost** | ~$18,889 | ~$29,278 | ~$51,567 | ~$107,667 |
 | **Transducers** | 18 | 36 | 36 | 72 |
 | **PSU Rating** | 1.5kW (DC only) | 3kW | 5kW | 8kW |
 | **Total Power (AC/DC)** | 11kW/1.3kW | 19kW/3kW | 29kW/5kW | 43kW/8kW |
@@ -128,9 +128,9 @@ The system follows a phased development approach with four distinct levels:
 ```mermaid
 graph LR
     subgraph "Cost Progression"
-        L1[Level 1<br/>$18k] --> L2[Level 2<br/>+$10k]
+        L1[Level 1<br/>$19k] --> L2[Level 2<br/>+$10k]
         L2 --> L3[Level 3<br/>+$22k]
-        L3 --> L4[Level 4<br/>+$55k]
+        L3 --> L4[Level 4<br/>+$56k]
     end
 ```
 
