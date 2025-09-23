@@ -732,34 +732,225 @@ class ComponentRegistry:
         # CRUCIBLE SUBSYSTEM - COTS
         self.components.extend([
             Component(
-                name="Induction Heater",
+                name="Induction Heater Module (OEM)",
                 category=ComponentCategory.CRUCIBLE,
                 type=ComponentType.COTS,
-                specification="DaWei 15kW, 30-80kHz",
+                specification="HCGF HCX-3000W-50K, 30-80kHz auto-tracking",
                 quantity=1,
-                unit_cost=700,
-                total_cost=700,
-                notes="Run at 3kW for L1",
-                supplier="DaWei",
+                unit_cost=420,
+                total_cost=420,
+                notes="Professional OEM module with control board",
+                supplier="HCGF/DUANXU via Alibaba",
                 requires_expansion=False,
                 expansion_notes="",
                 tech_specs=TechnicalSpecs(
-                    power_consumption=3000,  # W (derated for L1)
+                    power_consumption=3000,  # W continuous
                     power_type='AC',  # AC powered
-                    power_voltage=240,  # 240V for 3kW load
+                    power_voltage=220,  # 220V single phase
                     voltage_nominal=220,
                     voltage_range=(200, 240),
                     current_draw=15,  # A at 3kW
-                    weight=12.0,  # kg
-                    dimensions={'L': 400, 'W': 300, 'H': 200},  # mm
+                    weight=2.8,  # kg
+                    dimensions={'L': 280, 'W': 180, 'H': 60},  # mm board only
                     operating_temp=(0, 45),
                     max_temp=50,
                     thermal_dissipation=300,  # W
                     cooling_required="forced air",
                     frequency=50000,  # Hz typical
                     efficiency=85,  # %
-                    connections=["3-phase power", "water cooling"],
-                    control_signal="0-10V analog or RS485"
+                    connections=["AC input", "HF output to coil", "water cooling"],
+                    control_signal="PWM control input, Enable signal"
+                )
+            ),
+            # Induction Heater Integration Components
+            Component(
+                name="Induction Main Contactor",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="Schneider LC1D32P7, 32A 230V coil",
+                quantity=1,
+                unit_cost=85,
+                total_cost=85,
+                notes="Safety disconnect for induction power",
+                supplier="Grainger #3210847",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=5,  # W coil power
+                    power_type='AC',
+                    voltage_nominal=230,
+                    current_draw=0.02,  # A coil current
+                    weight=0.5,  # kg
+                    dimensions={'L': 55, 'W': 85, 'H': 95},  # mm
+                    operating_temp=(-25, 60),
+                    connections=["3 power poles", "NC aux contact"],
+                    control_signal="230V coil with E-stop interlock"
+                )
+            ),
+            Component(
+                name="Induction EMI Filter",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="Schaffner FN2090-16-06, 16A medical",
+                quantity=1,
+                unit_cost=45,
+                total_cost=45,
+                notes="Reduces conducted EMI from induction",
+                supplier="Mouser #448-FN2090-16-06",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=2,  # W losses
+                    weight=0.45,  # kg
+                    dimensions={'L': 130, 'W': 65, 'H': 55},  # mm
+                    operating_temp=(-25, 100),
+                    connections=["Line in", "Load out", "Ground"]
+                )
+            ),
+            Component(
+                name="Induction Work Coil",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.CUSTOM,
+                specification="6mm copper tube, 8 turns, 80mm dia",
+                quantity=1,
+                unit_cost=40,
+                total_cost=40,
+                notes="Water-cooled coil for crucible",
+                material="C11000 copper refrigeration tubing",
+                process="Hand wound to specifications",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0,  # Passive component
+                    weight=0.5,  # kg
+                    dimensions={'D': 80, 'H': 80, 'tube_od': 6},  # mm
+                    material_spec="6mm OD x 4mm ID copper tube",
+                    operating_temp=(20, 60),  # Water cooled
+                    max_temp=80,
+                    cooling_required="2 L/min water flow",
+                    connections=["6mm compression water fittings", "100A electrical lugs"]
+                )
+            ),
+            Component(
+                name="Induction Cooling Pump",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="Hygger HG-909, 800L/h submersible",
+                quantity=1,
+                unit_cost=25,
+                total_cost=25,
+                notes="Circulates cooling water for coil",
+                supplier="Amazon #B07L54XBDL",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=10,  # W
+                    power_type='DC',
+                    power_voltage=12,
+                    flow_rate=13.3,  # L/min max
+                    weight=0.3,  # kg
+                    dimensions={'L': 65, 'W': 45, 'H': 55},  # mm
+                    operating_temp=(5, 35)
+                )
+            ),
+            Component(
+                name="Induction Radiator",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="120mm aluminum with fan",
+                quantity=1,
+                unit_cost=35,
+                total_cost=35,
+                notes="Heat dissipation for cooling loop",
+                supplier="Amazon #B019OCLHKE",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=3,  # W fan power
+                    power_type='DC',
+                    power_voltage=12,
+                    thermal_dissipation=500,  # W heat rejection capacity
+                    weight=0.4,  # kg
+                    dimensions={'L': 155, 'W': 120, 'H': 28},  # mm
+                )
+            ),
+            Component(
+                name="Induction Flow Sensor",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="YF-S201 Hall effect, 1-30L/min",
+                quantity=1,
+                unit_cost=8,
+                total_cost=8,
+                notes="Safety interlock for cooling flow",
+                supplier="Amazon #B00VKAT7EE",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0.05,  # W
+                    power_type='DC',
+                    power_voltage=5,
+                    accuracy=10,  # % of reading
+                    connections=["G1/2 thread", "3-wire: 5V, GND, pulse"],
+                    control_signal="Square wave, 4.5 pulses/L"
+                )
+            ),
+            Component(
+                name="Induction Power Meter",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="PZEM-022 with 100A CT",
+                quantity=1,
+                unit_cost=18,
+                total_cost=18,
+                notes="Monitors actual power consumption",
+                supplier="Amazon #B07J2Q4YWW",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=0.5,  # W
+                    voltage_range=(80, 260),  # VAC measurement
+                    accuracy=1,  # % of reading
+                    connections=["UART TTL", "100A split-core CT"],
+                    control_signal="9600 baud UART"
+                )
+            ),
+            Component(
+                name="Induction Interface PCB",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.CUSTOM,
+                specification="2-layer FR4, optoisolated I/O",
+                quantity=1,
+                unit_cost=30,
+                total_cost=30,
+                notes="Connects STM32 to induction system",
+                material="FR4 PCB",
+                process="JLCPCB fabrication",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    power_consumption=1,  # W
+                    dimensions={'L': 100, 'W': 80, 'thickness': 1.6},  # mm
+                    connections=["20-pin STM32", "8-pin Phoenix", "Sensor headers"]
+                )
+            ),
+            Component(
+                name="Induction Enclosure",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.COTS,
+                specification="BUD NBF-32026, 14×10×6 inch NEMA 12",
+                quantity=1,
+                unit_cost=95,
+                total_cost=95,
+                notes="Safety enclosure for induction system",
+                supplier="DigiKey #377-1894-ND",
+                requires_expansion=False,
+                expansion_notes="",
+                tech_specs=TechnicalSpecs(
+                    weight=3.2,  # kg
+                    dimensions={'L': 356, 'W': 254, 'H': 152},  # mm
+                    material_spec="16 gauge steel, powder coated",
+                    mounting_type="Wall mount with cooling clearance"
                 )
             ),
             Component(

@@ -10,7 +10,7 @@ The Acoustic Manufacturing System uses ultrasonic levitation to manipulate molte
 graph TB
     subgraph "Input"
         MAT[Material Feed]
-        PWR[Power Supply<br/>1.5kW]
+        PWR[Power Supply<br/>10kW]
         CTRL[Control PC]
     end
     
@@ -64,12 +64,10 @@ graph TB
 - **Interface**: Gigabit Ethernet + USB 3.0
 
 ### Power Subsystem
-- **Capacity**: 1.5kW PSU (RSP-1500-48) with 91% efficiency
-- **Distribution**: 48V primary, DC-DC converters to 24V/12V/5V
-- **Architecture**: Dual domain - AC loads bypass PSU via SSRs
-- **DC Load**: 1.3kW (83% PSU utilization)
-- **AC Load**: 6kW (heating/induction direct from mains)
-- **Total System Power**: ~7.4kW from wall
+- **Capacity**: 10kW PSU with 91% efficiency
+- **Distribution**: 48V primary, 24V/12V/5V secondary
+- **Protection**: Over-current, over-temp, EMI filtering
+- **Net Consumption**: 4.6kW (Level 1)
 
 ### Material Feed Subsystem
 - **Capacity**: 25 parallel material outlets

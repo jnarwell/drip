@@ -691,7 +691,7 @@ Search components using the box below or browse by category.
 
 </div>
 
-### Induction Heater
+### Induction Heater Module (OEM)
 
 <div class="spec-card">
 
@@ -702,19 +702,251 @@ Search components using the box below or browse by category.
     | **Category** | Crucible Subsystem |
     | **Type** | Commercial Off-The-Shelf |
     | **Quantity** | 1 |
-    | **Unit Cost** | $700.00 |
+    | **Unit Cost** | $420.00 |
     | **Power Consumption** | 3000W |
     | **Voltage** | 220V |
     | **Operating Temp** | 0-45°C |
     | **Max Temperature** | 50°C |
-    | **Weight** | 12.0kg |
+    | **Weight** | 2.8kg |
     | **Efficiency** | 85% |
     | **Frequency** | 50000Hz |
-    | **Dimensions** | 400×300×200mm |
+    | **Dimensions** | 280×180×60mm |
 
 === "Notes"
 
-    Run at 3kW for L1
+    Professional OEM module with control board
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Main Contactor
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $85.00 |
+    | **Power Consumption** | 5W |
+    | **Voltage** | 230V |
+    | **Operating Temp** | -25-60°C |
+    | **Weight** | 0.5kg |
+    | **Dimensions** | 55×85×95mm |
+
+=== "Notes"
+
+    Safety disconnect for induction power
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction EMI Filter
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $45.00 |
+    | **Power Consumption** | 2W |
+    | **Operating Temp** | -25-100°C |
+    | **Weight** | 0.45kg |
+    | **Dimensions** | 130×65×55mm |
+
+=== "Notes"
+
+    Reduces conducted EMI from induction
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Work Coil
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Custom Fabricated |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $40.00 |
+    | **Operating Temp** | 20-60°C |
+    | **Max Temperature** | 80°C |
+    | **Weight** | 0.5kg |
+    | **Dimensions** | Ø80×80mm |
+
+=== "Notes"
+
+    Water-cooled coil for crucible
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Cooling Pump
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $25.00 |
+    | **Power Consumption** | 10W |
+    | **Operating Temp** | 5-35°C |
+    | **Weight** | 0.3kg |
+    | **Dimensions** | 65×45×55mm |
+
+=== "Notes"
+
+    Circulates cooling water for coil
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Radiator
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $35.00 |
+    | **Power Consumption** | 3W |
+    | **Weight** | 0.4kg |
+    | **Dimensions** | 155×120×28mm |
+
+=== "Notes"
+
+    Heat dissipation for cooling loop
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Flow Sensor
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $8.00 |
+    | **Power Consumption** | 0.05W |
+
+=== "Notes"
+
+    Safety interlock for cooling flow
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Power Meter
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $18.00 |
+    | **Power Consumption** | 0.5W |
+
+=== "Notes"
+
+    Monitors actual power consumption
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Interface PCB
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Custom Fabricated |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $30.00 |
+    | **Power Consumption** | 1W |
+
+=== "Notes"
+
+    Connects STM32 to induction system
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
+### Induction Enclosure
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Commercial Off-The-Shelf |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $95.00 |
+    | **Weight** | 3.2kg |
+    | **Dimensions** | 356×254×152mm |
+
+=== "Notes"
+
+    Safety enclosure for induction system
 
 === "Expansion"
 

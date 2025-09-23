@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **61 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **70 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 61 |
-| **COTS Components** | 27 (44%) |
-| **Custom Components** | 34 (56%) |
-| **Total Cost** | $22,175.00 |
+| **Total Components** | 70 |
+| **COTS Components** | 34 (49%) |
+| **Custom Components** | 36 (51%) |
+| **Total Cost** | $22,276.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -61,7 +61,16 @@ The Acoustic Manufacturing System consists of **61 components** organized into 5
 
     | Component | Type | Qty | Cost | Power |
     |-----------|------|-----|------|-------|
-    | Induction Heater | Commercial Off-The-Shelf | 1 | $700.00 | 3000W |
+    | Induction Heater Module (OEM) | Commercial Off-The-Shelf | 1 | $420.00 | 3000W |
+    | Induction Main Contactor | Commercial Off-The-Shelf | 1 | $85.00 | 5W |
+    | Induction EMI Filter | Commercial Off-The-Shelf | 1 | $45.00 | 2W |
+    | Induction Work Coil | Custom Fabricated | 1 | $40.00 | - |
+    | Induction Cooling Pump | Commercial Off-The-Shelf | 1 | $25.00 | 10W |
+    | Induction Radiator | Commercial Off-The-Shelf | 1 | $35.00 | 3W |
+    | Induction Flow Sensor | Commercial Off-The-Shelf | 1 | $8.00 | 0.05W |
+    | Induction Power Meter | Commercial Off-The-Shelf | 1 | $18.00 | 0.5W |
+    | Induction Interface PCB | Custom Fabricated | 1 | $30.00 | 1W |
+    | Induction Enclosure | Commercial Off-The-Shelf | 1 | $95.00 | - |
     | Pellet Hopper | Commercial Off-The-Shelf | 1 | $20.00 | 5W |
     | Feedrate Controller | Commercial Off-The-Shelf | 1 | $25.00 | 10W |
     | Temperature Controller | Commercial Off-The-Shelf | 1 | $15.00 | 3W |

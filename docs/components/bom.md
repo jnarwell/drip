@@ -44,41 +44,50 @@
 | 24 | Cooling Channels | Acoustic Cylinder Subsystem | Custom Fabricated | Integrated water passages | 1 | $200.00 | $200.00 | Built into housing |
 | 25 | Cooling Layer | Acoustic Cylinder Subsystem | Custom Fabricated | Heat sink assembly | 1 | $250.00 | $250.00 | With fins |
 | 26 | Air/Water Jacket | Acoustic Cylinder Subsystem | Custom Fabricated | Welded aluminum | 1 | $300.00 | $300.00 | Cooling manifold |
-| 27 | Induction Heater | Crucible Subsystem | Commercial Off-The-Shelf | DaWei 15kW, 30-80kHz | 1 | $700.00 | $700.00 | Run at 3kW for L1 |
-| 28 | Pellet Hopper | Crucible Subsystem | Commercial Off-The-Shelf | 3D printed PLA + hardware | 1 | $20.00 | $20.00 | Includes stepper motor |
-| 29 | Feedrate Controller | Crucible Subsystem | Commercial Off-The-Shelf | TB6600 stepper driver, 4A | 1 | $25.00 | $25.00 | Single axis control |
-| 30 | Temperature Controller | Crucible Subsystem | Commercial Off-The-Shelf | REX-C100 PID clone | 1 | $15.00 | $15.00 | SSR output for induction |
-| 31 | Thermocouples | Crucible Subsystem | Commercial Off-The-Shelf | Type K, ceramic sheath | 2 | $12.00 | $24.00 | Crucible monitoring |
-| 32 | Micro Heaters | Crucible Subsystem | Commercial Off-The-Shelf | 12V 40W cartridge, 6mm×20mm | 25 | $8.00 | $200.00 | Feed line heating |
-| 33 | Crucible Assembly | Crucible Subsystem | Custom Fabricated | Graphite + insulation | 1 | $400.00 | $400.00 | Complete unit |
-| 34 | Material Feed System | Crucible Subsystem | Custom Fabricated | Machined aluminum | 1 | $350.00 | $350.00 | Includes guides |
-| 35 | Induction Coil Assembly | Crucible Subsystem | Custom Fabricated | Copper tube + mounting | 1 | $250.00 | $250.00 | Custom wound |
-| 36 | Material Delivery System | Crucible Subsystem | Custom Fabricated | Multi-channel manifold | 1 | $400.00 | $400.00 | 25 outlets |
-| 37 | Outlet Array | Crucible Subsystem | Custom Fabricated | Precision drilled plate | 1 | $300.00 | $300.00 | 5×5 grid, 2mm spacing |
-| 38 | Splitter Plate | Crucible Subsystem | Custom Fabricated | Stainless steel | 1 | $200.00 | $200.00 | Flow distribution |
-| 39 | Feed Lines | Crucible Subsystem | Custom Fabricated | PTFE/SS tubing | 25 | $10.00 | $250.00 | High-temp rated |
-| 40 | Thermal Pulse Formation | Crucible Subsystem | Custom Fabricated | Control valves | 1 | $350.00 | $350.00 | Droplet timing |
-| 41 | Ceramic Isolation | Crucible Subsystem | Custom Fabricated | Moldable ceramic | 1 | $150.00 | $150.00 | Thermal protection |
-| 42 | Mean Well RSP-1500-48 | Power/Control Subsystem | Commercial Off-The-Shelf | 48V 32A switching power supply with PFC | 1 | $400.00 | $400.00 | Right-sized for 1.3kW DC load, 83% utilization |
-| 43 | FPGA Board | Power/Control Subsystem | Commercial Off-The-Shelf | Cyclone IV EP4CE6 | 1 | $75.00 | $75.00 | Per VDATP reference |
-| 44 | 6-Channel Amp Modules | Power/Control Subsystem | Commercial Off-The-Shelf | TDA2030 DIY boards | 4 | $15.00 | $60.00 | Build from kits |
-| 45 | 8-Channel Relays | Power/Control Subsystem | Commercial Off-The-Shelf | Generic relay modules, 10A | 5 | $8.00 | $40.00 | eBay/AliExpress |
-| 46 | STM32 Dev Board | Power/Control Subsystem | Commercial Off-The-Shelf | STM32F4 Discovery | 1 | $25.00 | $25.00 | Real STM32 for development |
-| 47 | Industrial PC | Power/Control Subsystem | Commercial Off-The-Shelf | User-provided | 0 | $0.00 | $0.00 | Min specs: i5, 8GB RAM |
-| 48 | Thermal Camera - Optris Xi 400 | Power/Control Subsystem | Commercial Off-The-Shelf | Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV | 2 | $4000.00 | $8000.00 | Droplet temperature monitoring - Replaces optical cameras |
-| 49 | Emergency Stop System | Power/Control Subsystem | Commercial Off-The-Shelf | Safety relay module with mushroom buttons | 1 | $350.00 | $350.00 | Fail-safe emergency shutdown per safety requirements |
-| 50 | Inkbird ITC-100VH PID Kit | Power/Control Subsystem | Commercial Off-The-Shelf | PID controller with 25A SSR and K thermocouple | 1 | $35.00 | $35.00 | Complete kit for primary zone control |
-| 51 | SSR-25DA Solid State Relay | Power/Control Subsystem | Commercial Off-The-Shelf | 25A DC-AC solid state relay | 1 | $8.00 | $8.00 | For second heater zone |
-| 52 | Type K Thermocouple (spare) | Power/Control Subsystem | Commercial Off-The-Shelf | Type K, 6mm probe, 2m cable | 1 | $10.00 | $10.00 | Second zone temperature sensing |
-| 53 | 2-Channel Relay Module | Power/Control Subsystem | Commercial Off-The-Shelf | 5V 10A dual relay for zone selection | 1 | $12.00 | $12.00 | Switches heater pairs for 2-zone operation |
-| 54 | 48V to 12V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 12V 35A step-down converter | 1 | $40.00 | $40.00 | Powers PC, fans, PID controllers |
-| 55 | 48V to 5V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 5V 15A step-down converter | 1 | $30.00 | $30.00 | Powers FPGA, STM32, logic circuits |
-| 56 | 48V to 24V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 24V 2A step-down converter | 1 | $20.00 | $20.00 | Powers stepper motors for material feed |
-| 57 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
-| 58 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
-| 59 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
-| 60 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
-| 61 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
+| 27 | Induction Heater Module (OEM) | Crucible Subsystem | Commercial Off-The-Shelf | HCGF HCX-3000W-50K, 30-80kHz auto-tracking | 1 | $420.00 | $420.00 | Professional OEM module with control board |
+| 28 | Induction Main Contactor | Crucible Subsystem | Commercial Off-The-Shelf | Schneider LC1D32P7, 32A 230V coil | 1 | $85.00 | $85.00 | Safety disconnect for induction power |
+| 29 | Induction EMI Filter | Crucible Subsystem | Commercial Off-The-Shelf | Schaffner FN2090-16-06, 16A medical | 1 | $45.00 | $45.00 | Reduces conducted EMI from induction |
+| 30 | Induction Work Coil | Crucible Subsystem | Custom Fabricated | 6mm copper tube, 8 turns, 80mm dia | 1 | $40.00 | $40.00 | Water-cooled coil for crucible |
+| 31 | Induction Cooling Pump | Crucible Subsystem | Commercial Off-The-Shelf | Hygger HG-909, 800L/h submersible | 1 | $25.00 | $25.00 | Circulates cooling water for coil |
+| 32 | Induction Radiator | Crucible Subsystem | Commercial Off-The-Shelf | 120mm aluminum with fan | 1 | $35.00 | $35.00 | Heat dissipation for cooling loop |
+| 33 | Induction Flow Sensor | Crucible Subsystem | Commercial Off-The-Shelf | YF-S201 Hall effect, 1-30L/min | 1 | $8.00 | $8.00 | Safety interlock for cooling flow |
+| 34 | Induction Power Meter | Crucible Subsystem | Commercial Off-The-Shelf | PZEM-022 with 100A CT | 1 | $18.00 | $18.00 | Monitors actual power consumption |
+| 35 | Induction Interface PCB | Crucible Subsystem | Custom Fabricated | 2-layer FR4, optoisolated I/O | 1 | $30.00 | $30.00 | Connects STM32 to induction system |
+| 36 | Induction Enclosure | Crucible Subsystem | Commercial Off-The-Shelf | BUD NBF-32026, 14×10×6 inch NEMA 12 | 1 | $95.00 | $95.00 | Safety enclosure for induction system |
+| 37 | Pellet Hopper | Crucible Subsystem | Commercial Off-The-Shelf | 3D printed PLA + hardware | 1 | $20.00 | $20.00 | Includes stepper motor |
+| 38 | Feedrate Controller | Crucible Subsystem | Commercial Off-The-Shelf | TB6600 stepper driver, 4A | 1 | $25.00 | $25.00 | Single axis control |
+| 39 | Temperature Controller | Crucible Subsystem | Commercial Off-The-Shelf | REX-C100 PID clone | 1 | $15.00 | $15.00 | SSR output for induction |
+| 40 | Thermocouples | Crucible Subsystem | Commercial Off-The-Shelf | Type K, ceramic sheath | 2 | $12.00 | $24.00 | Crucible monitoring |
+| 41 | Micro Heaters | Crucible Subsystem | Commercial Off-The-Shelf | 12V 40W cartridge, 6mm×20mm | 25 | $8.00 | $200.00 | Feed line heating |
+| 42 | Crucible Assembly | Crucible Subsystem | Custom Fabricated | Graphite + insulation | 1 | $400.00 | $400.00 | Complete unit |
+| 43 | Material Feed System | Crucible Subsystem | Custom Fabricated | Machined aluminum | 1 | $350.00 | $350.00 | Includes guides |
+| 44 | Induction Coil Assembly | Crucible Subsystem | Custom Fabricated | Copper tube + mounting | 1 | $250.00 | $250.00 | Custom wound |
+| 45 | Material Delivery System | Crucible Subsystem | Custom Fabricated | Multi-channel manifold | 1 | $400.00 | $400.00 | 25 outlets |
+| 46 | Outlet Array | Crucible Subsystem | Custom Fabricated | Precision drilled plate | 1 | $300.00 | $300.00 | 5×5 grid, 2mm spacing |
+| 47 | Splitter Plate | Crucible Subsystem | Custom Fabricated | Stainless steel | 1 | $200.00 | $200.00 | Flow distribution |
+| 48 | Feed Lines | Crucible Subsystem | Custom Fabricated | PTFE/SS tubing | 25 | $10.00 | $250.00 | High-temp rated |
+| 49 | Thermal Pulse Formation | Crucible Subsystem | Custom Fabricated | Control valves | 1 | $350.00 | $350.00 | Droplet timing |
+| 50 | Ceramic Isolation | Crucible Subsystem | Custom Fabricated | Moldable ceramic | 1 | $150.00 | $150.00 | Thermal protection |
+| 51 | Mean Well RSP-1500-48 | Power/Control Subsystem | Commercial Off-The-Shelf | 48V 32A switching power supply with PFC | 1 | $400.00 | $400.00 | Right-sized for 1.3kW DC load, 83% utilization |
+| 52 | FPGA Board | Power/Control Subsystem | Commercial Off-The-Shelf | Cyclone IV EP4CE6 | 1 | $75.00 | $75.00 | Per VDATP reference |
+| 53 | 6-Channel Amp Modules | Power/Control Subsystem | Commercial Off-The-Shelf | TDA2030 DIY boards | 4 | $15.00 | $60.00 | Build from kits |
+| 54 | 8-Channel Relays | Power/Control Subsystem | Commercial Off-The-Shelf | Generic relay modules, 10A | 5 | $8.00 | $40.00 | eBay/AliExpress |
+| 55 | STM32 Dev Board | Power/Control Subsystem | Commercial Off-The-Shelf | STM32F4 Discovery | 1 | $25.00 | $25.00 | Real STM32 for development |
+| 56 | Industrial PC | Power/Control Subsystem | Commercial Off-The-Shelf | User-provided | 0 | $0.00 | $0.00 | Min specs: i5, 8GB RAM |
+| 57 | Thermal Camera - Optris Xi 400 | Power/Control Subsystem | Commercial Off-The-Shelf | Xi 400, 382×288 pixels, 80Hz, 20°×15° FOV | 2 | $4000.00 | $8000.00 | Droplet temperature monitoring - Replaces optical cameras |
+| 58 | Emergency Stop System | Power/Control Subsystem | Commercial Off-The-Shelf | Safety relay module with mushroom buttons | 1 | $350.00 | $350.00 | Fail-safe emergency shutdown per safety requirements |
+| 59 | Inkbird ITC-100VH PID Kit | Power/Control Subsystem | Commercial Off-The-Shelf | PID controller with 25A SSR and K thermocouple | 1 | $35.00 | $35.00 | Complete kit for primary zone control |
+| 60 | SSR-25DA Solid State Relay | Power/Control Subsystem | Commercial Off-The-Shelf | 25A DC-AC solid state relay | 1 | $8.00 | $8.00 | For second heater zone |
+| 61 | Type K Thermocouple (spare) | Power/Control Subsystem | Commercial Off-The-Shelf | Type K, 6mm probe, 2m cable | 1 | $10.00 | $10.00 | Second zone temperature sensing |
+| 62 | 2-Channel Relay Module | Power/Control Subsystem | Commercial Off-The-Shelf | 5V 10A dual relay for zone selection | 1 | $12.00 | $12.00 | Switches heater pairs for 2-zone operation |
+| 63 | 48V to 12V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 12V 35A step-down converter | 1 | $40.00 | $40.00 | Powers PC, fans, PID controllers |
+| 64 | 48V to 5V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 5V 15A step-down converter | 1 | $30.00 | $30.00 | Powers FPGA, STM32, logic circuits |
+| 65 | 48V to 24V DC Converter | Power/Control Subsystem | Commercial Off-The-Shelf | 48V to 24V 2A step-down converter | 1 | $20.00 | $20.00 | Powers stepper motors for material feed |
+| 66 | Control Bus PCB | Power/Control Subsystem | Custom Fabricated | 4-layer board | 1 | $350.00 | $350.00 | Main interconnect |
+| 67 | Acoustic Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board | 1 | $200.00 | $200.00 | Transducer routing |
+| 68 | Thermal Bus PCB | Power/Control Subsystem | Custom Fabricated | 2-layer board with relays | 1 | $250.00 | $250.00 | Heater control |
+| 69 | Wiring Harness | Power/Control Subsystem | Custom Fabricated | Custom cables | 1 | $300.00 | $300.00 | All interconnects |
+| 70 | Control Enclosure | Power/Control Subsystem | Custom Fabricated | Sheet metal box | 1 | $200.00 | $200.00 | Electronics housing |
 
 </div>
 
@@ -89,6 +98,6 @@
 | Frame Subsystem | 11 | $190.00 | $4050.00 | $4240.00 |
 | Heated Bed Subsystem | 6 | $56.00 | $1300.00 | $1356.00 |
 | Acoustic Cylinder Subsystem | 9 | $40.00 | $2500.00 | $2540.00 |
-| Crucible Subsystem | 15 | $984.00 | $2650.00 | $3634.00 |
+| Crucible Subsystem | 24 | $1015.00 | $2720.00 | $3735.00 |
 | Power/Control Subsystem | 20 | $9105.00 | $1300.00 | $10405.00 |
-| **TOTAL** | **61** | **$10375.00** | **$11800.00** | **$22175.00** |
+| **TOTAL** | **70** | **$10406.00** | **$11870.00** | **$22276.00** |
