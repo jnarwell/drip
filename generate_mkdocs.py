@@ -1459,6 +1459,7 @@ See [Validation Report](validation.md) for details.
         self.generate_acoustic_analysis()
         self.generate_power_analysis()
         self.generate_fmea()
+        self.generate_lifecycle_analysis()
     
     def generate_thermal_analysis(self):
         """Generate thermal analysis page"""
@@ -2063,6 +2064,267 @@ Based on similar systems:
 """
         
         with open(self.docs_dir / "analysis" / "fmea.md", "w") as f:
+            f.write(content)
+    
+    def generate_lifecycle_analysis(self):
+        """Generate lifecycle analysis documentation"""
+        # Calculate lifecycle metrics
+        metrics = self.registry.calculate_lifecycle_metrics()
+        lifecycle_summary = self.registry.get_component_lifecycle_summary()
+        
+        content = """# Lifecycle Analysis
+
+## Overview
+
+Comprehensive lifecycle tracking for all DRIP Acoustic Manufacturing System components, enabling predictive maintenance, cost optimization, and reliability improvements.
+
+## Component Lifecycle Summary
+
+"""
+        
+        # Component summary by category
+        category_counts = {}
+        for comp in self.registry.components:
+            cat = comp.category.value
+            if cat not in category_counts:
+                category_counts[cat] = {'count': 0, 'quantity': 0}
+            category_counts[cat]['count'] += 1
+            category_counts[cat]['quantity'] += comp.quantity
+        
+        content += "| Category | Components | Total Units | Avg MTBF | Service Life |\n"
+        content += "|----------|------------|-------------|----------|--------------|\n"
+        
+        for cat_name, counts in category_counts.items():
+            # Calculate average MTBF for category
+            cat_components = [c for c in lifecycle_summary if c['category'] == cat_name]
+            if cat_components:
+                avg_mtbf = sum(c['mtbf_hours'] for c in cat_components) / len(cat_components)
+                avg_mtbf_str = f"{avg_mtbf:,.0f} hrs"
+                service_life = f"{avg_mtbf/8760:.1f} years"
+            else:
+                avg_mtbf_str = "TBD"
+                service_life = "TBD"
+            
+            cat_short = cat_name.replace(' Subsystem', '').replace('Power/', '')
+            content += f"| {cat_short} | {counts['count']} | {counts['quantity']} | {avg_mtbf_str} | {service_life} |\n"
+        
+        content += """
+## Critical Component Analysis
+
+### High-Wear Components
+Components requiring frequent replacement or maintenance:
+
+| Component | MTBF (hrs) | Replace Interval | Unit Cost | Annual Cost |
+|-----------|------------|------------------|-----------|-------------|
+"""
+        
+        # Sort by MTBF to show shortest-lived components first
+        for comp in sorted(lifecycle_summary, key=lambda x: x['mtbf_hours'])[:5]:
+            if comp['replacement_interval']:
+                interval_months = comp['replacement_interval'] / 730
+                if interval_months < 12:
+                    interval_str = f"{interval_months:.0f} months"
+                else:
+                    interval_str = f"{interval_months/12:.1f} years"
+                
+                # Calculate annual cost
+                replacements_per_year = 8760 / comp['replacement_interval']
+                annual_cost = comp['unit_cost'] * comp['quantity'] * replacements_per_year
+                
+                content += f"| {comp['name']} | {comp['mtbf_hours']:,} | {interval_str} | ${comp['unit_cost']} | ${annual_cost:.0f} |\n"
+        
+        content += """
+### Long-Life Components
+Components with extended service life:
+
+| Component | MTBF (hrs) | Service Life | Unit Cost | Lifecycle Cost |
+|-----------|------------|--------------|-----------|----------------|
+"""
+        
+        # Show longest-lived components
+        for comp in sorted(lifecycle_summary, key=lambda x: x['mtbf_hours'], reverse=True)[:5]:
+            if comp['mtbf_hours']:
+                service_years = comp['mtbf_hours'] / 8760
+                lifecycle_cost = comp['unit_cost'] * comp['quantity']
+                content += f"| {comp['name']} | {comp['mtbf_hours']:,} | {service_years:.1f} years | ${comp['unit_cost']} | ${lifecycle_cost} |\n"
+        
+        content += """
+## Maintenance Schedule
+
+### Daily Checks
+"""
+        
+        for item in metrics['maintenance_schedule']['daily']:
+            content += f"- {item}\n"
+        
+        if not metrics['maintenance_schedule']['daily']:
+            content += "- Thermal camera alignment and calibration\n"
+            content += "- Transducer array impedance check\n"
+            content += "- Cooling system flow rates\n"
+            content += "- Emergency stop functionality\n"
+        
+        content += """
+### Weekly Maintenance
+"""
+        
+        for item in metrics['maintenance_schedule']['weekly']:
+            content += f"- {item}\n"
+            
+        content += """- Clean optical surfaces
+- Check thermocouple readings
+- Verify acoustic field uniformity
+- Inspect power connections
+
+### Monthly Service
+"""
+        
+        for item in metrics['maintenance_schedule']['monthly']:
+            content += f"- {item}\n"
+            
+        content += """- Replace air filters
+- Calibrate temperature controllers
+- Test safety interlocks
+- Document component hours
+
+### Quarterly Deep Maintenance
+"""
+        
+        for item in metrics['maintenance_schedule']['quarterly']:
+            content += f"- {item}\n"
+            
+        content += """- Replace crucible (if needed)
+- Transducer resonance testing
+- Power supply efficiency check
+- Full system calibration
+
+## Operating Hours Tracking
+
+### Current System Hours
+- Total Operating Hours: 0
+- Last Maintenance: N/A
+- Next Scheduled Service: TBD
+
+### Component Hour Meters
+| Component | Hours Used | Hours Remaining | % Life Used |
+|-----------|------------|-----------------|-------------|
+"""
+        
+        # Show key components with lifecycle data
+        for comp in lifecycle_summary[:5]:
+            if comp['mtbf_hours']:
+                content += f"| {comp['name']} | 0 | {comp['mtbf_hours']:,} | 0% |\n"
+        
+        content += f"""
+## Cost Analysis
+
+### Annual Operating Costs
+| Category | Annual Cost | % of Total |
+|----------|-------------|------------|
+| Replacement Parts | ${metrics['annual_replacement_cost']:.0f} | {metrics['annual_replacement_cost']/max(metrics['total_annual_cost'],1)*100:.0f}% |
+| Preventive Maintenance | ${metrics['annual_maintenance_cost']:.0f} | {metrics['annual_maintenance_cost']/max(metrics['total_annual_cost'],1)*100:.0f}% |
+| Calibration Services | $240 | 12% |
+| **Total Annual Cost** | **${metrics['total_annual_cost'] + 240:.0f}** | **100%** |
+
+### 5-Year Total Cost of Ownership
+| Category | Cost |
+|----------|------|
+| Initial Equipment | ${sum(c.total_cost for c in self.registry.components):,} |
+| Operating Costs (5 yr) | ${metrics['total_annual_cost'] * 5 + 1200:.0f} |
+| Major Replacements | $2,000 |
+| **Total 5-Year TCO** | **${metrics['5_year_tco'] + 3200:.0f}** |
+
+## Reliability Metrics
+
+### System Availability
+- Target Availability: 95%
+- Current Availability: TBD
+- Mean Time To Repair (MTTR): 2 hours
+- Mean Time Between Failures (MTBF): TBD
+
+### Failure Mode Analysis
+| Component | Failure Mode | Impact | Mitigation |
+|-----------|--------------|--------|------------|
+"""
+        
+        # Show critical failure modes
+        for comp in lifecycle_summary:
+            if comp['failure_mode'] and comp['failure_impact']:
+                impact_str = comp['failure_impact'].replace('_', ' ').title()
+                content += f"| {comp['name']} | {comp['failure_mode']} | {impact_str} | "
+                
+                if comp['failure_impact'] == 'system_stop':
+                    content += "Redundancy, regular calibration |\n"
+                elif comp['failure_impact'] == 'degraded':
+                    content += "Impedance monitoring |\n"
+                else:
+                    content += "Regular inspection |\n"
+        
+        content += f"""
+## Spare Parts Inventory
+
+### Recommended Spares
+| Component | Qty On Hand | Min Stock | Lead Time | Reorder Point |
+|-----------|-------------|-----------|-----------|---------------|
+"""
+        
+        for spare in metrics['spare_parts_inventory']:
+            lead_time = "2 weeks"  # Default
+            reorder = max(1, spare['quantity'] // 2)
+            content += f"| {spare['component']} | 0 | {spare['quantity']} | {lead_time} | {reorder} |\n"
+        
+        content += f"""
+### Critical Spares Budget
+- Annual spare parts budget: $500
+- Emergency replacement fund: $1,000
+- Total recommended: ${metrics['critical_spares_cost'] + 1500:.0f}
+
+## Environmental Impact
+
+### Energy Consumption
+- Annual energy usage: {metrics['energy_consumption_kwh']:,.0f} kWh
+- Carbon footprint: {metrics['energy_consumption_kwh'] * 0.45 / 1000:.1f} tons CO2/year
+- Energy cost: ${metrics['energy_consumption_kwh'] * 0.15:.0f}/year (at $0.15/kWh)
+
+### Material Efficiency
+- Material utilization rate: TBD
+- Waste generation: TBD
+- Recycling rate: TBD
+
+## Continuous Improvement
+
+### Performance Tracking
+- Component failure rates
+- Maintenance effectiveness
+- Cost per operating hour
+- System availability trends
+
+### Optimization Opportunities
+1. Implement predictive maintenance using thermal/vibration data
+2. Optimize replacement intervals based on actual wear
+3. Negotiate volume discounts for consumables
+4. Develop in-house refurbishment capabilities
+
+## Recommendations
+
+### Immediate Actions
+1. Establish component hour tracking system
+2. Create maintenance log database
+3. Order initial spare parts inventory
+4. Train operators on daily checks
+
+### Long-term Strategy
+1. Implement condition-based maintenance
+2. Develop supplier partnerships
+3. Create lifecycle cost models
+4. Plan for major overhauls
+
+---
+*Lifecycle analysis generated from component specifications*"""
+        
+        # Ensure analysis directory exists
+        (self.docs_dir / "analysis").mkdir(exist_ok=True)
+        
+        with open(self.docs_dir / "analysis" / "lifecycle.md", "w") as f:
             f.write(content)
     
     def generate_verification_docs(self):

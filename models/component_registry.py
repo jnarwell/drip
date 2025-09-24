@@ -58,6 +58,37 @@ class TechnicalSpecs:
 
 
 @dataclass
+class LifecycleData:
+    """Lifecycle tracking information for components"""
+    mtbf_hours: Optional[int] = None  # Mean Time Between Failures
+    service_interval_hours: Optional[int] = None  # Recommended service interval
+    replacement_interval_hours: Optional[int] = None  # Replacement interval
+    warranty_hours: Optional[int] = None  # Warranty period in hours
+    expected_lifetime_hours: Optional[int] = None  # Total expected lifetime
+    
+    # Maintenance requirements
+    daily_check: bool = False
+    weekly_maintenance: bool = False
+    monthly_service: bool = False
+    quarterly_maintenance: bool = False
+    
+    # Failure modes and criticality
+    primary_failure_mode: Optional[str] = None
+    failure_impact: Optional[str] = None  # "system_stop", "degraded", "minimal"
+    spare_stock_min: int = 0  # Minimum spare parts to keep
+    lead_time_critical: bool = False  # True if long lead time makes spares critical
+    
+    # Environmental impact
+    energy_consumption_kwh_year: Optional[float] = None
+    recyclable: bool = True
+    hazardous_disposal: bool = False
+    
+    # Cost tracking
+    annual_maintenance_cost: Optional[float] = None
+    cost_per_operating_hour: Optional[float] = None
+
+
+@dataclass
 class Component:
     """Base component class for all system components"""
     name: str
@@ -82,6 +113,9 @@ class Component:
     
     # Technical specifications
     tech_specs: TechnicalSpecs = field(default_factory=TechnicalSpecs)
+    
+    # Lifecycle tracking
+    lifecycle: LifecycleData = field(default_factory=LifecycleData)
 
 
 class ComponentRegistry:
@@ -548,6 +582,22 @@ class ComponentRegistry:
                     efficiency=80,  # %
                     connections=["2-pin JST"],
                     control_signal="PWM 40kHz"
+                ),
+                lifecycle=LifecycleData(
+                    mtbf_hours=10000,  # 1.1 years continuous
+                    service_interval_hours=2000,  # Quarterly check
+                    replacement_interval_hours=10000,
+                    warranty_hours=8760,  # 1 year
+                    expected_lifetime_hours=20000,
+                    quarterly_maintenance=True,
+                    primary_failure_mode="PZT delamination",
+                    failure_impact="degraded",
+                    spare_stock_min=4,
+                    lead_time_critical=False,
+                    energy_consumption_kwh_year=1577,  # 180W * 8760hr
+                    recyclable=True,
+                    annual_maintenance_cost=50,
+                    cost_per_operating_hour=0.0036
                 )
             ),
             Component(
@@ -1051,6 +1101,21 @@ class ComponentRegistry:
                     connections=["Standard K-type plug", "Ungrounded junction"],
                     control_signal="Type K millivolt output (0-54.9mV @ 1350°C)",
                     mounting_type="1/4\" compression fitting"
+                ),
+                lifecycle=LifecycleData(
+                    mtbf_hours=8760,  # 1 year in high-temp
+                    service_interval_hours=720,  # Monthly calibration check
+                    replacement_interval_hours=8760,
+                    warranty_hours=4380,  # 6 months
+                    expected_lifetime_hours=17520,  # 2 years max
+                    monthly_service=True,
+                    primary_failure_mode="Drift or wire break",
+                    failure_impact="degraded",
+                    spare_stock_min=2,
+                    lead_time_critical=False,
+                    recyclable=True,
+                    annual_maintenance_cost=50,
+                    cost_per_operating_hour=0.017
                 )
             ),
             Component(
@@ -1101,6 +1166,22 @@ class ComponentRegistry:
                     efficiency=95,  # %
                     connections=["2-wire with fiberglass leads"],
                     control_signal="PWM or on/off"
+                ),
+                lifecycle=LifecycleData(
+                    mtbf_hours=5000,  # 7 months continuous
+                    service_interval_hours=1000,  # Monthly check
+                    replacement_interval_hours=5000,
+                    warranty_hours=2190,  # 3 months
+                    expected_lifetime_hours=10000,
+                    monthly_service=True,
+                    primary_failure_mode="Heating element burnout",
+                    failure_impact="minimal",  # Redundant heaters
+                    spare_stock_min=5,
+                    lead_time_critical=False,
+                    energy_consumption_kwh_year=8760,  # 1000W * 8760hr
+                    recyclable=True,
+                    annual_maintenance_cost=40,
+                    cost_per_operating_hour=0.008
                 )
             ),
         ])
@@ -1129,6 +1210,21 @@ class ComponentRegistry:
                     thermal_dissipation=100,  # W at operating temp
                     cooling_required="none",
                     mounting_type="Ceramic standoffs"
+                ),
+                lifecycle=LifecycleData(
+                    mtbf_hours=2000,  # 3 months in high-temp cycles
+                    service_interval_hours=500,  # Weekly inspection
+                    replacement_interval_hours=2000,
+                    warranty_hours=720,  # 1 month
+                    expected_lifetime_hours=4000,
+                    weekly_maintenance=True,
+                    primary_failure_mode="Thermal stress cracking",
+                    failure_impact="system_stop",
+                    spare_stock_min=1,
+                    lead_time_critical=True,  # 2-week lead time
+                    recyclable=True,
+                    annual_maintenance_cost=100,
+                    cost_per_operating_hour=0.20
                 )
             ),
             Component(
@@ -1349,6 +1445,22 @@ class ComponentRegistry:
                     efficiency=91,  # %
                     connections=["2× AC input terminals", "Parallel DC output bus"],
                     control_signal="Remote on/off, voltage adjust, current share"
+                ),
+                lifecycle=LifecycleData(
+                    mtbf_hours=50000,  # 5.7 years continuous
+                    service_interval_hours=8760,  # Annual check
+                    replacement_interval_hours=50000,
+                    warranty_hours=26280,  # 3 years
+                    expected_lifetime_hours=80000,
+                    monthly_service=True,  # Check fans/filters
+                    primary_failure_mode="Capacitor aging",
+                    failure_impact="system_stop",
+                    spare_stock_min=1,
+                    lead_time_critical=False,
+                    energy_consumption_kwh_year=1927,  # 220W * 8760hr
+                    recyclable=True,
+                    annual_maintenance_cost=20,
+                    cost_per_operating_hour=0.016
                 )
             ),
             Component(
@@ -2297,3 +2409,116 @@ if __name__ == "__main__":
         print("\nRecommendations:")
         for rec in thermal_validation['recommendations']:
             print(f"  • {rec}")
+    
+    def calculate_lifecycle_metrics(self, operating_hours_per_year: float = 8760) -> Dict[str, Any]:
+        """Calculate comprehensive lifecycle metrics for all components"""
+        metrics = {
+            'total_components': 0,
+            'components_with_lifecycle': 0,
+            'annual_replacement_cost': 0,
+            'annual_maintenance_cost': 0,
+            'total_annual_cost': 0,
+            'critical_spares_cost': 0,
+            'energy_consumption_kwh': 0,
+            'high_wear_components': [],
+            'critical_components': [],
+            'maintenance_schedule': {
+                'daily': [],
+                'weekly': [],
+                'monthly': [],
+                'quarterly': []
+            },
+            'spare_parts_inventory': [],
+            '5_year_tco': 0
+        }
+        
+        for component in self.components:
+            metrics['total_components'] += component.quantity
+            
+            if hasattr(component, 'lifecycle') and component.lifecycle.mtbf_hours:
+                metrics['components_with_lifecycle'] += 1
+                lifecycle = component.lifecycle
+                
+                # Calculate replacement costs
+                if lifecycle.replacement_interval_hours:
+                    replacements_per_year = operating_hours_per_year / lifecycle.replacement_interval_hours
+                    annual_replacement = component.unit_cost * component.quantity * replacements_per_year
+                    metrics['annual_replacement_cost'] += annual_replacement
+                    
+                    # Track high-wear components (replace more than once per year)
+                    if replacements_per_year > 1:
+                        metrics['high_wear_components'].append({
+                            'name': component.name,
+                            'mtbf': lifecycle.mtbf_hours,
+                            'replacements_per_year': replacements_per_year,
+                            'annual_cost': annual_replacement
+                        })
+                
+                # Add maintenance costs
+                if lifecycle.annual_maintenance_cost:
+                    metrics['annual_maintenance_cost'] += lifecycle.annual_maintenance_cost
+                
+                # Track critical components
+                if lifecycle.failure_impact == "system_stop":
+                    metrics['critical_components'].append({
+                        'name': component.name,
+                        'mtbf': lifecycle.mtbf_hours,
+                        'spare_min': lifecycle.spare_stock_min,
+                        'lead_time_critical': lifecycle.lead_time_critical
+                    })
+                
+                # Add to maintenance schedule
+                if lifecycle.daily_check:
+                    metrics['maintenance_schedule']['daily'].append(component.name)
+                if lifecycle.weekly_maintenance:
+                    metrics['maintenance_schedule']['weekly'].append(component.name)
+                if lifecycle.monthly_service:
+                    metrics['maintenance_schedule']['monthly'].append(component.name)
+                if lifecycle.quarterly_maintenance:
+                    metrics['maintenance_schedule']['quarterly'].append(component.name)
+                
+                # Calculate spare parts inventory cost
+                if lifecycle.spare_stock_min > 0:
+                    metrics['spare_parts_inventory'].append({
+                        'component': component.name,
+                        'quantity': lifecycle.spare_stock_min,
+                        'unit_cost': component.unit_cost,
+                        'total_cost': lifecycle.spare_stock_min * component.unit_cost
+                    })
+                    metrics['critical_spares_cost'] += lifecycle.spare_stock_min * component.unit_cost
+                
+                # Track energy consumption
+                if lifecycle.energy_consumption_kwh_year:
+                    metrics['energy_consumption_kwh'] += lifecycle.energy_consumption_kwh_year
+        
+        # Calculate totals
+        metrics['total_annual_cost'] = metrics['annual_replacement_cost'] + metrics['annual_maintenance_cost']
+        
+        # Calculate 5-year TCO
+        initial_cost = sum(c.total_cost for c in self.components)
+        operating_costs_5yr = metrics['total_annual_cost'] * 5
+        energy_cost_5yr = metrics['energy_consumption_kwh'] * 5 * 0.15  # $0.15/kWh
+        metrics['5_year_tco'] = initial_cost + operating_costs_5yr + energy_cost_5yr
+        
+        return metrics
+    
+    def get_component_lifecycle_summary(self) -> List[Dict[str, Any]]:
+        """Get lifecycle summary for all components with lifecycle data"""
+        summary = []
+        
+        for component in self.components:
+            if hasattr(component, 'lifecycle') and component.lifecycle.mtbf_hours:
+                summary.append({
+                    'name': component.name,
+                    'category': component.category.value,
+                    'quantity': component.quantity,
+                    'unit_cost': component.unit_cost,
+                    'mtbf_hours': component.lifecycle.mtbf_hours,
+                    'replacement_interval': component.lifecycle.replacement_interval_hours,
+                    'failure_mode': component.lifecycle.primary_failure_mode,
+                    'failure_impact': component.lifecycle.failure_impact,
+                    'spare_min': component.lifecycle.spare_stock_min,
+                    'annual_cost': component.lifecycle.annual_maintenance_cost or 0
+                })
+        
+        return sorted(summary, key=lambda x: x['mtbf_hours'] or float('inf'))
