@@ -214,16 +214,20 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 **Note:** All specifications are targets/estimates only. No simulation, validation, or physical testing has been performed.
 
-## 🔗 Planning Milestones
+## 🔗 Development Approach
 
-- **{datetime.now().strftime('%Y-%m-%d')}**: Documentation framework established for planning phase
-- **2025-01-14**: Target interface concepts outlined  
-- **2025-01-14**: Power consumption estimated at ~4.6kW (preliminary)
-- **2025-01-13**: Initial component research documented
+This project follows a phased development approach:
+
+- **Phase 1**: Documentation framework and requirements definition
+- **Phase 2**: Interface concepts and component selection  
+- **Phase 3**: Power architecture and preliminary design
+- **Phase 4**: Prototype assembly (pending funding)
+
+**All timelines are conceptual - actual schedule TBD based on funding and resources**
 
 ---
 
-*Last updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} | Build: v{self.build_version}*
+*Documentation framework version: v{self.build_version}*
 """
         
         with open(self.docs_dir / "index.md", "w") as f:
@@ -422,7 +426,7 @@ gantt
         content += f"""
 
 ---
-*Dashboard updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}*
+*Dashboard generated from component registry*
 """
         
         with open(self.docs_dir / "dashboard.md", "w") as f:
@@ -2096,7 +2100,7 @@ Comprehensive lifecycle tracking for all DRIP Acoustic Manufacturing System comp
         
         for cat_name, counts in category_counts.items():
             # Calculate average MTBF for category
-            cat_components = [c for c in lifecycle_summary if c['category'] == cat_name]
+            cat_components = [c for c in lifecycle_summary if c['category'] == cat_name and c['mtbf_hours'] is not None]
             if cat_components:
                 avg_mtbf = sum(c['mtbf_hours'] for c in cat_components) / len(cat_components)
                 avg_mtbf_str = f"{avg_mtbf:,.0f} hrs"
@@ -2119,19 +2123,23 @@ Components requiring frequent replacement or maintenance:
 """
         
         # Sort by MTBF to show shortest-lived components first
-        for comp in sorted(lifecycle_summary, key=lambda x: x['mtbf_hours'])[:5]:
-            if comp['replacement_interval']:
-                interval_months = comp['replacement_interval'] / 730
-                if interval_months < 12:
-                    interval_str = f"{interval_months:.0f} months"
-                else:
-                    interval_str = f"{interval_months/12:.1f} years"
-                
-                # Calculate annual cost
-                replacements_per_year = 8760 / comp['replacement_interval']
-                annual_cost = comp['unit_cost'] * comp['quantity'] * replacements_per_year
-                
-                content += f"| {comp['name']} | {comp['mtbf_hours']:,} | {interval_str} | ${comp['unit_cost']} | ${annual_cost:.0f} |\n"
+        components_with_mtbf = [c for c in lifecycle_summary if c['mtbf_hours'] is not None]
+        if components_with_mtbf:
+            for comp in sorted(components_with_mtbf, key=lambda x: x['mtbf_hours'])[:5]:
+                    if comp['replacement_interval']:
+                        interval_months = comp['replacement_interval'] / 730
+                        if interval_months < 12:
+                            interval_str = f"{interval_months:.0f} months"
+                        else:
+                            interval_str = f"{interval_months/12:.1f} years"
+                        
+                        # Calculate annual cost
+                        replacements_per_year = 8760 / comp['replacement_interval']
+                        annual_cost = comp['unit_cost'] * comp['quantity'] * replacements_per_year
+                        
+                        content += f"| {comp['name']} | {comp['mtbf_hours']:,} | {interval_str} | ${comp['unit_cost']} | ${annual_cost:.0f} |\n"
+        else:
+            content += "| All components awaiting test data | TBD | TBD | TBD | TBD |\n"
         
         content += """
 ### Long-Life Components
@@ -2142,11 +2150,13 @@ Components with extended service life:
 """
         
         # Show longest-lived components
-        for comp in sorted(lifecycle_summary, key=lambda x: x['mtbf_hours'], reverse=True)[:5]:
-            if comp['mtbf_hours']:
+        if components_with_mtbf:
+            for comp in sorted(components_with_mtbf, key=lambda x: x['mtbf_hours'], reverse=True)[:5]:
                 service_years = comp['mtbf_hours'] / 8760
                 lifecycle_cost = comp['unit_cost'] * comp['quantity']
                 content += f"| {comp['name']} | {comp['mtbf_hours']:,} | {service_years:.1f} years | ${comp['unit_cost']} | ${lifecycle_cost} |\n"
+        else:
+            content += "| All components awaiting test data | TBD | TBD | TBD | TBD |\n"
         
         content += """
 ## Maintenance Schedule
@@ -2210,9 +2220,11 @@ Components with extended service life:
 """
         
         # Show key components with lifecycle data
-        for comp in lifecycle_summary[:5]:
-            if comp['mtbf_hours']:
+        if components_with_mtbf:
+            for comp in components_with_mtbf[:5]:
                 content += f"| {comp['name']} | 0 | {comp['mtbf_hours']:,} | 0% |\n"
+        else:
+            content += "| All components | 0 | TBD | 0% |\n"
         
         content += f"""
 ## Cost Analysis

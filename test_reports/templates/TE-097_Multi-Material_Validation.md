@@ -25,7 +25,7 @@ result: null
 !!! info "Test Status"
     **Current Phase**: Planning Only
     **Hardware**: Not Available
-    **Expected Execution**: After prototype assembly (Q2 2025)
+    **Expected Execution**: After prototype assembly
 
 ## 1.0 Test Information
 

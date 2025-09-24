@@ -8,10 +8,11 @@ Comprehensive lifecycle tracking for all DRIP Acoustic Manufacturing System comp
 
 | Category | Components | Total Units | Avg MTBF | Service Life |
 |----------|------------|-------------|----------|--------------|
-| Acoustic | 50 | 50 | TBD | TBD |
-| Thermal | 14 | 39 | TBD | TBD |
-| Power/Control | 25 | 33 | TBD | TBD |
-| Mechanical | 11 | 33 | TBD | TBD |
+| Frame | 11 | 15 | TBD | TBD |
+| Heated Bed | 6 | 10 | TBD | TBD |
+| Acoustic Cylinder | 9 | 50 | TBD | TBD |
+| Crucible | 26 | 75 | TBD | TBD |
+| Control | 20 | 28 | TBD | TBD |
 
 ## Critical Component Analysis
 
@@ -20,19 +21,14 @@ Components requiring frequent replacement or maintenance:
 
 | Component | MTBF (hrs) | Replace Interval | Unit Cost | Annual Cost |
 |-----------|------------|------------------|-----------|-------------|
-| Type K Thermocouples | 8,760 | 1 year | $150 | $150 |
-| Crucible | 2,000 | 3 months | $200 | $800 |
-| 40kHz Transducers | 10,000 | 1.1 years | $19 | $315 |
-| Micro Heaters | 5,000 | 7 months | $4 | $100 |
+| All components awaiting test data | TBD | TBD | TBD | TBD |
 
 ### Long-Life Components
 Components with extended service life:
 
 | Component | MTBF (hrs) | Service Life | Unit Cost | Lifecycle Cost |
 |-----------|------------|--------------|-----------|----------------|
-| RSP-1500-48 PSU | 50,000 | 5.7 years | $400 | $400 |
-| FPGA Board | 100,000 | 11.4 years | $75 | $75 |
-| Industrial PC | 40,000 | 4.6 years | $0 | $0 |
+| All components awaiting test data | TBD | TBD | TBD | TBD |
 
 ## Maintenance Schedule
 
@@ -70,28 +66,25 @@ Components with extended service life:
 ### Component Hour Meters
 | Component | Hours Used | Hours Remaining | % Life Used |
 |-----------|------------|-----------------|-------------|
-| PSU Units | 0 | 50,000 | 0% |
-| Transducers | 0 | 10,000 | 0% |
-| Thermocouples | 0 | 8,760 | 0% |
-| Crucible | 0 | 2,000 | 0% |
+| All components | 0 | TBD | 0% |
 
 ## Cost Analysis
 
 ### Annual Operating Costs
 | Category | Annual Cost | % of Total |
 |----------|-------------|------------|
-| Replacement Parts | $1,365 | 68% |
-| Preventive Maintenance | $400 | 20% |
+| Replacement Parts | $0 | 0% |
+| Preventive Maintenance | $0 | 0% |
 | Calibration Services | $240 | 12% |
-| **Total Annual Cost** | **$2,005** | **100%** |
+| **Total Annual Cost** | **$240** | **100%** |
 
 ### 5-Year Total Cost of Ownership
 | Category | Cost |
 |----------|------|
-| Initial Equipment | $18,889 |
-| Operating Costs (5 yr) | $10,025 |
+| Initial Equipment | $19,139.0 |
+| Operating Costs (5 yr) | $1200 |
 | Major Replacements | $2,000 |
-| **Total 5-Year TCO** | **$30,914** |
+| **Total 5-Year TCO** | **$22339** |
 
 ## Reliability Metrics
 
@@ -104,32 +97,24 @@ Components with extended service life:
 ### Failure Mode Analysis
 | Component | Failure Mode | Impact | Mitigation |
 |-----------|--------------|--------|------------|
-| Thermocouples | Drift/Break | Temperature error | Redundancy, regular calibration |
-| Transducers | Delamination | Reduced power | Impedance monitoring |
-| PSU | Capacitor aging | Power instability | Dual redundancy |
-| Crucible | Thermal stress | Leakage | Regular inspection |
 
 ## Spare Parts Inventory
 
 ### Recommended Spares
 | Component | Qty On Hand | Min Stock | Lead Time | Reorder Point |
 |-----------|-------------|-----------|-----------|---------------|
-| Type K Thermocouples | 2 | 2 | 1 week | 1 |
-| 40kHz Transducers | 0 | 4 | 2 weeks | 2 |
-| Crucible | 0 | 1 | 2 weeks | 1 |
-| Fuses/Protection | 0 | 10 | 1 day | 5 |
 
 ### Critical Spares Budget
 - Annual spare parts budget: $500
 - Emergency replacement fund: $1,000
-- Total recommended: $1,500
+- Total recommended: $1500
 
 ## Environmental Impact
 
 ### Energy Consumption
-- Annual energy usage: 28,685 kWh
-- Carbon footprint: 12.9 tons CO2/year
-- Energy cost: $4,303/year (at $0.15/kWh)
+- Annual energy usage: 0 kWh
+- Carbon footprint: 0.0 tons CO2/year
+- Energy cost: $0/year (at $0.15/kWh)
 
 ### Material Efficiency
 - Material utilization rate: TBD

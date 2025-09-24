@@ -1120,6 +1120,32 @@ Search components using the box below or browse by category.
 
 </div>
 
+### Micro Heater Control System
+
+<div class="spec-card">
+
+=== "Specifications"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Category** | Crucible Subsystem |
+    | **Type** | Custom Fabricated |
+    | **Quantity** | 1 |
+    | **Unit Cost** | $250.00 |
+    | **Power Consumption** | 20W |
+    | **Weight** | 0.5kg |
+    | **Dimensions** | 200×150×50mm |
+
+=== "Notes"
+
+    Custom control board for micro heaters
+
+=== "Expansion"
+
+    No expansion notes
+
+</div>
+
 ### Crucible Assembly
 
 <div class="spec-card">

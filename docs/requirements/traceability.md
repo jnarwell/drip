@@ -96,6 +96,6 @@ These constraints will generate runtime alerts if requirements are violated duri
 
 ---
 
-*Last Updated: 2025-09-22*
+*Traceability matrix auto-generated from requirements*
 
 *Related: [Behavioral Models](../behavioral/index.md) | [Requirements](../system/requirements.md) | [Test Matrix](../verification/matrix.md)*

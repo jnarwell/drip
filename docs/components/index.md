@@ -2,16 +2,16 @@
 
 ## Overview
 
-The Acoustic Manufacturing System consists of **71 components** organized into 5 major subsystems.
+The Acoustic Manufacturing System consists of **72 components** organized into 5 major subsystems.
 
 ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| **Total Components** | 71 |
+| **Total Components** | 72 |
 | **COTS Components** | 35 (49%) |
-| **Custom Components** | 36 (51%) |
-| **Total Cost** | $18,889.00 |
+| **Custom Components** | 37 (51%) |
+| **Total Cost** | $19,139.00 |
 | **Lead Time** | 6-8 weeks |
 
 ## Subsystem Components
@@ -77,6 +77,7 @@ The Acoustic Manufacturing System consists of **71 components** organized into 5
     | Thermocouples | Commercial Off-The-Shelf | 2 | $150.00 | - |
     | TC Mounting Kit | Commercial Off-The-Shelf | 1 | $95.00 | - |
     | Micro Heaters | Commercial Off-The-Shelf | 25 | $200.00 | 40W |
+    | Micro Heater Control System | Custom Fabricated | 1 | $250.00 | 20W |
     | Crucible Assembly | Custom Fabricated | 1 | $400.00 | - |
     | Material Feed System | Custom Fabricated | 1 | $350.00 | - |
     | Induction Coil Assembly | Custom Fabricated | 1 | $250.00 | - |

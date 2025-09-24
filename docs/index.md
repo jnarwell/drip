@@ -36,7 +36,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
     ---
 
-    Planned modular progression from $18k prototype to $107k production system
+    Planned modular progression from $19k prototype to $109k production system
 
 </div>
 
@@ -44,7 +44,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 | Metric | Level 1 | Level 2 | Level 3 | Level 4 |
 |--------|---------|---------|---------|---------|
-| **Cost (Target)** | ~$18,889 | ~$29,278 | ~$51,567 | ~$107,667 |
+| **Cost (Target)** | ~$19,139 | ~$29,665 | ~$52,249 | ~$109,092 |
 | **Build Volume** | 125 cm³ | 1000 cm³ | 1000 cm³ | 8000 cm³ |
 | **Materials** | Al | Al + Steel | Dual | 5+ |
 | **Transducers** | 18 | 36 | 36 | 72 |
@@ -59,7 +59,7 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
     ---
     
-    71 planned components ready for Level 1
+    72 planned components ready for Level 1
 
 - :material-connection:{ .lg .middle } **[Interface Control](icds/index.md)**
 
@@ -95,13 +95,17 @@ The proposed Acoustic Manufacturing System would use **40 kHz ultrasonic transdu
 
 **Note:** All specifications are targets/estimates only. No simulation, validation, or physical testing has been performed.
 
-## 🔗 Planning Milestones
+## 🔗 Development Approach
 
-- **2025-09-23**: Documentation framework established for planning phase
-- **2025-01-14**: Target interface concepts outlined  
-- **2025-01-14**: Power consumption estimated at ~4.6kW (preliminary)
-- **2025-01-13**: Initial component research documented
+This project follows a phased development approach:
+
+- **Phase 1**: Documentation framework and requirements definition
+- **Phase 2**: Interface concepts and component selection  
+- **Phase 3**: Power architecture and preliminary design
+- **Phase 4**: Prototype assembly (pending funding)
+
+**All timelines are conceptual - actual schedule TBD based on funding and resources**
 
 ---
 
-*Last updated: 2025-09-23 18:26:28 | Build: v1758677188*
+*Documentation framework version: v1.0*

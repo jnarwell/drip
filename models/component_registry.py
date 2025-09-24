@@ -584,20 +584,14 @@ class ComponentRegistry:
                     control_signal="PWM 40kHz"
                 ),
                 lifecycle=LifecycleData(
-                    mtbf_hours=10000,  # 1.1 years continuous
-                    service_interval_hours=2000,  # Quarterly check
-                    replacement_interval_hours=10000,
-                    warranty_hours=8760,  # 1 year
-                    expected_lifetime_hours=20000,
-                    quarterly_maintenance=True,
-                    primary_failure_mode="PZT delamination",
-                    failure_impact="degraded",
-                    spare_stock_min=4,
-                    lead_time_critical=False,
-                    energy_consumption_kwh_year=1577,  # 180W * 8760hr
-                    recyclable=True,
-                    annual_maintenance_cost=50,
-                    cost_per_operating_hour=0.0036
+                    # TODO: Populate from TE-086 transducer endurance test results
+                    mtbf_hours=None,  # TBD from testing
+                    service_interval_hours=None,  # TBD from testing
+                    replacement_interval_hours=None,  # TBD from testing
+                    primary_failure_mode="TBD - likely PZT delamination or wire fatigue",
+                    failure_impact="degraded",  # System can run with fewer transducers
+                    spare_stock_min=4,  # Recommend 10% spares
+                    recyclable=True
                 )
             ),
             Component(
@@ -1103,19 +1097,14 @@ class ComponentRegistry:
                     mounting_type="1/4\" compression fitting"
                 ),
                 lifecycle=LifecycleData(
-                    mtbf_hours=8760,  # 1 year in high-temp
-                    service_interval_hours=720,  # Monthly calibration check
-                    replacement_interval_hours=8760,
-                    warranty_hours=4380,  # 6 months
-                    expected_lifetime_hours=17520,  # 2 years max
-                    monthly_service=True,
-                    primary_failure_mode="Drift or wire break",
-                    failure_impact="degraded",
+                    # TODO: Populate from TE-089 thermal cycling test
+                    mtbf_hours=None,  # TBD from high-temp testing
+                    service_interval_hours=720,  # Monthly calibration recommended
+                    replacement_interval_hours=None,  # TBD from testing
+                    primary_failure_mode="TBD - drift or junction degradation",
+                    failure_impact="degraded",  # Redundant sensors
                     spare_stock_min=2,
-                    lead_time_critical=False,
-                    recyclable=True,
-                    annual_maintenance_cost=50,
-                    cost_per_operating_hour=0.017
+                    recyclable=True
                 )
             ),
             Component(
@@ -1168,20 +1157,34 @@ class ComponentRegistry:
                     control_signal="PWM or on/off"
                 ),
                 lifecycle=LifecycleData(
-                    mtbf_hours=5000,  # 7 months continuous
-                    service_interval_hours=1000,  # Monthly check
-                    replacement_interval_hours=5000,
-                    warranty_hours=2190,  # 3 months
-                    expected_lifetime_hours=10000,
-                    monthly_service=True,
-                    primary_failure_mode="Heating element burnout",
+                    # TODO: Populate from TE-087 micro heater endurance test
+                    mtbf_hours=None,  # TBD from testing
+                    service_interval_hours=1000,  # Monthly visual inspection
+                    replacement_interval_hours=None,  # TBD from testing
+                    primary_failure_mode="TBD - element burnout or lead failure",
                     failure_impact="minimal",  # Redundant heaters
                     spare_stock_min=5,
-                    lead_time_critical=False,
-                    energy_consumption_kwh_year=8760,  # 1000W * 8760hr
-                    recyclable=True,
-                    annual_maintenance_cost=40,
-                    cost_per_operating_hour=0.008
+                    recyclable=True
+                )
+            ),
+            Component(
+                name="Micro Heater Control System",
+                category=ComponentCategory.CRUCIBLE,
+                type=ComponentType.CUSTOM,
+                specification="25-channel SSR control board",
+                quantity=1,
+                unit_cost=250,
+                total_cost=250,
+                notes="Custom control board for micro heaters",
+                requires_expansion=False,
+                tech_specs=TechnicalSpecs(
+                    power_consumption=20,  # Control electronics
+                    power_type='DC',
+                    power_voltage=5,  # Logic level
+                    weight=0.5,  # kg
+                    dimensions={'L': 200, 'W': 150, 'H': 50},  # mm
+                    connections=["25× SSR outputs", "SPI control", "5V power"],
+                    control_signal="SPI bus"
                 )
             ),
         ])
@@ -1212,19 +1215,16 @@ class ComponentRegistry:
                     mounting_type="Ceramic standoffs"
                 ),
                 lifecycle=LifecycleData(
-                    mtbf_hours=2000,  # 3 months in high-temp cycles
-                    service_interval_hours=500,  # Weekly inspection
-                    replacement_interval_hours=2000,
-                    warranty_hours=720,  # 1 month
-                    expected_lifetime_hours=4000,
+                    # TODO: Populate from TE-088 thermal shock testing
+                    mtbf_hours=None,  # TBD from thermal cycling tests
+                    service_interval_hours=168,  # Weekly visual inspection
+                    replacement_interval_hours=None,  # TBD from testing
                     weekly_maintenance=True,
-                    primary_failure_mode="Thermal stress cracking",
-                    failure_impact="system_stop",
+                    primary_failure_mode="TBD - thermal stress cracking likely",
+                    failure_impact="system_stop",  # Critical component
                     spare_stock_min=1,
-                    lead_time_critical=True,  # 2-week lead time
-                    recyclable=True,
-                    annual_maintenance_cost=100,
-                    cost_per_operating_hour=0.20
+                    lead_time_critical=True,  # Custom fabrication
+                    recyclable=True
                 )
             ),
             Component(
@@ -1447,20 +1447,16 @@ class ComponentRegistry:
                     control_signal="Remote on/off, voltage adjust, current share"
                 ),
                 lifecycle=LifecycleData(
-                    mtbf_hours=50000,  # 5.7 years continuous
-                    service_interval_hours=8760,  # Annual check
-                    replacement_interval_hours=50000,
-                    warranty_hours=26280,  # 3 years
-                    expected_lifetime_hours=80000,
+                    # TODO: Mean Well datasheet suggests 50k hr MTBF - verify with testing
+                    mtbf_hours=None,  # Manufacturer spec needs validation
+                    service_interval_hours=2160,  # Quarterly fan cleaning
+                    replacement_interval_hours=None,  # TBD from testing
                     monthly_service=True,  # Check fans/filters
-                    primary_failure_mode="Capacitor aging",
-                    failure_impact="system_stop",
+                    primary_failure_mode="TBD - capacitor aging or fan failure likely",
+                    failure_impact="system_stop",  # Critical component
                     spare_stock_min=1,
-                    lead_time_critical=False,
-                    energy_consumption_kwh_year=1927,  # 220W * 8760hr
-                    recyclable=True,
-                    annual_maintenance_cost=20,
-                    cost_per_operating_hour=0.016
+                    lead_time_critical=False,  # Off-the-shelf
+                    recyclable=True
                 )
             ),
             Component(
@@ -2325,91 +2321,6 @@ class ComponentRegistry:
     
     TOTAL WALL POWER: ~7.4kW (DC + AC)
     """
-
-
-"""
-Heater Installation Pattern (150mm diameter copper disc):
-    
-    Top View:
-         37.5mm
-           ↓
-      H1 ─────── H2     
-       │         │      H1,H2 = Zone 1 (Primary)
-       │    ●    │      H3,H4 = Zone 2 (Secondary)
-       │         │      
-      H3 ─────── H4     
-         50mm spacing
-         
-Drilling Specifications:
-- Hole diameter: 12.7mm (0.500")  
-- Hole depth: 25mm (leave 5mm bottom)
-- Position: 37.5mm from center
-- Pattern: Square, 50mm spacing
-- Finish: Ream for tight fit
-"""
-
-"""
-Electrical Architecture:
-
-120V AC Mains
-    │
-    ├─[20A Breaker]─┬─[SSR-1]──[H1: Heater 1 - Zone 1]
-    │               ├─[SSR-1]──[H2: Heater 2 - Zone 1]
-    │               ├─[SSR-2]──[H3: Heater 3 - Zone 2]
-    │               └─[SSR-2]──[H4: Heater 4 - Zone 2]
-    │
-    └─[5V PSU]──[Arduino/Control]
-         │
-         ├──[ITC-100VH PID]──[SSR-1 control]
-         ├──[Relay Module]───[Zone switching]
-         └──[Thermocouples]──[Temperature feedback]
-
-Operating Modes:
-1. Normal: H1+H2 active (2000W)
-2. Boost: H1+H2+H3+H4 (4000W for fast heat-up)
-3. Redundant: H3+H4 if H1 or H2 fails
-4. Uniform: Alternate pairs for better distribution
-"""
-
-# Example usage
-if __name__ == "__main__":
-    registry = ComponentRegistry()
-    registry.print_summary()
-    
-    # Calculate power budget
-    print("\n" + "=" * 80)
-    print("POWER BUDGET ANALYSIS")
-    print("=" * 80)
-    power_budget = registry.calculate_power_budget()
-    for subsystem, power_data in power_budget.items():
-        if power_data['active_power'] > 0:
-            print(f"\n{subsystem}:")
-            print(f"  Active Power: {power_data['active_power']:.1f}W")
-            print(f"  Thermal Load: {power_data['thermal_load']:.1f}W")
-            print(f"  Components: {power_data['component_count']}")
-    
-    # Validate thermal design
-    print("\n" + "=" * 80)
-    print("THERMAL VALIDATION")
-    print("=" * 80)
-    thermal_validation = registry.validate_thermal_design()
-    print(f"\nTotal Heat Generation: {thermal_validation['total_heat_generation']:.1f}W")
-    
-    print("\nCooling Requirements:")
-    for cooling_type, data in thermal_validation['cooling_requirements'].items():
-        print(f"  {cooling_type.title()}: {data['component_count']} components, "
-              f"{data['total_heat_load']:.1f}W heat load")
-    
-    if thermal_validation['warnings']:
-        print("\nWarnings:")
-        for warning in thermal_validation['warnings']:
-            print(f"  ⚠️  {warning}")
-    
-    if thermal_validation['recommendations']:
-        print("\nRecommendations:")
-        for rec in thermal_validation['recommendations']:
-            print(f"  • {rec}")
-    
     def calculate_lifecycle_metrics(self, operating_hours_per_year: float = 8760) -> Dict[str, Any]:
         """Calculate comprehensive lifecycle metrics for all components"""
         metrics = {

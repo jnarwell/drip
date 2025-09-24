@@ -9,7 +9,7 @@
 <span class="metric-icon">💰</span>
 <div class="metric-content">
 <h3>Total Cost</h3>
-<p class="metric-value">$18,889</p>
+<p class="metric-value">$19,139</p>
 <p class="metric-label">Level 1 System</p>
 </div>
 </div>
@@ -18,7 +18,7 @@
 <span class="metric-icon">🔧</span>
 <div class="metric-content">
 <h3>Components</h3>
-<p class="metric-value">71</p>
+<p class="metric-value">72</p>
 <p class="metric-label">Total Parts</p>
 </div>
 </div>
@@ -50,7 +50,7 @@ pie title Cost Distribution by Subsystem
     "Frame Subsystem" : 4240
     "Heated Bed Subsystem" : 1356
     "Acoustic Cylinder Subsystem" : 2540
-    "Crucible Subsystem" : 3956
+    "Crucible Subsystem" : 4206
     "Power/Control Subsystem" : 6797
 ```
 
@@ -60,29 +60,32 @@ pie title Cost Distribution by Subsystem
 |-----------|-------------|--------|-----------|
 | Heated Bed Subsystem | 6000W | 0W | 6000W |
 | Acoustic Cylinder Subsystem | 185W | 0W | 185W |
-| Crucible Subsystem | 5090W | 0W | 5090W |
+| Crucible Subsystem | 5110W | 0W | 5110W |
 | Power/Control Subsystem | 1500W | 6687W | -5187W |
-| **TOTAL** | **12774W** | **6687W** | **6087W** |
+| **TOTAL** | **12794W** | **6687W** | **6107W** |
 
-## 🔄 Development Timeline
+## 🔄 Development Phases
 
 ```mermaid
 gantt
-    title Development Phases
-    dateFormat  YYYY-MM-DD
+    title Development Phases (Conceptual Sequence)
+    dateFormat X
+    axisFormat %s
     section Level 1
-    Requirements    :done, 2025-01-01, 7d
-    Design          :active, 2025-01-08, 14d
-    Procurement     :2025-01-22, 14d
-    Assembly        :2025-02-06, 7d
-    Testing         :2025-02-13, 14d
+    Requirements    :done, req, 0, 1w
+    Design          :active, des, after req, 2w
+    Procurement     :proc, after des, 2w
+    Assembly        :assm, after proc, 1w
+    Testing         :test, after assm, 2w
     section Level 2
-    Steel Upgrade   :2025-02-27, 30d
+    Steel Upgrade   :steel, after test, 4w
     section Level 3
-    Dual Material   :2025-03-26, 45d
+    Dual Material   :dual, after steel, 6w
     section Level 4
-    Production      :2025-05-10, 60d
+    Production      :prod, after dual, 8w
 ```
+
+**Timeline: TBD pending project funding and approval**
 
 ## 📈 Test Progress
 
@@ -102,4 +105,4 @@ gantt
 | **TOTAL** | **100** | **0** | **🔴 0%** |
 
 ---
-*Dashboard updated: 2025-09-23 18:26:28*
+*Dashboard generated from component registry*
