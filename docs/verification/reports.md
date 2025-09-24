@@ -9,21 +9,24 @@
 - **Tests Failed**: 0
 - **Tests Blocked**: 0
 
-### Test Progress
-```mermaid
-gantt
-    title Test Execution Timeline
-    dateFormat YYYY-MM-DD
-    section Acoustic
-    Frequency Test :done, 2025-01-01, 1d
-    Field Mapping :active, 2025-01-02, 2d
-    Power Tests :2025-01-04, 1d
-    section Thermal
-    Range Test :2025-01-05, 2d
-    Stability Test :2025-01-07, 1d
-    section Integration
-    System Test :2025-01-10, 3d
-```
+### Test Execution Sequence (Conceptual)
+
+**Phase 1**: Component Tests
+- Individual transducer verification
+- Power supply testing
+- Sensor calibration
+
+**Phase 2**: Subsystem Tests  
+- Acoustic array coordination
+- Thermal control loops
+- Safety interlocks
+
+**Phase 3**: Integration Tests
+- Full system operation
+- Performance validation
+- Endurance testing
+
+*Timeline: TBD based on hardware availability*
 
 ## Completed Test Reports
 
@@ -145,7 +148,7 @@ gantt
 ### File Naming Convention
 `TR-XXX_[TestName]_[YYYYMMDD]_[Version].[ext]`
 
-Example: `TR-001_FrequencyTest_20250115_v1.csv`
+Example: `TR-001_FrequencyTest_vX.csv`
 
 ### Data Archive Structure
 ```

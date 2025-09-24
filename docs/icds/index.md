@@ -38,11 +38,11 @@ graph TB
 
 | ICD # | Interface | Criticality | Status | Last Updated |
 |-------|-----------|-------------|--------|--------------|
-| [ICD-001](ICD-001.md) | Acoustic-Thermal Interface | HIGH | Draft | 2025-09-24 |
-| [ICD-002](ICD-002.md) | Control-Power Interface | HIGH | Draft | 2025-09-24 |
-| [ICD-003](ICD-003.md) | Sensor-Control Interface | MEDIUM | Draft | 2025-09-24 |
-| [ICD-004](ICD-004.md) | Induction-Crucible Interface | HIGH | Draft | 2025-09-24 |
-| [ICD-005](ICD-005.md) | Amplifier-Transducer Interface | HIGH | Draft | 2025-09-24 |
+| [ICD-001](ICD-001.md) | Acoustic-Thermal Interface | HIGH | Draft | Current |
+| [ICD-002](ICD-002.md) | Control-Power Interface | HIGH | Draft | Current |
+| [ICD-003](ICD-003.md) | Sensor-Control Interface | MEDIUM | Draft | Current |
+| [ICD-004](ICD-004.md) | Induction-Crucible Interface | HIGH | Draft | Current |
+| [ICD-005](ICD-005.md) | Amplifier-Transducer Interface | HIGH | Draft | Current |
 
 ## Interface Categories
 

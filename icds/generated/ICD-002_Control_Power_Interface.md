@@ -3,7 +3,7 @@
 ## Document Control
 - **ICD Number**: ICD-002
 - **Revision**: 1.0
-- **Date**: 2025-09-22
+- **Date**: Current
 - **Status**: Draft
 - **Criticality**: HIGH
 
@@ -39,12 +39,14 @@ Not specified
 
 ### Side A Components
 **FPGA Board**
-- Power Consumption: 2W
+- Power Consumption: 2.0W
 - Operating Temp: 0-85°C
 - Weight: 0.05kg
+- Frequency: 50000000Hz
+- Efficiency: 85%
 - Dimensions: 70×50×15mm
-- Cost: $75
-- Supplier: None
+- Cost: $62.0
+- Supplier: ElectroPeak
 
 **STM32 Dev Board**
 - Power Consumption: 0.5W
@@ -58,15 +60,11 @@ Not specified
 
 ### Side B Components
 **15kW PSU**
-- Power Consumption: 1650W
-- Power Supply: 15000W
-- Operating Temp: 0-50°C
-- Max Temp: 70°C
-- Weight: 12.0kg
-- Efficiency: 91%
-- Dimensions: 350×200×100mm
-- Cost: $380
-- Supplier: Mean Well
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 
 ## 5. Verification & Validation
@@ -116,9 +114,11 @@ Not specified
 - Interface meets all functional requirements
 
 ## 6. Interface Compatibility Analysis
-### Compatibility Status: ✅ COMPATIBLE
+### Compatibility Status: ❌ INCOMPATIBLE
 
-No compatibility issues identified.
+**Critical Issues:**
+- ❌ Insufficient power supply: 2.5W demand vs 0W supply
+
 
 
 ## 7. Risk Assessment
@@ -149,7 +149,7 @@ No compatibility issues identified.
 ## 9. Change History
 | Date | Revision | Description | Author |
 |------|----------|-------------|--------|
-| 2025-09-22 | 1.0 | Initial release | System Engineer |
+| Current | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-22 22:07:09*
+*This ICD was auto-generated from component specifications on Current version*

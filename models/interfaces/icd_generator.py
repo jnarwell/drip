@@ -150,7 +150,7 @@ class ICDGenerator:
             test_procedure=self._generate_test_procedure(interface),
             compatibility_analysis=compatibility,
             risk_assessment=risks,
-            timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            timestamp="Current version"
         )
         
         return doc
@@ -419,7 +419,7 @@ class ICDGenerator:
     def _generate_summary(self, output_dir: str):
         """Generate ICD summary document"""
         summary = ["# Interface Control Document Summary\n"]
-        summary.append(f"**Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        summary.append(f"**Generated**: Current version")
         summary.append(f"**System**: Acoustic Manufacturing System L1")
         summary.append(f"**Total Interfaces**: {len(SYSTEM_INTERFACES)}\n")
         

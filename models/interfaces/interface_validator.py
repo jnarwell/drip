@@ -312,7 +312,7 @@ class InterfaceValidator:
         valid, results = self.validate_all_interfaces()
         
         report = ["# Interface Validation Report\n"]
-        report.append(f"**Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        report.append(f"**Generated**: Current version")
         report.append(f"**System**: Acoustic Manufacturing System L1")
         report.append(f"**Total Interfaces**: {len(SYSTEM_INTERFACES)}")
         report.append(f"**Overall Status**: {'✅ ALL VALID' if valid else '❌ ISSUES FOUND'}\n")

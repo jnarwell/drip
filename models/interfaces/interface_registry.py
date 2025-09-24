@@ -47,7 +47,7 @@ class Interface:
     criticality: InterfaceCriticality
     
     revision: str = "1.0"
-    date: str = field(default_factory=lambda: datetime.now().strftime("%Y-%m-%d"))
+    date: str = "Current"
     
     # Requirements
     requirements: List[InterfaceRequirement] = field(default_factory=list)

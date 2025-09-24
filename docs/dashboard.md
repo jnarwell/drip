@@ -64,28 +64,25 @@ pie title Cost Distribution by Subsystem
 | Power/Control Subsystem | 1500W | 6687W | -5187W |
 | **TOTAL** | **12794W** | **6687W** | **6107W** |
 
-## 🔄 Development Phases
+## 🔄 Development Timeline
 
 ```mermaid
 gantt
-    title Development Phases (Conceptual Sequence)
-    dateFormat X
-    axisFormat %s
+    title Development Phases
+    dateFormat  YYYY-MM-DD
     section Level 1
-    Requirements    :done, req, 0, 1w
-    Design          :active, des, after req, 2w
-    Procurement     :proc, after des, 2w
-    Assembly        :assm, after proc, 1w
-    Testing         :test, after assm, 2w
+    Requirements    :done, 2025-01-01, 7d
+    Design          :active, 2025-01-08, 14d
+    Procurement     :2025-01-22, 14d
+    Assembly        :2025-02-06, 7d
+    Testing         :2025-02-13, 14d
     section Level 2
-    Steel Upgrade   :steel, after test, 4w
+    Steel Upgrade   :2025-02-27, 30d
     section Level 3
-    Dual Material   :dual, after steel, 6w
+    Dual Material   :2025-03-26, 45d
     section Level 4
-    Production      :prod, after dual, 8w
+    Production      :2025-05-10, 60d
 ```
-
-**Timeline: TBD pending project funding and approval**
 
 ## 📈 Test Progress
 

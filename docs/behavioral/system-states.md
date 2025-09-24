@@ -195,7 +195,7 @@ graph TD
 
 ### State Change Events
 ```
-timestamp: 2025-09-15T10:23:45.123Z
+timestamp: Current
 previous_state: Idle
 new_state: Preheating
 trigger: StartBuildCommand

@@ -1,6 +1,6 @@
 # Interface Control Document Summary
 
-**Generated**: 2025-09-22 22:07:09
+**Generated**: Current version
 **System**: Acoustic Manufacturing System L1
 **Total Interfaces**: 5
 
@@ -31,7 +31,7 @@
 | Industrial PC | ICD-003 |
 | Material Feed System | ICD-004 |
 | STM32 Dev Board | ICD-002 |
-| Thermal Camera - Optris Xi 400 | ICD-003 |
+| Thermal Camera - FLIR A35 | ICD-003 |
 | Thermal Isolation Tube | ICD-001 |
 | Transducer Array Layer | ICD-001, ICD-005 |
 

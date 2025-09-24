@@ -3,7 +3,7 @@
 ## Document Control
 - **ICD Number**: ICD-004
 - **Revision**: 1.0
-- **Date**: 2025-09-22
+- **Date**: Current
 - **Status**: Draft
 - **Criticality**: HIGH
 
@@ -41,15 +41,11 @@ Not specified
 
 ### Side A Components
 **Induction Heater**
-- Power Consumption: 3000W
-- Operating Temp: 0-45°C
-- Max Temp: 50°C
-- Weight: 12.0kg
-- Frequency: 50000Hz
-- Efficiency: 85%
-- Dimensions: 400×300×200mm
-- Cost: $700
-- Supplier: DaWei
+- ⚠️ Component not in registry - needs definition
+- Specification: [TO BE DEFINED]
+- Cost: [TBD]
+- Supplier: [TBD]
+- **ACTION REQUIRED**: Add to component_registry.py
 
 **Induction Coil Assembly**
 - Operating Temp: 20-80°C
@@ -129,10 +125,6 @@ Not specified
 
 **Critical Issues:**
 - ❌ Extreme thermal mismatch: 1900°C difference between sides
-- ❌ Insufficient power supply: 3000W demand vs 0W supply
-
-**Warnings:**
-- ⚠️ Induction Heater has max temp of 50°C - ensure adequate thermal isolation
 
 
 
@@ -164,7 +156,7 @@ Not specified
 ## 9. Change History
 | Date | Revision | Description | Author |
 |------|----------|-------------|--------|
-| 2025-09-22 | 1.0 | Initial release | System Engineer |
+| Current | 1.0 | Initial release | System Engineer |
 
 ---
-*This ICD was auto-generated from component specifications on 2025-09-22 22:07:09*
+*This ICD was auto-generated from component specifications on Current version*

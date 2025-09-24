@@ -5,7 +5,7 @@
 !!! warning "Test Status: Planning Only"
     - Hardware: Not available
     - Simulations: Not yet performed  
-    - Expected Execution: After prototype assembly (Q2 2025 or later)
+    - Expected Execution: After prototype assembly
     - Current Status: Defining test procedures and acceptance criteria
 
 ## General Test Requirements
