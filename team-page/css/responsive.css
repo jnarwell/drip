@@ -1,0 +1,253 @@
+/* Responsive Styles */
+
+/* Tablet Styles - 768px to 1024px */
+@media screen and (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .logo-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Styles - Less than 768px */
+@media screen and (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    /* Header adjustments */
+    .site-header {
+        padding: 1.5rem 0;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Card status grid */
+    .card-status {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Timeline single column */
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact grid adjustments */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Specs grid adjustments */
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Panel content padding */
+    .panel-content {
+        padding: 1rem;
+    }
+    
+    .card-content section {
+        padding: 1rem;
+    }
+    
+    /* Reduce container padding on mobile */
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Small Mobile - Less than 480px */
+@media screen and (max-width: 480px) {
+    /* Further typography reduction */
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    /* Button size adjustment */
+    .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Search input adjustment */
+    .search-input {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Card header padding */
+    .card-header {
+        padding: 1rem;
+    }
+    
+    /* Contact fields smaller */
+    .contact-fields input {
+        padding: 0.625rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Status field inputs */
+    .status-field input {
+        font-size: 0.875rem;
+    }
+    
+    /* Reduce logo size */
+    .drip-logo {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Extra Small Devices - Less than 360px */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+    
+    h2 {
+        font-size: 1.125rem;
+    }
+    
+    .subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .description {
+        font-size: 0.875rem;
+    }
+}
+
+/* Large Screens - Greater than 1440px */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .role-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print-specific adjustments handled in print.css */
+
+/* Hover effects only on non-touch devices */
+@media (hover: hover) {
+    .card-header:hover {
+        background-color: #6D1010;
+    }
+    
+    .panel-header:hover {
+        background-color: #EEEEEE;
+    }
+    
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #8C1515;
+        --secondary-color: #000000;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --border-color: #000000;
+    }
+    
+    .card-header {
+        border: 2px solid var(--border-color);
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .card-content,
+    .panel-content {
+        transition: none;
+    }
+}
+
+/* Dark mode support (optional, not in requirements but good practice) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --card-background: #1E1E1E;
+        --text-primary: #FFFFFF;
+        --text-secondary: #B0B0B0;
+        --border-color: #333333;
+    }
+    
+    .status-field input,
+    .contact-fields input,
+    .search-input {
+        background-color: #2A2A2A;
+        color: white;
+        border-color: #444444;
+    }
+    
+    .progress-bar {
+        background-color: #333333;
+    }
+    
+    .phase {
+        background-color: #2A2A2A;
+    }
+    
+    .panel-header {
+        background-color: #2A2A2A;
+    }
+    
+    .card-status {
+        background-color: #252525;
+    }
+}

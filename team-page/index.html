@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIP Team Structure & Work Distribution</title>
+    <meta name="description" content="Cross-functional team leveraging Stanford resources to develop breakthrough acoustic levitation manufacturing technology for contactless metal printing">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="DRIP Team Structure - Acoustic Manufacturing System">
+    <meta property="og:description" content="Join the Stanford team developing breakthrough acoustic levitation manufacturing technology">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <svg class="drip-logo" width="60" height="60" viewBox="0 0 60 60">
+                        <circle cx="30" cy="30" r="28" fill="#8C1515"/>
+                        <path d="M30 15 Q20 25 20 35 Q20 45 30 45 Q40 45 40 35 Q40 25 30 15" fill="white"/>
+                        <circle cx="30" cy="35" r="3" fill="#8C1515"/>
+                    </svg>
+                    <div>
+                        <h1>DRIP Team Structure & Work Distribution</h1>
+                        <p class="subtitle">Acoustic Manufacturing System Development Team</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="exportTeamData()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 12l-4-4h2.5V3h3v5H12l-4 4z"/>
+                            <path d="M2 13v2h12v-2H2z"/>
+                        </svg>
+                        Export
+                    </button>
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M4 3h8v3h2V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4h2V3z"/>
+                            <path d="M13 8H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1v-3h8v3h1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"/>
+                            <path d="M5 12h6v3H5v-3z"/>
+                        </svg>
+                        Print
+                    </button>
+                </div>
+            </div>
+            <p class="description">
+                Cross-functional team leveraging Stanford resources to develop breakthrough acoustic levitation 
+                manufacturing technology for contactless metal printing
+            </p>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-section">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text"><span id="filledPositions">0</span> of 5 positions filled</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-section">
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Search roles, responsibilities, or subsystems..." 
+                       onkeyup="filterRoles(this.value)">
+            </div>
+
+            <!-- Role Cards -->
+            <div class="role-cards" id="roleCards">
+                <!-- Mechanical/Systems Lead -->
+                <div class="role-card" data-role="mech-lead">
+                    <div class="card-header" onclick="toggleCard('mech-lead')">
+                        <h2>Mechanical/Systems Lead</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="card-status">
+                        <div class="status-field">
+                            <label>Name:</label>
+                            <input type="text" 
+                                   placeholder="Enter name" 
+                                   data-role="mech-lead" 
+                                   data-field="name"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Email:</label>
+                            <input type="email" 
+                                   placeholder="Enter email" 
+                                   data-role="mech-lead" 
+                                   data-field="email"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Phone:</label>
+                            <input type="tel" 
+                                   placeholder="Enter phone" 
+                                   data-role="mech-lead" 
+                                   data-field="phone"
+                                   onchange="saveField(this)">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <section>
+                            <h3>Primary Responsibilities</h3>
+                            <ul>
+                                <li>System architecture and integration</li>
+                                <li>Mechanical design and CAD modeling</li>
+                                <li>Assembly planning and fixture design</li>
+                                <li>Test campaign management and coordination</li>
+                                <li>Tolerance analysis and stack-ups</li>
+                                <li>Interface control documentation</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Subsystems Owned</h3>
+                            <ul>
+                                <li>Frame Subsystem (11 components, 9 custom)</li>
+                                <li>Chamber Assembly (pressure vessel design)</li>
+                                <li>System Integration (all subsystem interfaces)</li>
+                                <li>Test Management System (100 test procedures)</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Key Deliverables</h3>
+                            <ul>
+                                <li>Complete frame structural FEA and design</li>
+                                <li>Chamber pressure vessel (300°C, atmospheric)</li>
+                                <li>Assembly procedures and work instructions</li>
+                                <li>Test fixtures for all subsystems</li>
+                                <li>Integration documentation and ICDs</li>
+                                <li>System verification reports</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Stanford Resources</h3>
+                            <ul>
+                                <li>Product Realization Lab (PRL) - CNC, waterjet, 3D printing</li>
+                                <li>Mechanical Testing Lab - Instron, vibration testing</li>
+                                <li>XCT Lab - X-ray computed tomography</li>
+                                <li>SNSF - Surface analysis</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Thermal/Materials Engineer -->
+                <div class="role-card" data-role="thermal-lead">
+                    <div class="card-header" onclick="toggleCard('thermal-lead')">
+                        <h2>Thermal/Materials Engineer</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="card-status">
+                        <div class="status-field">
+                            <label>Name:</label>
+                            <input type="text" 
+                                   placeholder="Enter name" 
+                                   data-role="thermal-lead" 
+                                   data-field="name"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Email:</label>
+                            <input type="email" 
+                                   placeholder="Enter email" 
+                                   data-role="thermal-lead" 
+                                   data-field="email"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Phone:</label>
+                            <input type="tel" 
+                                   placeholder="Enter phone" 
+                                   data-role="thermal-lead" 
+                                   data-field="phone"
+                                   onchange="saveField(this)">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <section>
+                            <h3>Primary Responsibilities</h3>
+                            <ul>
+                                <li>Thermal system design and modeling</li>
+                                <li>Material processing optimization</li>
+                                <li>Crucible and melting system design</li>
+                                <li>Heat transfer and cooling analysis</li>
+                                <li>Material compatibility assessment</li>
+                                <li>Phase change calculations</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Subsystems Owned</h3>
+                            <ul>
+                                <li>Heated Bed Subsystem (6 components, 4 custom)</li>
+                                <li>Crucible Subsystem (25 components, 14 custom)</li>
+                                <li>Thermal isolation systems</li>
+                                <li>Material feed mechanisms</li>
+                                <li>Induction heating system</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Key Deliverables</h3>
+                            <ul>
+                                <li>Complete thermal FEA models</li>
+                                <li>Crucible design for 700-1580°C operation</li>
+                                <li>Induction heating coil optimization</li>
+                                <li>Cooling system sizing and design</li>
+                                <li>Material compatibility matrix</li>
+                                <li>Thermal test procedures</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Stanford Resources</h3>
+                            <ul>
+                                <li>Geballe Laboratory - High-temp testing</li>
+                                <li>GLAM - Materials analysis</li>
+                                <li>MSE Thermal Lab - DSC, TGA</li>
+                                <li>Soft Materials Facility - Rheology</li>
+                                <li>High-temperature furnaces</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Power/Electronics Engineer -->
+                <div class="role-card" data-role="power-lead">
+                    <div class="card-header" onclick="toggleCard('power-lead')">
+                        <h2>Power/Electronics Engineer</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="card-status">
+                        <div class="status-field">
+                            <label>Name:</label>
+                            <input type="text" 
+                                   placeholder="Enter name" 
+                                   data-role="power-lead" 
+                                   data-field="name"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Email:</label>
+                            <input type="email" 
+                                   placeholder="Enter email" 
+                                   data-role="power-lead" 
+                                   data-field="email"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Phone:</label>
+                            <input type="tel" 
+                                   placeholder="Enter phone" 
+                                   data-role="power-lead" 
+                                   data-field="phone"
+                                   onchange="saveField(this)">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <section>
+                            <h3>Primary Responsibilities</h3>
+                            <ul>
+                                <li>Power distribution architecture (10kW system)</li>
+                                <li>Electrical safety system design</li>
+                                <li>PCB design and layout (4 custom boards)</li>
+                                <li>EMI/EMC compliance planning</li>
+                                <li>Heater control circuits</li>
+                                <li>Emergency stop implementation</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Subsystems Owned</h3>
+                            <ul>
+                                <li>Power distribution (48V primary, 24V/12V/5V secondary)</li>
+                                <li>Safety interlock systems</li>
+                                <li>Control electronics boards</li>
+                                <li>Thermal control circuits</li>
+                                <li>Wiring harness design</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Key Deliverables</h3>
+                            <ul>
+                                <li>Complete electrical schematics</li>
+                                <li>PCB layouts (Control, Acoustic, Thermal, Interface)</li>
+                                <li>Wiring harness documentation</li>
+                                <li>Emergency stop system design</li>
+                                <li>EMC pre-compliance testing</li>
+                                <li>Electrical test procedures</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Stanford Resources</h3>
+                            <ul>
+                                <li>EE Shop - PCB fabrication</li>
+                                <li>RF/EMC Test Facility</li>
+                                <li>Power Electronics Lab</li>
+                                <li>Allen Building test equipment</li>
+                                <li>Oscilloscopes and analyzers</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Acoustics/Control Engineer -->
+                <div class="role-card" data-role="acoustics-lead">
+                    <div class="card-header" onclick="toggleCard('acoustics-lead')">
+                        <h2>Acoustics/Control Engineer</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="card-status">
+                        <div class="status-field">
+                            <label>Name:</label>
+                            <input type="text" 
+                                   placeholder="Enter name" 
+                                   data-role="acoustics-lead" 
+                                   data-field="name"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Email:</label>
+                            <input type="email" 
+                                   placeholder="Enter email" 
+                                   data-role="acoustics-lead" 
+                                   data-field="email"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Phone:</label>
+                            <input type="tel" 
+                                   placeholder="Enter phone" 
+                                   data-role="acoustics-lead" 
+                                   data-field="phone"
+                                   onchange="saveField(this)">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <section>
+                            <h3>Primary Responsibilities</h3>
+                            <ul>
+                                <li>Acoustic field modeling and optimization</li>
+                                <li>Control algorithm development</li>
+                                <li>FPGA programming (Cyclone IV)</li>
+                                <li>Real-time software architecture</li>
+                                <li>Thermal camera integration (FLIR A35)</li>
+                                <li>Multi-droplet coordination algorithms</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Subsystems Owned</h3>
+                            <ul>
+                                <li>Acoustic Cylinder Subsystem (9 components, 7 custom)</li>
+                                <li>Control system architecture (PC-STM32-FPGA)</li>
+                                <li>Software/firmware stack</li>
+                                <li>Sensor integration systems</li>
+                                <li>40kHz transducer arrays (18-72 units)</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Key Deliverables</h3>
+                            <ul>
+                                <li>Acoustic field COMSOL models</li>
+                                <li>FPGA control algorithms (&lt;3ms loop)</li>
+                                <li>STM32 firmware for device control</li>
+                                <li>Python/C++ PC control software</li>
+                                <li>Droplet tracking system (60Hz)</li>
+                                <li>Real-time steering algorithms</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Stanford Resources</h3>
+                            <ul>
+                                <li>Stanford Acoustics Lab - Anechoic chamber</li>
+                                <li>SAIL - GPU clusters for ML</li>
+                                <li>Ultrasound Research Lab</li>
+                                <li>High-speed cameras (Photron)</li>
+                                <li>EE368 Lab - Computer vision</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- UX/Industrial Designer -->
+                <div class="role-card" data-role="ux-lead">
+                    <div class="card-header" onclick="toggleCard('ux-lead')">
+                        <h2>UX/Industrial Designer</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="card-status">
+                        <div class="status-field">
+                            <label>Name:</label>
+                            <input type="text" 
+                                   placeholder="Enter name" 
+                                   data-role="ux-lead" 
+                                   data-field="name"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Email:</label>
+                            <input type="email" 
+                                   placeholder="Enter email" 
+                                   data-role="ux-lead" 
+                                   data-field="email"
+                                   onchange="saveField(this)">
+                        </div>
+                        <div class="status-field">
+                            <label>Phone:</label>
+                            <input type="tel" 
+                                   placeholder="Enter phone" 
+                                   data-role="ux-lead" 
+                                   data-field="phone"
+                                   onchange="saveField(this)">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <section>
+                            <h3>Primary Responsibilities</h3>
+                            <ul>
+                                <li>Industrial design and aesthetics</li>
+                                <li>User interface design (physical and digital)</li>
+                                <li>Ergonomics and safety analysis</li>
+                                <li>Design for assembly (DFA)</li>
+                                <li>Documentation and visualization</li>
+                                <li>User experience optimization</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Subsystems Owned</h3>
+                            <ul>
+                                <li>User interfaces and controls</li>
+                                <li>Frame aesthetics and finish</li>
+                                <li>Access panels and maintenance doors</li>
+                                <li>Control panel layout</li>
+                                <li>Safety labeling system</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Key Deliverables</h3>
+                            <ul>
+                                <li>Professional CAD renderings</li>
+                                <li>UI/UX mockups and prototypes</li>
+                                <li>Assembly instruction graphics</li>
+                                <li>Safety labeling and signage</li>
+                                <li>User manual design and layout</li>
+                                <li>Marketing materials</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Stanford Resources</h3>
+                            <ul>
+                                <li>d.school - Design thinking tools</li>
+                                <li>PRL - Rapid prototyping</li>
+                                <li>Design software suite</li>
+                                <li>User testing facilities</li>
+                                <li>Photography studio</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Sections -->
+            <div class="info-sections">
+                <!-- System Specifications -->
+                <div class="info-panel" id="specsPanel">
+                    <div class="panel-header" onclick="togglePanel('specsPanel')">
+                        <h2>System Specifications</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="panel-content">
+                        <div class="specs-grid">
+                            <div class="spec-group">
+                                <h3>Core Specifications</h3>
+                                <dl>
+                                    <dt>Frequency:</dt>
+                                    <dd>40kHz ±100Hz ultrasonic</dd>
+                                    <dt>Temperature:</dt>
+                                    <dd>700-1580°C operating range</dd>
+                                    <dt>Accuracy:</dt>
+                                    <dd>±0.3mm droplet placement</dd>
+                                    <dt>Build Volume:</dt>
+                                    <dd>125-8000 cm³ (scalable)</dd>
+                                    <dt>Power:</dt>
+                                    <dd>4.6kW (L1) to 35kW (L4)</dd>
+                                    <dt>Materials:</dt>
+                                    <dd>Al, Steel, Ti (future)</dd>
+                                    <dt>Transducers:</dt>
+                                    <dd>18 (L1) to 72 (L4)</dd>
+                                    <dt>Cooling Rate:</dt>
+                                    <dd>&gt;1000°C/s</dd>
+                                </dl>
+                            </div>
+                            <div class="spec-group">
+                                <h3>Development Levels</h3>
+                                <ul class="level-list">
+                                    <li><strong>Level 1:</strong> $14k prototype (18 transducers)</li>
+                                    <li><strong>Level 2:</strong> $26k with steel capability</li>
+                                    <li><strong>Level 3:</strong> $49k with dual materials</li>
+                                    <li><strong>Level 4:</strong> $117k production system</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Timeline -->
+                <div class="info-panel" id="timelinePanel">
+                    <div class="panel-header" onclick="togglePanel('timelinePanel')">
+                        <h2>Project Timeline</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="panel-content">
+                        <div class="timeline">
+                            <div class="phase">
+                                <h3>Phase 1: Validation (Weeks 1-4)</h3>
+                                <ul>
+                                    <li>Acoustic levitation testing</li>
+                                    <li>Thermal characterization</li>
+                                    <li>Control algorithm prototyping</li>
+                                    <li>Design refinement at PRL</li>
+                                </ul>
+                            </div>
+                            <div class="phase">
+                                <h3>Phase 2: Procurement (Weeks 5-8)</h3>
+                                <ul>
+                                    <li>Component ordering</li>
+                                    <li>Custom part fabrication</li>
+                                    <li>PCB manufacturing</li>
+                                    <li>Material sourcing</li>
+                                </ul>
+                            </div>
+                            <div class="phase">
+                                <h3>Phase 3: Integration (Weeks 9-12)</h3>
+                                <ul>
+                                    <li>Subsystem assembly</li>
+                                    <li>Interface verification</li>
+                                    <li>Initial testing</li>
+                                    <li>Debug and refinement</li>
+                                </ul>
+                            </div>
+                            <div class="phase">
+                                <h3>Phase 4: Testing (Weeks 13-16)</h3>
+                                <ul>
+                                    <li>Full system integration</li>
+                                    <li>Performance validation</li>
+                                    <li>Safety verification</li>
+                                    <li>Documentation completion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Available -->
+                <div class="info-panel" id="resourcesPanel">
+                    <div class="panel-header" onclick="togglePanel('resourcesPanel')">
+                        <h2>Resources Available</h2>
+                        <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="panel-content">
+                        <div class="resources-grid">
+                            <div class="resource-group">
+                                <h3>Stanford Facilities</h3>
+                                <ul>
+                                    <li>Product Realization Lab (PRL)</li>
+                                    <li>5 department labs available</li>
+                                    <li>24/7 access with training</li>
+                                    <li>Subsidized fabrication rates</li>
+                                </ul>
+                            </div>
+                            <div class="resource-group">
+                                <h3>Software Tools</h3>
+                                <ul>
+                                    <li>COMSOL Multiphysics</li>
+                                    <li>ANSYS Mechanical/Fluent</li>
+                                    <li>SolidWorks/Fusion 360</li>
+                                    <li>Altium Designer</li>
+                                    <li>MATLAB/Simulink</li>
+                                </ul>
+                            </div>
+                            <div class="resource-group">
+                                <h3>Documentation</h3>
+                                <ul>
+                                    <li>200+ pages specifications</li>
+                                    <li>71 components defined</li>
+                                    <li>10 Interface Control Documents</li>
+                                    <li>100 test procedures</li>
+                                    <li>Complete FMEA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-section">
+                    <h2>Contact Information</h2>
+                    <div class="contact-grid">
+                        <div class="contact-group">
+                            <h3>Project Lead</h3>
+                            <div class="contact-fields">
+                                <input type="text" placeholder="Name" data-contact="lead-name" onchange="saveContact(this)">
+                                <input type="email" placeholder="Email" data-contact="lead-email" onchange="saveContact(this)">
+                                <input type="tel" placeholder="Phone" data-contact="lead-phone" onchange="saveContact(this)">
+                                <input type="text" placeholder="Office" data-contact="lead-office" onchange="saveContact(this)">
+                            </div>
+                        </div>
+                        <div class="contact-group">
+                            <h3>Faculty Advisors</h3>
+                            <div class="contact-fields">
+                                <input type="text" placeholder="Acoustics Advisor" data-contact="advisor-acoustics" onchange="saveContact(this)">
+                                <input type="text" placeholder="Thermal Advisor" data-contact="advisor-thermal" onchange="saveContact(this)">
+                                <input type="text" placeholder="Manufacturing Advisor" data-contact="advisor-manufacturing" onchange="saveContact(this)">
+                            </div>
+                        </div>
+                        <div class="contact-group">
+                            <h3>Lab Coordinators</h3>
+                            <div class="contact-fields">
+                                <input type="text" placeholder="PRL Contact" data-contact="lab-prl" onchange="saveContact(this)">
+                                <input type="text" placeholder="EE Shop" data-contact="lab-ee" onchange="saveContact(this)">
+                                <input type="text" placeholder="ME Testing" data-contact="lab-me" onchange="saveContact(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 DRIP Project. Stanford University.</p>
+            <p class="last-saved">Last saved: <span id="lastSaved">Never</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/team.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/export.js"></script>
+</body>
+</html>
