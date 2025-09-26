@@ -38,7 +38,7 @@ function exportAsText() {
         { id: 'thermal-lead', name: 'Thermal/Materials Engineer' },
         { id: 'power-lead', name: 'Power/Electronics Engineer' },
         { id: 'acoustics-lead', name: 'Acoustics/Control Engineer' },
-        { id: 'ux-lead', name: 'UX/Industrial Designer' }
+        { id: 'cs-math-lead', name: 'Computer Science/Mathematics Engineer' }
     ];
     
     let filledCount = 0;
@@ -173,7 +173,7 @@ function generateSummary() {
         { id: 'thermal-lead', name: 'Thermal/Materials Engineer' },
         { id: 'power-lead', name: 'Power/Electronics Engineer' },
         { id: 'acoustics-lead', name: 'Acoustics/Control Engineer' },
-        { id: 'ux-lead', name: 'UX/Industrial Designer' }
+        { id: 'cs-math-lead', name: 'Computer Science/Mathematics Engineer' }
     ];
     
     roles.forEach(role => {
