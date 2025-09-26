@@ -1,0 +1,284 @@
+/* Print Styles */
+@media print {
+    /* Reset backgrounds and colors for print */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Page setup */
+    @page {
+        margin: 0.75in;
+        size: letter;
+    }
+    
+    /* Remove unnecessary elements */
+    .header-actions,
+    .search-section,
+    .expand-icon,
+    .progress-section,
+    .site-footer {
+        display: none !important;
+    }
+    
+    /* Adjust header for print */
+    .site-header {
+        border-bottom: 2px solid black;
+        padding: 0 0 1rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    .drip-logo {
+        width: 40px;
+        height: 40px;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    /* Typography for print */
+    body {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    h1 {
+        font-size: 18pt;
+        margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 14pt;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        page-break-after: avoid;
+    }
+    
+    h3 {
+        font-size: 12pt;
+        margin-top: 0.75rem;
+        margin-bottom: 0.5rem;
+        page-break-after: avoid;
+    }
+    
+    /* Expand all cards and panels for print */
+    .card-content,
+    .panel-content {
+        display: block !important;
+        max-height: none !important;
+        padding: 0.5rem 0 !important;
+    }
+    
+    /* Role cards styling */
+    .role-card {
+        border: 1px solid black;
+        margin-bottom: 1.5rem;
+        page-break-inside: avoid;
+    }
+    
+    .card-header {
+        background: none !important;
+        padding: 0.75rem !important;
+        border-bottom: 1px solid black;
+    }
+    
+    .card-status {
+        background: none !important;
+        padding: 0.5rem !important;
+        border-bottom: 1px solid #ccc;
+        display: block !important;
+    }
+    
+    .status-field {
+        display: inline-block;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .status-field label {
+        display: inline;
+        font-weight: bold;
+        margin-right: 0.25rem;
+    }
+    
+    .status-field input {
+        display: inline;
+        border: none;
+        padding: 0;
+        font-weight: normal;
+        width: auto;
+    }
+    
+    .status-field input:after {
+        content: attr(value);
+    }
+    
+    /* Hide empty fields in print */
+    .status-field input:not(.filled) {
+        display: none;
+    }
+    
+    .status-field:has(input:not(.filled)) {
+        display: none;
+    }
+    
+    /* Card content sections */
+    .card-content section {
+        padding: 0.5rem 0 !important;
+        border-bottom: 1px dotted #ccc;
+    }
+    
+    .card-content section:last-child {
+        border-bottom: none;
+    }
+    
+    /* Lists in print */
+    .card-content ul,
+    .phase ul,
+    .resource-group ul {
+        margin-left: 1rem;
+        padding-left: 0;
+    }
+    
+    .card-content li,
+    .phase li,
+    .resource-group li {
+        padding-left: 0;
+        margin-bottom: 0.25rem;
+    }
+    
+    .card-content li:before,
+    .phase li:before,
+    .resource-group li:before {
+        content: "• ";
+        font-weight: bold;
+    }
+    
+    /* Info panels */
+    .info-panel {
+        border: 1px solid black;
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+    
+    .panel-header {
+        background: none !important;
+        padding: 0.5rem !important;
+        border-bottom: 1px solid black;
+    }
+    
+    /* Specifications */
+    .specs-grid {
+        display: block !important;
+    }
+    
+    .spec-group {
+        margin-bottom: 0.75rem;
+    }
+    
+    .spec-group dl {
+        display: block;
+    }
+    
+    .spec-group dt {
+        display: inline;
+        font-weight: bold;
+    }
+    
+    .spec-group dt:after {
+        content: ": ";
+    }
+    
+    .spec-group dd {
+        display: inline;
+        margin-right: 1rem;
+    }
+    
+    .spec-group dd:after {
+        content: " | ";
+    }
+    
+    .spec-group dd:last-child:after {
+        content: "";
+    }
+    
+    /* Timeline */
+    .timeline {
+        display: block !important;
+    }
+    
+    .phase {
+        background: none !important;
+        border-left: 2px solid black;
+        padding-left: 0.5rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Contact section */
+    .contact-section {
+        border: 1px solid black;
+        padding: 0.75rem !important;
+        page-break-inside: avoid;
+    }
+    
+    .contact-grid {
+        display: block !important;
+    }
+    
+    .contact-group {
+        margin-bottom: 0.75rem;
+    }
+    
+    .contact-fields {
+        display: block;
+    }
+    
+    .contact-fields input {
+        display: inline;
+        border: none;
+        padding: 0;
+        margin-right: 1rem;
+    }
+    
+    .contact-fields input:before {
+        content: attr(placeholder) ": ";
+        font-weight: bold;
+    }
+    
+    .contact-fields input.filled:after {
+        content: attr(value);
+    }
+    
+    /* Page breaks */
+    .role-card,
+    .info-panel,
+    .contact-section {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    /* Ensure content visibility */
+    .hidden {
+        display: none !important;
+    }
+    
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+    }
+    
+    /* Remove animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
