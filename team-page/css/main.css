@@ -43,6 +43,16 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
+/* Input defaults */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input {
+    color: var(--text-primary);
+    background-color: white;
+}
+
 h1 {
     font-size: 2rem;
     color: var(--primary-color);
@@ -178,6 +188,8 @@ h3 {
     border: 2px solid var(--border-color);
     border-radius: 8px;
     transition: var(--transition);
+    color: var(--text-primary);
+    background-color: white;
 }
 
 .search-input:focus {
@@ -261,6 +273,8 @@ h3 {
     border-radius: 4px;
     font-size: 1rem;
     transition: var(--transition);
+    color: var(--text-primary);
+    background-color: white;
 }
 
 .status-field input:focus {
@@ -506,6 +520,8 @@ h3 {
     border-radius: 4px;
     font-size: 1rem;
     transition: var(--transition);
+    color: var(--text-primary);
+    background-color: white;
 }
 
 .contact-fields input:focus {
