@@ -284,7 +284,6 @@ h3 {
 }
 
 .status-field input.filled {
-    background-color: #E8F5E9;
     border-color: var(--success-color);
 }
 
@@ -531,7 +530,6 @@ h3 {
 }
 
 .contact-fields input.filled {
-    background-color: #E8F5E9;
     border-color: var(--success-color);
 }
 
