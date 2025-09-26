@@ -215,6 +215,12 @@ nav:
     - Test Reports: verification/reports.md
     - Verification Status (Reconciled): verification/verification-status.md
   
+  - Team:
+    - Team Organization: team/index.md
+    - Team Structure & Roles: team/structure.md
+    - Stanford Resources: team/resources.md
+    - Interactive Team Page: team-page/index.html
+  
   - Resources:
     - API Reference: api/index.md
     - Glossary: resources/glossary.md
