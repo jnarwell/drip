@@ -21,7 +21,7 @@ The project is organized around five key engineering roles, each responsible for
    - Material compatibility
 
 3. **[Power/Electronics Engineer](structure.md#powerelectronics-engineer)**
-   - Power distribution (10kW system)
+   - Power distribution (3kW dual PSU system)
    - PCB design and safety systems
    - EMI/EMC compliance
 

@@ -95,8 +95,8 @@ def mark_expansion_components(verbose=True):
     
     # POWER/CONTROL SUBSYSTEM
     registry.mark_for_expansion(
-        "10kW PSU",
-        "L2: Upgrade to 25kW (+$2,500) | L3: Same 25kW | L4: 45kW system (+$5,000)"
+        "Mean Well RSP-1500-48 (Dual PSU)",
+        "L2: Upgrade to dual 3kW units (+$1,200) | L3: Same dual 3kW | L4: Upgrade to 5kW system (+$2,000)"
     )
     
     registry.mark_for_expansion(

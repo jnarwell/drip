@@ -7,7 +7,7 @@ flowchart TB
     end
     
     subgraph "Power Distribution"
-        PSU[10kW Power Supply<br/>48V DC Output]
+        PSU[Mean Well RSP-1500-48 (Dual PSU)<br/>3kW Total Capacity<br/>48V DC Output]
         PSU48[48V DC Supply]
         PSU24[24V DC Supply] 
         PSU12[12V DC Supply]

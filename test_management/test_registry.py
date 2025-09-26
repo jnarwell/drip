@@ -323,7 +323,7 @@ class TestRegistry:
             verification_type=VerificationType.PERFORMANCE,
             estimated_duration_hours=4.0,
             required_equipment=['Flow Meter', 'Thermocouples', 'Heat Load Bank'],
-            acceptance_criteria='>10kW heat removal at 30°C ambient'
+            acceptance_criteria='>3kW heat removal at 30°C ambient'
         )
         
         self.tests['TE-024'] = TestDefinition(
@@ -536,19 +536,19 @@ class TestRegistry:
         self.tests['TE-041'] = TestDefinition(
             test_id='TE-041',
             test_name='Main Power Supply Load Test',
-            test_purpose='Verify 10kW continuous output capability',
-            target_components=['15kW PSU'],
+            test_purpose='Verify 3kW continuous output capability',
+            target_components=['Mean Well RSP-1500-48 (Dual PSU)'],
             verification_type=VerificationType.ACCEPTANCE,
             estimated_duration_hours=4.0,
             required_equipment=['Electronic Load Bank', 'Power Analyzer'],
-            acceptance_criteria='10kW at 48V, <2% ripple, >94% efficiency'
+            acceptance_criteria='3kW total (2×1.5kW) at 48V, <2% ripple, >91% efficiency'
         )
         
         self.tests['TE-042'] = TestDefinition(
             test_id='TE-042',
             test_name='Power Supply Protection Features',
             test_purpose='Test OVP, OCP, OTP protection circuits',
-            target_components=['15kW PSU'],
+            target_components=['Mean Well RSP-1500-48 (Dual PSU)'],
             verification_type=VerificationType.SAFETY,
             prerequisite_tests=['TE-041'],
             estimated_duration_hours=3.0,
@@ -988,12 +988,12 @@ class TestRegistry:
             test_id='TE-079',
             test_name='Power System Integration',
             test_purpose='Test all power consumers together',
-            target_components=['15kW PSU', 'All Power Consumers'],
+            target_components=['Mean Well RSP-1500-48 (Dual PSU)', 'All Power Consumers'],
             verification_type=VerificationType.INTEGRATION,
             prerequisite_tests=['TE-048'],
             estimated_duration_hours=8.0,
             required_equipment=['Power Monitor', 'Thermal Camera'],
-            acceptance_criteria='<10kW total, no overheating'
+            acceptance_criteria='<3kW total, no overheating'
         )
         
         self.tests['TE-080'] = TestDefinition(
@@ -1078,7 +1078,7 @@ class TestRegistry:
             test_id='TE-086',
             test_name='Power Supply Endurance',
             test_purpose='Long-term stability test',
-            target_components=['15kW PSU'],
+            target_components=['Mean Well RSP-1500-48 (Dual PSU)'],
             verification_type=VerificationType.ENDURANCE,
             prerequisite_tests=['TE-041'],
             estimated_duration_hours=168.0,  # 1 week

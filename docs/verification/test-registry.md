@@ -57,8 +57,8 @@ This page contains the complete registry of all 100 tests in the DRIP system.
 | TE-038 | Crucible Thermal Shock | Verify crucible survives rapid temperature changes | Graphite Crucibles | 12.0h |
 | TE-039 | Induction Field Containment | Verify magnetic field safety limits | Induction Heater Module, Magnetic Shielding | 3.0h |
 | TE-040 | Droplet Temperature Measurement | Validate pyrometer readings of droplets | Pyrometers, Graphite Crucibles | 4.0h |
-| TE-041 | Main Power Supply Load Test | Verify 10kW continuous output capability | Mean Well RSP-10000-48 | 4.0h |
-| TE-042 | Power Supply Protection Features | Test OVP, OCP, OTP protection circuits | Mean Well RSP-10000-48 | 3.0h |
+| TE-041 | Main Power Supply Load Test | Verify 3kW continuous output capability | Mean Well RSP-1500-48 (Dual PSU) | 4.0h |
+| TE-042 | Power Supply Protection Features | Test OVP, OCP, OTP protection circuits | Mean Well RSP-1500-48 (Dual PSU) | 3.0h |
 | TE-043 | DC-DC Converter Verification | Test all voltage conversion stages | DC-DC Converters 48V to 24V, DC-DC Converters 48V to 12V | 3.0h |
 | TE-044 | UPS Battery Backup Test | Verify control system backup power | UPS Battery Backup 3kVA | 4.0h |
 | TE-045 | Power Distribution Verification | Test all circuit breakers and distribution | Circuit Breakers 3-phase 100A, Fuses 250V 10A | 6.0h |

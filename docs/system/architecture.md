@@ -10,7 +10,7 @@ The Acoustic Manufacturing System uses ultrasonic steering to guide falling molt
 graph TB
     subgraph "Input"
         MAT[Material Feed]
-        PWR[Power Supply<br/>10kW]
+        PWR[Mean Well RSP-1500-48<br/>Dual PSU (3kW)]
         CTRL[Control PC]
     end
     
@@ -64,7 +64,7 @@ graph TB
 - **Interface**: Gigabit Ethernet + USB 3.0
 
 ### Power Subsystem
-- **Capacity**: 10kW PSU with 91% efficiency
+- **Capacity**: 3kW dual PSU configuration (2×1.5kW units) with 91% efficiency
 - **Distribution**: 48V primary, 24V/12V/5V secondary
 - **Protection**: Over-current, over-temp, EMI filtering
 - **Net Consumption**: 4.6kW (Level 1)

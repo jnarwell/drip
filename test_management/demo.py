@@ -50,7 +50,7 @@ def main():
          "notes": "All 6 channels verified at 500W"},
         {"test_id": "TE-016", "status": "IN_PROGRESS", "engineer": "Jane Smith"},
         {"test_id": "TE-041", "status": "COMPLETE", "result": "PASS",
-         "notes": "10kW output verified, efficiency >94%"}
+         "notes": "3kW output verified, efficiency >91%"}
     ]
     
     print("\nUpdating test statuses:")

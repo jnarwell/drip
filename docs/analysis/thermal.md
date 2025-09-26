@@ -6,11 +6,11 @@
 - Induction heater: 3000W
 - Resistive heaters: 8000W (4×2000W)
 - Acoustic dissipation: 180W (18 transducers × 10W)
-- PSU losses: 900W (10kW @ 91% efficiency)
+- PSU losses: 220W (3kW dual PSU @ 91% efficiency)
 
 ### Heat Removal Requirements
-- Total heat load: 12,080W
-- Required cooling capacity: 15kW (with 25% margin)
+- Total heat load: 11,400W
+- Required cooling capacity: 14.3kW (with 25% margin)
 - Water flow rate: 5 L/min minimum
 - Air flow: 600 CFM for electronics
 

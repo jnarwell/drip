@@ -5,7 +5,7 @@
 | Side A Component | Side B Component | Interface Type | ICD Reference | Criticality |
 |------------------|------------------|----------------|---------------|-------------|
 | Acoustic Cylinder | Chamber Assembly | Thermal/Acoustic | ICD-001 | HIGH |
-| Cyclone IV FPGA | 10kW PSU | Electrical/Data | ICD-002 | HIGH |
+| Cyclone IV FPGA | Mean Well RSP-1500-48 (Dual PSU) | Electrical/Data | ICD-002 | HIGH |
 | Optris PI 1M | Industrial PC | Data | ICD-003 | MEDIUM |
 | Induction Heater | Crucible Assembly | Thermal/Electrical | ICD-004 | HIGH |
 | 6-Channel Amp | 40kHz Transducers | Electrical/Acoustic | ICD-005 | HIGH |

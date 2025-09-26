@@ -851,7 +851,7 @@ The Acoustic Manufacturing System uses ultrasonic steering to guide falling molt
 graph TB
     subgraph "Input"
         MAT[Material Feed]
-        PWR[Power Supply<br/>10kW]
+        PWR[Mean Well RSP-1500-48<br/>Dual PSU (3kW)]
         CTRL[Control PC]
     end
     
@@ -905,7 +905,7 @@ graph TB
 - **Interface**: Gigabit Ethernet + USB 3.0
 
 ### Power Subsystem
-- **Capacity**: 10kW PSU with 91% efficiency
+- **Capacity**: 3kW dual PSU configuration (2×1.5kW units) with 91% efficiency
 - **Distribution**: 48V primary, 24V/12V/5V secondary
 - **Protection**: Over-current, over-temp, EMI filtering
 - **Net Consumption**: 4.6kW (Level 1)
@@ -1475,7 +1475,7 @@ See [Validation Report](validation.md) for details.
 - Induction heater: 3000W
 - Resistive heaters: 8000W (4×2000W)
 - Acoustic dissipation: 180W (18 transducers × 10W)
-- PSU losses: 900W (10kW @ 91% efficiency)
+- PSU losses: 220W (3kW dual PSU @ 91% efficiency)
 
 ### Heat Removal Requirements
 - Total heat load: 12,080W

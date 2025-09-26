@@ -37,7 +37,7 @@ def demonstrate_registry_usage():
     
     # Example 4: Get a specific component
     print("\n4. Getting specific component details:")
-    component = registry.get_component_by_name("10kW PSU")
+    component = registry.get_component_by_name("Mean Well RSP-1500-48 (Dual PSU)")
     if component:
         print(f"   Name: {component.name}")
         print(f"   Specification: {component.specification}")

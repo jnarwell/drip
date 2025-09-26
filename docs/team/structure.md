@@ -85,7 +85,7 @@ This page provides detailed information about each team role in the DRIP project
 ## Power/Electronics Engineer
 
 ### Primary Responsibilities
-- Power distribution architecture design (10kW system)
+- Power distribution architecture design (3kW dual PSU system)
 - Electrical safety system implementation
 - PCB design and layout (4 custom boards required)
 - EMI/EMC compliance planning and testing

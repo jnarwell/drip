@@ -141,7 +141,7 @@ graph TD
     end
     
     subgraph "Power/Control Subsystem"
-        P1[10kW PSU]
+        P1[Mean Well RSP-1500-48 (Dual PSU)]
         P2[Cyclone IV FPGA Board]
         P3[STM32 Dev Board]
         P4[Industrial PC]
@@ -180,7 +180,7 @@ flowchart TB
     end
     
     subgraph "Power Distribution"
-        PSU[10kW Power Supply<br/>48V DC Output]
+        PSU[Mean Well RSP-1500-48 (Dual PSU)<br/>3kW Total Capacity<br/>48V DC Output]
         PSU48[48V DC Supply]
         PSU24[24V DC Supply] 
         PSU12[12V DC Supply]
@@ -272,7 +272,7 @@ flowchart TB
 | Side A Component | Side B Component | Interface Type | ICD Reference | Criticality |
 |------------------|------------------|----------------|---------------|-------------|
 | Acoustic Cylinder | Chamber Assembly | Thermal/Acoustic | ICD-001 | HIGH |
-| Cyclone IV FPGA | 10kW PSU | Electrical/Data | ICD-002 | HIGH |
+| Cyclone IV FPGA | Mean Well RSP-1500-48 (Dual PSU) | Electrical/Data | ICD-002 | HIGH |
 | Optris PI 1M | Industrial PC | Data | ICD-003 | MEDIUM |
 | Induction Heater | Crucible Assembly | Thermal/Electrical | ICD-004 | HIGH |
 | 6-Channel Amp | 40kHz Transducers | Electrical/Acoustic | ICD-005 | HIGH |
@@ -412,7 +412,7 @@ def generate_integration_guide():
 
 ### Phase 2: Power System Installation  
 1. **Install Power Supply Units**
-   - Mount 10kW PSU in ventilated area
+   - Mount dual 1.5kW PSUs in ventilated area
    - Install secondary power supplies (48V, 24V, 12V, 5V)
    - Verify electrical connections per ICD-002
 

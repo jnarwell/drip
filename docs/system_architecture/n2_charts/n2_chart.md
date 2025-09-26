@@ -30,7 +30,7 @@ graph TD
     end
     
     subgraph "Power/Control Subsystem"
-        P1[10kW PSU]
+        P1[Mean Well RSP-1500-48 (Dual PSU)]
         P2[Cyclone IV FPGA Board]
         P3[STM32 Dev Board]
         P4[Industrial PC]

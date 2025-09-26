@@ -1,11 +1,11 @@
 ---
 test_id: TE-041
 test_name: Main Power Supply Load Test
-test_purpose: Verify 10kW continuous output capability
+test_purpose: Verify 3kW continuous output capability
 verification_type: ACCEPTANCE
 components_verified:
-- name: Mean Well RSP-10000-48
-  id: MEAN_WELL_RSP-10000-48
+- name: Mean Well RSP-1500-48 (Dual PSU)
+  id: MEAN_WELL_RSP-1500-48_DUAL
   part_number: TBD
 prerequisite_tests: []
 enables_tests: []
@@ -31,7 +31,7 @@ result: null
 ### 1.1 Test Overview
 - **Test ID**: TE-041
 - **Test Name**: Main Power Supply Load Test
-- **Purpose**: Verify 10kW continuous output capability
+- **Purpose**: Verify 3kW continuous output capability
 - **Type**: ACCEPTANCE
 - **Duration**: 4.0 hours
 - **Date Executed**: _[To be filled]_
@@ -40,7 +40,7 @@ result: null
 ### 1.2 Components Under Test
 | Component | ID | Part Number | Serial Number |
 |-----------|----|--------------|--------------|
-| Mean Well RSP-10000-48 | MEAN_WELL_RSP-10000-48 | _[TBD]_ | _[Record S/N]_ |
+| Mean Well RSP-1500-48 (Dual PSU) | MEAN_WELL_RSP-1500-48_DUAL | _[TBD]_ | _[Record S/N]_ |
 
 
 ### 1.3 Prerequisites
@@ -150,7 +150,7 @@ _[Summarize what was learned from the test]_
 ### 6.2 Component Verification Status
 | Component | Verification Status | Notes |
 |-----------|--------------------|---------|
-| Mean Well RSP-10000-48 | _[Status after test]_ | _[Any notes]_ |
+| Mean Well RSP-1500-48 (Dual PSU) | _[Status after test]_ | _[Any notes]_ |
 
 
 ### 6.3 Recommendations

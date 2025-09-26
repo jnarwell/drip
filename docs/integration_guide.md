@@ -31,7 +31,7 @@
 
 ### Phase 2: Power System Installation  
 1. **Install Power Supply Units**
-   - Mount 10kW PSU in ventilated area
+   - Mount dual 1.5kW PSUs in ventilated area
    - Install secondary power supplies (48V, 24V, 12V, 5V)
    - Verify electrical connections per ICD-002
 

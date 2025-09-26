@@ -129,11 +129,12 @@ class PowerBudgetCalculator:
                 f"LOW POWER MARGIN: Only {budget['system_totals']['power_margin']:.1f}W margin remaining"
             )
         
-        # Check individual PSU capacity
+        # Check individual PSU capacity against actual rated capacity
         for source_name, source_data in budget["power_sources"].items():
-            if "10kW" in source_name and budget["system_totals"]["total_consumption"] > 10000:
+            rated_capacity = source_data["output_power"]
+            if budget["system_totals"]["total_consumption"] > rated_capacity:
                 budget["warnings"].append(
-                    f"PSU OVERLOAD: {source_name} rated for 10kW but system requires "
+                    f"PSU OVERLOAD: {source_name} rated for {rated_capacity:.0f}W but system requires "
                     f"{budget['system_totals']['total_consumption']:.1f}W"
                 )
         
