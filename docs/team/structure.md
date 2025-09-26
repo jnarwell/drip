@@ -165,45 +165,49 @@ This page provides detailed information about each team role in the DRIP project
 
 ---
 
-## UX/Industrial Designer
+## Computer Science/Mathematics Engineer
 
 ### Primary Responsibilities
-- Industrial design and system aesthetics
-- User interface design (physical and digital)
-- Ergonomics and safety analysis
-- Design for assembly (DFA) optimization
-- Technical documentation and visualization
-- User experience optimization
+- ALL code development and maintenance
+- COMSOL/MATLAB simulation scripts
+- Computer vision and tracking algorithms
+- GUI development (PyQt/Tkinter)
+- Data analysis pipelines (Pandas)
+- Mathematical models and optimization
+- Test automation and CI/CD
 
 ### Subsystems Owned
-- **User Interfaces**: Control panels and displays
-- **Frame Aesthetics**: Exterior design and finish
-- **Access Panels**: Maintenance doors and covers
-- **Control Panel Layout**: Ergonomic button/display placement
-- **Safety Labeling System**: Warning labels and indicators
+- **All Software Repositories**: Complete code ownership
+- **Simulation Frameworks**: COMSOL/MATLAB integration
+- **Data Processing Pipelines**: Test data analysis
+- **Control Software Interfaces**: PC/FPGA communication
+- **Documentation Generation**: Automated docs systems
+- **Testing Frameworks**: Unit/integration test suites
 
 ### Key Deliverables
-- Professional CAD renderings and visualizations
-- UI/UX mockups for control software
-- Assembly instruction graphics and animations
-- Safety labeling and signage design
-- User manual layout and graphics
-- Marketing materials and presentations
+- Control software (Python/C++)
+- FPGA interface libraries
+- Real-time tracking system (60Hz)
+- Physics simulation models
+- Data analysis notebooks
+- Automated test suites
+- Technical documentation generation
 
 ### Stanford Resources Available
-- d.school - Design thinking workshops and tools
-- PRL - Rapid prototyping (3D printing, laser cutting)
-- Design software suite - Adobe CC, KeyShot
-- User testing facilities
-- Photography studio for documentation
+- SAIL - GPU clusters for ML/simulations
+- Sherlock HPC cluster
+- GitHub Enterprise
+- MATLAB/COMSOL licenses
+- CS department computing resources
+- Software development tools
 
 ### Required Skills
-- Industrial design experience
-- CAD visualization (KeyShot, Fusion 360)
-- Adobe Creative Suite proficiency
-- Understanding of manufacturing processes
-- Technical illustration abilities
-- Human factors/ergonomics knowledge
+- Python/C++ proficiency
+- Numerical methods and optimization
+- Computer vision (OpenCV)
+- Scientific computing (NumPy, SciPy)
+- Version control (Git)
+- Technical documentation
 
 ---
 

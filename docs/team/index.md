@@ -30,10 +30,10 @@ The project is organized around five key engineering roles, each responsible for
    - FPGA/software development
    - Real-time control systems
 
-5. **[UX/Industrial Designer](structure.md#uxindustrial-designer)**
-   - Industrial design
-   - User interfaces
-   - Documentation and visualization
+5. **[Computer Science/Mathematics Engineer](structure.md#computer-sciencemathematics-engineer)**
+   - ALL code development and maintenance
+   - Simulation and mathematical models
+   - Data analysis and automation
 
 ## Interactive Team Page
 
