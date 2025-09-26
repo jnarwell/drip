@@ -37,7 +37,7 @@ The project is organized around five key engineering roles, each responsible for
 
 ## Interactive Team Page
 
-Access our **[Interactive Team Structure Page](../../team-page/index.html)** to:
+Access our **[Interactive Team Structure Page](../team-page/index.html)** to:
 
 - View detailed role responsibilities and requirements
 - Track team member assignments
@@ -102,7 +102,7 @@ The team has access to extensive Stanford facilities:
 ## Getting Started
 
 1. **Review Role Requirements**: Check the [team structure](structure.md) for your area of interest
-2. **Access Team Page**: Visit the [interactive team page](../../team-page/index.html)
+2. **Access Team Page**: Visit the [interactive team page](../team-page/index.html)
 3. **Connect with Lead**: Contact the project lead for onboarding
 4. **Complete Training**: Get safety training for required labs
 5. **Join Communication**: Add to Slack workspace and shared drives
@@ -125,7 +125,7 @@ All team members must complete:
 
 ## Next Steps
 
-1. Fill out your information on the [team page](../../team-page/index.html)
+1. Fill out your information on the [team page](../team-page/index.html)
 2. Review the [system architecture](../system/architecture.md)
 3. Study relevant [component specifications](../components/index.md)
 4. Familiarize yourself with [test procedures](../verification/procedures.md)

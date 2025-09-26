@@ -1,6 +1,6 @@
 # Team Structure & Roles
 
-This page provides detailed information about each team role in the DRIP project. For an interactive version with fillable contact fields, visit the **[Interactive Team Structure Page](../../team-page/index.html)**.
+This page provides detailed information about each team role in the DRIP project. For an interactive version with fillable contact fields, visit the **[Interactive Team Structure Page](../team-page/index.html)**.
 
 ## Mechanical/Systems Lead
 
@@ -229,6 +229,6 @@ New team members should:
 
 ## Contact Information
 
-For current team member contact information and to join the team, visit the **[Interactive Team Structure Page](../../team-page/index.html)**.
+For current team member contact information and to join the team, visit the **[Interactive Team Structure Page](../team-page/index.html)**.
 
 Project questions: Contact the project lead through the team page.

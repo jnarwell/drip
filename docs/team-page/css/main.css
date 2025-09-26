@@ -1,0 +1,568 @@
+/* CSS Variables */
+:root {
+    --primary-color: #8C1515;
+    --secondary-color: #4D4F53;
+    --accent-color: #175E54;
+    --success-color: #2E7D32;
+    --warning-color: #ED6C02;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-primary: #212121;
+    --text-secondary: #666666;
+    --border-color: #E0E0E0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--card-background);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 2rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.drip-logo {
+    flex-shrink: 0;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6D1010;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #3A3C3F;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Progress Section */
+.progress-section {
+    background-color: white;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.progress-bar {
+    background-color: var(--border-color);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--success-color);
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.progress-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Search Section */
+.search-section {
+    margin: 2rem 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(140, 21, 21, 0.1);
+}
+
+/* Role Cards */
+.role-cards {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.role-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.role-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.role-card.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+.card-header {
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.card-header:hover {
+    background-color: #6D1010;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: white;
+}
+
+.expand-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.card-status {
+    padding: 1.5rem;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.status-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.status-field label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.status-field input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.status-field input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(140, 21, 21, 0.1);
+}
+
+.status-field input.filled {
+    background-color: #E8F5E9;
+    border-color: var(--success-color);
+}
+
+.card-content {
+    display: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.role-card.expanded .card-content {
+    display: block;
+    max-height: 2000px;
+}
+
+.card-content section {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content section:last-child {
+    border-bottom: none;
+}
+
+.card-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-content li:before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Info Panels */
+.info-sections {
+    margin-bottom: 3rem;
+}
+
+.info-panel {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 1.5rem;
+    background-color: #F5F5F5;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.panel-header:hover {
+    background-color: #EEEEEE;
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.info-panel.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+.panel-content {
+    display: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.info-panel.expanded .panel-content {
+    display: block;
+    padding: 2rem;
+    max-height: 1000px;
+}
+
+/* Specifications Grid */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.spec-group h3 {
+    margin-bottom: 1rem;
+}
+
+.spec-group dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem;
+}
+
+.spec-group dt {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.spec-group dd {
+    color: var(--text-primary);
+}
+
+.level-list {
+    list-style: none;
+    padding: 0;
+}
+
+.level-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.level-list li:last-child {
+    border-bottom: none;
+}
+
+/* Timeline */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.phase {
+    padding: 1.5rem;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.phase h3 {
+    margin-bottom: 1rem;
+}
+
+.phase ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase li {
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.phase li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.resource-group h3 {
+    margin-bottom: 1rem;
+}
+
+.resource-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-group li {
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.resource-group li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 3rem;
+}
+
+.contact-section h2 {
+    margin-bottom: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-group h3 {
+    margin-bottom: 1rem;
+}
+
+.contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-fields input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.contact-fields input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(140, 21, 21, 0.1);
+}
+
+.contact-fields input.filled {
+    background-color: #E8F5E9;
+    border-color: var(--success-color);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+}
+
+.last-saved {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Loading State */
+.saving {
+    position: relative;
+}
+
+.saving::after {
+    content: "Saving...";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+.highlight {
+    background-color: #FFF9C4;
+    transition: background-color 0.5s ease;
+}
