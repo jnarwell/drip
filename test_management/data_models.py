@@ -29,6 +29,7 @@ class TestResult(Enum):
     ABORTED = "ABORTED"
 
 class VerificationType(Enum):
+    FEASIBILITY = "FEASIBILITY"
     FUNCTIONAL = "FUNCTIONAL"
     PERFORMANCE = "PERFORMANCE"
     INTEGRATION = "INTEGRATION"

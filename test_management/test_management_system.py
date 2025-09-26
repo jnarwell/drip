@@ -31,10 +31,30 @@ class TestManagementSystem:
         print(f"Tests Loaded: {len(self.test_registry.tests)}")
         print(f"Components Tracked: {len(self.engine.component_verifications)}")
     
+    def check_gateway_test(self):
+        """Check if TE-000 physics validation has passed"""
+        te000_execution = self.engine.test_executions.get('TE-000')
+        if not te000_execution or te000_execution.result != TestResult.PASS:
+            print("⚠️ WARNING: TE-000 Physics Validation MUST PASS before other testing!")
+            if not te000_execution:
+                print("Current Status: NOT STARTED")
+                print("➡️ START WITH TE-000 IMMEDIATELY")
+            else:
+                print(f"Current Status: {te000_execution.status.value}")
+                print(f"Result: {te000_execution.result.value}")
+            return False
+        return True
+    
     def update_test(self, test_id: str, status: str, result: str = None, 
                     engineer: str = "", notes: str = ""):
         """Update test status and result"""
         try:
+            # Check gateway test for all tests except TE-000
+            if test_id != "TE-000" and not self.check_gateway_test():
+                print(f"❌ Cannot proceed with {test_id} until TE-000 passes!")
+                print("   All testing is blocked by the gateway physics validation test.")
+                return
+            
             test_status = TestStatus[status.upper()]
             test_result = TestResult[result.upper()] if result else None
             
@@ -113,6 +133,19 @@ class TestManagementSystem:
     
     def show_next_tests(self, limit: int = 10):
         """Show next tests to execute"""
+        # Check if TE-000 needs to be done first
+        te000_execution = self.engine.test_executions.get('TE-000')
+        if not te000_execution or te000_execution.result != TestResult.PASS:
+            print("\n🚨 CRITICAL: TE-000 Physics Validation MUST be completed first!")
+            print("="*80)
+            print("\n1. TE-000: Acoustic Steering Physics Validation")
+            print("   Purpose: Validate lateral steering forces on falling droplets are achievable")
+            print("   Duration: 16.0h")
+            print("   Components: 40kHz Transducers")
+            print("   Equipment: Single 40kHz transducer, Function generator, Audio amplifier (100W)")
+            print("\n⚠️ All other tests are BLOCKED until TE-000 passes!")
+            return
+        
         next_tests = self.engine.get_next_required_tests(limit)
         
         print(f"\nNext {limit} Tests to Execute:")
@@ -158,6 +191,12 @@ class TestManagementSystem:
         print("="*60)
         print(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print()
+        
+        # Check gateway test status first
+        if not self.check_gateway_test():
+            print("🚨 CRITICAL: TE-000 Physics Validation MUST PASS before any other testing!")
+            print("="*60)
+            print()
         
         # Component summary
         print("Component Status:")

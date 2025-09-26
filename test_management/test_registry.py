@@ -19,7 +19,30 @@ class TestRegistry:
         self._initialize_validation_tests()
     
     def _initialize_acoustic_tests(self):
-        """TE-001 to TE-015: Acoustic Subsystem Tests"""
+        """TE-000 to TE-015: Physics Validation and Acoustic Subsystem Tests"""
+        
+        # TE-000: Physics Validation - MUST PASS BEFORE ANY OTHER TESTING
+        self.tests['TE-000'] = TestDefinition(
+            test_id='TE-000',
+            test_name='Acoustic Steering Physics Validation',
+            test_purpose='Validate lateral steering forces on falling droplets are achievable',
+            target_components=['40kHz Transducers'],
+            verification_type=VerificationType.FEASIBILITY,
+            prerequisite_tests=[],  # No prerequisites - this is first
+            enables_tests=['TE-001'],  # Gates all other testing
+            estimated_duration_hours=16.0,
+            required_equipment=[
+                'Single 40kHz transducer',
+                'Function generator',
+                'Audio amplifier (100W)',
+                'High-speed camera (>1000fps)',
+                'Laser vibrometer or pressure sensor',
+                'Test droplets (Tin/Bismuth low-temp)',
+                'Precision positioning stage',
+                'Data acquisition system'
+            ],
+            acceptance_criteria='Lateral deflection >0.5mm achieved, force measurements match physics model ±50%'
+        )
         
         # Transducer Tests
         self.tests['TE-001'] = TestDefinition(
@@ -28,6 +51,7 @@ class TestRegistry:
             test_purpose='Verify each transducer operates at 40kHz ±100Hz per SR001',
             target_components=['40kHz Transducers'],
             verification_type=VerificationType.ACCEPTANCE,
+            prerequisite_tests=['TE-000'],  # Now requires TE-000
             estimated_duration_hours=3.0,
             required_equipment=['Network Analyzer', 'Temperature Chamber', 'Test Fixture TF-001'],
             acceptance_criteria='All transducers within 40kHz ±100Hz at 23°C'
@@ -39,7 +63,7 @@ class TestRegistry:
             test_purpose='Confirm 10W continuous power capability',
             target_components=['40kHz Transducers'],
             verification_type=VerificationType.PERFORMANCE,
-            prerequisite_tests=['TE-001'],
+            prerequisite_tests=['TE-000', 'TE-001'],  # Now requires TE-000
             estimated_duration_hours=4.0,
             required_equipment=['Power Meter', 'Thermal Camera', 'Load Bank'],
             acceptance_criteria='10W continuous for 4 hours, temp <60°C'
@@ -51,6 +75,7 @@ class TestRegistry:
             test_purpose='Verify 50Ω impedance at operating frequency',
             target_components=['40kHz Transducers'],
             verification_type=VerificationType.FUNCTIONAL,
+            prerequisite_tests=['TE-000'],  # Now requires TE-000
             estimated_duration_hours=2.0,
             required_equipment=['Impedance Analyzer', 'Calibration Kit'],
             acceptance_criteria='Impedance 50Ω ±5% at 40kHz'
@@ -62,7 +87,7 @@ class TestRegistry:
             test_purpose='Confirm >80% electroacoustic efficiency',
             target_components=['40kHz Transducers'],
             verification_type=VerificationType.PERFORMANCE,
-            prerequisite_tests=['TE-001', 'TE-003'],
+            prerequisite_tests=['TE-000', 'TE-001', 'TE-003'],  # Now requires TE-000
             estimated_duration_hours=3.0,
             required_equipment=['Calorimeter', 'Power Analyzer', 'Acoustic Meter'],
             acceptance_criteria='Efficiency >80% at rated power'
@@ -75,7 +100,7 @@ class TestRegistry:
             test_purpose='Verify phase matching across transducer array',
             target_components=['40kHz Transducers', 'Transducer Array Layer'],
             verification_type=VerificationType.INTEGRATION,
-            prerequisite_tests=['TE-001'],
+            prerequisite_tests=['TE-000', 'TE-001'],  # Now requires TE-000
             estimated_duration_hours=4.0,
             required_equipment=['Multi-channel Oscilloscope', 'Phase Meter Array'],
             acceptance_criteria='Phase variance <5° across array'

@@ -3926,9 +3926,10 @@ This page shows the true verification status based on actual test completion and
 
 ## Complete Test List
 
-This page contains the complete registry of all 100 tests in the DRIP system.
+This page contains the complete registry of all 101 tests in the DRIP system.
 
 ### Test Categories:
+- **Physics Validation**: TE-000 (Critical Gateway Test)
 - **Acoustic Tests**: TE-001 to TE-015
 - **Thermal Tests**: TE-016 to TE-030  
 - **Material Tests**: TE-031 to TE-045
@@ -3952,6 +3953,7 @@ This page contains the complete registry of all 100 tests in the DRIP system.
 ## Test Statistics
 
 - **Total Tests**: {len(registry.tests)}
+- **Physics Validation**: 1 test (MUST PASS FIRST)
 - **Acoustic Subsystem**: 15 tests
 - **Thermal Subsystem**: 15 tests
 - **Material Handling**: 15 tests
